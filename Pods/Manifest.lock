@@ -1,0 +1,56 @@
+PODS:
+  - CollectionKit (2.4.0):
+    - CollectionKit/Core (= 2.4.0)
+  - CollectionKit/Core (2.4.0)
+  - EachNavigationBar (1.9.2)
+  - ESTabBarController-swift (2.6.4)
+  - lottie-ios (3.0.3)
+  - ProgressHUD (2.51)
+  - Realm (3.14.0):
+    - Realm/Headers (= 3.14.0)
+  - Realm/Headers (3.14.0)
+  - RealmSwift (3.14.0):
+    - Realm (= 3.14.0)
+  - RxRealm (0.7.6):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.5.0)
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - CollectionKit
+  - EachNavigationBar
+  - ESTabBarController-swift
+  - lottie-ios
+  - ProgressHUD
+  - RxRealm
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CollectionKit
+    - EachNavigationBar
+    - ESTabBarController-swift
+    - lottie-ios
+    - ProgressHUD
+    - Realm
+    - RealmSwift
+    - RxRealm
+    - RxSwift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
+  EachNavigationBar: 4978d1327a85d7c50d070b0a387f6e30fa089cfc
+  ESTabBarController-swift: 58cca4ab7de980657d99a02181c1ff310983e975
+  lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
+  ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
+  Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
+  RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
+  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: 8ed5cad69fb7bbbd91e0d54c3b5fc39dbb86bc89
+
+COCOAPODS: 1.6.1

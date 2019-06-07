@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E28D9CABC47F855FDF3A9D41 /* Pods_CareFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */; };
+		F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D4A22A8D2AD0060EACE /* Const.swift */; };
+		F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D4C22A8D2C70060EACE /* Extension.swift */; };
+		F5303D4F22A8D3B60060EACE /* CFBasicContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D4E22A8D3B60060EACE /* CFBasicContentView.swift */; };
+		F5303D5122A8D4B60060EACE /* CFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D5022A8D4B60060EACE /* CFHomeViewController.swift */; };
+		F5303D5322A8D4C20060EACE /* CFDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D5222A8D4C20060EACE /* CFDiaryViewController.swift */; };
+		F5303D5522A8D4CE0060EACE /* CFAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D5422A8D4CE0060EACE /* CFAlbumViewController.swift */; };
+		F5303D5722A8D4D80060EACE /* CFMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D5622A8D4D80060EACE /* CFMineViewController.swift */; };
+		F5303D5A22A8E2B00060EACE /* CFMineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D5822A8E2B00060EACE /* CFMineCell.swift */; };
+		F5303D5B22A8E2B00060EACE /* CFMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5303D5922A8E2B00060EACE /* CFMineCell.xib */; };
+		F54A1D1122A90638005836B3 /* diaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1022A90638005836B3 /* diaryModel.swift */; };
+		F54A1D1322A9064A005836B3 /* diaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1222A9064A005836B3 /* diaryCell.swift */; };
+		F54A1D1622A93422005836B3 /* emotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1422A93422005836B3 /* emotionCell.swift */; };
+		F54A1D1722A93422005836B3 /* emotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F54A1D1522A93422005836B3 /* emotionCell.xib */; };
+		F54A1D1B22A93A64005836B3 /* diaryWriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1A22A93A64005836B3 /* diaryWriteCell.swift */; };
+		F54A1D1E22A9428C005836B3 /* writeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1C22A9428C005836B3 /* writeCell.swift */; };
+		F54A1D1F22A9428C005836B3 /* writeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F54A1D1D22A9428C005836B3 /* writeCell.xib */; };
+		F5AC532622AA0289008A78E2 /* diaryWriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532422AA0289008A78E2 /* diaryWriteController.swift */; };
+		F5AC532722AA0289008A78E2 /* diaryWriteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AC532522AA0289008A78E2 /* diaryWriteController.xib */; };
+		F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */; };
+		F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */; };
+		F5AC532E22AA136D008A78E2 /* diaryPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */; };
 		F5D9752522A3B36E0014BE15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9752422A3B36E0014BE15 /* AppDelegate.swift */; };
 		F5D9752722A3B36E0014BE15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9752622A3B36E0014BE15 /* ViewController.swift */; };
 		F5D9752A22A3B36E0014BE15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D9752822A3B36E0014BE15 /* Main.storyboard */; };
@@ -15,6 +37,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AC6F29334E319B68CC1EE99 /* Pods-CareFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.debug.xcconfig"; path = "Target Support Files/Pods-CareFree/Pods-CareFree.debug.xcconfig"; sourceTree = "<group>"; };
+		7F85E82E5540FEAE07E10186 /* Pods-CareFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.release.xcconfig"; path = "Target Support Files/Pods-CareFree/Pods-CareFree.release.xcconfig"; sourceTree = "<group>"; };
+		B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CareFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5303D4A22A8D2AD0060EACE /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		F5303D4C22A8D2C70060EACE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F5303D4E22A8D3B60060EACE /* CFBasicContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFBasicContentView.swift; sourceTree = "<group>"; };
+		F5303D5022A8D4B60060EACE /* CFHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeViewController.swift; sourceTree = "<group>"; };
+		F5303D5222A8D4C20060EACE /* CFDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDiaryViewController.swift; sourceTree = "<group>"; };
+		F5303D5422A8D4CE0060EACE /* CFAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFAlbumViewController.swift; sourceTree = "<group>"; };
+		F5303D5622A8D4D80060EACE /* CFMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFMineViewController.swift; sourceTree = "<group>"; };
+		F5303D5822A8E2B00060EACE /* CFMineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFMineCell.swift; sourceTree = "<group>"; };
+		F5303D5922A8E2B00060EACE /* CFMineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CFMineCell.xib; sourceTree = "<group>"; };
+		F54A1D1022A90638005836B3 /* diaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryModel.swift; sourceTree = "<group>"; };
+		F54A1D1222A9064A005836B3 /* diaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryCell.swift; sourceTree = "<group>"; };
+		F54A1D1422A93422005836B3 /* emotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emotionCell.swift; sourceTree = "<group>"; };
+		F54A1D1522A93422005836B3 /* emotionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = emotionCell.xib; sourceTree = "<group>"; };
+		F54A1D1A22A93A64005836B3 /* diaryWriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryWriteCell.swift; sourceTree = "<group>"; };
+		F54A1D1C22A9428C005836B3 /* writeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeCell.swift; sourceTree = "<group>"; };
+		F54A1D1D22A9428C005836B3 /* writeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = writeCell.xib; sourceTree = "<group>"; };
+		F5AC532422AA0289008A78E2 /* diaryWriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryWriteController.swift; sourceTree = "<group>"; };
+		F5AC532522AA0289008A78E2 /* diaryWriteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = diaryWriteController.xib; sourceTree = "<group>"; };
+		F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeDiaryCell.swift; sourceTree = "<group>"; };
+		F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryPhotoCell.swift; sourceTree = "<group>"; };
+		F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = diaryPhotoCell.xib; sourceTree = "<group>"; };
 		F5D9752122A3B36E0014BE15 /* CareFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D9752422A3B36E0014BE15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D9752622A3B36E0014BE15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +75,132 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28D9CABC47F855FDF3A9D41 /* Pods_CareFree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		198E68254BFD076888BF7F91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B313FB6038FAD5D0BD076931 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0AC6F29334E319B68CC1EE99 /* Pods-CareFree.debug.xcconfig */,
+				7F85E82E5540FEAE07E10186 /* Pods-CareFree.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F5303D4422A8D1080060EACE /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				F54A1D0F22A90427005836B3 /* Cell */,
+				F5303D5622A8D4D80060EACE /* CFMineViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		F5303D4522A8D10E0060EACE /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				F5303D5422A8D4CE0060EACE /* CFAlbumViewController.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		F5303D4622A8D1520060EACE /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				F5AC532822AA061E008A78E2 /* Model */,
+				F54A1D1822A939E5005836B3 /* Cell */,
+				F5303D5222A8D4C20060EACE /* CFDiaryViewController.swift */,
+				F5AC532422AA0289008A78E2 /* diaryWriteController.swift */,
+				F5AC532522AA0289008A78E2 /* diaryWriteController.xib */,
+				F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */,
+				F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */,
+				F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		F5303D4722A8D15E0060EACE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F5303D5022A8D4B60060EACE /* CFHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F5303D4822A8D1620060EACE /* Extension+Cosnt */ = {
+			isa = PBXGroup;
+			children = (
+				F5303D4A22A8D2AD0060EACE /* Const.swift */,
+				F5303D4C22A8D2C70060EACE /* Extension.swift */,
+			);
+			path = "Extension+Cosnt";
+			sourceTree = "<group>";
+		};
+		F5303D4922A8D1730060EACE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F5303D4E22A8D3B60060EACE /* CFBasicContentView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F54A1D0F22A90427005836B3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F5303D5822A8E2B00060EACE /* CFMineCell.swift */,
+				F5303D5922A8E2B00060EACE /* CFMineCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F54A1D1822A939E5005836B3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F54A1D1222A9064A005836B3 /* diaryCell.swift */,
+				F54A1D1922A93A27005836B3 /* diaryTwoCell */,
+				F54A1D1A22A93A64005836B3 /* diaryWriteCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F54A1D1922A93A27005836B3 /* diaryTwoCell */ = {
+			isa = PBXGroup;
+			children = (
+				F54A1D1422A93422005836B3 /* emotionCell.swift */,
+				F54A1D1522A93422005836B3 /* emotionCell.xib */,
+				F54A1D1C22A9428C005836B3 /* writeCell.swift */,
+				F54A1D1D22A9428C005836B3 /* writeCell.xib */,
+			);
+			path = diaryTwoCell;
+			sourceTree = "<group>";
+		};
+		F5AC532822AA061E008A78E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F54A1D1022A90638005836B3 /* diaryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F5D9751822A3B36E0014BE15 = {
 			isa = PBXGroup;
 			children = (
 				F5D9752322A3B36E0014BE15 /* CareFree */,
 				F5D9752222A3B36E0014BE15 /* Products */,
+				B313FB6038FAD5D0BD076931 /* Pods */,
+				198E68254BFD076888BF7F91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +216,12 @@
 			isa = PBXGroup;
 			children = (
 				F5D9752422A3B36E0014BE15 /* AppDelegate.swift */,
+				F5303D4922A8D1730060EACE /* Main */,
+				F5303D4822A8D1620060EACE /* Extension+Cosnt */,
+				F5303D4722A8D15E0060EACE /* Home */,
+				F5303D4622A8D1520060EACE /* Diary */,
+				F5303D4522A8D10E0060EACE /* Album */,
+				F5303D4422A8D1080060EACE /* Mine */,
 				F5D9752622A3B36E0014BE15 /* ViewController.swift */,
 				F5D9752822A3B36E0014BE15 /* Main.storyboard */,
 				F5D9752B22A3B3700014BE15 /* Assets.xcassets */,
@@ -71,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5D9753322A3B3700014BE15 /* Build configuration list for PBXNativeTarget "CareFree" */;
 			buildPhases = (
+				06A4F3634E49C554880C5364 /* [CP] Check Pods Manifest.lock */,
 				F5D9751D22A3B36E0014BE15 /* Sources */,
 				F5D9751E22A3B36E0014BE15 /* Frameworks */,
 				F5D9751F22A3B36E0014BE15 /* Resources */,
+				7041C65CDE430184C24CC7F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,12 +292,82 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D9752F22A3B3700014BE15 /* LaunchScreen.storyboard in Resources */,
+				F54A1D1F22A9428C005836B3 /* writeCell.xib in Resources */,
+				F5303D5B22A8E2B00060EACE /* CFMineCell.xib in Resources */,
 				F5D9752C22A3B3700014BE15 /* Assets.xcassets in Resources */,
 				F5D9752A22A3B36E0014BE15 /* Main.storyboard in Resources */,
+				F5AC532722AA0289008A78E2 /* diaryWriteController.xib in Resources */,
+				F5AC532E22AA136D008A78E2 /* diaryPhotoCell.xib in Resources */,
+				F54A1D1722A93422005836B3 /* emotionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06A4F3634E49C554880C5364 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CareFree-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7041C65CDE430184C24CC7F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F5D9751D22A3B36E0014BE15 /* Sources */ = {
@@ -136,7 +375,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D9752722A3B36E0014BE15 /* ViewController.swift in Sources */,
+				F5303D5A22A8E2B00060EACE /* CFMineCell.swift in Sources */,
+				F54A1D1122A90638005836B3 /* diaryModel.swift in Sources */,
+				F54A1D1322A9064A005836B3 /* diaryCell.swift in Sources */,
+				F54A1D1E22A9428C005836B3 /* writeCell.swift in Sources */,
 				F5D9752522A3B36E0014BE15 /* AppDelegate.swift in Sources */,
+				F54A1D1622A93422005836B3 /* emotionCell.swift in Sources */,
+				F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */,
+				F5303D5322A8D4C20060EACE /* CFDiaryViewController.swift in Sources */,
+				F54A1D1B22A93A64005836B3 /* diaryWriteCell.swift in Sources */,
+				F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */,
+				F5303D4F22A8D3B60060EACE /* CFBasicContentView.swift in Sources */,
+				F5303D5122A8D4B60060EACE /* CFHomeViewController.swift in Sources */,
+				F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */,
+				F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */,
+				F5AC532622AA0289008A78E2 /* diaryWriteController.swift in Sources */,
+				F5303D5522A8D4CE0060EACE /* CFAlbumViewController.swift in Sources */,
+				F5303D5722A8D4D80060EACE /* CFMineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +535,7 @@
 		};
 		F5D9753422A3B3700014BE15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AC6F29334E319B68CC1EE99 /* Pods-CareFree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +554,7 @@
 		};
 		F5D9753522A3B3700014BE15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F85E82E5540FEAE07E10186 /* Pods-CareFree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
