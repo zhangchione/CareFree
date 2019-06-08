@@ -15,6 +15,15 @@ class diaryWriteController: UIViewController {
     fileprivate let dataHeadSource = ArrayDataSource(data:[1])
     fileprivate lazy var collectionView = CollectionView()
     
+    var emotionLayer: CAGradientLayer!
+    
+    lazy var backgroundView:UIView = {
+        let vi = UIView()
+        //vi.backgroundColor = UIColor.cyan
+        return vi
+    }()
+
+    
     lazy var backBtn:UIButton = {
        let btn = UIButton()
         btn.setTitle("×", for: .normal)
@@ -48,6 +57,21 @@ class diaryWriteController: UIViewController {
     }
     
     func configUI(){
+        
+        view.backgroundColor = UIColor.white
+        view.addSubview(backgroundView)
+        backgroundView.snp.makeConstraints{(make) in
+            make.left.top.bottom.right.equalTo(view)
+        }
+        
+        self.emotionLayer = CAGradientLayer()
+        self.emotionLayer.frame = backgroundView.bounds
+        
+        emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
+       // print("jump4")
+        self.backgroundView.layer.addSublayer(emotionLayer)
+        
+        //view.backgroundColor = UIColor.clear
         view.addSubview(backBtn)
         view.addSubview(Title)
         view.addSubview(saveBtn)
@@ -86,6 +110,7 @@ class diaryWriteController: UIViewController {
     func configCV(){
         let viewHeadSource = ClosureViewSource(viewUpdater: {(view:writeDiaryCell,data:Int,index:Int) in
             view.updateUI()
+   
         })
         let sizeHeadSource = {(index:Int,data:Int,collectionSize:CGSize) ->CGSize in
             return CGSize(width: collectionSize.width, height: 806)

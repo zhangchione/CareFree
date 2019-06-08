@@ -41,15 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         albumVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "相册", image: UIImage(named: "photo"), selectedImage: UIImage(named: "photo_1"))
         mineVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "我的", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))
 
-        let homeNav = UINavigationController.init(rootViewController: homeVC)
-        let diaryNav = UINavigationController.init(rootViewController: diaryVC)
-        let albumNav = UINavigationController.init(rootViewController: albumVC)
-        let mineNav = UINavigationController.init(rootViewController: mineVC)
+        let homeNav = MainNavigationController.init(rootViewController: homeVC)
+        let diaryNav = MainNavigationController.init(rootViewController: diaryVC)
+        let albumNav = MainNavigationController.init(rootViewController: albumVC)
+        let mineNav = MainNavigationController.init(rootViewController: mineVC)
         
         homeNav.navigation.configuration.isEnabled = true
         diaryNav.navigation.configuration.isEnabled = true
         albumNav.navigation.configuration.isEnabled = true
         mineNav.navigation.configuration.isEnabled = true
+        
+        
+        if homeNav.children.count > 1 {
+            
+        }
         
         let tabBarController = ESTabBarController()
         

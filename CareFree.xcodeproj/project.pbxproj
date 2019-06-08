@@ -24,8 +24,17 @@
 		F54A1D1B22A93A64005836B3 /* diaryWriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1A22A93A64005836B3 /* diaryWriteCell.swift */; };
 		F54A1D1E22A9428C005836B3 /* writeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1C22A9428C005836B3 /* writeCell.swift */; };
 		F54A1D1F22A9428C005836B3 /* writeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F54A1D1D22A9428C005836B3 /* writeCell.xib */; };
+		F55C10D222AB3E4A0036BE31 /* homeHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55C10D122AB3E4A0036BE31 /* homeHeadCell.swift */; };
+		F55C10D422AB3E710036BE31 /* homeRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55C10D322AB3E710036BE31 /* homeRecommendCell.swift */; };
+		F55C10D622AB4FDC0036BE31 /* albumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55C10D522AB4FDC0036BE31 /* albumCell.swift */; };
+		F55C10D922AB52490036BE31 /* albumTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55C10D722AB52490036BE31 /* albumTwoCell.swift */; };
+		F55C10DA22AB52490036BE31 /* albumTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F55C10D822AB52490036BE31 /* albumTwoCell.xib */; };
+		F56C2E0422AA5CFA00BCFA11 /* showDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C2E0322AA5CFA00BCFA11 /* showDiaryController.swift */; };
+		F56C2E0622AA6B2E00BCFA11 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C2E0522AA6B2E00BCFA11 /* MainNavigationController.swift */; };
+		F56C2E0822AA720A00BCFA11 /* showHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C2E0722AA720A00BCFA11 /* showHeadCell.swift */; };
+		F56C2E0A22AA811200BCFA11 /* showBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C2E0922AA811200BCFA11 /* showBodyCell.swift */; };
+		F56C2E0C22AA82D600BCFA11 /* nowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C2E0B22AA82D600BCFA11 /* nowModel.swift */; };
 		F5AC532622AA0289008A78E2 /* diaryWriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532422AA0289008A78E2 /* diaryWriteController.swift */; };
-		F5AC532722AA0289008A78E2 /* diaryWriteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AC532522AA0289008A78E2 /* diaryWriteController.xib */; };
 		F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */; };
 		F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */; };
 		F5AC532E22AA136D008A78E2 /* diaryPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */; };
@@ -56,8 +65,17 @@
 		F54A1D1A22A93A64005836B3 /* diaryWriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryWriteCell.swift; sourceTree = "<group>"; };
 		F54A1D1C22A9428C005836B3 /* writeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeCell.swift; sourceTree = "<group>"; };
 		F54A1D1D22A9428C005836B3 /* writeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = writeCell.xib; sourceTree = "<group>"; };
+		F55C10D122AB3E4A0036BE31 /* homeHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeHeadCell.swift; sourceTree = "<group>"; };
+		F55C10D322AB3E710036BE31 /* homeRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeRecommendCell.swift; sourceTree = "<group>"; };
+		F55C10D522AB4FDC0036BE31 /* albumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumCell.swift; sourceTree = "<group>"; };
+		F55C10D722AB52490036BE31 /* albumTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumTwoCell.swift; sourceTree = "<group>"; };
+		F55C10D822AB52490036BE31 /* albumTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = albumTwoCell.xib; sourceTree = "<group>"; };
+		F56C2E0322AA5CFA00BCFA11 /* showDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showDiaryController.swift; sourceTree = "<group>"; };
+		F56C2E0522AA6B2E00BCFA11 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		F56C2E0722AA720A00BCFA11 /* showHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showHeadCell.swift; sourceTree = "<group>"; };
+		F56C2E0922AA811200BCFA11 /* showBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showBodyCell.swift; sourceTree = "<group>"; };
+		F56C2E0B22AA82D600BCFA11 /* nowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nowModel.swift; sourceTree = "<group>"; };
 		F5AC532422AA0289008A78E2 /* diaryWriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryWriteController.swift; sourceTree = "<group>"; };
-		F5AC532522AA0289008A78E2 /* diaryWriteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = diaryWriteController.xib; sourceTree = "<group>"; };
 		F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeDiaryCell.swift; sourceTree = "<group>"; };
 		F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryPhotoCell.swift; sourceTree = "<group>"; };
 		F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = diaryPhotoCell.xib; sourceTree = "<group>"; };
@@ -112,6 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				F5303D5422A8D4CE0060EACE /* CFAlbumViewController.swift */,
+				F55C10D522AB4FDC0036BE31 /* albumCell.swift */,
+				F55C10D722AB52490036BE31 /* albumTwoCell.swift */,
+				F55C10D822AB52490036BE31 /* albumTwoCell.xib */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -119,14 +140,13 @@
 		F5303D4622A8D1520060EACE /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				F5303D5222A8D4C20060EACE /* CFDiaryViewController.swift */,
 				F5AC532822AA061E008A78E2 /* Model */,
 				F54A1D1822A939E5005836B3 /* Cell */,
-				F5303D5222A8D4C20060EACE /* CFDiaryViewController.swift */,
 				F5AC532422AA0289008A78E2 /* diaryWriteController.swift */,
-				F5AC532522AA0289008A78E2 /* diaryWriteController.xib */,
-				F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */,
-				F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */,
-				F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */,
+				F56C2E0322AA5CFA00BCFA11 /* showDiaryController.swift */,
+				F56C2E0722AA720A00BCFA11 /* showHeadCell.swift */,
+				F56C2E0922AA811200BCFA11 /* showBodyCell.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -135,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				F5303D5022A8D4B60060EACE /* CFHomeViewController.swift */,
+				F55C10D122AB3E4A0036BE31 /* homeHeadCell.swift */,
+				F55C10D322AB3E710036BE31 /* homeRecommendCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -152,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				F5303D4E22A8D3B60060EACE /* CFBasicContentView.swift */,
+				F56C2E0522AA6B2E00BCFA11 /* MainNavigationController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -171,6 +194,7 @@
 				F54A1D1222A9064A005836B3 /* diaryCell.swift */,
 				F54A1D1922A93A27005836B3 /* diaryTwoCell */,
 				F54A1D1A22A93A64005836B3 /* diaryWriteCell.swift */,
+				F56C2E0222AA5CA300BCFA11 /* writeCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -186,10 +210,21 @@
 			path = diaryTwoCell;
 			sourceTree = "<group>";
 		};
+		F56C2E0222AA5CA300BCFA11 /* writeCell */ = {
+			isa = PBXGroup;
+			children = (
+				F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */,
+				F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */,
+				F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */,
+			);
+			path = writeCell;
+			sourceTree = "<group>";
+		};
 		F5AC532822AA061E008A78E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				F54A1D1022A90638005836B3 /* diaryModel.swift */,
+				F56C2E0B22AA82D600BCFA11 /* nowModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,8 +330,8 @@
 				F54A1D1F22A9428C005836B3 /* writeCell.xib in Resources */,
 				F5303D5B22A8E2B00060EACE /* CFMineCell.xib in Resources */,
 				F5D9752C22A3B3700014BE15 /* Assets.xcassets in Resources */,
+				F55C10DA22AB52490036BE31 /* albumTwoCell.xib in Resources */,
 				F5D9752A22A3B36E0014BE15 /* Main.storyboard in Resources */,
-				F5AC532722AA0289008A78E2 /* diaryWriteController.xib in Resources */,
 				F5AC532E22AA136D008A78E2 /* diaryPhotoCell.xib in Resources */,
 				F54A1D1722A93422005836B3 /* emotionCell.xib in Resources */,
 			);
@@ -340,10 +375,6 @@
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
@@ -355,10 +386,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
@@ -374,15 +401,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56C2E0A22AA811200BCFA11 /* showBodyCell.swift in Sources */,
 				F5D9752722A3B36E0014BE15 /* ViewController.swift in Sources */,
 				F5303D5A22A8E2B00060EACE /* CFMineCell.swift in Sources */,
+				F56C2E0822AA720A00BCFA11 /* showHeadCell.swift in Sources */,
+				F56C2E0422AA5CFA00BCFA11 /* showDiaryController.swift in Sources */,
 				F54A1D1122A90638005836B3 /* diaryModel.swift in Sources */,
 				F54A1D1322A9064A005836B3 /* diaryCell.swift in Sources */,
 				F54A1D1E22A9428C005836B3 /* writeCell.swift in Sources */,
+				F55C10D922AB52490036BE31 /* albumTwoCell.swift in Sources */,
+				F55C10D222AB3E4A0036BE31 /* homeHeadCell.swift in Sources */,
 				F5D9752522A3B36E0014BE15 /* AppDelegate.swift in Sources */,
 				F54A1D1622A93422005836B3 /* emotionCell.swift in Sources */,
 				F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */,
 				F5303D5322A8D4C20060EACE /* CFDiaryViewController.swift in Sources */,
+				F55C10D622AB4FDC0036BE31 /* albumCell.swift in Sources */,
+				F56C2E0622AA6B2E00BCFA11 /* MainNavigationController.swift in Sources */,
 				F54A1D1B22A93A64005836B3 /* diaryWriteCell.swift in Sources */,
 				F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */,
 				F5303D4F22A8D3B60060EACE /* CFBasicContentView.swift in Sources */,
@@ -390,6 +424,8 @@
 				F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */,
 				F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */,
 				F5AC532622AA0289008A78E2 /* diaryWriteController.swift in Sources */,
+				F56C2E0C22AA82D600BCFA11 /* nowModel.swift in Sources */,
+				F55C10D422AB3E710036BE31 /* homeRecommendCell.swift in Sources */,
 				F5303D5522A8D4CE0060EACE /* CFAlbumViewController.swift in Sources */,
 				F5303D5722A8D4D80060EACE /* CFMineViewController.swift in Sources */,
 			);

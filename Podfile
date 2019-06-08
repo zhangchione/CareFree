@@ -7,7 +7,7 @@ target 'CareFree' do
   pod 'ESTabBarController-swift'
   pod 'CollectionKit'
   pod 'ProgressHUD'
-  pod 'RxRealm'
+  #pod 'RxRealm'
   pod 'SnapKit'
   pod 'lottie-ios'
   pod 'EachNavigationBar'

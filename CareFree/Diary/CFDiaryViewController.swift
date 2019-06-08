@@ -13,6 +13,7 @@ import CollectionKit
 
 class CFDiaryViewController: UIViewController {
 
+    var emotionLayer: CAGradientLayer!
     
     fileprivate let dataBodySource = ArrayDataSource(data:[diaryModel]())
     fileprivate let dataHeadSource = ArrayDataSource(data:[diaryModel]())
@@ -32,8 +33,6 @@ class CFDiaryViewController: UIViewController {
         configData()
     }
     
-
-    
     func configNavBar(){
         
         self.navigation.bar.isShadowHidden = true
@@ -48,6 +47,7 @@ class CFDiaryViewController: UIViewController {
 }
 
 extension CFDiaryViewController{
+    
     
     fileprivate func configData(){
         var model = diaryModel()
@@ -96,6 +96,21 @@ extension CFDiaryViewController{
         
         let viewHeadSource = ClosureViewSource(viewUpdater: {(view:diaryWriteCell,data:diaryModel,index:Int) in
             view.writeBtn.addTarget(self, action: #selector(self.write), for: .touchUpInside)
+            
+ 
+            view.jump = {
+                let writeVC = diaryWriteController()
+  
+                switch $0 {
+                case 0:print("jump1")
+                case 1:print("jump2")
+                case 2:print("jump3")
+                case 3:print("jump4")
+                default: break
+                }
+                self.present(writeVC, animated: true, completion: nil)
+
+            }
             view.updateUI(with: data)
         })
         let sizeHeadSource = {(index:Int,data:diaryModel,collectionSize:CGSize) -> CGSize in
@@ -115,11 +130,26 @@ extension CFDiaryViewController{
         collectionView.provider = finalProvider
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         
+        providerBody.tapHandler = { context -> Void in
+            let showDiaryVC = showDiaryController()
+            self.navigationController?.pushViewController(showDiaryVC, animated: true)
+        }
+        
+        
     }
     
     @objc func write(){
         print("跳转写日记界面...")
         let writeVC = diaryWriteController()
+        
+        self.emotionLayer = CAGradientLayer()
+        self.emotionLayer.frame = writeVC.backgroundView.bounds
+        emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
+        print("jump4")
+        writeVC.backgroundView.backgroundColor = UIColor.yellow
+        writeVC.backgroundView .layer.addSublayer(self.emotionLayer)
+        
+        
         self.present(writeVC, animated: true, completion: nil)
         //self.navigationController?.pushViewController(writeVC, animated: true)
         

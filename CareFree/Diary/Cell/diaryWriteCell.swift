@@ -9,9 +9,8 @@
 import UIKit
 
 class diaryWriteCell: UIView {
-    
-    
-    
+    var jump: ((Int) -> Void)?
+    var jump2: (() -> Void)?
     lazy var day: UILabel = {
         let label = UILabel()
         label.text = "24"
@@ -162,34 +161,70 @@ class diaryWriteCell: UIView {
         self.layer.shadowOpacity = 0.6
         self.layer.masksToBounds = false
     }
+        var jumpC = 0
 
 }
 extension diaryWriteCell:UICollectionViewDelegate,UICollectionViewDataSource{
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "writeCell", for: indexPath) as! writeCell
+        var tap = UITapGestureRecognizer()
+        var tap2 = UITapGestureRecognizer()
+        var tap3 = UITapGestureRecognizer()
+        var tap4 = UITapGestureRecognizer()
+
         switch indexPath.row {
         case 0 :
             cell.circleView.backgroundColor = UIColor.init(r: 57, g: 210, b: 214)
+
             cell.emotionLabel.text = "开心"
+            tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction))
+            cell.contentView.addGestureRecognizer(tap)
         case 1 :
             cell.circleView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
             cell.emotionLabel.text = "平静"
+            tap2 = UITapGestureRecognizer(target: self, action: #selector(self.tapAction2))
+            cell.contentView.addGestureRecognizer(tap2)
         case 2 :
             cell.circleView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
             cell.emotionLabel.text = "难过"
+            tap3 = UITapGestureRecognizer(target: self, action: #selector(self.tapAction3))
+            cell.contentView.addGestureRecognizer(tap3)
         default:
             cell.circleView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
             cell.emotionLabel.text = "压抑"
+            tap4 = UITapGestureRecognizer(target: self, action: #selector(self.tapAction4))
+            cell.contentView.addGestureRecognizer(tap4)
         }
+        
         return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
+    @objc func tapAction(){
+        print("要跳转")
+        jump!(0)
+    }
+    @objc func tapAction2(){
+        print("要跳转")
+        jump!(1)
+    }
+    @objc func tapAction3(){
+        print("要跳转")
+        jump!(2)
+    }
+    @objc func tapAction4(){
+        print("要跳转")
+        jump!(3)
+    }
+    //collectionViewdid
+    
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return CGSize(width: 50, height: 60 )
