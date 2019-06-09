@@ -13,7 +13,7 @@ import CollectionKit
 
 class CFDiaryViewController: UIViewController {
 
-    var emotionLayer: CAGradientLayer!
+
     
     fileprivate let dataBodySource = ArrayDataSource(data:[diaryModel]())
     fileprivate let dataHeadSource = ArrayDataSource(data:[diaryModel]())
@@ -56,7 +56,7 @@ extension CFDiaryViewController{
         model.value = 31
         model.week = "周五"
         model.yearMouth = "2019年5月"
-        for index in 1...6 {
+        for _ in 1...6 {
             self.dataBodySource.data.append(model)
         }
         self.dataHeadSource.data.append(model)
@@ -95,22 +95,30 @@ extension CFDiaryViewController{
         )
         
         let viewHeadSource = ClosureViewSource(viewUpdater: {(view:diaryWriteCell,data:diaryModel,index:Int) in
-            view.writeBtn.addTarget(self, action: #selector(self.write), for: .touchUpInside)
-            
- 
-            view.jump = {
-                let writeVC = diaryWriteController()
-  
-                switch $0 {
-                case 0:print("jump1")
-                case 1:print("jump2")
-                case 2:print("jump3")
-                case 3:print("jump4")
-                default: break
-                }
-                self.present(writeVC, animated: true, completion: nil)
 
+            
+            DispatchQueue.main.async {
+                view.writeBtn.addTarget(self, action: #selector(self.write), for: .touchUpInside)
+                view.jump = {
+                    let writeVC = diaryWriteController()
+                    let emotionLayer = CAGradientLayer()
+                    emotionLayer.frame = writeVC.view.bounds
+                    switch $0 {
+                    case 0:
+                    emotionLayer.colors = [UIColor.init(r: 56, g: 213, b: 214).cgColor,UIColor.init(r: 63, g: 171, b: 213).cgColor]
+                    case 1:
+                    emotionLayer.colors = [UIColor.init(r: 118, g: 175, b: 227).cgColor,UIColor.init(r: 91, g: 123, b: 218).cgColor]
+                    case 2:
+                    emotionLayer.colors = [UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
+                    case 3:
+                    emotionLayer.colors = [UIColor.init(r: 43, g: 88, b: 118).cgColor,UIColor.init(r: 9, g: 32, b: 63).cgColor]
+                    default: break
+                    }
+                    writeVC.emotionLayer = emotionLayer
+                    self.present(writeVC, animated: true, completion: nil)
+                }
             }
+
             view.updateUI(with: data)
         })
         let sizeHeadSource = {(index:Int,data:diaryModel,collectionSize:CGSize) -> CGSize in
@@ -132,6 +140,10 @@ extension CFDiaryViewController{
         
         providerBody.tapHandler = { context -> Void in
             let showDiaryVC = showDiaryController()
+            
+            let emotionLayer = CAGradientLayer()
+            emotionLayer.colors = [UIColor.init(r: 155, g: 121, b: 255).cgColor,UIColor.init(r: 96, g: 114, b: 255).cgColor]
+            showDiaryVC.emotionLayer = emotionLayer
             self.navigationController?.pushViewController(showDiaryVC, animated: true)
         }
         
@@ -140,16 +152,18 @@ extension CFDiaryViewController{
     
     @objc func write(){
         print("跳转写日记界面...")
+        
         let writeVC = diaryWriteController()
-        
-        self.emotionLayer = CAGradientLayer()
-        self.emotionLayer.frame = writeVC.backgroundView.bounds
-        emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
-        print("jump4")
-        writeVC.backgroundView.backgroundColor = UIColor.yellow
-        writeVC.backgroundView .layer.addSublayer(self.emotionLayer)
-        
-        
+        let emotionLayer = CAGradientLayer()
+        emotionLayer.frame = writeVC.view.bounds
+        emotionLayer.colors = [UIColor.white.cgColor,UIColor.white.cgColor]
+        emotionLayer.cornerRadius = 30
+        let topColor = UIColor.black
+        let writeColor = UIColor.init(r: 127, g: 127, b: 127)
+        writeVC.topColor = topColor
+        writeVC.writeColor = writeColor
+        writeVC.emotionLayer = emotionLayer
+
         self.present(writeVC, animated: true, completion: nil)
         //self.navigationController?.pushViewController(writeVC, animated: true)
         

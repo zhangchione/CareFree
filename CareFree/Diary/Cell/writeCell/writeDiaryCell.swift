@@ -12,13 +12,44 @@ class writeDiaryCell: UIView {
 
     var arrayData = [1,2]
     
-
+    lazy var backgroundView:UIView = {
+        let vi = UIView()
+        //vi.backgroundColor = UIColor.cyan
+        return vi
+    }()
+    
+    lazy var backBtn:UIButton = {
+        let btn = UIButton()
+        btn.setTitle("×", for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.titleLabel?.font = UIFont(name: "PingFangSC-Regular", size: 40)
+        btn.setTitleColor(.white, for: .normal)
+        return btn
+    }()
+    
+    lazy var saveBtn:UIButton = {
+        let btn = UIButton()
+        btn.setTitle("完成", for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.titleLabel?.font = UIFont(name: "PingFangSC-Regular", size: 20)
+        btn.setTitleColor(.white, for: .normal)
+        return btn
+    }()
+    
+    lazy var Title:UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.white
+        label.text = "今天"
+        label.font = UIFont(name: "PingFangSC-Regular", size: 20)
+        
+        return label
+    }()
     
     lazy var diaryWirte : UITextView = {
         let tv = UITextView()
         tv.backgroundColor = UIColor.clear
         tv.font = UIFont.systemFont(ofSize: 20)
-        tv.textColor = UIColor.init(r: 127, g: 127, b: 127)
+        tv.textColor = UIColor.white
         tv.text = "泡在了实验室一天，果然充实的学习还是最幸福的"
         return tv
     }()
@@ -47,14 +78,40 @@ class writeDiaryCell: UIView {
     
     
     func configUI(){
-
+        addSubview(backgroundView)
+        
+        backgroundView.snp.makeConstraints{(make) in
+            make.left.bottom.right.equalTo(self)
+            make.top.equalTo(self)
+        }
+        addSubview(backBtn)
+        addSubview(Title)
+        addSubview(saveBtn)
+        
+        backBtn.snp.makeConstraints{(make) in
+            make.left.equalTo(self).offset(20)
+            make.top.equalTo(self).offset(60)
+            make.width.height.equalTo(30)
+        }
+        Title.snp.makeConstraints{(make) in
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(backBtn.snp.centerY)
+            make.width.equalTo(60)
+            make.height.equalTo(30)
+        }
+        saveBtn.snp.makeConstraints{(make) in
+            make.right.equalTo(self).offset(-20)
+            make.centerY.equalTo(backBtn.snp.centerY)
+            make.width.equalTo(60)
+            make.height.equalTo(30)
+        }
         addSubview(diaryWirte)
         addSubview(photoCollection)
         photoCollection.delegate = self
         photoCollection.dataSource = self
         diaryWirte.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(27)
-            make.top.equalTo(self).offset(30)
+            make.top.equalTo(backBtn.snp.bottom).offset(20)
             make.height.equalTo(250)
             make.right.equalTo(self).offset(-27)
         }
@@ -64,6 +121,7 @@ class writeDiaryCell: UIView {
             make.bottom.equalTo(self).offset(5)
             make.right.equalTo(self).offset(-27)
         }
+        
         
     }
     func updateUI(){

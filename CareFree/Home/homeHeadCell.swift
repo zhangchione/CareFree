@@ -9,11 +9,16 @@
 import UIKit
 
 class homeHeadCell: UIView {
-
+    
+    lazy var topBackgroundView:UIView = {
+        let vi = UIView()
+        vi.layer.cornerRadius = 15
+        return vi
+    }()
 
     lazy var topView:UIView = {
        let vi = UIView()
-        vi.backgroundColor = .green
+        //vi.backgroundColor = .green
         vi.layer.cornerRadius = 15
         return vi
     }()
@@ -118,7 +123,9 @@ class homeHeadCell: UIView {
     
     
     func configUI(){
+
         addSubview(topView)
+        topView.addSubview(topBackgroundView)
         topView.addSubview(line)
         topView.addSubview(emotionValue)
         topView.addSubview(favImg)
@@ -137,6 +144,9 @@ class homeHeadCell: UIView {
             make.left.top.equalTo(self).offset(20)
             make.right.equalTo(self).offset(-20)
             make.height.equalTo(200)
+        }
+        topBackgroundView.snp.makeConstraints{(make) in
+            make.left.right.top.bottom.equalTo(topView)
         }
         line.snp.makeConstraints{(make) in
             make.left.equalTo(topView.snp.left).offset(10)
@@ -204,7 +214,6 @@ class homeHeadCell: UIView {
             make.width.equalTo(50)
             make.height.equalTo(25)
         }
-        
         
     }
     func configShaow(){

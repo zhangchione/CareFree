@@ -208,19 +208,19 @@ extension diaryWriteCell:UICollectionViewDelegate,UICollectionViewDataSource{
     }
     
     @objc func tapAction(){
-        print("要跳转")
+        print("要跳转1")
         jump!(0)
     }
     @objc func tapAction2(){
-        print("要跳转")
+        print("要跳转2")
         jump!(1)
     }
     @objc func tapAction3(){
-        print("要跳转")
+        print("要跳转3")
         jump!(2)
     }
     @objc func tapAction4(){
-        print("要跳转")
+        print("要跳转4")
         jump!(3)
     }
     //collectionViewdid

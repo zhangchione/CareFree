@@ -56,9 +56,20 @@ class CFHomeViewController: UIViewController {
     func configData(){
         
     }
+
     func configCV(){
         let viewHeadSource = ClosureViewSource(viewUpdater: {(view:homeHeadCell,data:Int,index:Int) in
-            view.updateUI()
+        //var emotionLayer: CAGradientLayer!
+            DispatchQueue.main.async {
+                let  emotionLayer = CAGradientLayer()
+                emotionLayer.frame = view.topView.bounds
+                emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
+                emotionLayer.cornerRadius = 30
+                view.topBackgroundView.layer.addSublayer(emotionLayer)
+            }
+
+            //view.backgroundColor = .green
+
             
         })
         let sizeHeadSource = {(index:Int,data:Int,collectionSize:CGSize) ->CGSize in
@@ -72,6 +83,8 @@ class CFHomeViewController: UIViewController {
         )
         collectionView.provider = provider
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+        //self.view.layer.addSublayer(self.emotionLayer)
     }
 }
 

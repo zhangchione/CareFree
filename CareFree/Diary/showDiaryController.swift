@@ -16,6 +16,8 @@ class showDiaryController: UIViewController {
     fileprivate lazy var collectionView = CollectionView()
     fileprivate let dataBodySource = ArrayDataSource(data:[nowModel]())
     
+    public var emotionLayer:CAGradientLayer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +41,7 @@ class showDiaryController: UIViewController {
 
         model.content = "期待已久的书终于到了"
         model.time = "12点17分"
-        for index in 1...6 {
+        for _ in 1...6 {
             self.dataBodySource.data.append(model)
         }
         self.collectionView.reloadData()
@@ -69,6 +71,10 @@ class showDiaryController: UIViewController {
         
         let viewHeadSource = ClosureViewSource(viewUpdater: {(view:showHeadCell,data:Int,index:Int) in
             view.updateUI()
+            DispatchQueue.main.async {
+                self.emotionLayer.frame = view.headView.bounds
+                view.headView.layer.addSublayer(self.emotionLayer)
+            }
             
         })
         let sizeHeadSource = {(index:Int,data:Int,collectionSize:CGSize) ->CGSize in
@@ -85,7 +91,7 @@ class showDiaryController: UIViewController {
             view.updateUI()
         })
         let sizeBodySource = {(index:Int,data:nowModel,collectionSize:CGSize) -> CGSize in
-            return CGSize(width: collectionSize.width, height: 150)
+            return CGSize(width: collectionSize.width, height: 140)
         }
         let providerBody = BasicProvider(
             dataSource: dataBodySource,
@@ -94,7 +100,7 @@ class showDiaryController: UIViewController {
         )
         let finalProvider = ComposedProvider(sections:[providerHead,providerBody])
         
-        providerBody.layout = FlowLayout(spacing: 20)
+        providerBody.layout = FlowLayout(spacing: 40)
         providerHead.layout = FlowLayout(spacing: 30)
         finalProvider.layout = FlowLayout(spacing: 20)
         
