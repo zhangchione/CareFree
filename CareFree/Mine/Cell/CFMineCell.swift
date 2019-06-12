@@ -14,6 +14,11 @@ class CFMineCell: UITableViewCell {
     @IBOutlet weak var emotionView: UIView!
     @IBOutlet weak var emotionValue: UILabel!
     
+    @IBOutlet weak var trashView: UIView!
+    @IBOutlet weak var setView: UIView!
+    
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var colorView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

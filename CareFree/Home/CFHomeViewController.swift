@@ -47,10 +47,7 @@ class CFHomeViewController: UIViewController {
         Title.frame = CGRect(x: 22.fitWidth_CGFloat, y: 50.fitHeight_CGFloat, width: 100.fitWidth_CGFloat, height: 40.fitHeight_CGFloat)
         Title.text = "首页"
         Title.font = UIFont(name: "PingFangSC-Semibold", size: 26)
-        view.addSubview(Title)
-        
-
-        
+        view.addSubview(Title) 
     }
     
     func configData(){

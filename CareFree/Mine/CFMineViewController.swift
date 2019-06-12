@@ -7,36 +7,76 @@
 //
 
 import UIKit
+import SnapKit
+import CollectionKit
 
 class CFMineViewController: UIViewController {
 
     var emotionLayer: CAGradientLayer!
     
+    fileprivate let dataSource = ArrayDataSource(data:[1])
+    
+    fileprivate lazy var collectionView = CollectionView()
+    
     fileprivate lazy var Title:UILabel = {
         let label = UILabel()
         return label
     }()
-    var tableView:UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configUI()
+        //configUI()
         configNavBar()
+        configCV()
+        congfigUI2()
     }
     
-    func configUI(){
+    func congfigUI2(){
         view.backgroundColor = UIColor.init(r: 247, g: 249, b: 254)
-        tableView = UITableView(frame: CGRect(x: 0, y: 88.fitHeight_CGFloat, width: 414.fitWidth_CGFloat, height: 725.fitHeight_CGFloat))
-        tableView.backgroundColor = UIColor.init(r: 247, g: 249, b: 254)
-        tableView.delegate = self
-        tableView.dataSource = self
-        view.addSubview(tableView)
-        tableView.separatorStyle = .none
-        tableView.allowsSelection = false
         
-        tableView.register(UINib(nibName: "CFMineCell", bundle: nil), forCellReuseIdentifier: "CFMineCell")
+        view.addSubview(collectionView)
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        //collectionView.isScrollEnabled = false
+        collectionView.alwaysBounceVertical = false
+        collectionView.snp.makeConstraints{(make) in
+            make.bottom.right.left.equalTo(view)
+            make.top.equalTo(navigation.bar.snp.bottom).offset(0)
+        }
+        
+        
     }
+    func configCV(){
+        let viewSource = ClosureViewSource(viewUpdater: {(view:MineCell,data:Int,index:Int) in
+            view.updateUI()
+            DispatchQueue.main.async {
+                let  emotionLayer = CAGradientLayer()
+                emotionLayer.frame = view.emotionView.bounds
+                emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
+                emotionLayer.cornerRadius = 25
+                view.oneBackView.layer.addSublayer(emotionLayer)
+            }
+            
+            let setTap = UITapGestureRecognizer(target: self, action: #selector(self.setEvent))
+            let trashTap = UITapGestureRecognizer(target: self, action: #selector(self.trashEvent))
+            view.setView.addGestureRecognizer(setTap)
+            view.trashView.addGestureRecognizer(trashTap)
+            
+        })
+        let sizeSource = {(index:Int,data:Int,collectionSize:CGSize) ->CGSize in
+            return CGSize(width: collectionSize.width, height: 820)
+        }
+        
+        let provider = BasicProvider(
+            dataSource: dataSource,
+            viewSource: viewSource,
+            sizeSource:sizeSource
+        )
+        collectionView.provider = provider
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
     
     func configNavBar(){
         self.navigation.bar.isShadowHidden = true
@@ -44,6 +84,7 @@ class CFMineViewController: UIViewController {
         Title.frame = CGRect(x: 22.fitWidth_CGFloat, y: 50.fitHeight_CGFloat, width: 100.fitWidth_CGFloat, height: 40.fitHeight_CGFloat)
         Title.text = "我的"
         Title.font = UIFont(name: "PingFangSC-Semibold", size: 26)
+       
         view.addSubview(Title)
     }
     
@@ -51,26 +92,19 @@ class CFMineViewController: UIViewController {
 
 }
 
-extension CFMineViewController:UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+extension CFMineViewController{
+    
+    @objc func trashEvent(){
+        print("废纸篓页面跳转中...")
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CFMineCell", for: indexPath) as! CFMineCell
-        emotionLayer = CAGradientLayer()
-        emotionLayer.frame = cell.emotionView.bounds
-        emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
-        emotionLayer.cornerRadius = 30
-        cell.backgroundViewone.layer.addSublayer(emotionLayer)
-        cell.emotionValue.text = "41"
-        return cell
+    @objc func setEvent(){
+        print("设置页面跳转中...")
+        let setVC = SetViewController()
+        self.navigationController?.pushViewController(setVC, animated: true)
     }
-    func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 790.fitHeight_CGFloat
+    @objc func back(){
+        
     }
     
 }

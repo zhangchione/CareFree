@@ -84,6 +84,75 @@ class homeHeadCell: UIView {
     }()
     
     // 情绪图
+    lazy var firstLabel : UILabel = {
+       let label = UILabel()
+        label.text = "50"
+        label.font = UIFont.init(name: "PingFangSC-Regular", size: 8)
+        label.textColor = UIColor.init(r: 138, g: 138, b: 138)
+        return label
+    }()
+    lazy  var firstLine: UIView = {
+       let vi = UIView()
+        vi.backgroundColor = UIColor.init(r: 151 , g: 151, b: 151)
+        return vi
+    }()
+    
+    lazy var secendLabel : UILabel = {
+        let label = UILabel()
+        label.text = "25"
+        label.font = UIFont.init(name: "PingFangSC-Regular", size: 8)
+        label.textColor = UIColor.init(r: 138, g: 138, b: 138)
+        return label
+    }()
+    lazy  var secendLine: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.init(r: 138, g: 138, b: 138)
+        return vi
+    }()
+    
+    lazy var thirdLabel : UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.font = UIFont.init(name: "PingFangSC-Regular", size: 8)
+        label.textColor = UIColor.init(r: 138, g: 138, b: 138)
+        return label
+    }()
+    lazy  var thirdTopLine: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.init(r: 151, g: 151, b: 151)
+        return vi
+    }()
+    lazy  var thirdBottomLine: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.init(r: 151, g: 151, b: 151)
+        return vi
+    }()
+    
+    lazy var fourthLabel : UILabel = {
+        let label = UILabel()
+        label.text = "-25"
+        label.font = UIFont.init(name: "PingFangSC-Regular", size: 8)
+        label.textColor = UIColor.init(r: 138, g: 138, b: 138)
+        return label
+    }()
+    lazy  var fourthLine: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.init(r: 151, g: 151, b: 151)
+        return vi
+    }()
+    
+    lazy var fivethLabel : UILabel = {
+        let label = UILabel()
+        label.text = "50"
+        label.font = UIFont.init(name: "PingFangSC-Regular", size: 8)
+        label.textColor = UIColor.init(r: 138, g: 138, b: 138)
+        return label
+    }()
+    lazy  var fivethLine: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.init(r: 151, g: 151, b: 151)
+        return vi
+    }()
     
     
     
@@ -137,6 +206,22 @@ class homeHeadCell: UIView {
         chartView.addSubview(chartMoreBtn)
         chartView.addSubview(recommendLabel)
         
+        chartView.addSubview(firstLabel)
+        chartView.addSubview(firstLine)
+        
+        chartView.addSubview(secendLabel)
+        chartView.addSubview(secendLine)
+        
+        chartView.addSubview(thirdLabel)
+        chartView.addSubview(thirdTopLine)
+        chartView.addSubview(thirdBottomLine)
+        
+        chartView.addSubview(fourthLabel)
+        chartView.addSubview(fourthLine)
+        
+        chartView.addSubview(fivethLabel)
+        chartView.addSubview(fivethLine)
+        
         addSubview(todayRecommend)
         addSubview(todayRecommendMoreBtn)
         
@@ -177,6 +262,7 @@ class homeHeadCell: UIView {
         }
         
         
+        // 中间View
         chartView.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(20)
             make.right.equalTo(self).offset(-20)
@@ -189,6 +275,74 @@ class homeHeadCell: UIView {
             make.width.equalTo(100)
             make.height.equalTo(35)
         }
+        
+        firstLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(chartView.snp.left).offset(20)
+            make.top.equalTo(chartLabel.snp.bottom).offset(10)
+            make.width.height.equalTo(10)
+        }
+        firstLine.snp.makeConstraints{(make) in
+            make.left.equalTo(firstLabel.snp.right).offset(2)
+            make.centerY.equalTo(firstLabel.snp.centerY)
+            make.right.equalTo(chartView.snp.right).offset(-20)
+            make.height.equalTo(1)
+        }
+        
+        secendLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(chartView.snp.left).offset(20)
+            make.top.equalTo(firstLabel.snp.bottom).offset(30)
+            make.width.height.equalTo(10)
+        }
+        secendLine.snp.makeConstraints{(make) in
+            make.left.equalTo(secendLabel.snp.right).offset(2)
+            make.centerY.equalTo(secendLabel.snp.centerY)
+            make.right.equalTo(chartView.snp.right).offset(-20)
+            make.height.equalTo(1)
+        }
+        
+        thirdLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(chartView.snp.left).offset(20)
+            make.top.equalTo(secendLabel.snp.bottom).offset(30)
+            make.width.height.equalTo(10)
+        }
+        thirdTopLine.snp.makeConstraints{(make) in
+            make.left.equalTo(thirdLabel.snp.right).offset(2)
+            make.centerY.equalTo(thirdLabel.snp.top).offset(-2)
+            make.right.equalTo(chartView.snp.right).offset(-20)
+            make.height.equalTo(1)
+        }
+        thirdBottomLine.snp.makeConstraints{(make) in
+            make.left.equalTo(thirdLabel.snp.right).offset(2)
+            make.centerY.equalTo(thirdLabel.snp.bottom).offset(2)
+            make.right.equalTo(chartView.snp.right).offset(-20)
+            make.height.equalTo(1)
+        }
+        
+        fourthLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(chartView.snp.left).offset(15)
+            make.top.equalTo(thirdLabel.snp.bottom).offset(30)
+            make.height.equalTo(10)
+            make.width.equalTo(15)
+        }
+        fourthLine.snp.makeConstraints{(make) in
+            make.left.equalTo(fourthLabel.snp.right).offset(2)
+            make.centerY.equalTo(fourthLabel.snp.centerY)
+            make.right.equalTo(chartView.snp.right).offset(-20)
+            make.height.equalTo(1)
+        }
+        
+        fivethLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(chartView.snp.left).offset(20)
+            make.top.equalTo(fourthLabel.snp.bottom).offset(30)
+            make.width.height.equalTo(10)
+        }
+        fivethLine.snp.makeConstraints{(make) in
+            make.left.equalTo(fivethLabel.snp.right).offset(2)
+            make.centerY.equalTo(fivethLabel.snp.centerY)
+            make.right.equalTo(chartView.snp.right).offset(-20)
+            make.height.equalTo(1)
+        }
+        
         chartMoreBtn.snp.makeConstraints{(make) in
             make.right.equalTo(chartView.snp.right).offset(-20)
             make.centerY.equalTo(chartLabel.snp.centerY)
@@ -201,6 +355,8 @@ class homeHeadCell: UIView {
             make.right.equalTo(chartView.snp.right).offset(-10)
         }
         
+        
+        // 今日推荐
         todayRecommend.snp.makeConstraints{(make) in
             make.top.equalTo(chartView.snp.bottom).offset(30)
             make.left.equalTo(self).offset(15)

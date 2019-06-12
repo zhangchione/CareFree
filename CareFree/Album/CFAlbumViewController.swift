@@ -37,7 +37,8 @@ class CFAlbumViewController: UIViewController {
         collectionView.alwaysBounceVertical = false
         collectionView.snp.makeConstraints{(make) in
             make.bottom.right.left.equalTo(view)
-            make.top.equalTo(navigation.bar.snp.bottom).offset(0)        }
+            make.top.equalTo(navigation.bar.snp.bottom).offset(0)
+        }
     }
     
     func configNavBar(){
