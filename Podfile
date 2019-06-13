@@ -6,8 +6,9 @@ target 'CareFree' do
   use_frameworks!
   pod 'ESTabBarController-swift'
   pod 'CollectionKit'
+  pod 'CollectionKit/WobbleAnimator'
   pod 'ProgressHUD'
-  #pod 'RxRealm'
+  pod 'RxRealm'
   pod 'SnapKit'
   pod 'lottie-ios'
   pod 'EachNavigationBar'

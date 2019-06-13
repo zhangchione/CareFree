@@ -141,8 +141,6 @@ extension CFDiaryViewController{
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         
         providerBody.tapHandler = { context -> Void in
-            
-            
             let showDiaryVC = showDiaryController()
             let emotionLayer = CAGradientLayer()
             emotionLayer.colors = [UIColor.init(r: 155, g: 121, b: 255).cgColor,UIColor.init(r: 96, g: 114, b: 255).cgColor]
@@ -150,6 +148,10 @@ extension CFDiaryViewController{
             self.navigationController?.pushViewController(showDiaryVC, animated: true)
         }
         
+        collectionView.animator = ScaleAnimator()
+        providerBody.animator = FadeAnimator()
+                providerHead.animator = FadeAnimator()
+        view.collectionAnimator = WobbleAnimator()
         
     }
     

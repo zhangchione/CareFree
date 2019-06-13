@@ -1,0 +1,6 @@
+framework module YetAnotherAnimationLibrary {
+  umbrella header "YetAnotherAnimationLibrary-umbrella.h"
+
+  export *
+  module * { export * }
+}

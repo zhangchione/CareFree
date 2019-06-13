@@ -3,23 +3,38 @@ PODS:
   - CollectionKit (2.4.0):
     - CollectionKit/Core (= 2.4.0)
   - CollectionKit/Core (2.4.0)
+  - CollectionKit/WobbleAnimator (2.4.0):
+    - CollectionKit/Core
+    - YetAnotherAnimationLibrary (~> 1.4.0)
   - EachNavigationBar (1.9.2)
   - ESTabBarController-swift (2.6.4)
   - HandyJSON (5.0.0-beta.1)
   - lottie-ios (3.0.3)
   - ProgressHUD (2.51)
+  - Realm (3.14.0):
+    - Realm/Headers (= 3.14.0)
+  - Realm/Headers (3.14.0)
+  - RealmSwift (3.14.0):
+    - Realm (= 3.14.0)
+  - RxRealm (0.7.6):
+    - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.5.0)
   - SideMenu (5.0.1)
   - SnapKit (4.2.0)
   - SwiftyJSON (4.3.0)
+  - YetAnotherAnimationLibrary (1.4.0)
 
 DEPENDENCIES:
   - Alamofire
   - CollectionKit
+  - CollectionKit/WobbleAnimator
   - EachNavigationBar
   - ESTabBarController-swift
   - HandyJSON (from `https://github.com/alibaba/HandyJSON.git`, branch `dev_for_swift5.0`)
   - lottie-ios
   - ProgressHUD
+  - RxRealm
   - SideMenu
   - SnapKit
   - SwiftyJSON
@@ -32,9 +47,14 @@ SPEC REPOS:
     - ESTabBarController-swift
     - lottie-ios
     - ProgressHUD
+    - Realm
+    - RealmSwift
+    - RxRealm
+    - RxSwift
     - SideMenu
     - SnapKit
     - SwiftyJSON
+    - YetAnotherAnimationLibrary
 
 EXTERNAL SOURCES:
   HandyJSON:
@@ -54,10 +74,15 @@ SPEC CHECKSUMS:
   HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
+  Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
+  RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
+  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 9e909ac643fcddbd82bf3101a3c1fec6868cac51
+PODFILE CHECKSUM: cee64dc43c417027d49b69b0c67727f7e80af9f4
 
 COCOAPODS: 1.6.1
