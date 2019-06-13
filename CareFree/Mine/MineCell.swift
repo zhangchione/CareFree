@@ -85,7 +85,7 @@ class MineCell: UIView {
         label.textColor = UIColor.white
         label.text = "31"
         label.textAlignment = NSTextAlignment.left
-        label.font = UIFont.init(name: "PingFangSC-Medium", size: 12)
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
         return label
     }()
     lazy var lineView:UIView = {
@@ -102,13 +102,156 @@ class MineCell: UIView {
         return label
     }()
     
+    
+    // 日记统计
+    
+    lazy var diaryView:UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.white
+        vi.cornerRadius = 25
+        return vi
+    }()
+    lazy var diaryLabel:UILabel  = {
+        let label = UILabel ()
+        label.textColor = UIColor.black
+        label.text = "日记统计"
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 14)
+        return label
+    }()
+    lazy var diaryIco:UIImageView = {
+        let vi = UIImageView()
+        vi.image = UIImage(named: "favor")
+        return vi
+    }()
+    lazy var diaryHeadValue:UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.text = "37"
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
+        return label
+    }()
+    lazy var lineDiaryHeadView:UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.black
+        return vi
+    }()
+    lazy var diaryHeadLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.init(r: 85, g: 85, b: 85)
+        label.text = "日记"
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 12)
+        return label
+    }()
+    lazy var diaryBackValue:UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.text = "217"
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
+        return label
+    }()
+    lazy var lineDiaryBackView:UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.black
+        return vi
+    }()
+    lazy var diaryBackLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.init(r: 85, g: 85, b: 85)
+        label.text = "此刻"
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 12)
+        return label
+    }()
+    
+    // 废纸篓
+    
     lazy var trashView:UIView = {
        let vi = UIView()
         vi.backgroundColor = UIColor.white
         vi.cornerRadius = 25
         return vi
     }()
+    lazy var trashLabel:UILabel  = {
+        let label = UILabel ()
+        label.textColor = UIColor.black
+        label.text = "废纸篓"
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 14)
+        return label
+    }()
+    lazy var trashIco:UIImageView = {
+        let vi = UIImageView()
+        vi.image = UIImage(named: "favor")
+        return vi
+    }()
+    lazy var trashValue:UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.text = "6"
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
+        return label
+    }()
+    lazy var lineTrashView:UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.black
+        return vi
+    }()
+    lazy var photoLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.init(r: 85, g: 85, b: 85)
+        label.text = "照片"
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 12)
+        return label
+    }()
     
+    
+    // 心情报表
+    
+    lazy var moodView:UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.white
+        vi.cornerRadius = 25
+        return vi
+    }()
+    lazy var moodLabel:UILabel  = {
+        let label = UILabel ()
+        label.textColor = UIColor.black
+        label.text = "心情报表"
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 14)
+        return label
+    }()
+    lazy var moodIco:UIImageView = {
+        let vi = UIImageView()
+        vi.image = UIImage(named: "favor")
+        return vi
+    }()
+    lazy var moodValue:UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.text = "7"
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
+        return label
+    }()
+    lazy var lineMoodView:UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.black
+        return vi
+    }()
+    lazy var moodDayLabel : UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.init(r: 85, g: 85, b: 85)
+        label.text = "天"
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.init(name: "PingFangSC-Medium", size: 12)
+        return label
+    }()
+    
+    // 设置
     lazy var setView: UIView = {
         let vi = UIView()
         vi.backgroundColor = UIColor.white
@@ -121,6 +264,11 @@ class MineCell: UIView {
         label.text = "设置"
         label.font = UIFont.init(name: "PingFangSC-Medium", size: 14)
         return label
+    }()
+    lazy var setIco:UIImageView = {
+        let vi = UIImageView()
+        vi.image = UIImage(named: "favor")
+        return vi
     }()
     
     init() {
@@ -181,6 +329,8 @@ class MineCell: UIView {
             make.height.equalTo(30)
             
         }
+        
+        // 情绪值
         emotionView.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(22)
             make.top.equalTo(userImg.snp.bottom).offset(35)
@@ -227,7 +377,7 @@ class MineCell: UIView {
         emotionValue.snp.makeConstraints{(make) in
             make.right.equalTo(emotionView.snp.right).offset(-20)
             make.centerY.equalTo(bottomView.snp.centerY).offset(10)
-            make.width.equalTo(20)
+            make.width.equalTo(23)
             make.height.equalTo(20)
         }
         lineView.snp.makeConstraints{(make) in
@@ -243,17 +393,167 @@ class MineCell: UIView {
             make.height.equalTo(20)
         }
         
-        addSubview(trashView)
+        // 日记统计
+        addSubview(diaryView)
+        diaryView.addSubview(diaryLabel)
+        diaryView.addSubview(diaryIco)
+        diaryView.addSubview(diaryHeadValue)
+        diaryView.addSubview(lineDiaryHeadView)
+        diaryView.addSubview(diaryHeadLabel)
         
+
+        
+        diaryView.snp.makeConstraints{(make) in
+            make.right.equalTo(self).offset(-22)
+            make.centerY.equalTo(emotionView.snp.centerY)
+            make.width.equalTo(175)
+            make.height.equalTo(215)
+        }
+        diaryLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(diaryView.snp.left).offset(20)
+            make.top.equalTo(diaryView.snp.top).offset(30)
+            make.width.equalTo(60)
+            make.height.equalTo(22)
+        }
+        diaryIco.snp.makeConstraints{(make) in
+            make.right.equalTo(diaryView.snp.right).offset(-20)
+            make.centerY.equalTo(diaryLabel.snp.centerY)
+            make.width.height.equalTo(20)
+        }
+        
+        diaryHeadValue.snp.makeConstraints{(make) in
+            make.left.equalTo(diaryView.snp.left).offset(20)
+            make.centerY.equalTo(emotionValue.snp.centerY)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
+        }
+        lineDiaryHeadView.snp.makeConstraints{(make) in
+            make.left.equalTo(diaryView.snp.left).offset(20)
+            make.top.equalTo(diaryHeadValue.snp.bottom).offset(3)
+            make.width.equalTo(14)
+            make.height.equalTo(1)
+        }
+        diaryHeadLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(diaryView.snp.left).offset(20)
+            make.top.equalTo(lineDiaryHeadView.snp.bottom).offset(3)
+            make.width.equalTo(38)
+            make.height.equalTo(20)
+        }
+        diaryView.addSubview(diaryBackValue)
+        diaryView.addSubview(lineDiaryBackView)
+        diaryView.addSubview(diaryBackLabel)
+        diaryBackValue.snp.makeConstraints{(make) in
+            make.right.equalTo(diaryView.snp.right).offset(-40)
+            make.centerY.equalTo(emotionValue.snp.centerY)
+            make.width.equalTo(30)
+            make.height.equalTo(20)
+        }
+        lineDiaryBackView.snp.makeConstraints{(make) in
+            make.right.equalTo(diaryView.snp.right).offset(-56)
+            make.top.equalTo(diaryBackValue.snp.bottom).offset(3)
+            make.width.equalTo(14)
+            make.height.equalTo(1)
+        }
+        diaryBackLabel.snp.makeConstraints{(make) in
+            make.right.equalTo(diaryView.snp.right).offset(-40)
+            make.top.equalTo(lineDiaryBackView.snp.bottom).offset(3)
+            make.width.equalTo(30)
+            make.height.equalTo(20)
+        }
+        
+        
+        // 废纸篓
+        addSubview(trashView)
+        trashView.addSubview(trashLabel)
+        trashView.addSubview(trashIco)
+        trashView.addSubview(trashValue)
+        trashView.addSubview(lineTrashView)
+        trashView.addSubview(photoLabel)
         trashView.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(22)
             make.top.equalTo(emotionView.snp.bottom).offset(20)
             make.width.equalTo(175)
             make.height.equalTo(175)
         }
+        trashLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(trashView.snp.left).offset(20)
+            make.top.equalTo(trashView.snp.top).offset(30)
+            make.width.equalTo(42)
+            make.height.equalTo(22)
+        }
+        trashIco.snp.makeConstraints{(make) in
+            make.right.equalTo(trashView.snp.right).offset(-20)
+            make.centerY.equalTo(trashLabel.snp.centerY)
+            make.width.height.equalTo(20)
+        }
         
+        trashValue.snp.makeConstraints{(make) in
+            make.left.equalTo(trashView.snp.left).offset(20)
+            make.top.equalTo(trashLabel.snp.bottom).offset(50)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
+        }
+        lineTrashView.snp.makeConstraints{(make) in
+            make.left.equalTo(trashView.snp.left).offset(20)
+            make.top.equalTo(trashValue.snp.bottom).offset(3)
+            make.width.equalTo(14)
+            make.height.equalTo(1)
+        }
+        photoLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(trashView.snp.left).offset(20)
+            make.top.equalTo(lineTrashView.snp.bottom).offset(3)
+            make.width.equalTo(38)
+            make.height.equalTo(20)
+        }
+        
+        // 心情报表
+        addSubview(moodView)
+        moodView.addSubview(moodLabel)
+        moodView.addSubview(moodIco)
+        moodView.addSubview(moodValue)
+        moodView.addSubview(lineMoodView)
+        moodView.addSubview(moodDayLabel)
+        
+        moodView.snp.makeConstraints{(make) in
+            make.right.equalTo(self).offset(-22)
+            make.top.equalTo(diaryView.snp.bottom).offset(20)
+            make.width.equalTo(175)
+            make.height.equalTo(215)
+        }
+        moodLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(moodView.snp.left).offset(20)
+            make.top.equalTo(moodView.snp.top).offset(30)
+            make.width.equalTo(70)
+            make.height.equalTo(22)
+        }
+        moodIco.snp.makeConstraints{(make) in
+            make.right.equalTo(moodView.snp.right).offset(-20)
+            make.centerY.equalTo(moodLabel.snp.centerY)
+            make.width.height.equalTo(20)
+        }
+        
+        moodValue.snp.makeConstraints{(make) in
+            make.left.equalTo(moodView.snp.left).offset(20)
+            make.top.equalTo(moodLabel.snp.bottom).offset(100)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
+        }
+        lineMoodView.snp.makeConstraints{(make) in
+            make.left.equalTo(moodView.snp.left).offset(20)
+            make.top.equalTo(moodValue.snp.bottom).offset(3)
+            make.width.equalTo(10)
+            make.height.equalTo(1)
+        }
+        moodDayLabel.snp.makeConstraints{(make) in
+            make.left.equalTo(moodView.snp.left).offset(20)
+            make.top.equalTo(lineMoodView.snp.bottom).offset(3)
+            make.width.equalTo(38)
+            make.height.equalTo(20)
+        }
+        // 设置
         addSubview(setView)
-        addSubview(setLabel)
+        setView.addSubview(setLabel)
+        setView.addSubview(setIco)
         setView.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(22)
             make.top.equalTo(trashView.snp.bottom).offset(20)
@@ -266,7 +566,11 @@ class MineCell: UIView {
             make.width.equalTo(42)
             make.height.equalTo(22)
         }
-        
+        setIco.snp.makeConstraints{(make) in
+            make.right.equalTo(setView.snp.right).offset(-20)
+            make.centerY.equalTo(setLabel.snp.centerY)
+            make.width.height.equalTo(20)
+        }
     }
     func configShadow(){
         

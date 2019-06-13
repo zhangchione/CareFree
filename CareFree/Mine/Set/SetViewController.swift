@@ -28,6 +28,9 @@ class SetViewController: UIViewController {
         return button
     }()
     
+    var useImg:UIImageView!
+    var imgPricker:UIImagePickerController!
+    
     
     fileprivate let dataSource = ArrayDataSource(data:[SetModel]())
     
@@ -65,6 +68,25 @@ class SetViewController: UIViewController {
     func configCV(){
         let viewSource = ClosureViewSource(viewUpdater: {(view:setCell,data:SetModel,index:Int) in
             view.updateUI(with: data)
+            var topTap = UITapGestureRecognizer()
+            var bottomTap = UITapGestureRecognizer()
+            switch index {
+            case 0 :
+                topTap = UITapGestureRecognizer(target: self, action: #selector(self.userImg))
+                bottomTap = UITapGestureRecognizer(target: self, action: #selector(self.userName))
+                view.topView.addGestureRecognizer(topTap)
+                view.bottomView.addGestureRecognizer(bottomTap)
+            case 1 :
+                topTap = UITapGestureRecognizer(target: self, action: #selector(self.faceBack))
+                bottomTap = UITapGestureRecognizer(target: self, action: #selector(self.about))
+                view.topView.addGestureRecognizer(topTap)
+                view.bottomView.addGestureRecognizer(bottomTap)
+            default:
+                topTap = UITapGestureRecognizer(target: self, action: #selector(self.cutUser))
+                bottomTap = UITapGestureRecognizer(target: self, action: #selector(self.returnLogin))
+                view.topView.addGestureRecognizer(topTap)
+                view.bottomView.addGestureRecognizer(bottomTap)
+            }
         })
         let sizeSource = {(index:Int,data:SetModel,collectionSize:CGSize) ->CGSize in
             return CGSize(width: collectionSize.width, height: 140)
@@ -92,8 +114,96 @@ class SetViewController: UIViewController {
         collectionView.reloadData()
     }
 }
+
+
 extension SetViewController{
     @objc func back(){
         self.navigationController?.popViewController(animated: true)
     }
+    @objc func userImg(){
+        print("更换图像")
+        let actionSheet = UIAlertController(title: "更改头像", message: "请选择图像来源", preferredStyle: .actionSheet)
+        let alterUserImg = UIAlertAction(title: "相册选择", style: .default, handler: {(alters:UIAlertAction) -> Void in
+            print("拍照继续更改头像中..")
+            
+            self.imgPricker = UIImagePickerController()
+            self.imgPricker.delegate = self
+            self.imgPricker.allowsEditing = true
+            self.imgPricker.sourceType = .photoLibrary
+            
+            self.imgPricker.navigationBar.barTintColor = UIColor.gray
+            self.imgPricker.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            
+            self.imgPricker.navigationBar.tintColor = UIColor.white
+            
+            self.present(self.imgPricker, animated: true, completion: nil)
+            
+        })
+        
+        let alterUserImgTake = UIAlertAction(title: "拍照选择", style: .default, handler: {(alters:UIAlertAction) -> Void in
+            print("继续更改头像中..")
+            if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
+            self.imgPricker = UIImagePickerController()
+            self.imgPricker.delegate = self
+            self.imgPricker.allowsEditing = true
+            self.imgPricker.sourceType = .camera
+            self.imgPricker.cameraDevice = UIImagePickerController.CameraDevice.rear
+                self.imgPricker.showsCameraControls = true
+            
+            self.imgPricker.navigationBar.barTintColor = UIColor.gray
+            self.imgPricker.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            
+            self.imgPricker.navigationBar.tintColor = UIColor.white
+            
+            self.present(self.imgPricker, animated: true, completion: nil)
+            }
+        })
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: {(alters:UIAlertAction) -> Void in print("取消更改头像")})
+        
+        actionSheet.addAction(cancel)
+        actionSheet.addAction(alterUserImg)
+        actionSheet.addAction(alterUserImgTake)
+        
+        self.present(actionSheet,animated: true){
+            print("正在更改")
+        }
+    }
+    @objc func userName(){
+        let alterVC = AlterUserNameController()
+        self.navigationController?.pushViewController(alterVC, animated: true)
+        print("改昵称")
+    }
+    @objc func faceBack(){
+        let faceBackVC = FacebackViewController()
+        self.navigationController?.pushViewController(faceBackVC, animated: true)
+        print("反馈")
+    }
+    @objc func about(){
+        let aboutVC = AboutViewController()
+        self.navigationController?.pushViewController(aboutVC, animated: true)
+        print("关于")
+    }
+    @objc func cutUser(){
+        print("切换账号")
+    }
+    @objc func returnLogin(){
+        print("退出登陆")
+        let loginVC = LoginViewController()
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
+    
+}
+
+extension SetViewController :UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("图片选取成功")
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

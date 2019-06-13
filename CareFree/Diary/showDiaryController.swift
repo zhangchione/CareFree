@@ -75,6 +75,7 @@ class showDiaryController: UIViewController {
                 self.emotionLayer.frame = view.headView.bounds
                 view.headView.layer.addSublayer(self.emotionLayer)
             }
+            //view.backgroundColor = .blue
             
         })
         let sizeHeadSource = {(index:Int,data:Int,collectionSize:CGSize) ->CGSize in

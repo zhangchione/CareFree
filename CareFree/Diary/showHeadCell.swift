@@ -12,6 +12,12 @@ class showHeadCell: UIView {
     
         var emotionLayer: CAGradientLayer!
     
+    lazy var topView : UIView = {
+        let vi = UIView()
+        vi.backgroundColor = UIColor.init(r: 155, g: 121, b: 255)
+        return vi
+    }()
+    
     lazy var headView : UIView = {
        let vi = UIView()
         vi.backgroundColor = UIColor.cyan
@@ -109,6 +115,7 @@ class showHeadCell: UIView {
     
     
     func configUI(){
+        addSubview(topView)
         addSubview(headView)
         addSubview(day)
         addSubview(week)
@@ -120,7 +127,11 @@ class showHeadCell: UIView {
         centerView.addSubview(content)
         addSubview(nowLabel)
         
-        
+        topView.snp.makeConstraints{(make) in
+            make.left.right.equalTo(self)
+            make.top.equalTo(self).offset(-680)
+            make.height.equalTo(680)
+        }
         
         headView.snp.makeConstraints{(make) in
             make.left.right.equalTo(self)

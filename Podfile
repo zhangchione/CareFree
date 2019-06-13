@@ -11,6 +11,10 @@ target 'CareFree' do
   pod 'SnapKit'
   pod 'lottie-ios'
   pod 'EachNavigationBar'
+  pod 'Alamofire'
+  pod 'SideMenu'
+  pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'dev_for_swift5.0'
+  pod 'SwiftyJSON'
    # Pods for CareFree
 
 end

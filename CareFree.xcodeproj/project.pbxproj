@@ -19,6 +19,9 @@
 		F5303D5722A8D4D80060EACE /* CFMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D5622A8D4D80060EACE /* CFMineViewController.swift */; };
 		F5303D5A22A8E2B00060EACE /* CFMineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D5822A8E2B00060EACE /* CFMineCell.swift */; };
 		F5303D5B22A8E2B00060EACE /* CFMineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5303D5922A8E2B00060EACE /* CFMineCell.xib */; };
+		F536AAC322B10EC100F9853B /* EmotionChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F536AAC222B10EC100F9853B /* EmotionChartController.swift */; };
+		F536AAC522B1152400F9853B /* emotionChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F536AAC422B1152400F9853B /* emotionChartCell.swift */; };
+		F536AAE522B1273B00F9853B /* emotionChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F536AAE422B1273B00F9853B /* emotionChartModel.swift */; };
 		F54A1D1122A90638005836B3 /* diaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1022A90638005836B3 /* diaryModel.swift */; };
 		F54A1D1322A9064A005836B3 /* diaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1222A9064A005836B3 /* diaryCell.swift */; };
 		F54A1D1622A93422005836B3 /* emotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54A1D1422A93422005836B3 /* emotionCell.swift */; };
@@ -40,6 +43,18 @@
 		F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */; };
 		F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */; };
 		F5AC532E22AA136D008A78E2 /* diaryPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */; };
+		F5C7738322B08C3A0087520B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7738122B08C3A0087520B /* LoginViewController.swift */; };
+		F5C7738422B08C3A0087520B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7738222B08C3A0087520B /* LoginViewController.xib */; };
+		F5C7738722B090F70087520B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7738522B090F70087520B /* RegisterViewController.swift */; };
+		F5C7738822B090F70087520B /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7738622B090F70087520B /* RegisterViewController.xib */; };
+		F5C7738B22B091D90087520B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7738922B091D90087520B /* AboutViewController.swift */; };
+		F5C7738C22B091D90087520B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7738A22B091D90087520B /* AboutViewController.xib */; };
+		F5C7739022B092240087520B /* CutUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7738E22B092240087520B /* CutUserViewController.swift */; };
+		F5C7739122B092240087520B /* CutUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7738F22B092240087520B /* CutUserViewController.xib */; };
+		F5C7739622B092500087520B /* FacebackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7739422B092500087520B /* FacebackViewController.swift */; };
+		F5C7739722B092500087520B /* FacebackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7739522B092500087520B /* FacebackViewController.xib */; };
+		F5C7739B22B0927D0087520B /* AlterUserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7739922B0927D0087520B /* AlterUserNameController.swift */; };
+		F5C7739C22B0927D0087520B /* AlterUserNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7739A22B0927D0087520B /* AlterUserNameController.xib */; };
 		F5D9752522A3B36E0014BE15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9752422A3B36E0014BE15 /* AppDelegate.swift */; };
 		F5D9752722A3B36E0014BE15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9752622A3B36E0014BE15 /* ViewController.swift */; };
 		F5D9752A22A3B36E0014BE15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D9752822A3B36E0014BE15 /* Main.storyboard */; };
@@ -65,6 +80,9 @@
 		F5303D5622A8D4D80060EACE /* CFMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFMineViewController.swift; sourceTree = "<group>"; };
 		F5303D5822A8E2B00060EACE /* CFMineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFMineCell.swift; sourceTree = "<group>"; };
 		F5303D5922A8E2B00060EACE /* CFMineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CFMineCell.xib; sourceTree = "<group>"; };
+		F536AAC222B10EC100F9853B /* EmotionChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionChartController.swift; sourceTree = "<group>"; };
+		F536AAC422B1152400F9853B /* emotionChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emotionChartCell.swift; sourceTree = "<group>"; };
+		F536AAE422B1273B00F9853B /* emotionChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emotionChartModel.swift; sourceTree = "<group>"; };
 		F54A1D1022A90638005836B3 /* diaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryModel.swift; sourceTree = "<group>"; };
 		F54A1D1222A9064A005836B3 /* diaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryCell.swift; sourceTree = "<group>"; };
 		F54A1D1422A93422005836B3 /* emotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emotionCell.swift; sourceTree = "<group>"; };
@@ -86,6 +104,18 @@
 		F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeDiaryCell.swift; sourceTree = "<group>"; };
 		F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryPhotoCell.swift; sourceTree = "<group>"; };
 		F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = diaryPhotoCell.xib; sourceTree = "<group>"; };
+		F5C7738122B08C3A0087520B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F5C7738222B08C3A0087520B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		F5C7738522B090F70087520B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F5C7738622B090F70087520B /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		F5C7738922B091D90087520B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		F5C7738A22B091D90087520B /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		F5C7738E22B092240087520B /* CutUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutUserViewController.swift; sourceTree = "<group>"; };
+		F5C7738F22B092240087520B /* CutUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CutUserViewController.xib; sourceTree = "<group>"; };
+		F5C7739422B092500087520B /* FacebackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebackViewController.swift; sourceTree = "<group>"; };
+		F5C7739522B092500087520B /* FacebackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebackViewController.xib; sourceTree = "<group>"; };
+		F5C7739922B0927D0087520B /* AlterUserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterUserNameController.swift; sourceTree = "<group>"; };
+		F5C7739A22B0927D0087520B /* AlterUserNameController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlterUserNameController.xib; sourceTree = "<group>"; };
 		F5D9752122A3B36E0014BE15 /* CareFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D9752422A3B36E0014BE15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D9752622A3B36E0014BE15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,10 +160,10 @@
 		F5303D4422A8D1080060EACE /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				F5303D5622A8D4D80060EACE /* CFMineViewController.swift */,
+				F5C7739D22B0C11D0087520B /* Trash */,
 				F5EEED0822AFDBBD00C84E9B /* Set */,
 				F54A1D0F22A90427005836B3 /* Cell */,
-				F5303D5622A8D4D80060EACE /* CFMineViewController.swift */,
-				F52A269322ACD544000785D4 /* TrashViewController.swift */,
 				F5FCFA6022AE85CB00C7B8A0 /* MineCell.swift */,
 			);
 			path = Mine;
@@ -170,6 +200,9 @@
 				F5303D5022A8D4B60060EACE /* CFHomeViewController.swift */,
 				F55C10D122AB3E4A0036BE31 /* homeHeadCell.swift */,
 				F55C10D322AB3E710036BE31 /* homeRecommendCell.swift */,
+				F536AAC222B10EC100F9853B /* EmotionChartController.swift */,
+				F536AAC422B1152400F9853B /* emotionChartCell.swift */,
+				F536AAE422B1273B00F9853B /* emotionChartModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -186,6 +219,8 @@
 		F5303D4922A8D1730060EACE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F5C7738022B08C230087520B /* Register */,
+				F5C7737F22B08C130087520B /* Login */,
 				F5303D4E22A8D3B60060EACE /* CFBasicContentView.swift */,
 				F56C2E0522AA6B2E00BCFA11 /* MainNavigationController.swift */,
 			);
@@ -242,6 +277,68 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F5C7737F22B08C130087520B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F5C7738122B08C3A0087520B /* LoginViewController.swift */,
+				F5C7738222B08C3A0087520B /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F5C7738022B08C230087520B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F5C7738522B090F70087520B /* RegisterViewController.swift */,
+				F5C7738622B090F70087520B /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		F5C7738D22B092080087520B /* CutUser */ = {
+			isa = PBXGroup;
+			children = (
+				F5C7738E22B092240087520B /* CutUserViewController.swift */,
+				F5C7738F22B092240087520B /* CutUserViewController.xib */,
+			);
+			path = CutUser;
+			sourceTree = "<group>";
+		};
+		F5C7739222B0922D0087520B /* About */ = {
+			isa = PBXGroup;
+			children = (
+				F5C7738922B091D90087520B /* AboutViewController.swift */,
+				F5C7738A22B091D90087520B /* AboutViewController.xib */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		F5C7739322B092380087520B /* Faceback */ = {
+			isa = PBXGroup;
+			children = (
+				F5C7739422B092500087520B /* FacebackViewController.swift */,
+				F5C7739522B092500087520B /* FacebackViewController.xib */,
+			);
+			path = Faceback;
+			sourceTree = "<group>";
+		};
+		F5C7739822B0925B0087520B /* AlterUserName */ = {
+			isa = PBXGroup;
+			children = (
+				F5C7739922B0927D0087520B /* AlterUserNameController.swift */,
+				F5C7739A22B0927D0087520B /* AlterUserNameController.xib */,
+			);
+			path = AlterUserName;
+			sourceTree = "<group>";
+		};
+		F5C7739D22B0C11D0087520B /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				F52A269322ACD544000785D4 /* TrashViewController.swift */,
+			);
+			path = Trash;
+			sourceTree = "<group>";
+		};
 		F5D9751822A3B36E0014BE15 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +382,10 @@
 				F52A269122ACD537000785D4 /* SetViewController.swift */,
 				F5EEED0922AFDC9500C84E9B /* setCell.swift */,
 				F5EEED0B22AFE71400C84E9B /* setModel.swift */,
+				F5C7739822B0925B0087520B /* AlterUserName */,
+				F5C7739322B092380087520B /* Faceback */,
+				F5C7739222B0922D0087520B /* About */,
+				F5C7738D22B092080087520B /* CutUser */,
 			);
 			path = Set;
 			sourceTree = "<group>";
@@ -350,13 +451,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D9752F22A3B3700014BE15 /* LaunchScreen.storyboard in Resources */,
+				F5C7738822B090F70087520B /* RegisterViewController.xib in Resources */,
 				F54A1D1F22A9428C005836B3 /* writeCell.xib in Resources */,
 				F5303D5B22A8E2B00060EACE /* CFMineCell.xib in Resources */,
+				F5C7739122B092240087520B /* CutUserViewController.xib in Resources */,
+				F5C7739722B092500087520B /* FacebackViewController.xib in Resources */,
 				F5D9752C22A3B3700014BE15 /* Assets.xcassets in Resources */,
 				F55C10DA22AB52490036BE31 /* albumTwoCell.xib in Resources */,
 				F5D9752A22A3B36E0014BE15 /* Main.storyboard in Resources */,
 				F5AC532E22AA136D008A78E2 /* diaryPhotoCell.xib in Resources */,
 				F54A1D1722A93422005836B3 /* emotionCell.xib in Resources */,
+				F5C7738C22B091D90087520B /* AboutViewController.xib in Resources */,
+				F5C7739C22B0927D0087520B /* AlterUserNameController.xib in Resources */,
+				F5C7738422B08C3A0087520B /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,22 +501,30 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +542,7 @@
 				F56C2E0A22AA811200BCFA11 /* showBodyCell.swift in Sources */,
 				F5D9752722A3B36E0014BE15 /* ViewController.swift in Sources */,
 				F5303D5A22A8E2B00060EACE /* CFMineCell.swift in Sources */,
+				F5C7738B22B091D90087520B /* AboutViewController.swift in Sources */,
 				F56C2E0822AA720A00BCFA11 /* showHeadCell.swift in Sources */,
 				F56C2E0422AA5CFA00BCFA11 /* showDiaryController.swift in Sources */,
 				F54A1D1122A90638005836B3 /* diaryModel.swift in Sources */,
@@ -435,8 +551,12 @@
 				F54A1D1E22A9428C005836B3 /* writeCell.swift in Sources */,
 				F5FCFA6122AE85CB00C7B8A0 /* MineCell.swift in Sources */,
 				F55C10D922AB52490036BE31 /* albumTwoCell.swift in Sources */,
+				F5C7739622B092500087520B /* FacebackViewController.swift in Sources */,
+				F5C7739022B092240087520B /* CutUserViewController.swift in Sources */,
 				F55C10D222AB3E4A0036BE31 /* homeHeadCell.swift in Sources */,
 				F52A269422ACD544000785D4 /* TrashViewController.swift in Sources */,
+				F5C7739B22B0927D0087520B /* AlterUserNameController.swift in Sources */,
+				F5C7738722B090F70087520B /* RegisterViewController.swift in Sources */,
 				F5D9752522A3B36E0014BE15 /* AppDelegate.swift in Sources */,
 				F54A1D1622A93422005836B3 /* emotionCell.swift in Sources */,
 				F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */,
@@ -445,6 +565,7 @@
 				F56C2E0622AA6B2E00BCFA11 /* MainNavigationController.swift in Sources */,
 				F54A1D1B22A93A64005836B3 /* diaryWriteCell.swift in Sources */,
 				F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */,
+				F5C7738322B08C3A0087520B /* LoginViewController.swift in Sources */,
 				F5303D4F22A8D3B60060EACE /* CFBasicContentView.swift in Sources */,
 				F5303D5122A8D4B60060EACE /* CFHomeViewController.swift in Sources */,
 				F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */,
@@ -452,9 +573,12 @@
 				F5AC532622AA0289008A78E2 /* diaryWriteController.swift in Sources */,
 				F56C2E0C22AA82D600BCFA11 /* nowModel.swift in Sources */,
 				F55C10D422AB3E710036BE31 /* homeRecommendCell.swift in Sources */,
+				F536AAE522B1273B00F9853B /* emotionChartModel.swift in Sources */,
 				F52A269222ACD537000785D4 /* SetViewController.swift in Sources */,
 				F5303D5522A8D4CE0060EACE /* CFAlbumViewController.swift in Sources */,
+				F536AAC322B10EC100F9853B /* EmotionChartController.swift in Sources */,
 				F5303D5722A8D4D80060EACE /* CFMineViewController.swift in Sources */,
+				F536AAC522B1152400F9853B /* emotionChartCell.swift in Sources */,
 				F5EEED0A22AFDC9500C84E9B /* setCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

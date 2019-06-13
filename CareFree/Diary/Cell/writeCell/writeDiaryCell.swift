@@ -50,7 +50,7 @@ class writeDiaryCell: UIView {
         tv.backgroundColor = UIColor.clear
         tv.font = UIFont.systemFont(ofSize: 20)
         tv.textColor = UIColor.white
-        tv.text = "泡在了实验室一天，果然充实的学习还是最幸福的"
+        tv.text = "快记录一下吧~"
         return tv
     }()
     

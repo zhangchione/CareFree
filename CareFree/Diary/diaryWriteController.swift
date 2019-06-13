@@ -60,6 +60,9 @@ class diaryWriteController: UIViewController {
                 view.Title.textColor = self.topColor
                 view.diaryWirte.textColor = self.writeColor
             }
+            view.diaryWirte.text = "快记录一下吧~"
+            view.diaryWirte.textColor = UIColor.lightGray
+            view.diaryWirte.delegate = self
             view.backBtn.addTarget(self, action: #selector(self.back), for: .touchUpInside)
             view.saveBtn.addTarget(self, action: #selector(self.save), for: .touchUpInside)
         })
@@ -78,8 +81,16 @@ class diaryWriteController: UIViewController {
 
 }
 
-extension diaryWriteController {
+extension diaryWriteController:UITextViewDelegate {
     
+    func textViewShouldBeginEditing(_ content: UITextView) -> Bool {
+        if (content.text == "快记录一下吧~") {
+            content.text = ""
+        }
+        content.textColor = UIColor.black
+        return true
+        
+    }
     // 右边保存按钮事件
     @objc func save(){
         print("日记保存成功")

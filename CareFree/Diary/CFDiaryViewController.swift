@@ -84,6 +84,7 @@ extension CFDiaryViewController{
     fileprivate func configCV(){
         let viewBodySource = ClosureViewSource(viewUpdater: {(view:diaryCell,data:diaryModel,index:Int) in
             view.updateUI(with: data)
+            
         })
         let sizeBodySource = {(index:Int,data:diaryModel,collectionSize:CGSize) -> CGSize in
             return CGSize(width: collectionSize.width, height: 170)
@@ -132,6 +133,7 @@ extension CFDiaryViewController{
         
         let finalProvider = ComposedProvider(sections:[providerHead,providerBody])
         
+        
         providerBody.layout = FlowLayout(spacing: 30)
         providerHead.layout = FlowLayout(spacing: 30)
         finalProvider.layout = FlowLayout(spacing: 30)
@@ -139,8 +141,9 @@ extension CFDiaryViewController{
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         
         providerBody.tapHandler = { context -> Void in
-            let showDiaryVC = showDiaryController()
             
+            
+            let showDiaryVC = showDiaryController()
             let emotionLayer = CAGradientLayer()
             emotionLayer.colors = [UIColor.init(r: 155, g: 121, b: 255).cgColor,UIColor.init(r: 96, g: 114, b: 255).cgColor]
             showDiaryVC.emotionLayer = emotionLayer

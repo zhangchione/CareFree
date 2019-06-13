@@ -1,21 +1,21 @@
 //
-//  TrashViewController.swift
+//  CutUserViewController.swift
 //  CareFree
 //
-//  Created by 张驰 on 2019/6/9.
+//  Created by 张驰 on 2019/6/12.
 //  Copyright © 2019 张驰. All rights reserved.
 //
 
 import UIKit
 
-class TrashViewController: UIViewController {
+class CutUserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation

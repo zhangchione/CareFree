@@ -47,9 +47,12 @@ class CFMineViewController: UIViewController {
         
         
     }
+    var impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    public var duration = 0.3
     func configCV(){
         let viewSource = ClosureViewSource(viewUpdater: {(view:MineCell,data:Int,index:Int) in
             view.updateUI()
+            
             DispatchQueue.main.async {
                 let  emotionLayer = CAGradientLayer()
                 emotionLayer.frame = view.emotionView.bounds
@@ -60,9 +63,12 @@ class CFMineViewController: UIViewController {
             
             let setTap = UITapGestureRecognizer(target: self, action: #selector(self.setEvent))
             let trashTap = UITapGestureRecognizer(target: self, action: #selector(self.trashEvent))
+            let diaryChartTap = UITapGestureRecognizer(target: self, action: #selector(self.diaryChartEvnent))
             view.setView.addGestureRecognizer(setTap)
             view.trashView.addGestureRecognizer(trashTap)
-            
+            view.moodView.addGestureRecognizer(diaryChartTap)
+  
+            view.setView.layer.add(self.impliesAnimation, forKey: nil)
         })
         let sizeSource = {(index:Int,data:Int,collectionSize:CGSize) ->CGSize in
             return CGSize(width: collectionSize.width, height: 820)
@@ -96,12 +102,21 @@ extension CFMineViewController{
     
     @objc func trashEvent(){
         print("废纸篓页面跳转中...")
+        let trashVC = TrashViewController()
+        self.navigationController?.pushViewController(trashVC, animated: true)
     }
     
     @objc func setEvent(){
+
+        impliesAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
+        impliesAnimation.duration = self.duration * 2
+        impliesAnimation.calculationMode = CAAnimationCalculationMode.cubic
         print("设置页面跳转中...")
         let setVC = SetViewController()
         self.navigationController?.pushViewController(setVC, animated: true)
+    }
+    @objc func diaryChartEvnent(){
+        print("心情报表页面跳转中...")
     }
     @objc func back(){
         

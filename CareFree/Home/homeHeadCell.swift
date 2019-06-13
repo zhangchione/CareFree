@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import CollectionKit
+import SnapKit
+
 
 class homeHeadCell: UIView {
+    
+    
     
     lazy var topBackgroundView:UIView = {
         let vi = UIView()
@@ -24,7 +29,7 @@ class homeHeadCell: UIView {
     }()
     lazy var line:UIView = {
         let vi = UIView()
-        vi.backgroundColor = .red
+        vi.backgroundColor = .white
         return vi
     }()
     // 心情圆
@@ -93,7 +98,7 @@ class homeHeadCell: UIView {
     }()
     lazy  var firstLine: UIView = {
        let vi = UIView()
-        vi.backgroundColor = UIColor.init(r: 151 , g: 151, b: 151)
+        vi.backgroundColor = UIColor.init(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 0.2)
         return vi
     }()
     
@@ -106,7 +111,7 @@ class homeHeadCell: UIView {
     }()
     lazy  var secendLine: UIView = {
         let vi = UIView()
-        vi.backgroundColor = UIColor.init(r: 138, g: 138, b: 138)
+        vi.backgroundColor = UIColor.init(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 0.2)
         return vi
     }()
     
@@ -119,12 +124,12 @@ class homeHeadCell: UIView {
     }()
     lazy  var thirdTopLine: UIView = {
         let vi = UIView()
-        vi.backgroundColor = UIColor.init(r: 151, g: 151, b: 151)
+        vi.backgroundColor = UIColor.init(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 0.2)
         return vi
     }()
     lazy  var thirdBottomLine: UIView = {
         let vi = UIView()
-        vi.backgroundColor = UIColor.init(r: 151, g: 151, b: 151)
+        vi.backgroundColor = UIColor.init(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 0.2)
         return vi
     }()
     
@@ -137,21 +142,28 @@ class homeHeadCell: UIView {
     }()
     lazy  var fourthLine: UIView = {
         let vi = UIView()
-        vi.backgroundColor = UIColor.init(r: 151, g: 151, b: 151)
+        vi.backgroundColor = UIColor.init(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 0.2)
         return vi
     }()
     
     lazy var fivethLabel : UILabel = {
         let label = UILabel()
-        label.text = "50"
+        label.text = "-50"
         label.font = UIFont.init(name: "PingFangSC-Regular", size: 8)
         label.textColor = UIColor.init(r: 138, g: 138, b: 138)
         return label
     }()
     lazy  var fivethLine: UIView = {
         let vi = UIView()
-        vi.backgroundColor = UIColor.init(r: 151, g: 151, b: 151)
+        vi.backgroundColor = UIColor.init(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 0.2)
         return vi
+    }()
+    
+         let dataHeadSource = ArrayDataSource(data:[emotionChartModel]())
+    lazy var  collectionView: CollectionView = {
+        let cv = CollectionView()
+        cv.backgroundColor = UIColor.clear
+        return cv
     }()
     
     
@@ -222,8 +234,32 @@ class homeHeadCell: UIView {
         chartView.addSubview(fivethLabel)
         chartView.addSubview(fivethLine)
         
+        chartView.addSubview(collectionView)
+        
+        //collectionView.backgroundColor = UIColor.green
+        let viewHeadSource = ClosureViewSource(viewUpdater: {(view:emotionChartCell,data:emotionChartModel,index:Int) in
+            view.updateUI(with: data)
+            //view.backgroundColor = UIColor.yellow
+        })
+        let sizeHeadSource = {(index:Int,data:emotionChartModel,collectionSize:CGSize) ->CGSize in
+            return CGSize(width: 33, height: 160)
+        }
+        
+        let provider = BasicProvider(
+            dataSource: dataHeadSource,
+            viewSource: viewHeadSource,
+            sizeSource:sizeHeadSource
+        )
+        provider.layout = FlowLayout(spacing: 10)
+        collectionView.provider = provider
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        
+        
+        
         addSubview(todayRecommend)
         addSubview(todayRecommendMoreBtn)
+        
+        
         
         topView.snp.makeConstraints{(make) in
             make.left.top.equalTo(self).offset(20)
@@ -278,7 +314,7 @@ class homeHeadCell: UIView {
         
         firstLabel.snp.makeConstraints{(make) in
             make.left.equalTo(chartView.snp.left).offset(20)
-            make.top.equalTo(chartLabel.snp.bottom).offset(10)
+            make.top.equalTo(chartLabel.snp.bottom).offset(15)
             make.width.height.equalTo(10)
         }
         firstLine.snp.makeConstraints{(make) in
@@ -332,9 +368,10 @@ class homeHeadCell: UIView {
         }
         
         fivethLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(chartView.snp.left).offset(20)
+            make.left.equalTo(chartView.snp.left).offset(15)
             make.top.equalTo(fourthLabel.snp.bottom).offset(30)
-            make.width.height.equalTo(10)
+            make.width.height.equalTo(15)
+            make.height.equalTo(10)
         }
         fivethLine.snp.makeConstraints{(make) in
             make.left.equalTo(fivethLabel.snp.right).offset(2)
@@ -355,6 +392,12 @@ class homeHeadCell: UIView {
             make.right.equalTo(chartView.snp.right).offset(-10)
         }
         
+        collectionView.snp.makeConstraints{(make) in
+            make.left.equalTo(firstLine.snp.left).offset(10)
+            make.top.equalTo( firstLine .snp.top).offset(0)
+            make.bottom.equalTo(fivethLine.snp.bottom).offset(0)
+            make.right.equalTo(firstLine.snp.right).offset(0)
+        }
         
         // 今日推荐
         todayRecommend.snp.makeConstraints{(make) in
