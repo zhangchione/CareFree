@@ -56,6 +56,12 @@ class LoginViewController: UIViewController {
     }
 
 
-  
+    @IBAction func backgorundTap(_ sender: Any) {
+        dismissKeyboard()
+    }
+    func dismissKeyboard(){
+        self.view.endEditing(false)
+    }
+    
 
 }

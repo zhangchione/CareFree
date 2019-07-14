@@ -8,7 +8,7 @@
 
 import UIKit
 import ESTabBarController_swift
-
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        let realm = try! Realm()
+        print(realm.configuration.fileURL!)
+        // 从 Realm 数据库中删除所有对象
+        try! realm.write {
+            realm.deleteAll()
+        }
+        //let now = Date()
+         //print(now.year(),now.month(),now.day(),now.weekDay())
         configVC()
         return true
     }
@@ -33,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func mainTabBarVC() -> ESTabBarController{
 
         let homeVC = CFHomeViewController()
-        let diaryVC = CFDiaryViewController()
+        let diaryVC = DiaryViewController()
         let albumVC = CFAlbumViewController()
         let mineVC = CFMineViewController()
         homeVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "首页", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))

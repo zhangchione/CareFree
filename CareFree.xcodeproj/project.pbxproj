@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E28D9CABC47F855FDF3A9D41 /* Pods_CareFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */; };
+		CE0FA413EC31AFDFE7EDA7E6 /* Pods_CareFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */; };
 		F52A269222ACD537000785D4 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A269122ACD537000785D4 /* SetViewController.swift */; };
 		F52A269422ACD544000785D4 /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A269322ACD544000785D4 /* TrashViewController.swift */; };
 		F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D4A22A8D2AD0060EACE /* Const.swift */; };
@@ -39,6 +39,9 @@
 		F56C2E0822AA720A00BCFA11 /* showHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C2E0722AA720A00BCFA11 /* showHeadCell.swift */; };
 		F56C2E0A22AA811200BCFA11 /* showBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C2E0922AA811200BCFA11 /* showBodyCell.swift */; };
 		F56C2E0C22AA82D600BCFA11 /* nowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56C2E0B22AA82D600BCFA11 /* nowModel.swift */; };
+		F5A5B2DD22BB359A003BBF5D /* DwriteDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5B2DC22BB359A003BBF5D /* DwriteDiaryCell.swift */; };
+		F5A5B2DF22BB385A003BBF5D /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5B2DE22BB385A003BBF5D /* DiaryViewModel.swift */; };
+		F5A5C3B922B26C830060AA3E /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C3B822B26C830060AA3E /* Diary.swift */; };
 		F5AC532622AA0289008A78E2 /* diaryWriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532422AA0289008A78E2 /* diaryWriteController.swift */; };
 		F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */; };
 		F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */; };
@@ -55,6 +58,9 @@
 		F5C7739722B092500087520B /* FacebackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7739522B092500087520B /* FacebackViewController.xib */; };
 		F5C7739B22B0927D0087520B /* AlterUserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7739922B0927D0087520B /* AlterUserNameController.swift */; };
 		F5C7739C22B0927D0087520B /* AlterUserNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7739A22B0927D0087520B /* AlterUserNameController.xib */; };
+		F5D28D5622BB1921008CA4D2 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D28D5522BB1921008CA4D2 /* DiaryViewController.swift */; };
+		F5D28D5E22BB1D45008CA4D2 /* DsearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D28D5D22BB1D45008CA4D2 /* DsearchCell.swift */; };
+		F5D28D6122BB1DD8008CA4D2 /* DshowDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D28D6022BB1DD8008CA4D2 /* DshowDiaryCell.swift */; };
 		F5D9752522A3B36E0014BE15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9752422A3B36E0014BE15 /* AppDelegate.swift */; };
 		F5D9752722A3B36E0014BE15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D9752622A3B36E0014BE15 /* ViewController.swift */; };
 		F5D9752A22A3B36E0014BE15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D9752822A3B36E0014BE15 /* Main.storyboard */; };
@@ -85,11 +91,11 @@
 		F536AAE422B1273B00F9853B /* emotionChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emotionChartModel.swift; sourceTree = "<group>"; };
 		F54A1D1022A90638005836B3 /* diaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryModel.swift; sourceTree = "<group>"; };
 		F54A1D1222A9064A005836B3 /* diaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryCell.swift; sourceTree = "<group>"; };
-		F54A1D1422A93422005836B3 /* emotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emotionCell.swift; sourceTree = "<group>"; };
-		F54A1D1522A93422005836B3 /* emotionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = emotionCell.xib; sourceTree = "<group>"; };
+		F54A1D1422A93422005836B3 /* emotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = emotionCell.swift; path = ../../../OldCoding/Cell/diaryTwoCell/emotionCell.swift; sourceTree = "<group>"; };
+		F54A1D1522A93422005836B3 /* emotionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = emotionCell.xib; path = ../../../OldCoding/Cell/diaryTwoCell/emotionCell.xib; sourceTree = "<group>"; };
 		F54A1D1A22A93A64005836B3 /* diaryWriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryWriteCell.swift; sourceTree = "<group>"; };
-		F54A1D1C22A9428C005836B3 /* writeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeCell.swift; sourceTree = "<group>"; };
-		F54A1D1D22A9428C005836B3 /* writeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = writeCell.xib; sourceTree = "<group>"; };
+		F54A1D1C22A9428C005836B3 /* writeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = writeCell.swift; path = ../../../OldCoding/Cell/diaryTwoCell/writeCell.swift; sourceTree = "<group>"; };
+		F54A1D1D22A9428C005836B3 /* writeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = writeCell.xib; path = ../../../OldCoding/Cell/diaryTwoCell/writeCell.xib; sourceTree = "<group>"; };
 		F55C10D122AB3E4A0036BE31 /* homeHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeHeadCell.swift; sourceTree = "<group>"; };
 		F55C10D322AB3E710036BE31 /* homeRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeRecommendCell.swift; sourceTree = "<group>"; };
 		F55C10D522AB4FDC0036BE31 /* albumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumCell.swift; sourceTree = "<group>"; };
@@ -100,6 +106,9 @@
 		F56C2E0722AA720A00BCFA11 /* showHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showHeadCell.swift; sourceTree = "<group>"; };
 		F56C2E0922AA811200BCFA11 /* showBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showBodyCell.swift; sourceTree = "<group>"; };
 		F56C2E0B22AA82D600BCFA11 /* nowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nowModel.swift; sourceTree = "<group>"; };
+		F5A5B2DC22BB359A003BBF5D /* DwriteDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwriteDiaryCell.swift; sourceTree = "<group>"; };
+		F5A5B2DE22BB385A003BBF5D /* DiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewModel.swift; sourceTree = "<group>"; };
+		F5A5C3B822B26C830060AA3E /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		F5AC532422AA0289008A78E2 /* diaryWriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryWriteController.swift; sourceTree = "<group>"; };
 		F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeDiaryCell.swift; sourceTree = "<group>"; };
 		F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryPhotoCell.swift; sourceTree = "<group>"; };
@@ -116,6 +125,9 @@
 		F5C7739522B092500087520B /* FacebackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebackViewController.xib; sourceTree = "<group>"; };
 		F5C7739922B0927D0087520B /* AlterUserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterUserNameController.swift; sourceTree = "<group>"; };
 		F5C7739A22B0927D0087520B /* AlterUserNameController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlterUserNameController.xib; sourceTree = "<group>"; };
+		F5D28D5522BB1921008CA4D2 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		F5D28D5D22BB1D45008CA4D2 /* DsearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DsearchCell.swift; sourceTree = "<group>"; };
+		F5D28D6022BB1DD8008CA4D2 /* DshowDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DshowDiaryCell.swift; sourceTree = "<group>"; };
 		F5D9752122A3B36E0014BE15 /* CareFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D9752422A3B36E0014BE15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D9752622A3B36E0014BE15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E28D9CABC47F855FDF3A9D41 /* Pods_CareFree.framework in Frameworks */,
+				CE0FA413EC31AFDFE7EDA7E6 /* Pods_CareFree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,13 +195,8 @@
 		F5303D4622A8D1520060EACE /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				F5303D5222A8D4C20060EACE /* CFDiaryViewController.swift */,
-				F5AC532822AA061E008A78E2 /* Model */,
-				F54A1D1822A939E5005836B3 /* Cell */,
-				F5AC532422AA0289008A78E2 /* diaryWriteController.swift */,
-				F56C2E0322AA5CFA00BCFA11 /* showDiaryController.swift */,
-				F56C2E0722AA720A00BCFA11 /* showHeadCell.swift */,
-				F56C2E0922AA811200BCFA11 /* showBodyCell.swift */,
+				F5D28D5422BB1905008CA4D2 /* Diary - 日记 */,
+				F5D28D5322BB18F0008CA4D2 /* OldCoding */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -242,7 +249,6 @@
 				F54A1D1222A9064A005836B3 /* diaryCell.swift */,
 				F54A1D1922A93A27005836B3 /* diaryTwoCell */,
 				F54A1D1A22A93A64005836B3 /* diaryWriteCell.swift */,
-				F56C2E0222AA5CA300BCFA11 /* writeCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -250,10 +256,6 @@
 		F54A1D1922A93A27005836B3 /* diaryTwoCell */ = {
 			isa = PBXGroup;
 			children = (
-				F54A1D1422A93422005836B3 /* emotionCell.swift */,
-				F54A1D1522A93422005836B3 /* emotionCell.xib */,
-				F54A1D1C22A9428C005836B3 /* writeCell.swift */,
-				F54A1D1D22A9428C005836B3 /* writeCell.xib */,
 			);
 			path = diaryTwoCell;
 			sourceTree = "<group>";
@@ -266,6 +268,43 @@
 				F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */,
 			);
 			path = writeCell;
+			sourceTree = "<group>";
+		};
+		F5A5B2DB22BB3578003BBF5D /* DshowDiaryCell - 日记归档 */ = {
+			isa = PBXGroup;
+			children = (
+				F5D28D6022BB1DD8008CA4D2 /* DshowDiaryCell.swift */,
+				F54A1D1422A93422005836B3 /* emotionCell.swift */,
+				F54A1D1522A93422005836B3 /* emotionCell.xib */,
+			);
+			path = "DshowDiaryCell - 日记归档";
+			sourceTree = "<group>";
+		};
+		F5A5B2E022BB63D9003BBF5D /* DiaryShow - 日记展示 */ = {
+			isa = PBXGroup;
+			children = (
+				F56C2E0322AA5CFA00BCFA11 /* showDiaryController.swift */,
+				F56C2E0722AA720A00BCFA11 /* showHeadCell.swift */,
+				F56C2E0922AA811200BCFA11 /* showBodyCell.swift */,
+			);
+			path = "DiaryShow - 日记展示";
+			sourceTree = "<group>";
+		};
+		F5A5B2E122BB66C2003BBF5D /* DiaryWrite - 日记记录 */ = {
+			isa = PBXGroup;
+			children = (
+				F56C2E0222AA5CA300BCFA11 /* writeCell */,
+				F5AC532422AA0289008A78E2 /* diaryWriteController.swift */,
+			);
+			path = "DiaryWrite - 日记记录";
+			sourceTree = "<group>";
+		};
+		F5A5C3B722B26C5A0060AA3E /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5C3B822B26C830060AA3E /* Diary.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		F5AC532822AA061E008A78E2 /* Model */ = {
@@ -339,6 +378,88 @@
 			path = Trash;
 			sourceTree = "<group>";
 		};
+		F5D28D5322BB18F0008CA4D2 /* OldCoding */ = {
+			isa = PBXGroup;
+			children = (
+				F5303D5222A8D4C20060EACE /* CFDiaryViewController.swift */,
+				F5AC532822AA061E008A78E2 /* Model */,
+				F54A1D1822A939E5005836B3 /* Cell */,
+			);
+			path = OldCoding;
+			sourceTree = "<group>";
+		};
+		F5D28D5422BB1905008CA4D2 /* Diary - 日记 */ = {
+			isa = PBXGroup;
+			children = (
+				F5D28D5522BB1921008CA4D2 /* DiaryViewController.swift */,
+				F5A5B2E122BB66C2003BBF5D /* DiaryWrite - 日记记录 */,
+				F5A5B2E022BB63D9003BBF5D /* DiaryShow - 日记展示 */,
+				F5D28D5B22BB1C87008CA4D2 /* Controllers */,
+				F5D28D5A22BB1C7F008CA4D2 /* ViewModel */,
+				F5D28D5922BB1C7A008CA4D2 /* Model */,
+				F5D28D5822BB1C76008CA4D2 /* View */,
+				F5D28D5722BB1C6F008CA4D2 /* API */,
+			);
+			path = "Diary - 日记";
+			sourceTree = "<group>";
+		};
+		F5D28D5722BB1C6F008CA4D2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F5D28D5822BB1C76008CA4D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5B2DB22BB3578003BBF5D /* DshowDiaryCell - 日记归档 */,
+				F5D28D5F22BB1DA2008CA4D2 /* DwrteDiaryCell - 写日记 */,
+				F5D28D5C22BB1CB7008CA4D2 /* DsearchCell - 顶部搜索 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5D28D5922BB1C7A008CA4D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F5D28D5A22BB1C7F008CA4D2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5B2DE22BB385A003BBF5D /* DiaryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F5D28D5B22BB1C87008CA4D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F5D28D5C22BB1CB7008CA4D2 /* DsearchCell - 顶部搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				F5D28D5D22BB1D45008CA4D2 /* DsearchCell.swift */,
+			);
+			path = "DsearchCell - 顶部搜索";
+			sourceTree = "<group>";
+		};
+		F5D28D5F22BB1DA2008CA4D2 /* DwrteDiaryCell - 写日记 */ = {
+			isa = PBXGroup;
+			children = (
+				F5A5B2DC22BB359A003BBF5D /* DwriteDiaryCell.swift */,
+				F54A1D1C22A9428C005836B3 /* writeCell.swift */,
+				F54A1D1D22A9428C005836B3 /* writeCell.xib */,
+			);
+			path = "DwrteDiaryCell - 写日记";
+			sourceTree = "<group>";
+		};
 		F5D9751822A3B36E0014BE15 = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D9752422A3B36E0014BE15 /* AppDelegate.swift */,
+				F5A5C3B722B26C5A0060AA3E /* DataBase */,
 				F5303D4922A8D1730060EACE /* Main */,
 				F5303D4822A8D1620060EACE /* Extension+Cosnt */,
 				F5303D4722A8D15E0060EACE /* Home */,
@@ -502,10 +624,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/BSImageView/BSImageView.framework",
 				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -522,10 +648,14 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImageView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -552,16 +682,19 @@
 				F56C2E0A22AA811200BCFA11 /* showBodyCell.swift in Sources */,
 				F5D9752722A3B36E0014BE15 /* ViewController.swift in Sources */,
 				F5303D5A22A8E2B00060EACE /* CFMineCell.swift in Sources */,
+				F5D28D5622BB1921008CA4D2 /* DiaryViewController.swift in Sources */,
 				F5C7738B22B091D90087520B /* AboutViewController.swift in Sources */,
 				F56C2E0822AA720A00BCFA11 /* showHeadCell.swift in Sources */,
 				F56C2E0422AA5CFA00BCFA11 /* showDiaryController.swift in Sources */,
 				F54A1D1122A90638005836B3 /* diaryModel.swift in Sources */,
 				F5EEED0C22AFE71400C84E9B /* setModel.swift in Sources */,
+				F5D28D6122BB1DD8008CA4D2 /* DshowDiaryCell.swift in Sources */,
 				F54A1D1322A9064A005836B3 /* diaryCell.swift in Sources */,
 				F54A1D1E22A9428C005836B3 /* writeCell.swift in Sources */,
 				F5FCFA6122AE85CB00C7B8A0 /* MineCell.swift in Sources */,
 				F55C10D922AB52490036BE31 /* albumTwoCell.swift in Sources */,
 				F5C7739622B092500087520B /* FacebackViewController.swift in Sources */,
+				F5D28D5E22BB1D45008CA4D2 /* DsearchCell.swift in Sources */,
 				F5C7739022B092240087520B /* CutUserViewController.swift in Sources */,
 				F55C10D222AB3E4A0036BE31 /* homeHeadCell.swift in Sources */,
 				F52A269422ACD544000785D4 /* TrashViewController.swift in Sources */,
@@ -571,12 +704,14 @@
 				F54A1D1622A93422005836B3 /* emotionCell.swift in Sources */,
 				F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */,
 				F5303D5322A8D4C20060EACE /* CFDiaryViewController.swift in Sources */,
+				F5A5B2DD22BB359A003BBF5D /* DwriteDiaryCell.swift in Sources */,
 				F55C10D622AB4FDC0036BE31 /* albumCell.swift in Sources */,
 				F56C2E0622AA6B2E00BCFA11 /* MainNavigationController.swift in Sources */,
 				F54A1D1B22A93A64005836B3 /* diaryWriteCell.swift in Sources */,
 				F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */,
 				F5C7738322B08C3A0087520B /* LoginViewController.swift in Sources */,
 				F5303D4F22A8D3B60060EACE /* CFBasicContentView.swift in Sources */,
+				F5A5B2DF22BB385A003BBF5D /* DiaryViewModel.swift in Sources */,
 				F5303D5122A8D4B60060EACE /* CFHomeViewController.swift in Sources */,
 				F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */,
 				F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */,
@@ -584,6 +719,7 @@
 				F56C2E0C22AA82D600BCFA11 /* nowModel.swift in Sources */,
 				F55C10D422AB3E710036BE31 /* homeRecommendCell.swift in Sources */,
 				F536AAE522B1273B00F9853B /* emotionChartModel.swift in Sources */,
+				F5A5C3B922B26C830060AA3E /* Diary.swift in Sources */,
 				F52A269222ACD537000785D4 /* SetViewController.swift in Sources */,
 				F5303D5522A8D4CE0060EACE /* CFAlbumViewController.swift in Sources */,
 				F536AAC322B10EC100F9853B /* EmotionChartController.swift in Sources */,

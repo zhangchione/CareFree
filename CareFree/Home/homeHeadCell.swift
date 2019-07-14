@@ -17,14 +17,14 @@ class homeHeadCell: UIView {
     
     lazy var topBackgroundView:UIView = {
         let vi = UIView()
-        vi.layer.cornerRadius = 15
+        vi.layer.cornerRadius = 10
         return vi
     }()
 
     lazy var topView:UIView = {
        let vi = UIView()
         //vi.backgroundColor = .green
-        vi.layer.cornerRadius = 15
+        vi.layer.cornerRadius = 10
         return vi
     }()
     lazy var line:UIView = {
