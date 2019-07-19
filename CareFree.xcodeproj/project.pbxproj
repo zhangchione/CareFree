@@ -3,11 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE0FA413EC31AFDFE7EDA7E6 /* Pods_CareFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */; };
+		251215A722E060E70025CFD9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251215A622E060E70025CFD9 /* UserDefaults.swift */; };
+		251215AB22E062010025CFD9 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251215AA22E062010025CFD9 /* MyModel.swift */; };
+		25E3582422DEEDD80063AA9E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582322DEEDD80063AA9E /* Alamofire.framework */; };
+		25E3582622DEEDD80063AA9E /* BSGridCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582522DEEDD80063AA9E /* BSGridCollectionViewLayout.framework */; };
+		25E3582822DEEDD80063AA9E /* BSImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582722DEEDD80063AA9E /* BSImagePicker.framework */; };
+		25E3582A22DEEDD80063AA9E /* BSImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582922DEEDD80063AA9E /* BSImageView.framework */; };
+		25E3582C22DEEDD80063AA9E /* CollectionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582B22DEEDD80063AA9E /* CollectionKit.framework */; };
+		25E3582E22DEEDD80063AA9E /* EachNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582D22DEEDD80063AA9E /* EachNavigationBar.framework */; };
+		25E3583022DEEDD80063AA9E /* ESTabBarController_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582F22DEEDD80063AA9E /* ESTabBarController_swift.framework */; };
+		25E3583222DEEDD80063AA9E /* HandyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583122DEEDD80063AA9E /* HandyJSON.framework */; };
+		25E3583422DEEDD80063AA9E /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583322DEEDD80063AA9E /* Lottie.framework */; };
+		25E3583622DEEDD80063AA9E /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583522DEEDD80063AA9E /* MJRefresh.framework */; };
+		25E3583822DEEDD80063AA9E /* Pods_CareFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583722DEEDD80063AA9E /* Pods_CareFree.framework */; };
+		25E3583A22DEEDD80063AA9E /* ProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583922DEEDD80063AA9E /* ProgressHUD.framework */; };
+		25E3583C22DEEDD80063AA9E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583B22DEEDD80063AA9E /* Realm.framework */; };
+		25E3583E22DEEDD80063AA9E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583D22DEEDD80063AA9E /* RealmSwift.framework */; };
+		25E3584022DEEDD80063AA9E /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583F22DEEDD80063AA9E /* RxRealm.framework */; };
+		25E3584222DEEDD80063AA9E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584122DEEDD80063AA9E /* RxSwift.framework */; };
+		25E3584422DEEDD80063AA9E /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584322DEEDD80063AA9E /* SideMenu.framework */; };
+		25E3584622DEEDD80063AA9E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584522DEEDD80063AA9E /* SnapKit.framework */; };
+		25E3584822DEEDD80063AA9E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584722DEEDD80063AA9E /* SwiftyJSON.framework */; };
+		25E3584A22DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584922DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework */; };
+		25EBFE3722E14E8D0055B7C2 /* YQCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE3622E14E8D0055B7C2 /* YQCircleProgressView.swift */; };
+		25EBFE3C22E16B000055B7C2 /* RecommendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE3B22E16B000055B7C2 /* RecommendController.swift */; };
 		F52A269222ACD537000785D4 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A269122ACD537000785D4 /* SetViewController.swift */; };
 		F52A269422ACD544000785D4 /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A269322ACD544000785D4 /* TrashViewController.swift */; };
 		F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D4A22A8D2AD0060EACE /* Const.swift */; };
@@ -73,8 +96,35 @@
 
 /* Begin PBXFileReference section */
 		0AC6F29334E319B68CC1EE99 /* Pods-CareFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.debug.xcconfig"; path = "Target Support Files/Pods-CareFree/Pods-CareFree.debug.xcconfig"; sourceTree = "<group>"; };
+		251215A622E060E70025CFD9 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		251215AA22E062010025CFD9 /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
+		25E3582322DEEDD80063AA9E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3582522DEEDD80063AA9E /* BSGridCollectionViewLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSGridCollectionViewLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3582722DEEDD80063AA9E /* BSImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3582922DEEDD80063AA9E /* BSImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BSImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3582B22DEEDD80063AA9E /* CollectionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CollectionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3582D22DEEDD80063AA9E /* EachNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EachNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3582F22DEEDD80063AA9E /* ESTabBarController_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ESTabBarController_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3583122DEEDD80063AA9E /* HandyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HandyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3583322DEEDD80063AA9E /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3583522DEEDD80063AA9E /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3583722DEEDD80063AA9E /* Pods_CareFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_CareFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3583922DEEDD80063AA9E /* ProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3583B22DEEDD80063AA9E /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3583D22DEEDD80063AA9E /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3583F22DEEDD80063AA9E /* RxRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3584122DEEDD80063AA9E /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3584322DEEDD80063AA9E /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3584522DEEDD80063AA9E /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3584722DEEDD80063AA9E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25E3584922DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YetAnotherAnimationLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25EBFE3622E14E8D0055B7C2 /* YQCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQCircleProgressView.swift; sourceTree = "<group>"; };
+		25EBFE3B22E16B000055B7C2 /* RecommendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendController.swift; sourceTree = "<group>"; };
+		25FE25E622DEFC4E00FAE883 /* CareFree-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CareFree-Bridging-Header.h"; sourceTree = "<group>"; };
 		7F85E82E5540FEAE07E10186 /* Pods-CareFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.release.xcconfig"; path = "Target Support Files/Pods-CareFree/Pods-CareFree.release.xcconfig"; sourceTree = "<group>"; };
+		AB56F75EB18873700726BCC1 /* Pods-CareFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CareFree/Pods-CareFree.debug.xcconfig"; sourceTree = "<group>"; };
 		B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CareFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D61990A36297C6554824A5D1 /* Pods-CareFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.release.xcconfig"; path = "Pods/Target Support Files/Pods-CareFree/Pods-CareFree.release.xcconfig"; sourceTree = "<group>"; };
 		F52A269122ACD537000785D4 /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		F52A269322ACD544000785D4 /* TrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewController.swift; sourceTree = "<group>"; };
 		F5303D4A22A8D2AD0060EACE /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -145,7 +195,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0FA413EC31AFDFE7EDA7E6 /* Pods_CareFree.framework in Frameworks */,
+				25E3582422DEEDD80063AA9E /* Alamofire.framework in Frameworks */,
+				25E3582622DEEDD80063AA9E /* BSGridCollectionViewLayout.framework in Frameworks */,
+				25E3582822DEEDD80063AA9E /* BSImagePicker.framework in Frameworks */,
+				25E3582A22DEEDD80063AA9E /* BSImageView.framework in Frameworks */,
+				25E3582C22DEEDD80063AA9E /* CollectionKit.framework in Frameworks */,
+				25E3582E22DEEDD80063AA9E /* EachNavigationBar.framework in Frameworks */,
+				25E3583022DEEDD80063AA9E /* ESTabBarController_swift.framework in Frameworks */,
+				25E3583222DEEDD80063AA9E /* HandyJSON.framework in Frameworks */,
+				25E3583422DEEDD80063AA9E /* Lottie.framework in Frameworks */,
+				25E3583622DEEDD80063AA9E /* MJRefresh.framework in Frameworks */,
+				25E3583822DEEDD80063AA9E /* Pods_CareFree.framework in Frameworks */,
+				25E3583A22DEEDD80063AA9E /* ProgressHUD.framework in Frameworks */,
+				25E3583C22DEEDD80063AA9E /* Realm.framework in Frameworks */,
+				25E3583E22DEEDD80063AA9E /* RealmSwift.framework in Frameworks */,
+				25E3584022DEEDD80063AA9E /* RxRealm.framework in Frameworks */,
+				25E3584222DEEDD80063AA9E /* RxSwift.framework in Frameworks */,
+				25E3584422DEEDD80063AA9E /* SideMenu.framework in Frameworks */,
+				25E3584622DEEDD80063AA9E /* SnapKit.framework in Frameworks */,
+				25E3584822DEEDD80063AA9E /* SwiftyJSON.framework in Frameworks */,
+				25E3584A22DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +224,64 @@
 		198E68254BFD076888BF7F91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25E3582322DEEDD80063AA9E /* Alamofire.framework */,
+				25E3582522DEEDD80063AA9E /* BSGridCollectionViewLayout.framework */,
+				25E3582722DEEDD80063AA9E /* BSImagePicker.framework */,
+				25E3582922DEEDD80063AA9E /* BSImageView.framework */,
+				25E3582B22DEEDD80063AA9E /* CollectionKit.framework */,
+				25E3582D22DEEDD80063AA9E /* EachNavigationBar.framework */,
+				25E3582F22DEEDD80063AA9E /* ESTabBarController_swift.framework */,
+				25E3583122DEEDD80063AA9E /* HandyJSON.framework */,
+				25E3583322DEEDD80063AA9E /* Lottie.framework */,
+				25E3583522DEEDD80063AA9E /* MJRefresh.framework */,
+				25E3583722DEEDD80063AA9E /* Pods_CareFree.framework */,
+				25E3583922DEEDD80063AA9E /* ProgressHUD.framework */,
+				25E3583B22DEEDD80063AA9E /* Realm.framework */,
+				25E3583D22DEEDD80063AA9E /* RealmSwift.framework */,
+				25E3583F22DEEDD80063AA9E /* RxRealm.framework */,
+				25E3584122DEEDD80063AA9E /* RxSwift.framework */,
+				25E3584322DEEDD80063AA9E /* SideMenu.framework */,
+				25E3584522DEEDD80063AA9E /* SnapKit.framework */,
+				25E3584722DEEDD80063AA9E /* SwiftyJSON.framework */,
+				25E3584922DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework */,
 				B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		251215A922E061F30025CFD9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				251215AA22E062010025CFD9 /* MyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		25EBFE3522E14E810055B7C2 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				25EBFE3622E14E8D0055B7C2 /* YQCircleProgressView.swift */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		25EBFE3822E15A600055B7C2 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				25EBFE3B22E16B000055B7C2 /* RecommendController.swift */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		25FE25EA22DF02AE00FAE883 /* CareFree */ = {
+			isa = PBXGroup;
+			children = (
+				F5303D4722A8D15E0060EACE /* Home */,
+				F5303D4622A8D1520060EACE /* Diary */,
+				F5303D4522A8D10E0060EACE /* Album */,
+				F5303D4422A8D1080060EACE /* Mine */,
+			);
+			path = CareFree;
 			sourceTree = "<group>";
 		};
 		B313FB6038FAD5D0BD076931 /* Pods */ = {
@@ -165,6 +289,8 @@
 			children = (
 				0AC6F29334E319B68CC1EE99 /* Pods-CareFree.debug.xcconfig */,
 				7F85E82E5540FEAE07E10186 /* Pods-CareFree.release.xcconfig */,
+				AB56F75EB18873700726BCC1 /* Pods-CareFree.debug.xcconfig */,
+				D61990A36297C6554824A5D1 /* Pods-CareFree.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -172,6 +298,7 @@
 		F5303D4422A8D1080060EACE /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				251215A922E061F30025CFD9 /* Model */,
 				F5303D5622A8D4D80060EACE /* CFMineViewController.swift */,
 				F5C7739D22B0C11D0087520B /* Trash */,
 				F5EEED0822AFDBBD00C84E9B /* Set */,
@@ -204,6 +331,7 @@
 		F5303D4722A8D15E0060EACE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				25EBFE3822E15A600055B7C2 /* Recommend */,
 				F5303D5022A8D4B60060EACE /* CFHomeViewController.swift */,
 				F55C10D122AB3E4A0036BE31 /* homeHeadCell.swift */,
 				F55C10D322AB3E710036BE31 /* homeRecommendCell.swift */,
@@ -303,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A5C3B822B26C830060AA3E /* Diary.swift */,
+				251215A622E060E70025CFD9 /* UserDefaults.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -482,18 +611,17 @@
 			isa = PBXGroup;
 			children = (
 				F5D9752422A3B36E0014BE15 /* AppDelegate.swift */,
+				25FE25EA22DF02AE00FAE883 /* CareFree */,
 				F5A5C3B722B26C5A0060AA3E /* DataBase */,
 				F5303D4922A8D1730060EACE /* Main */,
 				F5303D4822A8D1620060EACE /* Extension+Cosnt */,
-				F5303D4722A8D15E0060EACE /* Home */,
-				F5303D4622A8D1520060EACE /* Diary */,
-				F5303D4522A8D10E0060EACE /* Album */,
-				F5303D4422A8D1080060EACE /* Mine */,
+				25EBFE3522E14E810055B7C2 /* Third */,
 				F5D9752622A3B36E0014BE15 /* ViewController.swift */,
 				F5D9752822A3B36E0014BE15 /* Main.storyboard */,
 				F5D9752B22A3B3700014BE15 /* Assets.xcassets */,
 				F5D9752D22A3B3700014BE15 /* LaunchScreen.storyboard */,
 				F5D9753022A3B3700014BE15 /* Info.plist */,
+				25FE25E622DEFC4E00FAE883 /* CareFree-Bridging-Header.h */,
 			);
 			path = CareFree;
 			sourceTree = "<group>";
@@ -546,6 +674,7 @@
 				TargetAttributes = {
 					F5D9752022A3B36E0014BE15 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -597,15 +726,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-CareFree-checkManifestLockResult.txt",
 			);
@@ -620,52 +745,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
-				"${BUILT_PRODUCTS_DIR}/BSImageView/BSImageView.framework",
-				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
-				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/YetAnotherAnimationLibrary/YetAnotherAnimationLibrary.framework",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImageView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YetAnotherAnimationLibrary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -699,9 +783,11 @@
 				F55C10D222AB3E4A0036BE31 /* homeHeadCell.swift in Sources */,
 				F52A269422ACD544000785D4 /* TrashViewController.swift in Sources */,
 				F5C7739B22B0927D0087520B /* AlterUserNameController.swift in Sources */,
+				251215A722E060E70025CFD9 /* UserDefaults.swift in Sources */,
 				F5C7738722B090F70087520B /* RegisterViewController.swift in Sources */,
 				F5D9752522A3B36E0014BE15 /* AppDelegate.swift in Sources */,
 				F54A1D1622A93422005836B3 /* emotionCell.swift in Sources */,
+				25EBFE3C22E16B000055B7C2 /* RecommendController.swift in Sources */,
 				F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */,
 				F5303D5322A8D4C20060EACE /* CFDiaryViewController.swift in Sources */,
 				F5A5B2DD22BB359A003BBF5D /* DwriteDiaryCell.swift in Sources */,
@@ -714,6 +800,7 @@
 				F5A5B2DF22BB385A003BBF5D /* DiaryViewModel.swift in Sources */,
 				F5303D5122A8D4B60060EACE /* CFHomeViewController.swift in Sources */,
 				F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */,
+				251215AB22E062010025CFD9 /* MyModel.swift in Sources */,
 				F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */,
 				F5AC532622AA0289008A78E2 /* diaryWriteController.swift in Sources */,
 				F56C2E0C22AA82D600BCFA11 /* nowModel.swift in Sources */,
@@ -722,6 +809,7 @@
 				F5A5C3B922B26C830060AA3E /* Diary.swift in Sources */,
 				F52A269222ACD537000785D4 /* SetViewController.swift in Sources */,
 				F5303D5522A8D4CE0060EACE /* CFAlbumViewController.swift in Sources */,
+				25EBFE3722E14E8D0055B7C2 /* YQCircleProgressView.swift in Sources */,
 				F536AAC322B10EC100F9853B /* EmotionChartController.swift in Sources */,
 				F5303D5722A8D4D80060EACE /* CFMineViewController.swift in Sources */,
 				F536AAC522B1152400F9853B /* emotionChartCell.swift in Sources */,
@@ -802,7 +890,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -857,7 +945,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -872,6 +960,7 @@
 			baseConfigurationReference = 0AC6F29334E319B68CC1EE99 /* Pods-CareFree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4TWU4S2JA;
 				INFOPLIST_FILE = CareFree/Info.plist;
@@ -881,6 +970,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zc.cone.CareFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CareFree/CareFree-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -891,6 +982,7 @@
 			baseConfigurationReference = 7F85E82E5540FEAE07E10186 /* Pods-CareFree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A4TWU4S2JA;
 				INFOPLIST_FILE = CareFree/Info.plist;
@@ -900,6 +992,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zc.cone.CareFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CareFree/CareFree-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

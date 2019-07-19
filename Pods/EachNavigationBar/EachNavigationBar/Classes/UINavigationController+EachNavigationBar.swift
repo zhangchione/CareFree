@@ -44,5 +44,4 @@ extension UINavigationController {
         }
         view.sendSubviewToBack(navigationBar)
     }
-    
 }

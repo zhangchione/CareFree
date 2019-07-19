@@ -11,10 +11,10 @@ import UIKit
 open class EachNavigationBar: UINavigationBar {
     
     /// automatically adjusts position when view layout
-    @objc open var automaticallyAdjustsPosition: Bool = true
+    open var automaticallyAdjustsPosition: Bool = true
     
     /// Additional height for the navigation bar.
-    @objc open var additionalHeight: CGFloat = 0 {
+    open var additionalHeight: CGFloat = 0 {
         didSet {
             frame.size.height = barHeight + _additionalHeight
             viewController?.adjustsSafeAreaInsetsAfterIOS11()
@@ -22,36 +22,35 @@ open class EachNavigationBar: UINavigationBar {
     }
     
     /// Hides shadow image
-    @objc open var isShadowHidden: Bool = false {
+    open var isShadowHidden: Bool = false {
         didSet {
             guard let background = subviews.first else { return }
             background.clipsToBounds = isShadowHidden
         }
     }
     
-    @objc open var statusBarStyle: UIStatusBarStyle = .default {
+    open var statusBarStyle: UIStatusBarStyle = .default {
         didSet {
             superNavigationBar?.barStyle = _barStyle
         }
     }
     
     /// Bar button item to use for the back button in the child navigation item.
-    @objc open var backBarButtonItem: BackBarButtonItem = .none {
+    open var backBarButtonItem: BackBarButtonItem? {
         didSet {
-            backBarButtonItem.navigationController = viewController?.navigationController
+            backBarButtonItem?.navigationController = viewController?.navigationController
             
-            let item = backBarButtonItem.makeBarButtonItem()
-            viewController?._navigationItem.leftBarButtonItem = item
+            viewController?._navigationItem.leftBarButtonItem = backBarButtonItem
         }
     }
 
     @available(iOS 11.0, *)
     /// Padding of navigation bar content view.
-    @objc public lazy var layoutPaddings: UIEdgeInsets = {
+    public lazy var layoutPaddings: UIEdgeInsets = {
         Const.NavigationBar.layoutPaddings
     }()
     
-    @objc open var additionalView: UIView? {
+    open var additionalView: UIView? {
         didSet {
             guard let additionalView = additionalView else {
                 oldValue?.removeFromSuperview()
@@ -62,14 +61,8 @@ open class EachNavigationBar: UINavigationBar {
         }
     }
     
-    @objc open var shadow: Shadow = .none {
-        didSet {
-            layer.shadowColor = shadow.color
-            layer.shadowOpacity = shadow.opacity
-            layer.shadowOffset = shadow.offset
-            layer.shadowRadius = shadow.radius
-            layer.shadowPath = shadow.path
-        }
+    open var shadow: Shadow = .none {
+        didSet { layer.set(shadow) }
     }
     
     private var _contentView: UIView?
@@ -180,14 +173,5 @@ extension EachNavigationBar {
         layoutMargins = Const.NavigationBar.layoutMargins
         contentView?.frame.origin.y = prefersLargeTitles ? 0 : additionalHeight
         contentView?.layoutMargins = layoutPaddings
-    }
-}
-
-extension EachNavigationBar {
-    
-    @available(swift, deprecated: 4.2, message: "Please use additionalHeight.")
-    @objc open var extraHeight: CGFloat {
-        get { return additionalHeight }
-        set { additionalHeight = newValue }
     }
 }

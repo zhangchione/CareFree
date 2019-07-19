@@ -6,77 +6,56 @@
 //  Copyright © 2018年 Pircate. All rights reserved.
 //
 
-public class BackBarButtonItem: NSObject {
+open class BackBarButtonItem: UIBarButtonItem {
     
-    @objc public static let none: BackBarButtonItem = .init(style: .none)
+    public var shouldBack: (BackBarButtonItem) -> Bool = { _ in true }
     
-    @objc public var shouldBack: (BackBarButtonItem) -> Bool = { _ in true }
+    public var willBack: () -> Void = {}
     
-    @objc public var willBack: () -> Void = {}
+    public var didBack: () -> Void = {}
     
-    @objc public var didBack: () -> Void = {}
+    weak var navigationController: UINavigationController?
+}
+
+public extension BackBarButtonItem {
     
-    public enum Style {
-        case none
+    convenience init(style: ItemStyle, tintColor: UIColor? = nil) {
+        let action = #selector(backBarButtonItemAction)
+        
+        switch style {
+        case .title(let title):
+            self.init(title: title, style: .plain, target: nil, action: action)
+            
+            self.target = self
+            self.tintColor = tintColor
+        case .image(let image):
+            self.init(image: image, style: .plain, target: nil, action: action)
+            
+            self.target = self
+            self.tintColor = tintColor
+        case .custom(let button):
+            self.init(customView: button)
+            
+            button.addTarget(self, action: action, for: .touchUpInside)
+            button.tintColor = tintColor
+        }
+    }
+    
+    func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+extension BackBarButtonItem {
+    
+    public enum ItemStyle {
         case title(String?)
         case image(UIImage?)
         case custom(UIButton)
     }
-    
-    weak var navigationController: UINavigationController?
-    
-    var needsDuplicate: Bool = false
-    
-    var style: Style = .none
-    
-    var tintColor: UIColor?
-    
-    public init(style: Style, tintColor: UIColor? = nil) {
-        self.style = style
-        self.tintColor = tintColor
-    }
-    
-    @objc public func goBack() {
-        navigationController?.popViewController(animated: true)
-    }
- 
-    func makeBarButtonItem() -> UIBarButtonItem? {
-        let action = #selector(backBarButtonItemAction)
-        
-        switch style {
-        case .none:
-            return nil
-        case .title(let title):
-            let backBarButtonItem = UIBarButtonItem(
-                title: title,
-                style: .plain,
-                target: self,
-                action: action)
-            backBarButtonItem.tintColor = tintColor
-            
-            return backBarButtonItem
-        case .image(let image):
-            let backBarButtonItem = UIBarButtonItem(
-                image: image,
-                style: .plain,
-                target: self,
-                action: action)
-            backBarButtonItem.tintColor = tintColor
-            
-            return backBarButtonItem
-        case .custom(let button):
-            guard needsDuplicate else {
-                button.addTarget(self, action: action, for: .touchUpInside)
-                button.tintColor = tintColor
-                return UIBarButtonItem(customView: button)
-            }
-            
-            guard let customView = button.duplicate() else { return nil }
-            customView.addTarget(self, action: action, for: .touchUpInside)
-            customView.tintColor = tintColor
-            return UIBarButtonItem(customView: customView)
-        }
-    }
+}
+
+extension BackBarButtonItem {
     
     @objc private func backBarButtonItemAction() {
         guard shouldBack(self) else { return }

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - BmobSDK (2.3.4)
   - BSGridCollectionViewLayout (1.2.3)
   - BSImagePicker (2.10.0):
     - BSGridCollectionViewLayout (= 1.2.3)
@@ -33,6 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BmobSDK
   - BSImagePicker (~> 2.8)
   - CollectionKit
   - CollectionKit/WobbleAnimator
@@ -50,6 +52,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - BmobSDK
     - BSGridCollectionViewLayout
     - BSImagePicker
     - BSImageView
@@ -80,6 +83,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  BmobSDK: 03e9889d92b721bfc2452faa5b2c2497581abbca
   BSGridCollectionViewLayout: 568273e113fbc815f868f1898ef0465aee68f955
   BSImagePicker: fa0c15b6740e8aa7a7b7f0fe38a71ad4cfa0ec4a
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
@@ -99,6 +103,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 3ac660d53aea0a8a66435f5bb7a5e80b1f6cd904
+PODFILE CHECKSUM: a6a053e6207c520399cdd9988b782279b8bdde47
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.4

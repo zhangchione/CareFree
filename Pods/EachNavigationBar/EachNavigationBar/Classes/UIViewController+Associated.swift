@@ -36,7 +36,9 @@ extension UIViewController {
             as? EachNavigationBar {
             return bar
         }
+        
         let bar = EachNavigationBar(viewController: self)
+        
         objc_setAssociatedObject(
             self,
             &AssociatedKeys.navigationBar,
@@ -52,8 +54,10 @@ extension UIViewController {
             as? UINavigationItem {
             return item
         }
-        let item = navigationItem.duplicate() ?? UINavigationItem()
-        item.copyTargetActions(from: navigationItem)
+        
+        let item = UINavigationItem()
+        item.copy(by: navigationItem)
+        
         objc_setAssociatedObject(
             self,
             &AssociatedKeys.navigationItem,
@@ -65,23 +69,8 @@ extension UIViewController {
 
 private extension UINavigationItem {
     
-    func copyTargetActions(from navigationItem: UINavigationItem) {
-        if let leftBarButtonItems = navigationItem.leftBarButtonItems,
-            let leftItems = self.leftBarButtonItems,
-            leftBarButtonItems.count == leftItems.count {
-            leftItems.enumerated().forEach {
-                $0.element.target = leftBarButtonItems[$0.offset].target
-                $0.element.action = leftBarButtonItems[$0.offset].action
-            }
-        }
-        
-        if let rightBarButtonItems = navigationItem.rightBarButtonItems,
-            let rightItems = self.rightBarButtonItems,
-            rightBarButtonItems.count == rightItems.count {
-            rightItems.enumerated().forEach {
-                $0.element.target = rightBarButtonItems[$0.offset].target
-                $0.element.action = rightBarButtonItems[$0.offset].action
-            }
-        }
+    func copy(by navigationItem: UINavigationItem) {
+        self.title = navigationItem.title
+        self.prompt = navigationItem.prompt
     }
 }

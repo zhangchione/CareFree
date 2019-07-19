@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/EachNavigationBar.svg?style=flat)](http://cocoapods.org/pods/EachNavigationBar)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/EachNavigationBar.svg?style=flat)](http://cocoapods.org/pods/EachNavigationBar)
-![iOS 9.0+](https://img.shields.io/badge/iOS-9.0%2B-blue.svg)
+[![Platform](https://img.shields.io/cocoapods/p/EachNavigationBar.svg?style=flat)](https://cocoapods.org/pods/EachNavigationBar)
 [![中文文档](https://woolson.gitee.io/npmer-badge/-007ec6-%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3-007ec6-github-ffffff-square-gradient-shadow.svg)](https://github.com/Pircate/EachNavigationBar/blob/master/README_CN.md)
 
 [中文文档](https://github.com/Pircate/EachNavigationBar/blob/master/README_CN.md)
@@ -43,33 +43,20 @@ github "Pircate/EachNavigationBar"
 
 ### Import
 
-Swift
 ``` swift
 import EachNavigationBar
-```
-Objective-C
-``` ObjC
-@import EachNavigationBar;
 ```
 
 ### Enable
 
-Swift
 ``` swift
 let nav = UINavigationController(rootViewController: vc)
 nav.navigation.configuration.isEnabled = true
 ```
 
-Objective-C
-``` ObjC
-UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-nav.navigation_configuration.isEnabled = YES;
-```
-
 ### Setting
 #### Global
 
-Swift
 ``` swift
 nav.navigation.configuration.titleTextAttributes = [.foregroundColor: UIColor.blue]
 
@@ -77,28 +64,12 @@ nav.navigation.configuration.barTintColor = UIColor.red
 
 nav.navigation.configuration.shadowImage = UIImage(named: "shadow")
 
-nav.navigation.configuration.backBarButtonItem = .init(style: .image(UIImage(named: "back")), tintColor: UIColor.red)
-
 nav.navigation.configuration.setBackgroundImage(UIImage(named: "nav"), for: .any, barMetrics: .default)
-```
-
-Objective-C
-``` ObjC
-nav.navigation_configuration.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.blueColor};
-
-nav.navigation_configuration.barTintColor = UIColor.redColor;
-
-nav.navigation_configuration.shadowImage = [UIImage imageNamed:@"shadow"];
-
-nav.navigation_configuration.backBarButtonItem = [[BackBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"]];
-
-[nav.navigation_configuration setBackgroundImage:[UIImage imageNamed:@"nav"] for:UIBarPositionAny barMetrics:UIBarMetricsDefault];
 ```
 
 #### Each view controller
 ##### Normal
 
-Swift
 ``` swift
 navigation.bar  -> EachNavigationBar -> UINavigationBar
 navigation.item -> UINavigationItem
@@ -164,12 +135,6 @@ navigation.bar.shadow = Shadow(
     color: UIColor.black.cgColor,
     opacity: 0.5,
     offset: CGSize(width: 0, height: 3))
-```
-
-Objective-C
-``` ObjC
-self.navigation_bar.xxx
-self.navigation_item.xxx
 ```
 
 ##### LargeTitle(iOS 11.0+)
