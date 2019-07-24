@@ -10,6 +10,9 @@ import UIKit
 
 class emotionCell: UITableViewCell {
 
+    @IBOutlet weak var waiView: UIView!
+    @IBOutlet weak var modeData: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -92,7 +92,9 @@ class DiaryViewController: UIViewController {
             make.bottom.equalTo(self.view.snp.bottom).offset(-88)
             make.top.equalTo(self.navigation.bar.snp.bottom).offset(0)
         }
-        
+    }
+    
+    func configData(){
         
     }
 
@@ -146,6 +148,7 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         return cell
         }else {
             let cell :DshowDiaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: DshowDiaryCellID, for: indexPath) as! DshowDiaryCell
+            
             return cell
         }
     }

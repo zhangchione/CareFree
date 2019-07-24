@@ -15,7 +15,7 @@ class homeRecommendCell: UIView {
     // 书本推荐
     lazy var bookIcon:UIImageView = {
        let iv = UIImageView()
-        iv.image = UIImage(named: "mine_set")
+        iv.image = UIImage(named: "book")
         return iv
     }()
     
@@ -58,7 +58,7 @@ class homeRecommendCell: UIView {
     // 音乐推荐
     lazy var musicIcon:UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "mine_set")
+        iv.image = UIImage(named: "music")
         return iv
     }()
     
@@ -101,7 +101,7 @@ class homeRecommendCell: UIView {
     // 壁纸
     lazy var wallIcon:UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "mine_set")
+        iv.image = UIImage(named: "wall")
         return iv
     }()
     
@@ -179,7 +179,7 @@ class homeRecommendCell: UIView {
         bookIcon.snp.makeConstraints{(make) in
             make.top.equalTo(self).offset(10)
             make.left.equalTo(self).offset(20)
-            make.width.height.equalTo(30)
+            make.width.height.equalTo(20)
         }
         bookLabel.snp.makeConstraints{(make) in
             make.left.equalTo(bookIcon.snp.right).offset(10)
@@ -217,7 +217,7 @@ class homeRecommendCell: UIView {
         musicIcon.snp.makeConstraints{(make) in
             make.top.equalTo(bookView.snp.bottom).offset(10)
             make.left.equalTo(self).offset(20)
-            make.width.height.equalTo(30)
+            make.width.height.equalTo(20)
         }
         musicLabel.snp.makeConstraints{(make) in
             make.left.equalTo(musicIcon.snp.right).offset(10)
@@ -253,7 +253,7 @@ class homeRecommendCell: UIView {
         wallIcon.snp.makeConstraints{(make) in
             make.top.equalTo(musicView.snp.bottom).offset(10)
             make.left.equalTo(self).offset(20)
-            make.width.height.equalTo(30)
+            make.width.height.equalTo(20)
         }
         wallLabel.snp.makeConstraints{(make) in
             make.left.equalTo(wallIcon.snp.right).offset(10)

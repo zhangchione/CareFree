@@ -31,6 +31,12 @@
 		25E3584A22DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584922DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework */; };
 		25EBFE3722E14E8D0055B7C2 /* YQCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE3622E14E8D0055B7C2 /* YQCircleProgressView.swift */; };
 		25EBFE3C22E16B000055B7C2 /* RecommendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE3B22E16B000055B7C2 /* RecommendController.swift */; };
+		25EBFE4722E18D650055B7C2 /* RecommendHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE4622E18D650055B7C2 /* RecommendHeaderView.swift */; };
+		25EBFE4C22E190E50055B7C2 /* RecommendBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE4B22E190E50055B7C2 /* RecommendBookCell.swift */; };
+		25EBFE4E22E1924B0055B7C2 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE4D22E1924B0055B7C2 /* BookModel.swift */; };
+		25EBFE5022E193090055B7C2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE4F22E193090055B7C2 /* BookCell.swift */; };
+		25EBFE5322E19B680055B7C2 /* RCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE5122E19B680055B7C2 /* RCViewController.swift */; };
+		25EBFE5422E19B680055B7C2 /* RCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25EBFE5222E19B680055B7C2 /* RCViewController.xib */; };
 		F52A269222ACD537000785D4 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A269122ACD537000785D4 /* SetViewController.swift */; };
 		F52A269422ACD544000785D4 /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A269322ACD544000785D4 /* TrashViewController.swift */; };
 		F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D4A22A8D2AD0060EACE /* Const.swift */; };
@@ -120,6 +126,12 @@
 		25E3584922DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YetAnotherAnimationLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25EBFE3622E14E8D0055B7C2 /* YQCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQCircleProgressView.swift; sourceTree = "<group>"; };
 		25EBFE3B22E16B000055B7C2 /* RecommendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendController.swift; sourceTree = "<group>"; };
+		25EBFE4622E18D650055B7C2 /* RecommendHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendHeaderView.swift; sourceTree = "<group>"; };
+		25EBFE4B22E190E50055B7C2 /* RecommendBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendBookCell.swift; sourceTree = "<group>"; };
+		25EBFE4D22E1924B0055B7C2 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		25EBFE4F22E193090055B7C2 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		25EBFE5122E19B680055B7C2 /* RCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCViewController.swift; sourceTree = "<group>"; };
+		25EBFE5222E19B680055B7C2 /* RCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RCViewController.xib; sourceTree = "<group>"; };
 		25FE25E622DEFC4E00FAE883 /* CareFree-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CareFree-Bridging-Header.h"; sourceTree = "<group>"; };
 		7F85E82E5540FEAE07E10186 /* Pods-CareFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.release.xcconfig"; path = "Target Support Files/Pods-CareFree/Pods-CareFree.release.xcconfig"; sourceTree = "<group>"; };
 		AB56F75EB18873700726BCC1 /* Pods-CareFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CareFree/Pods-CareFree.debug.xcconfig"; sourceTree = "<group>"; };
@@ -269,8 +281,70 @@
 			isa = PBXGroup;
 			children = (
 				25EBFE3B22E16B000055B7C2 /* RecommendController.swift */,
+				25EBFE4422E189160055B7C2 /* ViewModel */,
+				25EBFE4322E189110055B7C2 /* Model */,
+				25EBFE4222E189080055B7C2 /* View */,
+				25EBFE4122E189000055B7C2 /* API */,
+				25EBFE5122E19B680055B7C2 /* RCViewController.swift */,
+				25EBFE5222E19B680055B7C2 /* RCViewController.xib */,
 			);
 			path = Recommend;
+			sourceTree = "<group>";
+		};
+		25EBFE4022E1706E0055B7C2 /* EmotionChart */ = {
+			isa = PBXGroup;
+			children = (
+				F536AAC222B10EC100F9853B /* EmotionChartController.swift */,
+			);
+			path = EmotionChart;
+			sourceTree = "<group>";
+		};
+		25EBFE4122E189000055B7C2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		25EBFE4222E189080055B7C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25EBFE4822E190360055B7C2 /* Recommend - 图书 */,
+				25EBFE4522E18D290055B7C2 /* Recommend - 头部视图 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		25EBFE4322E189110055B7C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				25EBFE4D22E1924B0055B7C2 /* BookModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		25EBFE4422E189160055B7C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		25EBFE4522E18D290055B7C2 /* Recommend - 头部视图 */ = {
+			isa = PBXGroup;
+			children = (
+				25EBFE4622E18D650055B7C2 /* RecommendHeaderView.swift */,
+			);
+			path = "Recommend - 头部视图";
+			sourceTree = "<group>";
+		};
+		25EBFE4822E190360055B7C2 /* Recommend - 图书 */ = {
+			isa = PBXGroup;
+			children = (
+				25EBFE4B22E190E50055B7C2 /* RecommendBookCell.swift */,
+				25EBFE4F22E193090055B7C2 /* BookCell.swift */,
+			);
+			path = "Recommend - 图书";
 			sourceTree = "<group>";
 		};
 		25FE25EA22DF02AE00FAE883 /* CareFree */ = {
@@ -331,11 +405,11 @@
 		F5303D4722A8D15E0060EACE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				25EBFE4022E1706E0055B7C2 /* EmotionChart */,
 				25EBFE3822E15A600055B7C2 /* Recommend */,
 				F5303D5022A8D4B60060EACE /* CFHomeViewController.swift */,
 				F55C10D122AB3E4A0036BE31 /* homeHeadCell.swift */,
 				F55C10D322AB3E710036BE31 /* homeRecommendCell.swift */,
-				F536AAC222B10EC100F9853B /* EmotionChartController.swift */,
 				F536AAC422B1152400F9853B /* emotionChartCell.swift */,
 				F536AAE422B1273B00F9853B /* emotionChartModel.swift */,
 			);
@@ -439,7 +513,6 @@
 		F5AC532822AA061E008A78E2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F54A1D1022A90638005836B3 /* diaryModel.swift */,
 				F56C2E0B22AA82D600BCFA11 /* nowModel.swift */,
 			);
 			path = Model;
@@ -552,6 +625,7 @@
 		F5D28D5922BB1C7A008CA4D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F54A1D1022A90638005836B3 /* diaryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -704,6 +778,7 @@
 				F5D9752F22A3B3700014BE15 /* LaunchScreen.storyboard in Resources */,
 				F5C7738822B090F70087520B /* RegisterViewController.xib in Resources */,
 				F54A1D1F22A9428C005836B3 /* writeCell.xib in Resources */,
+				25EBFE5422E19B680055B7C2 /* RCViewController.xib in Resources */,
 				F5303D5B22A8E2B00060EACE /* CFMineCell.xib in Resources */,
 				F5C7739122B092240087520B /* CutUserViewController.xib in Resources */,
 				F5C7739722B092500087520B /* FacebackViewController.xib in Resources */,
@@ -785,7 +860,9 @@
 				F5C7739B22B0927D0087520B /* AlterUserNameController.swift in Sources */,
 				251215A722E060E70025CFD9 /* UserDefaults.swift in Sources */,
 				F5C7738722B090F70087520B /* RegisterViewController.swift in Sources */,
+				25EBFE4722E18D650055B7C2 /* RecommendHeaderView.swift in Sources */,
 				F5D9752522A3B36E0014BE15 /* AppDelegate.swift in Sources */,
+				25EBFE5022E193090055B7C2 /* BookCell.swift in Sources */,
 				F54A1D1622A93422005836B3 /* emotionCell.swift in Sources */,
 				25EBFE3C22E16B000055B7C2 /* RecommendController.swift in Sources */,
 				F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */,
@@ -794,9 +871,11 @@
 				F55C10D622AB4FDC0036BE31 /* albumCell.swift in Sources */,
 				F56C2E0622AA6B2E00BCFA11 /* MainNavigationController.swift in Sources */,
 				F54A1D1B22A93A64005836B3 /* diaryWriteCell.swift in Sources */,
+				25EBFE4C22E190E50055B7C2 /* RecommendBookCell.swift in Sources */,
 				F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */,
 				F5C7738322B08C3A0087520B /* LoginViewController.swift in Sources */,
 				F5303D4F22A8D3B60060EACE /* CFBasicContentView.swift in Sources */,
+				25EBFE5322E19B680055B7C2 /* RCViewController.swift in Sources */,
 				F5A5B2DF22BB385A003BBF5D /* DiaryViewModel.swift in Sources */,
 				F5303D5122A8D4B60060EACE /* CFHomeViewController.swift in Sources */,
 				F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */,
@@ -809,6 +888,7 @@
 				F5A5C3B922B26C830060AA3E /* Diary.swift in Sources */,
 				F52A269222ACD537000785D4 /* SetViewController.swift in Sources */,
 				F5303D5522A8D4CE0060EACE /* CFAlbumViewController.swift in Sources */,
+				25EBFE4E22E1924B0055B7C2 /* BookModel.swift in Sources */,
 				25EBFE3722E14E8D0055B7C2 /* YQCircleProgressView.swift in Sources */,
 				F536AAC322B10EC100F9853B /* EmotionChartController.swift in Sources */,
 				F5303D5722A8D4D80060EACE /* CFMineViewController.swift in Sources */,

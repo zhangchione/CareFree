@@ -11,6 +11,8 @@ import UIKit
 
 class DshowDiaryCell: UICollectionViewCell {
     
+    var diaryContents = [diaryModel]()
+    
     lazy var day: UILabel = {
         let label = UILabel()
         label.text = "24"
@@ -84,6 +86,13 @@ class DshowDiaryCell: UICollectionViewCell {
     
     func updateWriteUI(){
         
+    }
+    
+    var conten:[diaryModel]?{
+        didSet{
+            guard let model = conten else { return }
+            
+        }
     }
     
     func configUI(){

@@ -149,7 +149,7 @@ class CFHomeViewController: UIViewController {
     }
     
     @objc func recommendClick(){
-        let recommendClickVC = RecommendController()
+        let recommendClickVC = RCViewController()
         self.navigationController?.pushViewController(recommendClickVC, animated: true)
     }
 }
