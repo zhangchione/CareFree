@@ -12,4 +12,5 @@ import UIKit
 struct  nowModel  {
     var time = ""
     var content = ""
+    var mode = 0
 }

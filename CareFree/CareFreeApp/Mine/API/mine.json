@@ -1,0 +1,19 @@
+{
+    "msg" : "success",
+    "token" : "b3bb38d2cf642a21cf49ea879c3be459345e8091",
+    "code": 200,
+    "data": {
+        "head_pic" : "http://pv6ra2z2b.bkt.clouddn.com/%E6%A4%AD%E5%9C%86%E5%BD%A2@3x.png",
+        "id" : "4196",
+        "username" : "Jeffrey",
+        "sex": "0",
+        "mode": "36",
+        "day_notes" : "17",
+        "now_notes" :"37",
+        "password": "zc123...",
+        "mode_value": [36,10,20,-15,-39,45,15],
+    }
+}
+    
+    
+

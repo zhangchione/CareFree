@@ -45,5 +45,10 @@
 	<string>我们需要相机权限来进行照片修改头像</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>我们需要相册权限来进行照片修改头像</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

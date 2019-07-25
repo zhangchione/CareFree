@@ -60,10 +60,42 @@ class DiaryViewController: UIViewController {
         return DiaryViewModel()
     }()
 
-    
+    var contents = [diaryModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var model = diaryModel()
+        model.day = "25"
+        model.yearMouth = "2019年7月"
+        model.week = "周四"
+        model.content = "  上班好累呀！好想休息，去浪迹天涯诶，上班真累，难过ing 😞 🙁！"
+        model.value = -15
+        model.count = 4
+        contents.append(model)
+        
+        model.day = "24"
+        model.yearMouth = "2019年7月"
+        model.week = "周三"
+        model.content = "  今天的歌很平静如水就像我的心情一样。静下心来感受生活"
+        model.value = 12
+        model.count = 3
+        contents.append(model)
+        
+        model.day = "23"
+        model.yearMouth = "2019年7月"
+        model.week = "周二"
+        model.content = "  关于你的回忆，我只知道，你不会再理我了"
+        model.value = -12
+        model.count = 1
+        contents.append(model)
+        
+        model.day = "22"
+        model.yearMouth = "2019年7月"
+        model.week = "周一"
+        model.content = "  你知道嘛，认认真真喜欢一个人，会很累呢 😫！"
+        model.value = -30
+        model.count = 2
+        contents.append(model)
+        
         configUI()
         configNavBar()
     }
@@ -133,7 +165,7 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         if section <= 1 {
             return 1
         }
-        return 3
+        return contents.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -148,7 +180,7 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         return cell
         }else {
             let cell :DshowDiaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: DshowDiaryCellID, for: indexPath) as! DshowDiaryCell
-            
+            cell.conten = contents[indexPath.row]
             return cell
         }
     }
@@ -157,7 +189,7 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         if indexPath.section == 0 {
             return CGSize(width: 374, height: 60)
         }else if indexPath.section == 1 {
-        return CGSize(width: 374, height: 160)
+            return CGSize(width: 374, height: 160)
         }else {
             return CGSize(width: 374, height: 180)
         }

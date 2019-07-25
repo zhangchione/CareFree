@@ -26,7 +26,7 @@ class showHeadCell: UIView {
     
     lazy var day: UILabel = {
         let label = UILabel()
-        label.text = "24"
+        label.text = "25"
         label.font = UIFont(name: "PingFangSC-Semibold", size: 44)
        // label.backgroundColor = UIColor.cyan
         //label.backgroundColor = UIColor.red
@@ -35,7 +35,7 @@ class showHeadCell: UIView {
     
     lazy var week: UILabel = {
         let label = UILabel()
-        label.text = "周五"
+        label.text = "周四"
         label.font = UIFont(name: "PingFangSC-Regular", size: 13)
        // label.backgroundColor = UIColor.yellow
         //label.backgroundColor = UIColor.green
@@ -44,7 +44,7 @@ class showHeadCell: UIView {
     
     lazy var yearMouth: UILabel = {
         let label = UILabel()
-        label.text = "2019年5月"
+        label.text = "2019年7月"
         label.font = UIFont(name: "PingFangSC-Regular", size: 13)
         //label.backgroundColor = UIColor.blue
         //label.backgroundColor = UIColor.blue
@@ -60,7 +60,7 @@ class showHeadCell: UIView {
     
     lazy var emotionValue:UILabel = {
        let label = UILabel()
-            label.text = "情绪值 27"
+            label.text = "情绪值 -12"
         label.textColor = UIColor.white
         return label
     }()
@@ -84,7 +84,7 @@ class showHeadCell: UIView {
     
     lazy var content:UILabel = {
        let label = UILabel()
-        label.text = "泡在了实验室一天，果然充实的学习还是最幸福的"
+        label.text = "  上班好累呀！好想休息，去浪迹天涯诶，上班真累，难过ing 😞 🙁！"
         label.font = UIFont(name: "PingFangSC-Regular", size: 16)
         label.textColor = UIColor.init(r: 127, g: 127, b: 127)
         label.numberOfLines = 0
@@ -173,7 +173,7 @@ class showHeadCell: UIView {
         emotionValue.snp.makeConstraints{(make) in
             make.centerY.equalTo(rightView.snp.centerY)
             make.centerX.equalTo(rightView.snp.centerX)
-            make.width.equalTo(80)
+            make.width.equalTo(85)
             make.height.equalTo(25)
         }
         

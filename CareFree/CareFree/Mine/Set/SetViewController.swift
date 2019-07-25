@@ -202,6 +202,7 @@ extension SetViewController{
     }
     @objc func returnLogin(){
         print("退出登陆")
+        
         let loginVC = LoginViewController()
         self.navigationController?.pushViewController(loginVC, animated: true)
     }

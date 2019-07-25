@@ -13,7 +13,7 @@ import SnapKit
 
 class CFAlbumViewController: UIViewController {
 
-    fileprivate let dataSource = ArrayDataSource(data:[1,2,3,4])
+    fileprivate let dataSource = ArrayDataSource(data:[1])
     fileprivate lazy var collectionView = CollectionView()
     
     fileprivate lazy var Title:UILabel = {
@@ -58,12 +58,17 @@ class CFAlbumViewController: UIViewController {
         let sizeSource = {(index:Int,data:Int,collectionSize:CGSize) ->CGSize in
             return CGSize(width: collectionSize.width, height: 520)
         }
-        
+
         let provider = BasicProvider(
             dataSource: dataSource,
             viewSource: viewSource,
             sizeSource:sizeSource
         )
+        provider.tapHandler = { context -> Void in
+            let albumMoreVC = AlbumMoreViewController()
+            self.navigationController?.pushViewController(albumMoreVC, animated: true)
+            print("Cell")
+        }
         collectionView.provider = provider
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }

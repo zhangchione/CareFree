@@ -19,21 +19,21 @@ class DwriteDiaryCell: UICollectionViewCell {
     
     lazy var day: UILabel = {
         let label = UILabel()
-        label.text = "24"
+        label.text = "25"
         label.font = UIFont(name: "PingFangSC-Semibold", size: 32)
         return label
     }()
     
     lazy var week: UILabel = {
         let label = UILabel()
-        label.text = "周五"
+        label.text = "周四"
         label.font = UIFont(name: "PingFangSC-Regular", size: 12)
         return label
     }()
     
     lazy var yearMouth: UILabel = {
         let label = UILabel()
-        label.text = "2019年5月"
+        label.text = "2019年7月"
         label.font = UIFont(name: "PingFangSC-Regular", size: 12)
         return label
     }()

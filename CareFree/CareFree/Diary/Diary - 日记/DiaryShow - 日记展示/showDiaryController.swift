@@ -40,10 +40,25 @@ class showDiaryController: UIViewController {
         var model = nowModel()
 
         model.content = "期待已久的书终于到了"
-        model.time = "12点17分"
-        for _ in 1...6 {
-            self.dataBodySource.data.append(model)
-        }
+        model.time = "10点17分"
+        model.mode = 20
+        self.dataBodySource.data.append(model)
+        model.content = "书没有想象中的好"
+        model.time = "11点32分"
+        model.mode = -10
+        self.dataBodySource.data.append(model)
+        model.content = "书很难看诶！！☹️！"
+        model.time = "12点21分"
+        model.mode = -20
+        self.dataBodySource.data.append(model)
+        model.content = "朋友说送我一本好书，😸！开心"
+        model.time = "14点32分"
+        model.mode = 36
+        self.dataBodySource.data.append(model)
+        model.content = "真不好过，压抑啊 ！"
+        model.time = "16点32分"
+        model.mode = -34
+        self.dataBodySource.data.append(model)
         self.collectionView.reloadData()
     }
     
@@ -89,7 +104,7 @@ class showDiaryController: UIViewController {
         )
         
         let viewBodySource = ClosureViewSource(viewUpdater: {(view:showBodyCell,data:nowModel,index:Int) in
-            view.updateUI()
+            view.updateUI(with: data)
         })
         let sizeBodySource = {(index:Int,data:nowModel,collectionSize:CGSize) -> CGSize in
             return CGSize(width: collectionSize.width, height: 140)
@@ -107,7 +122,7 @@ class showDiaryController: UIViewController {
         
         collectionView.provider = finalProvider
         
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
     }
     
     

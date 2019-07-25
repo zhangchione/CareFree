@@ -30,7 +30,8 @@ class showBodyCell: UIView {
         let label = UILabel()
         label.text = "泡在了实验室一天，果然充实的学习还是最幸福的"
         label.font = UIFont(name: "PingFangSC-Regular", size: 16)
-        label.textColor = UIColor.init(r: 127, g: 127, b: 127)
+        label.textColor = UIColor.white
+       // label.textColor = UIColor.init(r: 127, g: 127, b: 127)
         label.numberOfLines = 0
         return label
     }()
@@ -44,6 +45,24 @@ class showBodyCell: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+
+    
+    func updateUI(with data:nowModel){
+        self.time.text = data.time
+        self.content.text = data.content
+        if data.mode < 0 && data.mode > -25 {
+            self.backgruondView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
+        }
+        else if data.mode < -25 {
+                 self.backgruondView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
+        }
+        else if data.mode > 0 && data.mode < 25 {
+                self.backgruondView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
+        }
+        else {
+                 self.backgruondView.backgroundColor =  UIColor.init(r: 57, g: 210, b: 214)
+        }
+    }
     func configUI(){
         addSubview(backgruondView)
         addSubview(time)
@@ -81,8 +100,6 @@ class showBodyCell: UIView {
         self.layer.shadowOpacity = 0.6
         self.layer.masksToBounds = false
     }
-    func updateUI(){
-        
-    }
+
     
 }

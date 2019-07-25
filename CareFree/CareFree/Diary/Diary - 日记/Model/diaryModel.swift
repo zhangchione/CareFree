@@ -15,8 +15,6 @@ struct  diaryModel  {
     var yearMouth = " "
     var content = " "
     var value = 0
-    var happy = 0
-    var pingjing = 0
-    var nanguo = 0
-    var yayi = 0
+    var mode = [1,2,3,4]
+    var count = 0
 }

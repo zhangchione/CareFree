@@ -88,12 +88,31 @@ class DshowDiaryCell: UICollectionViewCell {
         
     }
     
-    var conten:[diaryModel]?{
+    var conten:diaryModel?{
         didSet{
             guard let model = conten else { return }
+            self.day.text = model.day
+            self.yearMouth.text = model.yearMouth
+            self.content.text = model.content
+            self.week.text = model.week
+            self.emotionValue.text = "情绪值 " + String(model.value)
+            
+            if model.value < 0 && model.value > -25 {
+                self.emotionValue.textColor = UIColor.init(r: 155, g: 133, b: 255)
+            }
+            else if model.value < -25 {
+                self.emotionValue.textColor = UIColor.init(r: 31, g: 69, b: 99)
+            }
+            else if model.value > 0 && model.value < 25 {
+                 self.emotionValue.textColor = UIColor.init(r: 100, g: 175, b: 232)
+            }
+            else {
+                self.emotionValue.textColor =  UIColor.init(r: 57, g: 210, b: 214)
+            }
             
         }
     }
+    
     
     func configUI(){
         addSubview(day)
@@ -170,12 +189,57 @@ class DshowDiaryCell: UICollectionViewCell {
 
 extension DshowDiaryCell:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return conten!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "emotionCell", for: indexPath) as! emotionCell
         cell.selectionStyle = .none
+        if conten!.count == 0 {
+            cell.waiView.backgroundColor = UIColor.white
+            cell.modeData.text = ""
+        }
+        else if conten!.count == 1 {
+            cell.waiView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
+            cell.modeData.text = "难过\(1)条"
+        }
+        else if conten!.count == 2 {
+            if indexPath.row == 0 {
+                cell.waiView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
+                cell.modeData.text = "压抑\(2)条"
+            } else {
+            cell.waiView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
+            cell.modeData.text = "平静\(1)条"
+            }
+        }
+        else if conten!.count == 3 {
+            if indexPath.row == 0 {
+                cell.waiView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
+                cell.modeData.text = "平静\(1)条"
+            } else if indexPath.row == 1 {
+                cell.waiView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
+                cell.modeData.text = "难过\(1)条"
+            }else {
+                cell.waiView.backgroundColor = UIColor.init(r: 57, g: 210, b: 214)
+                cell.modeData.text = "开心\(1)条"
+            }
+        }
+        else if conten?.count == 4 {
+            if indexPath.row == 0 {
+                cell.waiView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
+                cell.modeData.text = "平静\(1)条"
+            } else if indexPath.row == 1 {
+                cell.waiView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
+                cell.modeData.text = "难过\(2)条"
+            }else if indexPath.row == 2{
+                cell.waiView.backgroundColor = UIColor.init(r: 57, g: 210, b: 214)
+                cell.modeData.text = "开心\(1)条"
+            }
+            else {
+                cell.waiView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
+                cell.modeData.text = "压抑\(1)条"
+            }
+        }
         return cell
     }
     

@@ -19,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let b = 1
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+
+        
         Bmob.register(withAppKey: "e41b7c9e8c0729aa40a5553ec3c19fa5")
-        save()
+        //save()
         let realm = try! Realm()
         print(realm.configuration.fileURL!)
         // 从 Realm 数据库中删除所有对象
@@ -30,7 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let now = Date()
          //print(now.year(),now.month(),now.day(),now.weekDay())
         configVC()
+        
+//        // 静态图片引导页
+//        self.setStaticGuidePage()
         return true
+    }
+    func setStaticGuidePage() {
+        let imageNameArray: [String] = ["lead1", "lead2", "lead3","lead4"]
+        let guideView = HHGuidePageHUD.init(imageNameArray: imageNameArray, isHiddenSkipButton: false)
+        self.window?.rootViewController?.view.addSubview(guideView)
     }
     
     func save(){
@@ -89,13 +99,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func mainTabBarVC() -> ESTabBarController{
 
-        let homeVC = CFHomeViewController()
+        let homeVC = CFHomeController()
         let diaryVC = DiaryViewController()
         let albumVC = CFAlbumViewController()
-        let mineVC = CFMineViewController()
+        let mineVC = CFMineController()
         homeVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "首页", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))
-        diaryVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "日记", image: UIImage(named: "find"), selectedImage: UIImage(named: "find_1"))
-        albumVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "相册", image: UIImage(named: "photo"), selectedImage: UIImage(named: "photo_1"))
+        diaryVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "日记", image: UIImage(named: "分组2"), selectedImage: UIImage(named: "find_1"))
+        albumVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "相册", image: UIImage(named: "分组4"), selectedImage: UIImage(named: "photo_1"))
         mineVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "我的", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))
 
         let homeNav = MainNavigationController.init(rootViewController: homeVC)

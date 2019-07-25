@@ -17,7 +17,9 @@ target 'CareFree' do
   pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'dev_for_swift5.0'
   pod 'SwiftyJSON'
   
+  pod 'Kingfisher'
   pod 'BmobSDK'
+  
   pod "BSImagePicker", "~> 2.8"
   #图片选择器
   #pod 'DKImagePickerController'

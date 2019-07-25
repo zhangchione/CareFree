@@ -14,7 +14,7 @@ class albumCell: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 28)
         label.textColor = .black
-        label.text = "2019年5月"
+        label.text = "2019年7月"
         return label
     }()
     
@@ -66,15 +66,32 @@ extension albumCell:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "albumTwoCell", for: indexPath) as! albumTwoCell
+        if indexPath.row == 0 {
+            cell.imgOne.image = UIImage(named: "img11")
+            cell.imgTwo.image = UIImage(named: "img12")
+        }
         if indexPath.row == 1 {
+            cell.imgOne.image = UIImage(named: "img21")
+            cell.imgTwo.image = UIImage(named: "img22")
+            cell.moreImg.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
+            cell.imgNumber.text = "4+"
             cell.emotionCircle.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
         }
         if indexPath.row == 2 {
+            cell.imgOne.image = UIImage(named: "img31")
             cell.emotionCircle.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
+            cell.moreImg.isHidden = true
+            cell.imgNumber.isHidden = true
+                        cell.imgTwo.isHidden = true
         }
         if indexPath.row == 3{
             cell.line.backgroundColor = .white
             cell.emotionCircle.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
+            cell.imgOne.image = UIImage(named: "img41")
+            cell.imgTwo.image = UIImage(named: "img42")
+            cell.moreImg.isHidden = true
+            cell.imgNumber.isHidden = true
+            
         }
         return cell
     }

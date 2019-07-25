@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MineCell: UIView {
 
@@ -84,7 +85,7 @@ class MineCell: UIView {
     lazy var emotionValue:UILabel = {
        let label = UILabel()
         label.textColor = UIColor.white
-        label.text = "31"
+        label.text = "36"
         label.textAlignment = NSTextAlignment.left
         label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
         return label
@@ -127,7 +128,7 @@ class MineCell: UIView {
     lazy var diaryHeadValue:UILabel = {
         let label = UILabel()
         label.textColor = UIColor.black
-        label.text = "37"
+        label.text = "17"
         label.textAlignment = NSTextAlignment.left
         label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
         return label
@@ -148,7 +149,7 @@ class MineCell: UIView {
     lazy var diaryBackValue:UILabel = {
         let label = UILabel()
         label.textColor = UIColor.black
-        label.text = "217"
+        label.text = "37"
         label.textAlignment = NSTextAlignment.left
         label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
         return label
@@ -283,7 +284,14 @@ class MineCell: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateUI(){
+    func updateUI(with data: MineModel){
+        let urlTitleImage = URL(string: data.head_pic)
+        self.userImg.kf.setImage(with: urlTitleImage)
+        self.userName.text = data.username
+        self.id.text = "ID: " + data.id
+        self.emotionValue.text = data.mode
+        self.diaryHeadValue.text = data.day_notes
+        self.diaryBackValue.text = data.now_notes
         
     }
     
