@@ -294,6 +294,14 @@ class MineCell: UIView {
     }
     
     func updateUI(with data: MineModel){
+        
+        DispatchQueue.main.async {
+            let  emotionLayer = CAGradientLayer()
+            emotionLayer.frame = self.emotionView.bounds
+            emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
+            emotionLayer.cornerRadius = 25
+            self.oneBackView.layer.addSublayer(emotionLayer)
+        }
         let urlTitleImage = URL(string: data.head_pic)
         //self.userImg.kf.setImage(with: urlTitleImage)
         self.userName.text = data.username
