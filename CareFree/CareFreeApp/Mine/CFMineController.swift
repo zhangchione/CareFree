@@ -67,6 +67,8 @@ class CFMineController: CFBaseViewController {
             view.moodView.addGestureRecognizer(diaryChartTap)
             
             view.setView.layer.add(self.impliesAnimation, forKey: nil)
+            
+            
         })
         let sizeSource = {(index:Int,data:MineModel,collectionSize:CGSize) ->CGSize in
             return CGSize(width: collectionSize.width, height: 820)
@@ -124,6 +126,7 @@ extension CFMineController {
             dataSource.data.append(mappedObject)
             self.collectionView.reloadData()
         }
+        
 
     }
 }

@@ -16,8 +16,12 @@ struct MineModel:HandyJSON {
     var username = ""
     var password = ""
     var mode = ""
-    var mode_value = Int()
+    var mode_value = [Int]()
     var sex = ""
     var now_notes = ""
     var head_pic = ""
+}
+
+struct MineMoodModel {
+    var mode_value = Int()
 }

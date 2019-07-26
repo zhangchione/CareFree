@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import CollectionKit
 
 class MineCell: UIView {
 
@@ -231,6 +232,14 @@ class MineCell: UIView {
         vi.image = UIImage(named: "mine_chat")
         return vi
     }()
+    // 心情柱状图
+    let dataHeadSource = ArrayDataSource(data:[emotionChartModel]())
+    lazy var  collectionView: CollectionView = {
+        let cv = CollectionView()
+        cv.backgroundColor = UIColor.clear
+        return cv
+    }()
+    
     lazy var moodValue:UILabel = {
         let label = UILabel()
         label.textColor = UIColor.black
@@ -292,6 +301,33 @@ class MineCell: UIView {
         self.emotionValue.text = data.mode
         self.diaryHeadValue.text = data.day_notes
         self.diaryBackValue.text = data.now_notes
+        
+        var model = emotionChartModel()
+        for index in 0 ..< data.mode_value.count {
+            if data.mode_value[index] > 0 {
+                model.bottomValue = 0
+                model.topValue = data.mode_value[index]
+                if data.mode_value[index] >= 25 {
+                    model.color =  UIColor.init(r: 57, g: 210, b: 214)
+                }
+                else {
+                    model.color = UIColor.init(r: 100, g: 175, b: 232)
+                }
+            }
+            else {
+                model.bottomValue = -data.mode_value[index]
+                model.topValue = 0
+                if data.mode_value[index] <= -25 {
+                    model.color = UIColor.init(r: 31, g: 69, b: 99)
+                }
+                else {
+                    model.color = UIColor.init(r: 155, g: 133, b: 255)
+                }
+            }
+            model.day = String(index + 1)
+            self.dataHeadSource.data.append(model)
+        }
+        self.collectionView.reloadData()
         
     }
     
@@ -523,6 +559,7 @@ class MineCell: UIView {
         moodView.addSubview(moodValue)
         moodView.addSubview(lineMoodView)
         moodView.addSubview(moodDayLabel)
+        moodView.addSubview(collectionView)
         
         moodView.snp.makeConstraints{(make) in
             make.right.equalTo(self).offset(-22)
@@ -541,6 +578,30 @@ class MineCell: UIView {
             make.centerY.equalTo(moodLabel.snp.centerY)
             make.width.height.equalTo(20)
         }
+        
+        // 心情图
+        collectionView.snp.makeConstraints{(make) in
+            make.centerX.equalTo(moodView.snp.centerX)
+            make.centerY.equalTo(moodView.snp.centerY).offset(5)
+            make.width.equalTo(150)
+            make.height.equalTo(100)
+        }
+        let viewHeadSource = ClosureViewSource(viewUpdater: {(view:MineChartCell,data:emotionChartModel,index:Int) in
+            view.updateUI(with: data)
+//            view.backgroundColor = UIColor.yellow
+        })
+        let sizeHeadSource = {(index:Int,data:emotionChartModel,collectionSize:CGSize) ->CGSize in
+            return CGSize(width: 15, height: 90)
+        }
+        
+        let provider = BasicProvider(
+            dataSource: dataHeadSource,
+            viewSource: viewHeadSource,
+            sizeSource:sizeHeadSource
+        )
+        provider.layout = FlowLayout(spacing: 5)
+        collectionView.provider = provider
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         
         moodValue.snp.makeConstraints{(make) in
             make.left.equalTo(moodView.snp.left).offset(20)

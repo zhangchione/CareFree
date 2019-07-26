@@ -101,6 +101,7 @@
 		F5C7739722B092500087520B /* FacebackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7739522B092500087520B /* FacebackViewController.xib */; };
 		F5C7739B22B0927D0087520B /* AlterUserNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7739922B0927D0087520B /* AlterUserNameController.swift */; };
 		F5C7739C22B0927D0087520B /* AlterUserNameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7739A22B0927D0087520B /* AlterUserNameController.xib */; };
+		F5C8D40322EA900E002215F4 /* MineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C8D40222EA900E002215F4 /* MineChartCell.swift */; };
 		F5D28D5622BB1921008CA4D2 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D28D5522BB1921008CA4D2 /* DiaryViewController.swift */; };
 		F5D28D5E22BB1D45008CA4D2 /* DsearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D28D5D22BB1D45008CA4D2 /* DsearchCell.swift */; };
 		F5D28D6122BB1DD8008CA4D2 /* DshowDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D28D6022BB1DD8008CA4D2 /* DshowDiaryCell.swift */; };
@@ -215,6 +216,7 @@
 		F5C7739522B092500087520B /* FacebackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebackViewController.xib; sourceTree = "<group>"; };
 		F5C7739922B0927D0087520B /* AlterUserNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterUserNameController.swift; sourceTree = "<group>"; };
 		F5C7739A22B0927D0087520B /* AlterUserNameController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlterUserNameController.xib; sourceTree = "<group>"; };
+		F5C8D40222EA900E002215F4 /* MineChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChartCell.swift; sourceTree = "<group>"; };
 		F5D28D5522BB1921008CA4D2 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F5D28D5D22BB1D45008CA4D2 /* DsearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DsearchCell.swift; sourceTree = "<group>"; };
 		F5D28D6022BB1DD8008CA4D2 /* DshowDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DshowDiaryCell.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 		F58869BE22E992B20047BEF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F5C8D40222EA900E002215F4 /* MineChartCell.swift */,
 				F5FCFA6022AE85CB00C7B8A0 /* MineCell.swift */,
 			);
 			path = View;
@@ -995,7 +998,26 @@
 				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
-				"",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImageView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YetAnotherAnimationLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1067,6 +1089,7 @@
 				F52A269222ACD537000785D4 /* SetViewController.swift in Sources */,
 				F58869A922E96CBC0047BEF5 /* UIImage+GIF.swift in Sources */,
 				F5303D5522A8D4CE0060EACE /* CFAlbumViewController.swift in Sources */,
+				F5C8D40322EA900E002215F4 /* MineChartCell.swift in Sources */,
 				25EBFE4E22E1924B0055B7C2 /* BookModel.swift in Sources */,
 				25EBFE3722E14E8D0055B7C2 /* YQCircleProgressView.swift in Sources */,
 				F536AAC322B10EC100F9853B /* EmotionChartController.swift in Sources */,

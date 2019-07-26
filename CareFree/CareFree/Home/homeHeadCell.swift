@@ -167,7 +167,7 @@ class homeHeadCell: UIView {
         return vi
     }()
     
-         let dataHeadSource = ArrayDataSource(data:[emotionChartModel]())
+    let dataHeadSource = ArrayDataSource(data:[emotionChartModel]())
     lazy var  collectionView: CollectionView = {
         let cv = CollectionView()
         cv.backgroundColor = UIColor.clear

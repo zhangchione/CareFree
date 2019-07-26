@@ -99,13 +99,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func mainTabBarVC() -> ESTabBarController{
 
-        let homeVC = CFHomeController()
+        let homeVC = CFHomeViewController()
         let diaryVC = DiaryViewController()
         let albumVC = CFAlbumViewController()
         let mineVC = CFMineController()
         homeVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "首页", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))
-        diaryVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "日记", image: UIImage(named: "分组2"), selectedImage: UIImage(named: "find_1"))
-        albumVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "相册", image: UIImage(named: "分组4"), selectedImage: UIImage(named: "photo_1"))
+        diaryVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "日记", image: UIImage(named: "分组2"), selectedImage: UIImage(named: "分组2"))
+        albumVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "相册", image: UIImage(named: "分组4"), selectedImage: UIImage(named: "分组4"))
         mineVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "我的", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))
 
         let homeNav = MainNavigationController.init(rootViewController: homeVC)
