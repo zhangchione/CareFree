@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          //print(now.year(),now.month(),now.day(),now.weekDay())
         configVC()
         
-//        // 静态图片引导页
-//        self.setStaticGuidePage()
+        // 静态图片引导页
+        self.setStaticGuidePage()
         return true
     }
     func setStaticGuidePage() {

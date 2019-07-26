@@ -15,7 +15,6 @@ PODS:
   - EachNavigationBar (1.9.2)
   - ESTabBarController-swift (2.6.4)
   - HandyJSON (5.0.0-beta.1)
-  - Kingfisher (4.10.1)
   - lottie-ios (3.0.3)
   - MJRefresh (3.1.16)
   - ProgressHUD (2.51)
@@ -42,7 +41,6 @@ DEPENDENCIES:
   - EachNavigationBar
   - ESTabBarController-swift
   - HandyJSON (from `https://github.com/alibaba/HandyJSON.git`, branch `dev_for_swift5.0`)
-  - Kingfisher
   - lottie-ios
   - MJRefresh
   - ProgressHUD
@@ -61,7 +59,6 @@ SPEC REPOS:
     - CollectionKit
     - EachNavigationBar
     - ESTabBarController-swift
-    - Kingfisher
     - lottie-ios
     - MJRefresh
     - ProgressHUD
@@ -94,7 +91,6 @@ SPEC CHECKSUMS:
   EachNavigationBar: 4978d1327a85d7c50d070b0a387f6e30fa089cfc
   ESTabBarController-swift: 58cca4ab7de980657d99a02181c1ff310983e975
   HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
-  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
@@ -107,6 +103,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 645c557942bf1b428ac5eba5ba17b7870591ce2d
+PODFILE CHECKSUM: 5c247eb046600ee6eb66205b41689622b0982a1c
 
 COCOAPODS: 1.6.1

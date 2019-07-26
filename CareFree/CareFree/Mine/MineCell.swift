@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Kingfisher
+//import Kingfisher
 import CollectionKit
 
 class MineCell: UIView {
@@ -295,7 +295,7 @@ class MineCell: UIView {
     
     func updateUI(with data: MineModel){
         let urlTitleImage = URL(string: data.head_pic)
-        self.userImg.kf.setImage(with: urlTitleImage)
+        //self.userImg.kf.setImage(with: urlTitleImage)
         self.userName.text = data.username
         self.id.text = "ID: " + data.id
         self.emotionValue.text = data.mode

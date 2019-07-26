@@ -173,6 +173,7 @@
 		F54A1D1A22A93A64005836B3 /* diaryWriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryWriteCell.swift; sourceTree = "<group>"; };
 		F54A1D1C22A9428C005836B3 /* writeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = writeCell.swift; path = ../../../OldCoding/Cell/diaryTwoCell/writeCell.swift; sourceTree = "<group>"; };
 		F54A1D1D22A9428C005836B3 /* writeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = writeCell.xib; path = ../../../OldCoding/Cell/diaryTwoCell/writeCell.xib; sourceTree = "<group>"; };
+		F550784222EAEE3A00CC6F7B /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55C10D122AB3E4A0036BE31 /* homeHeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeHeadCell.swift; sourceTree = "<group>"; };
 		F55C10D322AB3E710036BE31 /* homeRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeRecommendCell.swift; sourceTree = "<group>"; };
 		F55C10D522AB4FDC0036BE31 /* albumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = albumCell.swift; sourceTree = "<group>"; };
@@ -266,6 +267,7 @@
 		198E68254BFD076888BF7F91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F550784222EAEE3A00CC6F7B /* Kingfisher.framework */,
 				25E3582322DEEDD80063AA9E /* Alamofire.framework */,
 				25E3582522DEEDD80063AA9E /* BSGridCollectionViewLayout.framework */,
 				25E3582722DEEDD80063AA9E /* BSImagePicker.framework */,
@@ -980,7 +982,6 @@
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -998,26 +999,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSGridCollectionViewLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImagePicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSImageView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EachNavigationBar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YetAnotherAnimationLibrary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
