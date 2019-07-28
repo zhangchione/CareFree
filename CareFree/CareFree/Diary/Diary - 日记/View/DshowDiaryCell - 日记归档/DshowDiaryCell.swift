@@ -88,22 +88,25 @@ class DshowDiaryCell: UICollectionViewCell {
         
     }
     
-    var conten:diaryModel?{
+    var conten:DiaryTodayModel?{
         didSet{
             guard let model = conten else { return }
-            self.day.text = model.day
-            self.yearMouth.text = model.yearMouth
-            self.content.text = model.content
-            self.week.text = model.week
-            self.emotionValue.text = "情绪值 " + String(model.value)
             
-            if model.value < 0 && model.value > -25 {
+            
+            self.day.text = (model.date as NSString).substring(to: 2)
+            self.yearMouth.text = (model.date as NSString).substring(with: NSMakeRange(3,8))
+            self.week.text = (model.date as NSString).substring(from: 19)
+            
+            self.content.text = model.content
+            self.emotionValue.text = "情绪值 " + String(model.mode)
+
+            if model.mode < 0 && model.mode > -25 {
                 self.emotionValue.textColor = UIColor.init(r: 155, g: 133, b: 255)
             }
-            else if model.value < -25 {
+            else if model.mode < -25 {
                 self.emotionValue.textColor = UIColor.init(r: 31, g: 69, b: 99)
             }
-            else if model.value > 0 && model.value < 25 {
+            else if model.mode > 0 && model.mode < 25 {
                  self.emotionValue.textColor = UIColor.init(r: 100, g: 175, b: 232)
             }
             else {

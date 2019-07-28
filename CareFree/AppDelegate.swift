@@ -34,14 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configVC()
         
         // 静态图片引导页
-        self.setStaticGuidePage()
+        //self.setStaticGuidePage()
         return true
     }
-    func setStaticGuidePage() {
-        let imageNameArray: [String] = ["lead1", "lead2", "lead3","lead4"]
-        let guideView = HHGuidePageHUD.init(imageNameArray: imageNameArray, isHiddenSkipButton: false)
-        self.window?.rootViewController?.view.addSubview(guideView)
-    }
+//    func setStaticGuidePage() {
+//        let imageNameArray: [String] = ["lead1", "lead2", "lead3","lead4"]
+//        let guideView = HHGuidePageHUD.init(imageNameArray: imageNameArray, isHiddenSkipButton: false)
+//        self.window?.rootViewController?.view.addSubview(guideView)
+//    }
     
     func save(){
         let use:BmobObject = BmobObject(className: "_User")

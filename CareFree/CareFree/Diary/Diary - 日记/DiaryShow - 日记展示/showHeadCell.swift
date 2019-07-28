@@ -8,9 +8,14 @@
 
 import UIKit
 
+// 添加按钮点击代理方法
+protocol diaryShowDelegate:NSObjectProtocol {
+    func diaryShowClick(mood:String)
+}
+
 class showHeadCell: UIView {
     
-        var emotionLayer: CAGradientLayer!
+    var emotionLayer: CAGradientLayer!
     
     lazy var topView : UIView = {
         let vi = UIView()

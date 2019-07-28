@@ -30,29 +30,35 @@ class LoginViewController: UIViewController {
     @IBAction func loginBtn(_ sender: UIButton) {
         
    
+        ProgressHUD.show("登录中",interaction: true)
+        
+
+        ProgressHUD.dismiss()
+        self.navigationController?.popViewController(animated: true)
+        ProgressHUD.showSuccess("登录成功")
         // ProgressHUD.show("登陆中")
         let loginApiUrl = getApiLogin(userId: userID.text!, password: password.text!)
-        
-        let URL = "https://b97fe674.ngrok.io/login?username=17408001048&password=test"
-        
-        Alamofire.request(URL).responseJSON{(resonds) in
-            guard resonds.result.isSuccess else {
-                print("请求错误")
-                return
-            }
-            if let value = resonds.result.value{
-                let json = JSON(value)
-                print(json)
-            }
-        }
-        
-        Alamofire.request(loginApiUrl).responseJSON{(responds) in
-            guard responds.result.isSuccess else { ProgressHUD.showError("网络请求失败"); ProgressHUD.dismiss();  return }
-            if let value = responds.result.value {
-                let json = JSON(value)
-                print(json)
-            }
-        }
+//
+//        let URL = "https://b97fe674.ngrok.io/login?username=17408001048&password=test"
+//
+//        Alamofire.request(URL).responseJSON{(resonds) in
+//            guard resonds.result.isSuccess else {
+//                print("请求错误")
+//                return
+//            }
+//            if let value = resonds.result.value{
+//                let json = JSON(value)
+//                print(json)
+//            }
+//        }
+//
+//        Alamofire.request(loginApiUrl).responseJSON{(responds) in
+//            guard responds.result.isSuccess else { ProgressHUD.showError("网络请求失败"); ProgressHUD.dismiss();  return }
+//            if let value = responds.result.value {
+//                let json = JSON(value)
+//                print(json)
+//            }
+//        }
         
 //            //查找GameScore表
 //            let query:BmobQuery = BmobQuery(className: "_User")

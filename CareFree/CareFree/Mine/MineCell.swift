@@ -60,7 +60,7 @@ class MineCell: UIView {
     }()
     lazy var favIco:UIImageView = {
        let vi = UIImageView()
-        vi.image = UIImage(named: "favor")
+        vi.image = UIImage(named: "fa")
         return vi
     }()
     
@@ -72,7 +72,7 @@ class MineCell: UIView {
     }()
     lazy var topOneView:UIView  = {
        let vi = UIView()
-        vi.cornerRadius = 20
+        vi.cornerRadius = 17
         vi.backgroundColor = UIColor.init(r: 255, g: 135, b: 90)
         return vi
     }()
@@ -441,7 +441,7 @@ class MineCell: UIView {
             make.height.equalTo(1)
         }
         pointLabel.snp.makeConstraints{(make) in
-            make.right.equalTo(emotionView.snp.right).offset(-20)
+            make.right.equalTo(emotionView.snp.right).offset(-18)
             make.top.equalTo(lineView.snp.bottom).offset(3)
             make.width.equalTo(38)
             make.height.equalTo(20)

@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 import CollectionKit
-
+import Hero
 
 class SetViewController: UIViewController {
     
@@ -42,8 +42,10 @@ class SetViewController: UIViewController {
         return iv
     }()
     
+    let backView = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configCV()
         configUI()
         updateUI()
@@ -52,6 +54,12 @@ class SetViewController: UIViewController {
 
 
     func configUI(){
+        
+        backView.backgroundColor = UIColor.init(r: 247, g: 249, b: 254)
+       // view.insertSubview(backView, belowSubview: leftBarButton)
+        //backView.hero.modifiers = [.translate(y:100)]
+        
+        
         view.backgroundColor = UIColor.init(r: 247, g: 249, b: 254)
         self.navigation.bar.isShadowHidden = true
         self.navigation.bar.alpha = 0

@@ -81,6 +81,17 @@ class showDiaryController: UIViewController {
 
         }
     }
+        var updateDiaryTap = UITapGestureRecognizer()
+    @objc func update() {
+        let updateDiaryVC = diaryWriteController()
+        updateDiaryVC.content = "  上班好累呀！好想休息，去浪迹天涯诶，上班真累，难过ing 😞 🙁！"
+        let emotionLayer = CAGradientLayer()
+        emotionLayer.frame = updateDiaryVC.view.bounds
+        emotionLayer.colors = [UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
+        
+        updateDiaryVC.emotionLayer = emotionLayer
+        present(updateDiaryVC,animated: true)
+    }
     
     func configCV(){
         
@@ -90,6 +101,10 @@ class showDiaryController: UIViewController {
                 self.emotionLayer.frame = view.headView.bounds
                 view.headView.layer.addSublayer(self.emotionLayer)
             }
+            
+            self.updateDiaryTap.addTarget(self, action: #selector(self.update))
+            view.centerView.addGestureRecognizer(self.updateDiaryTap)
+            //view.centerView
             //view.backgroundColor = .blue
             
         })

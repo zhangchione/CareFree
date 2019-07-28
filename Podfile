@@ -16,6 +16,8 @@ target 'CareFree' do
   pod 'SideMenu'
   pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'dev_for_swift5.0'
   pod 'SwiftyJSON'
+  # UI库
+  pod 'Hero'
   
   #pod 'Kingfisher'
   pod 'BmobSDK'
@@ -23,7 +25,7 @@ target 'CareFree' do
   pod "BSImagePicker", "~> 2.8"
   #图片选择器
   #pod 'DKImagePickerController'
-      pod 'MJRefresh'
+  pod 'MJRefresh'
    # Pods for CareFree
 
 end

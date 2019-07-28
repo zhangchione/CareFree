@@ -58,7 +58,7 @@ class diaryWriteController: UIViewController {
         return collection
     }()
     
-    var content = ""
+    var content = "快记录一下吧~"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -117,7 +117,7 @@ class diaryWriteController: UIViewController {
             }
             view.addGestureRecognizer(self.dismissKetboardTap)
             view.delegate = self
-            view.diaryWirte.text = "快记录一下吧~"
+            view.diaryWirte.text = self.content //"快记录一下吧~"
             view.diaryWirte.textColor = UIColor.lightGray
             view.diaryWirte.delegate = self
             view.backBtn.addTarget(self, action: #selector(self.back), for: .touchUpInside)

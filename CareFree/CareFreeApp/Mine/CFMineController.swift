@@ -11,6 +11,7 @@ import CollectionKit
 import SnapKit
 import SwiftyJSON
 import HandyJSON
+import Hero
 
 class CFMineController: CFBaseViewController {
 
@@ -62,6 +63,9 @@ class CFMineController: CFBaseViewController {
             
             view.setView.layer.add(self.impliesAnimation, forKey: nil)
             
+            view.setView.hero.id = "sky"
+            
+            
             
         })
         let sizeSource = {(index:Int,data:MineModel,collectionSize:CGSize) ->CGSize in
@@ -94,7 +98,9 @@ extension CFMineController{
         impliesAnimation.calculationMode = CAAnimationCalculationMode.cubic
         print("设置页面跳转中...")
         let setVC = SetViewController()
-        self.navigationController?.pushViewController(setVC, animated: true)
+//        setVC.hero.isEnabled = true
+//        setVC.backView.hero.id = "sky"
+       self.navigationController?.pushViewController(setVC, animated: true)
     }
     @objc func diaryChartEvnent(){
         print("心情报表页面跳转中...")
