@@ -32,7 +32,6 @@ class CFMineController: CFBaseViewController {
 
     func congfigUI() {
         self.Title.text = "我的"
-        
         view.addSubview(collectionView)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false

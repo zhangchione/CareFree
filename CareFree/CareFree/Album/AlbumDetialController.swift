@@ -25,10 +25,12 @@ class AlbumDetialController: UIViewController {
         style.titleColor = UIColor.gray
        // style.bottomLineColor = DominantColor
         style.bottomLineHeight = 0
-        style.contentViewBackgroundColor = UIColor.init(r: 247, g: 249, b: 254)
-        style.coverViewBackgroundColor = UIColor.init(r: 247, g: 249, b: 254)
+//        style.contentViewBackgroundColor = UIColor.init(r: 247, g: 249, b: 254)
+      //  style.coverViewBackgroundColor = UIColor.init(r: 247, g: 249, b: 254)
         style.titleViewBackgroundColor = UIColor.init(r: 247, g: 249, b: 254)
-        
+//        style.TWidth = CFWidth
+//        style.Ty = 0
+//        style.Tx = 0
         style.titleFont = UIFont.systemFont(ofSize: 22)
         
         let titles = ["开心","平静","难过","压抑"]
@@ -83,7 +85,7 @@ class AlbumDetialController: UIViewController {
         self.navigation.item.title = "相册"
         
         self.navigation.item.leftBarButtonItem = UIBarButtonItem.init(customView: leftBarButton)
-        self.navigation.item.rightBarButtonItem = UIBarButtonItem.init(customView: RightButton)
+        //self.navigation.item.rightBarButtonItem = UIBarButtonItem.init(customView: RightButton)
         
     }
     @objc func AR(){

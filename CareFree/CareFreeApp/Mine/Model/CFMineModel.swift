@@ -15,7 +15,7 @@ struct MineModel:HandyJSON {
     var day_notes = ""
     var username = ""
     var password = ""
-    var mode = ""
+    var mode = 0
     var mode_value = [Int]()
     var sex = ""
     var now_notes = ""

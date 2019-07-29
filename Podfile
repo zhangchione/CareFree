@@ -20,7 +20,7 @@ target 'CareFree' do
   pod 'Hero'
   pod 'SwiftEntryKit'
   
-  #pod 'Kingfisher'
+  pod 'Kingfisher'
   pod 'BmobSDK'
   
   pod "BSImagePicker", "~> 2.8"

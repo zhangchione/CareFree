@@ -104,6 +104,11 @@
 		F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */; };
 		F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */; };
 		F5AC532E22AA136D008A78E2 /* diaryPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */; };
+		F5C4091522EED25C004DE68A /* DayEmotionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4091422EED25C004DE68A /* DayEmotionController.swift */; };
+		F5C4091722EED267004DE68A /* WeekEmotionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4091622EED267004DE68A /* WeekEmotionController.swift */; };
+		F5C4091922EED276004DE68A /* MouthEmotionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4091822EED276004DE68A /* MouthEmotionController.swift */; };
+		F5C4091B22EED287004DE68A /* YearEmotionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4091A22EED287004DE68A /* YearEmotionController.swift */; };
+		F5C4091D22EED74F004DE68A /* CoustDNSPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4091C22EED74F004DE68A /* CoustDNSPageView.swift */; };
 		F5C7738322B08C3A0087520B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7738122B08C3A0087520B /* LoginViewController.swift */; };
 		F5C7738422B08C3A0087520B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C7738222B08C3A0087520B /* LoginViewController.xib */; };
 		F5C7738722B090F70087520B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7738522B090F70087520B /* RegisterViewController.swift */; };
@@ -235,6 +240,11 @@
 		F5AC532922AA07A7008A78E2 /* writeDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeDiaryCell.swift; sourceTree = "<group>"; };
 		F5AC532B22AA136D008A78E2 /* diaryPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryPhotoCell.swift; sourceTree = "<group>"; };
 		F5AC532C22AA136D008A78E2 /* diaryPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = diaryPhotoCell.xib; sourceTree = "<group>"; };
+		F5C4091422EED25C004DE68A /* DayEmotionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayEmotionController.swift; sourceTree = "<group>"; };
+		F5C4091622EED267004DE68A /* WeekEmotionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekEmotionController.swift; sourceTree = "<group>"; };
+		F5C4091822EED276004DE68A /* MouthEmotionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouthEmotionController.swift; sourceTree = "<group>"; };
+		F5C4091A22EED287004DE68A /* YearEmotionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearEmotionController.swift; sourceTree = "<group>"; };
+		F5C4091C22EED74F004DE68A /* CoustDNSPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoustDNSPageView.swift; sourceTree = "<group>"; };
 		F5C7738122B08C3A0087520B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F5C7738222B08C3A0087520B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		F5C7738522B090F70087520B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -387,6 +397,7 @@
 		25EBFE4022E1706E0055B7C2 /* EmotionChart */ = {
 			isa = PBXGroup;
 			children = (
+				F5C4091322EED131004DE68A /* EmotionPage */,
 				F536AAC222B10EC100F9853B /* EmotionChartController.swift */,
 			);
 			path = EmotionChart;
@@ -735,6 +746,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F5C4091322EED131004DE68A /* EmotionPage */ = {
+			isa = PBXGroup;
+			children = (
+				F5C4091422EED25C004DE68A /* DayEmotionController.swift */,
+				F5C4091622EED267004DE68A /* WeekEmotionController.swift */,
+				F5C4091822EED276004DE68A /* MouthEmotionController.swift */,
+				F5C4091A22EED287004DE68A /* YearEmotionController.swift */,
+				F5C4091C22EED74F004DE68A /* CoustDNSPageView.swift */,
+			);
+			path = EmotionPage;
+			sourceTree = "<group>";
+		};
 		F5C7737F22B08C130087520B /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1063,6 +1086,7 @@
 				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
@@ -1101,6 +1125,7 @@
 				F5D28D5622BB1921008CA4D2 /* DiaryViewController.swift in Sources */,
 				F502C3AF22EE956200E99112 /* TKARViewController.swift in Sources */,
 				F5C7738B22B091D90087520B /* AboutViewController.swift in Sources */,
+				F5C4091D22EED74F004DE68A /* CoustDNSPageView.swift in Sources */,
 				F58869C222E9930E0047BEF5 /* CFMineViewModel.swift in Sources */,
 				F56C2E0822AA720A00BCFA11 /* showHeadCell.swift in Sources */,
 				F56C2E0422AA5CFA00BCFA11 /* showDiaryController.swift in Sources */,
@@ -1113,6 +1138,7 @@
 				F58869B822E98CEB0047BEF5 /* CFBaseViewController.swift in Sources */,
 				F5FCFA6122AE85CB00C7B8A0 /* MineCell.swift in Sources */,
 				F55C10D922AB52490036BE31 /* albumTwoCell.swift in Sources */,
+				F5C4091B22EED287004DE68A /* YearEmotionController.swift in Sources */,
 				F502C39822EE8C4000E99112 /* HappyAlbumController.swift in Sources */,
 				F5C7739622B092500087520B /* FacebackViewController.swift in Sources */,
 				F5D28D5E22BB1D45008CA4D2 /* DsearchCell.swift in Sources */,
@@ -1121,6 +1147,7 @@
 				F502C3B322EE956200E99112 /* TKPanoramaSelectViewController.swift in Sources */,
 				F55C10D222AB3E4A0036BE31 /* homeHeadCell.swift in Sources */,
 				F52A269422ACD544000785D4 /* TrashViewController.swift in Sources */,
+				F5C4091722EED267004DE68A /* WeekEmotionController.swift in Sources */,
 				F5C7739B22B0927D0087520B /* AlterUserNameController.swift in Sources */,
 				251215A722E060E70025CFD9 /* UserDefaults.swift in Sources */,
 				F5C7738722B090F70087520B /* RegisterViewController.swift in Sources */,
@@ -1145,6 +1172,7 @@
 				F5C7738322B08C3A0087520B /* LoginViewController.swift in Sources */,
 				F58869BC22E991770047BEF5 /* CFMineController.swift in Sources */,
 				F5303D4F22A8D3B60060EACE /* CFBasicContentView.swift in Sources */,
+				F5C4091922EED276004DE68A /* MouthEmotionController.swift in Sources */,
 				F58869BA22E98EAB0047BEF5 /* CFHomeController.swift in Sources */,
 				25EBFE5322E19B680055B7C2 /* RCViewController.swift in Sources */,
 				F5A5B2DF22BB385A003BBF5D /* DiaryViewModel.swift in Sources */,
@@ -1163,6 +1191,7 @@
 				F536AAE522B1273B00F9853B /* emotionChartModel.swift in Sources */,
 				F5A5C3B922B26C830060AA3E /* Diary.swift in Sources */,
 				F52A269222ACD537000785D4 /* SetViewController.swift in Sources */,
+				F5C4091522EED25C004DE68A /* DayEmotionController.swift in Sources */,
 				F5303D5522A8D4CE0060EACE /* CFAlbumViewController.swift in Sources */,
 				F5C8D40322EA900E002215F4 /* MineChartCell.swift in Sources */,
 				25EBFE4E22E1924B0055B7C2 /* BookModel.swift in Sources */,

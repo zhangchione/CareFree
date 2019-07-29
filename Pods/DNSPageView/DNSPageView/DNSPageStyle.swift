@@ -36,13 +36,16 @@ public class DNSPageStyle {
     public var titleViewBackgroundColor: UIColor = UIColor.white
     public var titleMargin: CGFloat = 30
     public var titleViewSelectedColor: UIColor = UIColor.clear
-
+//    public var Tx: CGFloat = 0
+//    public var Ty: CGFloat = 0
+//    public var TWidth: CGFloat = 0;
+    
     
     /// titleView滑动
     public var isTitleViewScrollEnabled: Bool = false
     
     /// title下划线
-    public var isShowBottomLine: Bool = false
+    public var isShowBottomLine: Bool = true
     public var bottomLineColor: UIColor = UIColor.blue
     public var bottomLineHeight: CGFloat = 2
     public var bottomLineRadius: CGFloat = 1

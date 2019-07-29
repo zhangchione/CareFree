@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Kingfisher
+import Kingfisher
 import CollectionKit
 
 class MineCell: UIView {
@@ -80,6 +80,7 @@ class MineCell: UIView {
         let vi = UIView()
         vi.cornerRadius = 8
         vi.backgroundColor = UIColor.init(r: 255, g: 135, b: 90)
+        //vi.backgroundColor = .white
         return vi
     }()
     
@@ -87,7 +88,7 @@ class MineCell: UIView {
        let label = UILabel()
         label.textColor = UIColor.white
         label.text = "36"
-        label.textAlignment = NSTextAlignment.left
+        label.textAlignment = NSTextAlignment.right
         label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
         return label
     }()
@@ -100,7 +101,7 @@ class MineCell: UIView {
        let label = UILabel()
         label.textColor = UIColor.white
         label.text = "Point"
-        label.textAlignment = NSTextAlignment.left
+        label.textAlignment = NSTextAlignment.right
         label.font = UIFont.init(name: "PingFangSC-Medium", size: 12)
         return label
     }()
@@ -298,15 +299,40 @@ class MineCell: UIView {
         DispatchQueue.main.async {
             let  emotionLayer = CAGradientLayer()
             emotionLayer.frame = self.emotionView.bounds
-            emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
+            if data.mode > 25 {
+                emotionLayer.colors = [UIColor.init(r: 56, g: 213, b: 214).cgColor,UIColor.init(r: 63, g: 171, b: 213).cgColor]
+
+            }else if data.mode < 25 && data.mode > 0 {
+                emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
+            }else if data.mode < 0 && data.mode > -25 {
+                 emotionLayer.colors = [UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
+            }else {
+                emotionLayer.colors = [UIColor.init(r: 43, g: 88, b: 118).cgColor,UIColor.init(r: 9, g: 32, b: 63).cgColor]
+            }
+            
             emotionLayer.cornerRadius = 25
             self.oneBackView.layer.addSublayer(emotionLayer)
         }
+        topOneView.snp.makeConstraints{(make) in
+            make.height.equalTo(data.mode * 2)
+            print("高度设置成功1")
+        }
+        topTwoView.snp.makeConstraints{(make) in
+            if fabs(Double(data.mode)) > 20 {
+                make.height.equalTo(40)
+            }
+            else {
+                make.height.equalTo(Double(data.mode)*2)
+            }
+            
+            print("高度设置成功")
+        }
+        
         let urlTitleImage = URL(string: data.head_pic)
-        //self.userImg.kf.setImage(with: urlTitleImage)
+        self.userImg.kf.setImage(with: urlTitleImage)
         self.userName.text = data.username
         self.id.text = "ID: " + data.id
-        self.emotionValue.text = data.mode
+        self.emotionValue.text = String(data.mode)
         self.diaryHeadValue.text = data.day_notes
         self.diaryBackValue.text = data.now_notes
         
@@ -412,26 +438,27 @@ class MineCell: UIView {
             make.centerX.equalTo(emotionLabel.snp.centerX)
             make.top.equalTo(emotionLabel.snp.bottom).offset(30)
             make.width.equalTo(40)
-            make.height.equalTo(105)
+            make.height.equalTo(100)
         }
 
         topTwoView.snp.makeConstraints{(make) in
             make.centerX.equalTo(emotionLabel.snp.centerX)
             make.bottom.equalTo(bottomView.snp.bottom).offset(0)
             make.width.equalTo(40)
-            make.height.equalTo(60)
+            //make.height.equalTo(60)
         }
         topOneView.snp.makeConstraints{(make) in
             make.centerX.equalTo(emotionLabel.snp.centerX)
-            make.bottom.equalTo(topTwoView.snp.top).offset(30)
+            make.centerY.equalTo(topTwoView.snp.top).offset(5)
+           // make.bottom.equalTo().offset(30)
             make.width.equalTo(40)
-            make.height.equalTo(50)
+            //make.height.equalTo(50)
         }
         
         emotionValue.snp.makeConstraints{(make) in
-            make.right.equalTo(emotionView.snp.right).offset(-20)
+            make.right.equalTo(emotionView.snp.right).offset(-25)
             make.centerY.equalTo(bottomView.snp.centerY).offset(10)
-            make.width.equalTo(23)
+            make.width.equalTo(30)
             make.height.equalTo(20)
         }
         lineView.snp.makeConstraints{(make) in
@@ -441,7 +468,7 @@ class MineCell: UIView {
             make.height.equalTo(1)
         }
         pointLabel.snp.makeConstraints{(make) in
-            make.right.equalTo(emotionView.snp.right).offset(-18)
+            make.right.equalTo(emotionView.snp.right).offset(-25)
             make.top.equalTo(lineView.snp.bottom).offset(3)
             make.width.equalTo(38)
             make.height.equalTo(20)
@@ -599,7 +626,7 @@ class MineCell: UIView {
 //            view.backgroundColor = UIColor.yellow
         })
         let sizeHeadSource = {(index:Int,data:emotionChartModel,collectionSize:CGSize) ->CGSize in
-            return CGSize(width: 15, height: 90)
+            return CGSize(width: 15, height: 95)
         }
         
         let provider = BasicProvider(
