@@ -90,6 +90,7 @@ class showDiaryController: UIViewController {
         emotionLayer.colors = [UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
         
         updateDiaryVC.emotionLayer = emotionLayer
+        updateDiaryVC.photo = ["t1","t2"]
         present(updateDiaryVC,animated: true)
     }
     
@@ -131,6 +132,17 @@ class showDiaryController: UIViewController {
         )
         let finalProvider = ComposedProvider(sections:[providerHead,providerBody])
         
+        providerBody.tapHandler = { context -> Void in
+            let updateDiaryVC = diaryWriteController()
+            updateDiaryVC.content = "  期待已久的书终于到了"
+            let emotionLayer = CAGradientLayer()
+            emotionLayer.frame = updateDiaryVC.view.bounds
+            emotionLayer.colors = [UIColor.init(r: 118, g: 175, b: 227).cgColor,UIColor.init(r: 91, g: 123, b: 218).cgColor]
+            
+            updateDiaryVC.emotionLayer = emotionLayer
+            updateDiaryVC.photo = ["t3"]
+            self.present(updateDiaryVC,animated: true)
+        }
         providerBody.layout = FlowLayout(spacing: 40)
         providerHead.layout = FlowLayout(spacing: 30)
         finalProvider.layout = FlowLayout(spacing: 20)

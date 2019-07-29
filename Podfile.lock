@@ -12,6 +12,7 @@ PODS:
   - CollectionKit/WobbleAnimator (2.4.0):
     - CollectionKit/Core
     - YetAnotherAnimationLibrary (~> 1.4.0)
+  - DNSPageView (1.1.6)
   - EachNavigationBar (1.9.2)
   - ESTabBarController-swift (2.6.4)
   - HandyJSON (5.0.0-beta.1)
@@ -19,6 +20,7 @@ PODS:
   - lottie-ios (3.0.3)
   - MJRefresh (3.1.16)
   - ProgressHUD (2.51)
+  - QuickLayout (3.0.0)
   - Realm (3.14.0):
     - Realm/Headers (= 3.14.0)
   - Realm/Headers (3.14.0)
@@ -30,6 +32,8 @@ PODS:
   - RxSwift (4.5.0)
   - SideMenu (5.0.1)
   - SnapKit (4.2.0)
+  - SwiftEntryKit (1.0.2):
+    - QuickLayout (= 3.0.0)
   - SwiftyJSON (4.3.0)
   - YetAnotherAnimationLibrary (1.4.0)
 
@@ -39,6 +43,7 @@ DEPENDENCIES:
   - BSImagePicker (~> 2.8)
   - CollectionKit
   - CollectionKit/WobbleAnimator
+  - DNSPageView
   - EachNavigationBar
   - ESTabBarController-swift
   - HandyJSON (from `https://github.com/alibaba/HandyJSON.git`, branch `dev_for_swift5.0`)
@@ -49,6 +54,7 @@ DEPENDENCIES:
   - RxRealm
   - SideMenu
   - SnapKit
+  - SwiftEntryKit
   - SwiftyJSON
 
 SPEC REPOS:
@@ -59,18 +65,21 @@ SPEC REPOS:
     - BSImagePicker
     - BSImageView
     - CollectionKit
+    - DNSPageView
     - EachNavigationBar
     - ESTabBarController-swift
     - Hero
     - lottie-ios
     - MJRefresh
     - ProgressHUD
+    - QuickLayout
     - Realm
     - RealmSwift
     - RxRealm
     - RxSwift
     - SideMenu
     - SnapKit
+    - SwiftEntryKit
     - SwiftyJSON
     - YetAnotherAnimationLibrary
 
@@ -91,6 +100,7 @@ SPEC CHECKSUMS:
   BSImagePicker: fa0c15b6740e8aa7a7b7f0fe38a71ad4cfa0ec4a
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
+  DNSPageView: df84b178394ddf4a73b2d19baf4deb24b4a4ba33
   EachNavigationBar: 4978d1327a85d7c50d070b0a387f6e30fa089cfc
   ESTabBarController-swift: 58cca4ab7de980657d99a02181c1ff310983e975
   HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
@@ -98,15 +108,17 @@ SPEC CHECKSUMS:
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
   RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
   RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftEntryKit: 7bcd42b3dbff59c431d60d6513129fd3679e4aaf
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 84f2fc92b3ca99b9b26f39158e966b1840f397db
+PODFILE CHECKSUM: 7bf0e04ccf84240bb080dfdf1b198e8bec922314
 
-COCOAPODS: 1.7.4
+COCOAPODS: 1.6.1

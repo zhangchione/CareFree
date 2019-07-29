@@ -105,6 +105,14 @@ class diaryWriteController: UIViewController {
 
     }
     
+    var photoData = [String]()
+    
+    var photo:[String]? {
+        didSet {
+            self.photoData = photo!
+        }
+    }
+    
     func configCV(){
         let viewHeadSource = ClosureViewSource(viewUpdater: {(view:writeDiaryCell,data:Int,index:Int) in
 
@@ -277,7 +285,7 @@ UINavigationControllerDelegate {
 
 extension diaryWriteController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemArray!.count + 1
+        return  photoData.count + 1 //itemArray!.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -291,8 +299,9 @@ extension diaryWriteController:UICollectionViewDelegate,UICollectionViewDataSour
         else {
             //cell.backgroundColor  = .red
             //selectImg.image = pictureImages[indexPath.row]
-            var da =  itemArray![indexPath.row - 1].data
-            cell.photo.image = UIImage(data:da!)
+            //var da =  itemArray![indexPath.row - 1].data
+            //cell.photo.image = UIImage(data:da!)
+            cell.photo.image = UIImage(named: photoData[indexPath.row - 1])
         }
         return cell
     }

@@ -18,6 +18,7 @@ target 'CareFree' do
   pod 'SwiftyJSON'
   # UI库
   pod 'Hero'
+  pod 'SwiftEntryKit'
   
   #pod 'Kingfisher'
   pod 'BmobSDK'
@@ -26,6 +27,9 @@ target 'CareFree' do
   #图片选择器
   #pod 'DKImagePickerController'
   pod 'MJRefresh'
+
+   # 分页
+   pod 'DNSPageView'
    # Pods for CareFree
 
 end

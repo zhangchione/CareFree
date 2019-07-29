@@ -41,6 +41,23 @@
 		25EBFE5022E193090055B7C2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE4F22E193090055B7C2 /* BookCell.swift */; };
 		25EBFE5322E19B680055B7C2 /* RCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE5122E19B680055B7C2 /* RCViewController.swift */; };
 		25EBFE5422E19B680055B7C2 /* RCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25EBFE5222E19B680055B7C2 /* RCViewController.xib */; };
+		F502C39622EE865700E99112 /* AlbumDetialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C39522EE865700E99112 /* AlbumDetialController.swift */; };
+		F502C39822EE8C4000E99112 /* HappyAlbumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C39722EE8C4000E99112 /* HappyAlbumController.swift */; };
+		F502C39B22EE909C00E99112 /* CalmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C39922EE909C00E99112 /* CalmViewController.swift */; };
+		F502C39C22EE909C00E99112 /* CalmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F502C39A22EE909C00E99112 /* CalmViewController.xib */; };
+		F502C39F22EE91C000E99112 /* SoSadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C39D22EE91C000E99112 /* SoSadViewController.swift */; };
+		F502C3A022EE91C000E99112 /* SoSadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F502C39E22EE91C000E99112 /* SoSadViewController.xib */; };
+		F502C3A322EE93BA00E99112 /* SadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C3A122EE93BA00E99112 /* SadViewController.swift */; };
+		F502C3A422EE93BA00E99112 /* SadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F502C3A222EE93BA00E99112 /* SadViewController.xib */; };
+		F502C3A722EE955700E99112 /* ImportOC.m in Sources */ = {isa = PBXBuildFile; fileRef = F502C3A622EE955700E99112 /* ImportOC.m */; };
+		F502C3AF22EE956200E99112 /* TKARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C3A822EE956000E99112 /* TKARViewController.swift */; };
+		F502C3B022EE956200E99112 /* ARPanorama.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F502C3A922EE956000E99112 /* ARPanorama.storyboard */; };
+		F502C3B122EE956200E99112 /* ResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C3AA22EE956100E99112 /* ResourceManager.swift */; };
+		F502C3B222EE956200E99112 /* DLARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C3AB22EE956100E99112 /* DLARSCNView.swift */; };
+		F502C3B322EE956200E99112 /* TKPanoramaSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C3AC22EE956100E99112 /* TKPanoramaSelectViewController.swift */; };
+		F502C3B422EE956200E99112 /* TKMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C3AD22EE956100E99112 /* TKMacro.swift */; };
+		F502C3B522EE956200E99112 /* ResourceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F502C3AE22EE956200E99112 /* ResourceConfiguration.swift */; };
+		F502C3B722EE965F00E99112 /* 往后余生.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F502C3B622EE965E00E99112 /* 往后余生.mp3 */; };
 		F52A269222ACD537000785D4 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A269122ACD537000785D4 /* SetViewController.swift */; };
 		F52A269422ACD544000785D4 /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52A269322ACD544000785D4 /* TrashViewController.swift */; };
 		F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5303D4A22A8D2AD0060EACE /* Const.swift */; };
@@ -154,6 +171,23 @@
 		AB56F75EB18873700726BCC1 /* Pods-CareFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CareFree/Pods-CareFree.debug.xcconfig"; sourceTree = "<group>"; };
 		B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CareFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D61990A36297C6554824A5D1 /* Pods-CareFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.release.xcconfig"; path = "Pods/Target Support Files/Pods-CareFree/Pods-CareFree.release.xcconfig"; sourceTree = "<group>"; };
+		F502C39522EE865700E99112 /* AlbumDetialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetialController.swift; sourceTree = "<group>"; };
+		F502C39722EE8C4000E99112 /* HappyAlbumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyAlbumController.swift; sourceTree = "<group>"; };
+		F502C39922EE909C00E99112 /* CalmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmViewController.swift; sourceTree = "<group>"; };
+		F502C39A22EE909C00E99112 /* CalmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalmViewController.xib; sourceTree = "<group>"; };
+		F502C39D22EE91C000E99112 /* SoSadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoSadViewController.swift; sourceTree = "<group>"; };
+		F502C39E22EE91C000E99112 /* SoSadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoSadViewController.xib; sourceTree = "<group>"; };
+		F502C3A122EE93BA00E99112 /* SadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SadViewController.swift; sourceTree = "<group>"; };
+		F502C3A222EE93BA00E99112 /* SadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SadViewController.xib; sourceTree = "<group>"; };
+		F502C3A622EE955700E99112 /* ImportOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportOC.m; sourceTree = "<group>"; };
+		F502C3A822EE956000E99112 /* TKARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKARViewController.swift; sourceTree = "<group>"; };
+		F502C3A922EE956000E99112 /* ARPanorama.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ARPanorama.storyboard; sourceTree = "<group>"; };
+		F502C3AA22EE956100E99112 /* ResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceManager.swift; sourceTree = "<group>"; };
+		F502C3AB22EE956100E99112 /* DLARSCNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLARSCNView.swift; sourceTree = "<group>"; };
+		F502C3AC22EE956100E99112 /* TKPanoramaSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKPanoramaSelectViewController.swift; sourceTree = "<group>"; };
+		F502C3AD22EE956100E99112 /* TKMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKMacro.swift; sourceTree = "<group>"; };
+		F502C3AE22EE956200E99112 /* ResourceConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceConfiguration.swift; sourceTree = "<group>"; };
+		F502C3B622EE965E00E99112 /* 往后余生.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "往后余生.mp3"; sourceTree = "<group>"; };
 		F52A269122ACD537000785D4 /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		F52A269322ACD544000785D4 /* TrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewController.swift; sourceTree = "<group>"; };
 		F5303D4A22A8D2AD0060EACE /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -428,6 +462,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F502C3A522EE952700E99112 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				F502C3A922EE956000E99112 /* ARPanorama.storyboard */,
+				F502C3AC22EE956100E99112 /* TKPanoramaSelectViewController.swift */,
+				F502C3A822EE956000E99112 /* TKARViewController.swift */,
+				F502C3AB22EE956100E99112 /* DLARSCNView.swift */,
+				F502C3AE22EE956200E99112 /* ResourceConfiguration.swift */,
+				F502C3AA22EE956100E99112 /* ResourceManager.swift */,
+				F502C3AD22EE956100E99112 /* TKMacro.swift */,
+				F502C3A622EE955700E99112 /* ImportOC.m */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
 		F5303D4422A8D1080060EACE /* Mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +497,14 @@
 				F55C10D522AB4FDC0036BE31 /* albumCell.swift */,
 				F55C10D722AB52490036BE31 /* albumTwoCell.swift */,
 				F55C10D822AB52490036BE31 /* albumTwoCell.xib */,
+				F502C39522EE865700E99112 /* AlbumDetialController.swift */,
+				F502C39722EE8C4000E99112 /* HappyAlbumController.swift */,
+				F502C39922EE909C00E99112 /* CalmViewController.swift */,
+				F502C39A22EE909C00E99112 /* CalmViewController.xib */,
+				F502C39D22EE91C000E99112 /* SoSadViewController.swift */,
+				F502C39E22EE91C000E99112 /* SoSadViewController.xib */,
+				F502C3A122EE93BA00E99112 /* SadViewController.swift */,
+				F502C3A222EE93BA00E99112 /* SadViewController.xib */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -543,6 +600,7 @@
 		F58869AF22E98C690047BEF5 /* CareFreeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F502C3A522EE952700E99112 /* AR */,
 				F58869B622E98C970047BEF5 /* Base */,
 				F58869B422E98C8A0047BEF5 /* Home */,
 				F58869B322E98C840047BEF5 /* Diary */,
@@ -855,6 +913,7 @@
 				F5D9752822A3B36E0014BE15 /* Main.storyboard */,
 				F5D9752B22A3B3700014BE15 /* Assets.xcassets */,
 				F5D9752D22A3B3700014BE15 /* LaunchScreen.storyboard */,
+				F502C3B622EE965E00E99112 /* 往后余生.mp3 */,
 				F5D9753022A3B3700014BE15 /* Info.plist */,
 				25FE25E622DEFC4E00FAE883 /* CareFree-Bridging-Header.h */,
 			);
@@ -943,14 +1002,19 @@
 				25EBFE5422E19B680055B7C2 /* RCViewController.xib in Resources */,
 				250DDD0522ED2939001C765B /* diary_now.json in Resources */,
 				F5303D5B22A8E2B00060EACE /* CFMineCell.xib in Resources */,
+				F502C39C22EE909C00E99112 /* CalmViewController.xib in Resources */,
 				F5C7739122B092240087520B /* CutUserViewController.xib in Resources */,
 				F5C7739722B092500087520B /* FacebackViewController.xib in Resources */,
 				F5D9752C22A3B3700014BE15 /* Assets.xcassets in Resources */,
 				F55C10DA22AB52490036BE31 /* albumTwoCell.xib in Resources */,
+				F502C3B722EE965F00E99112 /* 往后余生.mp3 in Resources */,
 				F58869CC22E99E280047BEF5 /* mine.json in Resources */,
 				F5D9752A22A3B36E0014BE15 /* Main.storyboard in Resources */,
+				F502C3B022EE956200E99112 /* ARPanorama.storyboard in Resources */,
 				F5AC532E22AA136D008A78E2 /* diaryPhotoCell.xib in Resources */,
+				F502C3A022EE91C000E99112 /* SoSadViewController.xib in Resources */,
 				F54A1D1722A93422005836B3 /* emotionCell.xib in Resources */,
+				F502C3A422EE93BA00E99112 /* SadViewController.xib in Resources */,
 				F5C7738C22B091D90087520B /* AboutViewController.xib in Resources */,
 				F5C7739C22B0927D0087520B /* AlterUserNameController.xib in Resources */,
 				F5C7738422B08C3A0087520B /* LoginViewController.xib in Resources */,
@@ -987,9 +1051,37 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BSGridCollectionViewLayout/BSGridCollectionViewLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/BSImagePicker/BSImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/BSImageView/BSImageView.framework",
+				"${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework",
+				"${BUILT_PRODUCTS_DIR}/DNSPageView/DNSPageView.framework",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YetAnotherAnimationLibrary/YetAnotherAnimationLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CareFree/Pods-CareFree-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1007,10 +1099,12 @@
 				F5D9752722A3B36E0014BE15 /* ViewController.swift in Sources */,
 				F5303D5A22A8E2B00060EACE /* CFMineCell.swift in Sources */,
 				F5D28D5622BB1921008CA4D2 /* DiaryViewController.swift in Sources */,
+				F502C3AF22EE956200E99112 /* TKARViewController.swift in Sources */,
 				F5C7738B22B091D90087520B /* AboutViewController.swift in Sources */,
 				F58869C222E9930E0047BEF5 /* CFMineViewModel.swift in Sources */,
 				F56C2E0822AA720A00BCFA11 /* showHeadCell.swift in Sources */,
 				F56C2E0422AA5CFA00BCFA11 /* showDiaryController.swift in Sources */,
+				F502C3B122EE956200E99112 /* ResourceManager.swift in Sources */,
 				F54A1D1122A90638005836B3 /* diaryModel.swift in Sources */,
 				F5EEED0C22AFE71400C84E9B /* setModel.swift in Sources */,
 				F5D28D6122BB1DD8008CA4D2 /* DshowDiaryCell.swift in Sources */,
@@ -1019,9 +1113,12 @@
 				F58869B822E98CEB0047BEF5 /* CFBaseViewController.swift in Sources */,
 				F5FCFA6122AE85CB00C7B8A0 /* MineCell.swift in Sources */,
 				F55C10D922AB52490036BE31 /* albumTwoCell.swift in Sources */,
+				F502C39822EE8C4000E99112 /* HappyAlbumController.swift in Sources */,
 				F5C7739622B092500087520B /* FacebackViewController.swift in Sources */,
 				F5D28D5E22BB1D45008CA4D2 /* DsearchCell.swift in Sources */,
 				F5C7739022B092240087520B /* CutUserViewController.swift in Sources */,
+				F502C3B222EE956200E99112 /* DLARSCNView.swift in Sources */,
+				F502C3B322EE956200E99112 /* TKPanoramaSelectViewController.swift in Sources */,
 				F55C10D222AB3E4A0036BE31 /* homeHeadCell.swift in Sources */,
 				F52A269422ACD544000785D4 /* TrashViewController.swift in Sources */,
 				F5C7739B22B0927D0087520B /* AlterUserNameController.swift in Sources */,
@@ -1033,12 +1130,16 @@
 				25EBFE5022E193090055B7C2 /* BookCell.swift in Sources */,
 				F54A1D1622A93422005836B3 /* emotionCell.swift in Sources */,
 				25EBFE3C22E16B000055B7C2 /* RecommendController.swift in Sources */,
+				F502C39B22EE909C00E99112 /* CalmViewController.swift in Sources */,
 				F5AC532A22AA07A7008A78E2 /* writeDiaryCell.swift in Sources */,
 				F5303D5322A8D4C20060EACE /* CFDiaryViewController.swift in Sources */,
 				F5A5B2DD22BB359A003BBF5D /* DwriteDiaryCell.swift in Sources */,
 				F55C10D622AB4FDC0036BE31 /* albumCell.swift in Sources */,
+				F502C3B522EE956200E99112 /* ResourceConfiguration.swift in Sources */,
 				F56C2E0622AA6B2E00BCFA11 /* MainNavigationController.swift in Sources */,
+				F502C3B422EE956200E99112 /* TKMacro.swift in Sources */,
 				F54A1D1B22A93A64005836B3 /* diaryWriteCell.swift in Sources */,
+				F502C39622EE865700E99112 /* AlbumDetialController.swift in Sources */,
 				25EBFE4C22E190E50055B7C2 /* RecommendBookCell.swift in Sources */,
 				F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */,
 				F5C7738322B08C3A0087520B /* LoginViewController.swift in Sources */,
@@ -1047,12 +1148,15 @@
 				F58869BA22E98EAB0047BEF5 /* CFHomeController.swift in Sources */,
 				25EBFE5322E19B680055B7C2 /* RCViewController.swift in Sources */,
 				F5A5B2DF22BB385A003BBF5D /* DiaryViewModel.swift in Sources */,
+				F502C3A322EE93BA00E99112 /* SadViewController.swift in Sources */,
+				F502C3A722EE955700E99112 /* ImportOC.m in Sources */,
 				F5303D5122A8D4B60060EACE /* CFHomeViewController.swift in Sources */,
 				F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */,
 				251215AB22E062010025CFD9 /* MyModel.swift in Sources */,
 				F58869C422E993580047BEF5 /* CFMineModel.swift in Sources */,
 				F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */,
 				F58869A022E951BC0047BEF5 /* AlbumMoreViewController.swift in Sources */,
+				F502C39F22EE91C000E99112 /* SoSadViewController.swift in Sources */,
 				F5AC532622AA0289008A78E2 /* diaryWriteController.swift in Sources */,
 				F56C2E0C22AA82D600BCFA11 /* nowModel.swift in Sources */,
 				F55C10D422AB3E710036BE31 /* homeRecommendCell.swift in Sources */,

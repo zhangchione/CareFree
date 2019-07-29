@@ -69,11 +69,12 @@ extension albumCell:UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 0 {
             cell.imgOne.image = UIImage(named: "img11")
             cell.imgTwo.image = UIImage(named: "img12")
+            cell.emotionCircle.backgroundColor = happyColor
         }
         if indexPath.row == 1 {
             cell.imgOne.image = UIImage(named: "img21")
             cell.imgTwo.image = UIImage(named: "img22")
-            cell.moreImg.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
+            //cell.moreImg.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
             cell.imgNumber.text = "4+"
             cell.emotionCircle.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
         }

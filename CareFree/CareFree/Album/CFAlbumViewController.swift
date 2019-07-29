@@ -65,7 +65,7 @@ class CFAlbumViewController: UIViewController {
             sizeSource:sizeSource
         )
         provider.tapHandler = { context -> Void in
-            let albumMoreVC = AlbumMoreViewController()
+            let albumMoreVC = AlbumDetialController()
             self.navigationController?.pushViewController(albumMoreVC, animated: true)
             print("Cell")
         }
