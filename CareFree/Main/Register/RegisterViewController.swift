@@ -35,11 +35,15 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerBtn(_ sender: UIButton) {
+        guard phoneNumber.text! == "" else {
+            ProgressHUD.showError("手机号码不能为空")
+            return
+        }
         let registerUrl = "http://120.77.151.36/api/registry?UserCode=" + verify.text! + "&UserTel=" + phoneNumber.text! +  "&Password=" + password.text!
         Alamofire.request(registerUrl).responseJSON{(responds) in
             print(registerUrl)
             guard responds.result.isSuccess else {
-                ProgressHUD.showError("网络请求失败");
+                ProgressHUD.showError("注册失败，请稍后再试");
                 ProgressHUD.dismiss();
                 print("网络请求失败"); return
             }
@@ -47,6 +51,8 @@ class RegisterViewController: UIViewController {
                 print("value=",value)
                 let json = JSON(value)
                 print(json)
+                ProgressHUD.showSuccess("注册成功")
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }
@@ -54,7 +60,12 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigation.item.leftBarButtonItem = UIBarButtonItem.init(customView: leftBarButton)
+        self.navigation.item.title = "注册账号"
+        self.navigation.bar.isShadowHidden = true
+        self.navigation.bar.alpha = 0
+        
+        
     }
 
 
@@ -65,5 +76,19 @@ class RegisterViewController: UIViewController {
     func dismissKeyboard(){
         self.view.endEditing(false)
     }
+    // 左边返回按钮
+    private lazy var leftBarButton:UIButton = {
+        let button = UIButton.init(type: .custom)
+        button.frame = CGRect(x:10, y:0, width:30, height: 30)
+        button.setTitle("←", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 36)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
+        button.tintColor = UIColor.red
+        return button
+    }()
     
+    @objc func back(){
+        self.navigationController?.popViewController(animated: true)
+    }
 }

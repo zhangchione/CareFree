@@ -87,7 +87,7 @@ open class DNSPageTitleView: UIView {
         let bottomLine = UIView()
         bottomLine.backgroundColor = self.style.bottomLineColor
         bottomLine.layer.cornerRadius = self.style.bottomLineRadius
-        bottomLine.frame.size.width = 20
+        //bottomLine.frame.size.width = 20
         return bottomLine
     }()
     
@@ -166,7 +166,7 @@ open class DNSPageTitleView: UIView {
         if style.isShowBottomLine {
             UIView.animate(withDuration: 0.25, animations: {
                 self.bottomLine.frame.origin.x = targetLabel.frame.origin.x
-                self.bottomLine.frame.size.width = targetLabel.frame.width - 70
+                self.bottomLine.frame.size.width = targetLabel.frame.width
             })
         }
 
@@ -291,7 +291,7 @@ extension DNSPageTitleView {
         
         bottomLine.frame.origin.x = label.frame.origin.x
         bottomLine.frame.origin.y = self.bounds.height - self.style.bottomLineHeight
-        bottomLine.frame.size.width = label.frame.width - 70
+        bottomLine.frame.size.width = label.frame.width
         bottomLine.frame.size.height = self.style.bottomLineHeight
     }
 }
@@ -365,7 +365,7 @@ extension DNSPageTitleView : DNSPageContentViewDelegate {
             let deltaX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
             let deltaW = targetLabel.frame.width - sourceLabel.frame.width
             bottomLine.frame.origin.x = sourceLabel.frame.origin.x + progress * deltaX
-            bottomLine.frame.size.width = 30 //sourceLabel.frame.width + progress * deltaW
+            bottomLine.frame.size.width = sourceLabel.frame.width + progress * deltaW
         }
         
         if style.isShowCoverView {
@@ -387,7 +387,7 @@ extension DNSPageTitleView : DNSPageContentViewDelegate {
             
             if self.style.isShowBottomLine {
                 self.bottomLine.frame.origin.x = targetLabel.frame.origin.x
-                self.bottomLine.frame.size.width = targetLabel.frame.width - 70
+                self.bottomLine.frame.size.width = targetLabel.frame.width
             }
             
             if self.style.isShowCoverView {

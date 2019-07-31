@@ -51,16 +51,12 @@ class EmotionChartController: UIViewController {
     func configPage() {
         // 创建DNSPageStyle，设置样式
         let style = DNSPageStyle()
-        // style.isTitleScrollEnable = false
-        style.isTitleScaleEnabled = false
+        style.isTitleScaleEnabled = true
         style.isShowBottomLine = true
         style.titleSelectedColor = UIColor.init(r: 96, g: 114, b: 255)
         style.titleColor = UIColor.black
-        //style.bottomLineColor = DominantColor
-        style.bottomLineHeight = 3
+        style.bottomLineHeight = 0
         style.bottomLineColor = UIColor.init(r: 96, g: 114, b: 255)
-        style.contentViewBackgroundColor = UIColor.init(r: 247, g: 249, b: 254)
-        style.coverViewBackgroundColor = UIColor.init(r: 247, g: 249, b: 254)
         style.titleViewBackgroundColor = UIColor.init(r: 247, g: 249, b: 254)
         
         style.titleFont = UIFont.systemFont(ofSize: 18)
@@ -73,10 +69,6 @@ class EmotionChartController: UIViewController {
         }
         let pageView = DNSPageView(frame: CGRect(x: 0, y: 88, width: CFWidth, height: CFHeight-navigationBarHeight-44), style: style, titles: titles, childViewControllers: viewControllers)
         
-        if  pageView.contentView.currentIndex == 1 {
-            pageView.style.titleSelectedColor = calmColor
-            print(pageView.contentView.currentIndex)
-        }
         pageView.titleView.frame = CGRect(x: CFWidth/6, y: 0, width: 2 * CFWidth/3 , height: 44)
         view.addSubview(pageView)
     }

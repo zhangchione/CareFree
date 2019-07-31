@@ -32,7 +32,7 @@ public class DNSPageStyle {
     public var titleViewHeight: CGFloat = 44
     public var titleColor: UIColor = UIColor.black
     public var titleSelectedColor: UIColor = UIColor.blue
-    public var titleFont: UIFont = UIFont.systemFont(ofSize: 22)
+    public var titleFont: UIFont = UIFont.systemFont(ofSize: 18)
     public var titleViewBackgroundColor: UIColor = UIColor.white
     public var titleMargin: CGFloat = 30
     public var titleViewSelectedColor: UIColor = UIColor.clear

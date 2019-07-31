@@ -97,6 +97,7 @@
 		F58869C222E9930E0047BEF5 /* CFMineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58869C122E9930E0047BEF5 /* CFMineViewModel.swift */; };
 		F58869C422E993580047BEF5 /* CFMineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58869C322E993580047BEF5 /* CFMineModel.swift */; };
 		F58869CC22E99E280047BEF5 /* mine.json in Resources */ = {isa = PBXBuildFile; fileRef = F58869CB22E99E280047BEF5 /* mine.json */; };
+		F59FC05C22F16B37008F5019 /* PageChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC05B22F16B37008F5019 /* PageChartCell.swift */; };
 		F5A5B2DD22BB359A003BBF5D /* DwriteDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5B2DC22BB359A003BBF5D /* DwriteDiaryCell.swift */; };
 		F5A5B2DF22BB385A003BBF5D /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5B2DE22BB385A003BBF5D /* DiaryViewModel.swift */; };
 		F5A5C3B922B26C830060AA3E /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5C3B822B26C830060AA3E /* Diary.swift */; };
@@ -233,6 +234,7 @@
 		F58869C122E9930E0047BEF5 /* CFMineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFMineViewModel.swift; sourceTree = "<group>"; };
 		F58869C322E993580047BEF5 /* CFMineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFMineModel.swift; sourceTree = "<group>"; };
 		F58869CB22E99E280047BEF5 /* mine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mine.json; sourceTree = "<group>"; };
+		F59FC05B22F16B37008F5019 /* PageChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageChartCell.swift; sourceTree = "<group>"; };
 		F5A5B2DC22BB359A003BBF5D /* DwriteDiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwriteDiaryCell.swift; sourceTree = "<group>"; };
 		F5A5B2DE22BB385A003BBF5D /* DiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewModel.swift; sourceTree = "<group>"; };
 		F5A5C3B822B26C830060AA3E /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 		25EBFE4022E1706E0055B7C2 /* EmotionChart */ = {
 			isa = PBXGroup;
 			children = (
+				F59FC05A22F16B0D008F5019 /* ChartCell */,
 				F5C4091322EED131004DE68A /* EmotionPage */,
 				F536AAC222B10EC100F9853B /* EmotionChartController.swift */,
 			);
@@ -655,6 +658,7 @@
 		F58869B422E98C8A0047BEF5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F59FC08022F173F0008F5019 /* API */,
 				F58869B922E98EAB0047BEF5 /* CFHomeController.swift */,
 			);
 			path = Home;
@@ -699,6 +703,21 @@
 				F58869C122E9930E0047BEF5 /* CFMineViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F59FC05A22F16B0D008F5019 /* ChartCell */ = {
+			isa = PBXGroup;
+			children = (
+				F59FC05B22F16B37008F5019 /* PageChartCell.swift */,
+			);
+			path = ChartCell;
+			sourceTree = "<group>";
+		};
+		F59FC08022F173F0008F5019 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		F5A5B2DB22BB3578003BBF5D /* DshowDiaryCell - 日记归档 */ = {
@@ -1182,6 +1201,7 @@
 				F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */,
 				251215AB22E062010025CFD9 /* MyModel.swift in Sources */,
 				F58869C422E993580047BEF5 /* CFMineModel.swift in Sources */,
+				F59FC05C22F16B37008F5019 /* PageChartCell.swift in Sources */,
 				F5AC532D22AA136D008A78E2 /* diaryPhotoCell.swift in Sources */,
 				F58869A022E951BC0047BEF5 /* AlbumMoreViewController.swift in Sources */,
 				F502C39F22EE91C000E99112 /* SoSadViewController.swift in Sources */,
