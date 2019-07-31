@@ -16,7 +16,7 @@ class SetViewController: UIViewController {
     
     
     var headlabel = [["头像","昵称"],["我要反馈","关于"],["切换账号","退出登录"]]
-    var backUser = [["userImg","Jeffrey"],["",""],["",""]]
+    var backUser = [["",""],["",""],["",""]]
     
     // 左边返回按钮
     private lazy var leftBarButton:UIButton = {
@@ -78,12 +78,12 @@ class SetViewController: UIViewController {
             make.top.equalTo(navigation.bar.snp.bottom).offset(0)
             make.height.equalTo(600)
         }
-//        img.snp.makeConstraints{(make) in
-//            make.top.equalTo(collectionView.snp.bottom).offset(10)
-//            make.centerX.equalTo(collectionView.snp.centerX)
-//            make.width.height.equalTo(100)
-//
-//        }
+        img.snp.makeConstraints{(make) in
+            make.top.equalTo(collectionView.snp.bottom).offset(10)
+            make.centerX.equalTo(collectionView.snp.centerX)
+            make.width.height.equalTo(100)
+
+        }
         //img.backgroundColor = .red
     }
 
@@ -234,27 +234,27 @@ extension SetViewController :UIImagePickerControllerDelegate,UINavigationControl
         
         let doucument = paths[0]
         
-        let fullpath = URL(fileURLWithPath: doucument).appendingPathComponent("photo.jpg").absoluteString
-        
-        let notes = BmobObject(className: "Notes")
-        let file = BmobFile.init(filePath: fullpath)
-        file?.name = "photo.jpg"
-            //BmobFile(fileName: "photo.jpeg", withFileData: imageData!)
-        //file?.url = "111"
-        file!.saveInBackground { (isSuccessful, error) in
-            if isSuccessful {
-                notes?.setObject(file, forKey: "photo")
-                notes?.saveInBackground()
-                print(file?.url)
-                print("success")
-            }else{
-                print(error)
-                print(file?.url)
-                print(file!)
-                print("错误")
-                self.img.image = UIImage(data: imageData!)
-            }
-        }
+//        let fullpath = URL(fileURLWithPath: doucument).appendingPathComponent("photo.jpg").absoluteString
+//        
+//        let notes = BmobObject(className: "Notes")
+//        let file = BmobFile.init(filePath: fullpath)
+//        file?.name = "photo.jpg"
+//            //BmobFile(fileName: "photo.jpeg", withFileData: imageData!)
+//        //file?.url = "111"
+//        file!.saveInBackground { (isSuccessful, error) in
+//            if isSuccessful {
+//                notes?.setObject(file, forKey: "photo")
+//                notes?.saveInBackground()
+//                print(file?.url)
+//                print("success")
+//            }else{
+//                print(error)
+//                print(file?.url)
+//                print(file!)
+//                print("错误")
+//                self.img.image = UIImage(data: imageData!)
+//            }
+//        }
         print("Bmob云后端存储成功")
         //imageData?.write(to: <#T##URL#>)
         //imageData?.write(to: fullpath)

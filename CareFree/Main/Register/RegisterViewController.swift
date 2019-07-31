@@ -35,10 +35,10 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerBtn(_ sender: UIButton) {
-        guard phoneNumber.text! == "" else {
-            ProgressHUD.showError("手机号码不能为空")
-            return
-        }
+//        guard phoneNumber.text! == "" else {
+//            ProgressHUD.showError("手机号码不能为空")
+//            return
+//        }
         let registerUrl = "http://120.77.151.36/api/registry?UserCode=" + verify.text! + "&UserTel=" + phoneNumber.text! +  "&Password=" + password.text!
         Alamofire.request(registerUrl).responseJSON{(responds) in
             print(registerUrl)

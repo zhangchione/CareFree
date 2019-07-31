@@ -99,6 +99,7 @@ extension CFMineController{
         let setVC = SetViewController()
 //        setVC.hero.isEnabled = true
 //        setVC.backView.hero.id = "sky"
+        setVC.backUser = [["user","Jeffrey"],["",""],["",""]]
        self.navigationController?.pushViewController(setVC, animated: true)
     }
     @objc func diaryChartEvnent(){
