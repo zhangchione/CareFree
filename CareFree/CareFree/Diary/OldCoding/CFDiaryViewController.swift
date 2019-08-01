@@ -9,13 +9,11 @@
 import UIKit
 import SnapKit
 import CollectionKit
-import RealmSwift
+
 
 class CFDiaryViewController: UIViewController {
 
-    var itemArray: Results<DiaryToday>?
-    let realm = try! Realm()
-    
+
     fileprivate let dataBodySource = ArrayDataSource(data:[diaryModel]())
     fileprivate let dataHeadSource = ArrayDataSource(data:[diaryModel]())
     
@@ -53,11 +51,10 @@ extension CFDiaryViewController{
     
     
     fileprivate func configData(){
-        itemArray = realm.objects(DiaryToday.self)
-        print("数据库数据条数",itemArray?.count as Any)
-        for data in itemArray! {
-            print(data)
-        }
+    
+//        for data in itemArray! {
+//            print(data)
+//        }
         var model = diaryModel()
         model.content = "今天考试，准备了很久，希望能够得到好成绩"
         model.day = "24"

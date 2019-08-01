@@ -8,13 +8,15 @@ target 'CareFree' do
   pod 'CollectionKit'
   pod 'CollectionKit/WobbleAnimator'
   pod 'ProgressHUD'
-  pod 'RxRealm'
+  #pod 'RxRealm'
+  pod 'RealmSwift'
   pod 'SnapKit'
   pod 'lottie-ios'
   pod 'EachNavigationBar'
   pod 'Alamofire'
   pod 'SideMenu'
   pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'dev_for_swift5.0'
+  
   pod 'SwiftyJSON'
   # UI库
   pod 'Hero'

@@ -25,10 +25,6 @@
 		25E3583622DEEDD80063AA9E /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583522DEEDD80063AA9E /* MJRefresh.framework */; };
 		25E3583822DEEDD80063AA9E /* Pods_CareFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583722DEEDD80063AA9E /* Pods_CareFree.framework */; };
 		25E3583A22DEEDD80063AA9E /* ProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583922DEEDD80063AA9E /* ProgressHUD.framework */; };
-		25E3583C22DEEDD80063AA9E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583B22DEEDD80063AA9E /* Realm.framework */; };
-		25E3583E22DEEDD80063AA9E /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583D22DEEDD80063AA9E /* RealmSwift.framework */; };
-		25E3584022DEEDD80063AA9E /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583F22DEEDD80063AA9E /* RxRealm.framework */; };
-		25E3584222DEEDD80063AA9E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584122DEEDD80063AA9E /* RxSwift.framework */; };
 		25E3584422DEEDD80063AA9E /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584322DEEDD80063AA9E /* SideMenu.framework */; };
 		25E3584622DEEDD80063AA9E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584522DEEDD80063AA9E /* SnapKit.framework */; };
 		25E3584822DEEDD80063AA9E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584722DEEDD80063AA9E /* SwiftyJSON.framework */; };
@@ -292,10 +288,6 @@
 				25E3583622DEEDD80063AA9E /* MJRefresh.framework in Frameworks */,
 				25E3583822DEEDD80063AA9E /* Pods_CareFree.framework in Frameworks */,
 				25E3583A22DEEDD80063AA9E /* ProgressHUD.framework in Frameworks */,
-				25E3583C22DEEDD80063AA9E /* Realm.framework in Frameworks */,
-				25E3583E22DEEDD80063AA9E /* RealmSwift.framework in Frameworks */,
-				25E3584022DEEDD80063AA9E /* RxRealm.framework in Frameworks */,
-				25E3584222DEEDD80063AA9E /* RxSwift.framework in Frameworks */,
 				25E3584422DEEDD80063AA9E /* SideMenu.framework in Frameworks */,
 				25E3584622DEEDD80063AA9E /* SnapKit.framework in Frameworks */,
 				25E3584822DEEDD80063AA9E /* SwiftyJSON.framework in Frameworks */,
@@ -1111,8 +1103,6 @@
 				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",

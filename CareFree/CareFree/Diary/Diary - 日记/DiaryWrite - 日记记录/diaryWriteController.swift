@@ -11,7 +11,6 @@ import SnapKit
 import CollectionKit
 import RealmSwift
 
-
 class diaryWriteController: UIViewController {
 
     /// 照片多选
@@ -22,9 +21,6 @@ class diaryWriteController: UIViewController {
         print("键盘成功关闭")
         self.view.endEditing(false)
     }
-    
-    let realm = try! Realm()
-    var itemArray: Results<selectphoto>?
     
     fileprivate let dataHeadSource = ArrayDataSource(data:[1])
     fileprivate lazy var collectionView = CollectionView()
@@ -70,11 +66,9 @@ class diaryWriteController: UIViewController {
     }
     
     func configUI(){
-                itemArray = realm.objects(selectphoto.self)
         dismissKetboardTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(dismissKetboardTap)
         self.photoCollection.addGestureRecognizer(dismissKetboardTap)
-        print("图片数量为：\(itemArray?.count)")
         view.backgroundColor = UIColor.clear
         //view.addSubview(backgroundView)
         view.addSubview(collectionView)
@@ -166,20 +160,20 @@ extension diaryWriteController:UITextViewDelegate {
     }
     // 右边保存按钮事件
     @objc func save(){
-        let diaryToday = DiaryToday()
-        
-        diaryToday.content = content
-        let date = Date()
-        let timeForMatter = DateFormatter()
-        timeForMatter.dateFormat = "YYYY-MM-dd'-'HH:mm"
-        
-        let strNowTime = timeForMatter.string(from: date) as String
-        let endIndex =  strNowTime.index(strNowTime.startIndex, offsetBy: 10)
-
-        let returnWeekstr = String(strNowTime[..<endIndex])
-        
-        diaryToday.week = getDayOfWeek(returnWeekstr)!
-        diaryToday.time = strNowTime
+//        let diaryToday = DiaryToday()
+//
+//        diaryToday.content = content
+//        let date = Date()
+//        let timeForMatter = DateFormatter()
+//        timeForMatter.dateFormat = "YYYY-MM-dd'-'HH:mm"
+//
+//        let strNowTime = timeForMatter.string(from: date) as String
+//        let endIndex =  strNowTime.index(strNowTime.startIndex, offsetBy: 10)
+//
+//        let returnWeekstr = String(strNowTime[..<endIndex])
+//
+//        diaryToday.week = getDayOfWeek(returnWeekstr)!
+//        diaryToday.time = strNowTime
         //self.saveData(item: diaryToday)
         
         print("日记保存成功")
@@ -197,16 +191,7 @@ extension diaryWriteController:UITextViewDelegate {
     }
     
     
-    func saveData(item:DiaryToday)
-    {
-        do {
-            try realm.write {
-                realm.add(item)
-            }
-        }catch {
-            print("错")
-        }
-    }
+
     
     func getDayOfWeek(_ today:String) -> String? {
         let formatter  = DateFormatter()
@@ -256,13 +241,13 @@ UINavigationControllerDelegate {
             print(info[UIImagePickerController.InfoKey.imageURL]!)
            
             
-            let newItem = selectphoto()
-            let imageURL = info[UIImagePickerController.InfoKey.imageURL]!
-            let imageData1 = try! Data(contentsOf: imageURL as! URL)
-            print("imageURL:\(imageURL)")
-            print("imageData1:\(imageData1)")
-            newItem.data = imageData1
-            savePhotoTest(item: newItem)
+//            let newItem = selectphoto()
+//            let imageURL = info[UIImagePickerController.InfoKey.imageURL]!
+//            let imageData1 = try! Data(contentsOf: imageURL as! URL)
+//            print("imageURL:\(imageURL)")
+//            print("imageData1:\(imageData1)")
+//            newItem.data = imageData1
+//            savePhotoTest(item: newItem)
            self.collectionView.reloadData()
            self.photoCollection.reloadData()
         }
@@ -270,17 +255,17 @@ UINavigationControllerDelegate {
         dismiss(animated: true, completion: nil)
     
     }
-    func savePhotoTest(item:selectphoto)
-    {
-        do {
-            try realm.write {
-                realm.add(item)
-                print("数据保存完毕")
-            }
-        }catch {
-            print("错")
-        }
-    }
+   //func savePhotoTest(item:selectphoto)
+    //{
+//        do {
+//            try realm.write {
+//                realm.add(item)
+//                print("数据保存完毕")
+//            }
+//        }catch {
+//            print("错")
+//        }
+    //}
 }
 
 extension diaryWriteController:UICollectionViewDelegate,UICollectionViewDataSource{

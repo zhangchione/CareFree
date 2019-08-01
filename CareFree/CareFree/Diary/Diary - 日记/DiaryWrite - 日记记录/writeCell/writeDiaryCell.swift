@@ -8,7 +8,6 @@
 
 import UIKit
 
-import RealmSwift
 
 protocol WriteDiaryDelegate:NSObjectProtocol {
     //func selectPhoto()
@@ -23,9 +22,7 @@ class writeDiaryCell: UIView {
     
     var arrayData = [1]
     
-    
-    let realm = try! Realm()
-    var itemArray: Results<testPhoto>?
+
     
     lazy var backgroundView:UIView = {
         let vi = UIView()
@@ -94,9 +91,7 @@ class writeDiaryCell: UIView {
     
     
     func configUI(){
-            itemArray = realm.objects(testPhoto.self)
-        print("writeDiaryCell 图片数量为：\(itemArray?.count)")
-        
+
         addSubview(backgroundView)
         
         backgroundView.snp.makeConstraints{(make) in

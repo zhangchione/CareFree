@@ -9,6 +9,7 @@
 import UIKit
 import CollectionKit
 import SnapKit
+import RealmSwift
 
 class CFHomeViewController: UIViewController {
 
@@ -24,6 +25,8 @@ class CFHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         configCV()
         configUI()
         configNavBar()

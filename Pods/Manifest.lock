@@ -22,15 +22,11 @@ PODS:
   - MJRefresh (3.1.16)
   - ProgressHUD (2.51)
   - QuickLayout (3.0.0)
-  - Realm (3.14.0):
-    - Realm/Headers (= 3.14.0)
-  - Realm/Headers (3.14.0)
-  - RealmSwift (3.14.0):
-    - Realm (= 3.14.0)
-  - RxRealm (0.7.6):
-    - RealmSwift (~> 3.0)
-    - RxSwift (~> 4.0)
-  - RxSwift (4.5.0)
+  - Realm (3.17.0):
+    - Realm/Headers (= 3.17.0)
+  - Realm/Headers (3.17.0)
+  - RealmSwift (3.17.0):
+    - Realm (= 3.17.0)
   - SideMenu (5.0.1)
   - SnapKit (4.2.0)
   - SwiftEntryKit (1.0.2):
@@ -53,7 +49,7 @@ DEPENDENCIES:
   - lottie-ios
   - MJRefresh
   - ProgressHUD
-  - RxRealm
+  - RealmSwift
   - SideMenu
   - SnapKit
   - SwiftEntryKit
@@ -78,8 +74,6 @@ SPEC REPOS:
     - QuickLayout
     - Realm
     - RealmSwift
-    - RxRealm
-    - RxSwift
     - SideMenu
     - SnapKit
     - SwiftEntryKit
@@ -113,16 +107,14 @@ SPEC CHECKSUMS:
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
-  Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
-  RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
-  RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  Realm: b30db41ff34fc858ffc25ba8d44a82c164e7ccd0
+  RealmSwift: fe733e459d60dc7b6971d4cbee2eb4854097d12c
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftEntryKit: 7bcd42b3dbff59c431d60d6513129fd3679e4aaf
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: b299d52df736aded19620b31ba7d387032df096a
+PODFILE CHECKSUM: 279efd91f18489cc67d83fcdd14d4d6c21c1698e
 
 COCOAPODS: 1.6.1

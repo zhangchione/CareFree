@@ -23,16 +23,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Bmob.register(withAppKey: "e41b7c9e8c0729aa40a5553ec3c19fa5")
         //save()
+        let config = Realm.Configuration(
+        // 设置新的架构版本。这个版本号必须高于之前所用的版本号
+        // （如果您之前从未设置过架构版本，那么这个版本号设置为 0）
+        schemaVersion: 1,
+        
+        // 设置闭包，这个闭包将会在打开低于上面所设置版本号的 Realm 数据库的时候被自动调用
+        migrationBlock: { migration, oldSchemaVersion in
+            // 目前我们还未进行数据迁移，因此 oldSchemaVersion == 0
+            if (oldSchemaVersion < 1) {
+                // 什么都不要做！Realm 会自行检测新增和需要移除的属性，然后自动更新硬盘上的数据库架构
+            }
+        })
+        
+        // 告诉 Realm 为默认的 Realm 数据库使用这个新的配置对象
+        Realm.Configuration.defaultConfiguration = config
         let realm = try! Realm()
         print(realm.configuration.fileURL!)
-        // 从 Realm 数据库中删除所有对象
-        try! realm.write {
-            realm.deleteAll()
-        }
+//        // 从 Realm 数据库中删除所有对象
+//        try! realm.write {
+//        }
         //let now = Date()
          //print(now.year(),now.month(),now.day(),now.weekDay())
         configVC()
-        
         // 静态图片引导页
         //self.setStaticGuidePage()
         return true
