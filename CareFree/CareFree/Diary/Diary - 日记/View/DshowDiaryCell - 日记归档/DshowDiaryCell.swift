@@ -95,9 +95,29 @@ class DshowDiaryCell: UICollectionViewCell {
             
             self.day.text = (model.date as NSString).substring(to: 2)
             self.yearMouth.text = (model.date as NSString).substring(with: NSMakeRange(3,8))
-            self.week.text = (model.date as NSString).substring(from: 19)
+            var weekText:String?
             
-            self.content.text = model.content
+            switch (model.date as NSString).substring(from: 19) {
+            case "Mon":
+                weekText = "周一"
+            case "Tue":
+                weekText = "周二"
+            case "Wed":
+                weekText = "周三"
+            case "Thu":
+                weekText = "周四"
+            case "Fri":
+                weekText = "周五"
+            case "Sat":
+                weekText = "周六"
+            default:
+                weekText = "周日"
+            }
+            
+            self.week.text = weekText
+                
+            
+            self.content.text = "  " + model.content
             self.emotionValue.text = "情绪值 " + String(model.mode)
 
             if model.mode < 0 && model.mode > -25 {

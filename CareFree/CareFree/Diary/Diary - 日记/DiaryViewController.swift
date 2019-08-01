@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import HandyJSON
+import RealmSwift
 
 class DiaryViewController: UIViewController {
     
@@ -19,6 +20,8 @@ class DiaryViewController: UIViewController {
         print("键盘成功关闭")
         self.view.endEditing(false)
     }
+    // MARK - 查询数据库
+    let realm = try! Realm()
     
     // MARK - 右边日历按钮
     private lazy var rightBarButton:UIButton = {
@@ -71,6 +74,10 @@ class DiaryViewController: UIViewController {
         configData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        configData()
+    }
+    
     func configNavBar(){
         
         self.navigation.bar.isShadowHidden = true
@@ -107,8 +114,31 @@ class DiaryViewController: UIViewController {
         let datas = json["data"]
         for data in datas {
             if let model = DiaryTodayModel.deserialize(from: data.1.rawString()) {
-                self.diaryData.append(model)
+                //self.diaryData.append(model)
             }
+        }
+        let diaryData = realm.objects(diaryToday.self)
+        self.diaryData.removeAll()
+        var dataModel = DiaryTodayModel()
+        for data in diaryData {
+            dataModel.content = data.content
+            dataModel.id = data.id
+            dataModel.user_id = "cone"
+            dataModel.title = data.title
+            dataModel.date = data.date
+            for img in data.images {
+                dataModel.images.append(img)
+            }
+            dataModel.latitude = "119"
+            dataModel.longitude = "33"
+            dataModel.location = data.location
+            dataModel.mode = data.mode
+            dataModel.count = data.count
+            dataModel.now?.happy = data.happy
+            dataModel.now?.calm = data.calm
+            dataModel.now?.sad = data.sad
+            dataModel.now?.so_sad = data.so_sad
+            self.diaryData.append(dataModel)
         }
         self.collectionView.reloadData()
         

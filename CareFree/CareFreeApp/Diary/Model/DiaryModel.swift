@@ -10,12 +10,12 @@ import Foundation
 import HandyJSON
 
 struct DiaryTodayModel:HandyJSON {
-    var id = 0
+    var id = ""
     var user_id = ""
     var title = ""
     var content = ""
     var date = ""
-    var images = Int()
+    var images = [Data]()
     var latitude = ""
     var longitude = ""
     var location = ""

@@ -31,6 +31,18 @@ class diaryWriteController: UIViewController {
     
     private lazy var pictureImages = [UIImage]()
     
+    let realm = try! Realm()
+    // 存日记
+    var writeDiaryData = diaryToday()
+    
+    var photoData = [Data]()
+    
+    var photo:[String]? {
+        didSet {
+            print("12342")
+        }
+    }
+    
     //照片选取
     var imagePickerController : UIImagePickerController!
     
@@ -99,13 +111,7 @@ class diaryWriteController: UIViewController {
 
     }
     
-    var photoData = [String]()
-    
-    var photo:[String]? {
-        didSet {
-            self.photoData = photo!
-        }
-    }
+
     
     func configCV(){
         let viewHeadSource = ClosureViewSource(viewUpdater: {(view:writeDiaryCell,data:Int,index:Int) in
@@ -158,30 +164,59 @@ extension diaryWriteController:UITextViewDelegate {
         return true
         
     }
+    func textViewDidChange(_ textView: UITextView) {
+        writeDiaryData.content = textView.text
+        print("改变的内容为：",self.writeDiaryData.content)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.content = textView.text
+        print("内容为：",self.content)
+    }
     // 右边保存按钮事件
     @objc func save(){
-//        let diaryToday = DiaryToday()
-//
-//        diaryToday.content = content
-//        let date = Date()
-//        let timeForMatter = DateFormatter()
-//        timeForMatter.dateFormat = "YYYY-MM-dd'-'HH:mm"
-//
-//        let strNowTime = timeForMatter.string(from: date) as String
-//        let endIndex =  strNowTime.index(strNowTime.startIndex, offsetBy: 10)
-//
-//        let returnWeekstr = String(strNowTime[..<endIndex])
-//
-//        diaryToday.week = getDayOfWeek(returnWeekstr)!
-//        diaryToday.time = strNowTime
-        //self.saveData(item: diaryToday)
         
+//        writeDiaryData.content = content
+        writeDiaryData.location = "上海"
+         writeDiaryData.mode = Int(arc4random() % 50)
+
+        let now = Date()
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "dd yyyy年MM月 HH点mm分 EE"
+        let date = timeForMatter.string(from: now)
+        writeDiaryData.date = date
+        timeForMatter.dateFormat = "yyyyMMdd"
+        let id = timeForMatter.string(from: now)
+        let allDiary = realm.objects(diaryToday.self)
+        
+        writeDiaryData.id = id + String(allDiary.count)
+        
+        if allDiary.count % 3 == 0 {
+            writeDiaryData.mode = -writeDiaryData.mode
+        }
+        
+        print("日记内容：",writeDiaryData.content)
+        print("日记id: ",writeDiaryData.id )
+        print("日记保存中..")
+        saveDiaryData(item: writeDiaryData)
         print("日记保存成功")
         //键盘消失
         self.view.endEditing(false)
         self.dismiss(animated: true, completion: nil)
     }
     
+    // 日记保存至Realm 数据库
+    func saveDiaryData(item:diaryToday)
+    {
+            do {
+                try realm.write {
+                    realm.add(item)
+                    print("数据保存完毕")
+                }
+            }catch {
+                print("数据保存出错")
+            }
+    }
     // 左边退出按钮事件
     @objc func back(){
         print("退出写日记界面")
@@ -242,8 +277,10 @@ UINavigationControllerDelegate {
            
             
 //            let newItem = selectphoto()
-//            let imageURL = info[UIImagePickerController.InfoKey.imageURL]!
-//            let imageData1 = try! Data(contentsOf: imageURL as! URL)
+            let imageURL = info[UIImagePickerController.InfoKey.imageURL]!
+            let imageData = try! Data(contentsOf: imageURL as! URL)
+            writeDiaryData.images.append(imageData)
+            photoData.append(imageData)
 //            print("imageURL:\(imageURL)")
 //            print("imageData1:\(imageData1)")
 //            newItem.data = imageData1
@@ -251,26 +288,16 @@ UINavigationControllerDelegate {
            self.collectionView.reloadData()
            self.photoCollection.reloadData()
         }
-//
+
         dismiss(animated: true, completion: nil)
     
     }
-   //func savePhotoTest(item:selectphoto)
-    //{
-//        do {
-//            try realm.write {
-//                realm.add(item)
-//                print("数据保存完毕")
-//            }
-//        }catch {
-//            print("错")
-//        }
-    //}
+
 }
 
 extension diaryWriteController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  photoData.count + 1 //itemArray!.count + 1
+        return  photoData.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -282,11 +309,9 @@ extension diaryWriteController:UICollectionViewDelegate,UICollectionViewDataSour
             print("选取按钮")
         }
         else {
-            //cell.backgroundColor  = .red
-            //selectImg.image = pictureImages[indexPath.row]
-            //var da =  itemArray![indexPath.row - 1].data
-            //cell.photo.image = UIImage(data:da!)
-            cell.photo.image = UIImage(named: photoData[indexPath.row - 1])
+            // 设置选择图片展示在此界面
+            let imgdata = photoData[indexPath.row - 1]
+            cell.photo.image = UIImage(data: imgdata)
         }
         return cell
     }

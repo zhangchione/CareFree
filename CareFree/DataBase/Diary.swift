@@ -14,7 +14,7 @@ class diaryToday: Object {
     @objc dynamic var title = ""
     @objc dynamic var content = ""
     @objc dynamic var date = ""
-    @objc dynamic var images = Data()
+    dynamic var images = List<Data>()
     @objc dynamic var location = ""
     @objc dynamic var mode = 0
     @objc dynamic var happy = 0
@@ -29,9 +29,6 @@ class diaryToday: Object {
 }
 
 
-class test: Object {
-    @objc dynamic var name = ""
-}
 
 
 //class DiaryToday: Object {
