@@ -15,6 +15,15 @@ class diaryWriteController: UIViewController {
 
     /// 照片多选
     
+    private var type:String?
+    
+    convenience init(modeType:String) {
+        self.init()
+        self.type = modeType
+    }
+    
+    
+    
     var dismissKetboardTap = UITapGestureRecognizer()
     
     @objc func dismissKeyboard(){
@@ -32,8 +41,11 @@ class diaryWriteController: UIViewController {
     private lazy var pictureImages = [UIImage]()
     
     let realm = try! Realm()
-    // 存日记
+    // 今日日记
     var writeDiaryData = diaryToday()
+    
+    // 此刻日记
+    var writeDiaryNow = diaryNow()
     
     var photoData = [Data]()
     
@@ -166,7 +178,12 @@ extension diaryWriteController:UITextViewDelegate {
     }
     func textViewDidChange(_ textView: UITextView) {
         writeDiaryData.content = textView.text
+        writeDiaryNow.content = textView.text
+        if self.type == "描述今日" {
         print("改变的内容为：",self.writeDiaryData.content)
+        }else {
+        print("此刻改变的内容为：",self.writeDiaryNow.content)
+        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -176,36 +193,49 @@ extension diaryWriteController:UITextViewDelegate {
     // 右边保存按钮事件
     @objc func save(){
         
-//        writeDiaryData.content = content
-        writeDiaryData.location = "上海"
-         writeDiaryData.mode = Int(arc4random() % 50)
-
+        
         let now = Date()
         let timeForMatter = DateFormatter()
-        timeForMatter.dateFormat = "dd yyyy年MM月 HH点mm分 EE"
-        let date = timeForMatter.string(from: now)
-        writeDiaryData.date = date
+
+
         timeForMatter.dateFormat = "yyyyMMdd"
         let id = timeForMatter.string(from: now)
-        let allDiary = realm.objects(diaryToday.self)
-        
-        writeDiaryData.id = id + String(allDiary.count)
-        
-        if allDiary.count % 3 == 0 {
-            writeDiaryData.mode = -writeDiaryData.mode
+        timeForMatter.dateFormat = "dd yyyy年MM月 HH点mm分 EE"
+        let date = timeForMatter.string(from: now)
+
+        if self.type == "描述今日" {
+            writeDiaryData.location = "上海"
+            writeDiaryData.mode = Int(arc4random() % 50)
+            writeDiaryData.date = date
+            let allDiary = realm.objects(diaryToday.self)
+            writeDiaryData.id = id + String(allDiary.count)
+            if allDiary.count % 3 == 0 {
+                writeDiaryData.mode = -writeDiaryData.mode
+            }
+            saveDiaryData(item: writeDiaryData)
+            print("描述今日日记保存成功")
+        }else {
+            writeDiaryNow.location = "上海"
+            writeDiaryNow.mode = Int(arc4random() % 50)
+            writeDiaryNow.date = date
+            let allNowDiary = realm.objects(diaryNow.self)
+            writeDiaryNow.id = id + String(allNowDiary.count) + "1"
+            writeDiaryNow.dayId = id
+            if allNowDiary.count % 3 == 0 {
+                writeDiaryNow.mode = -writeDiaryNow.mode
+            }
+            saveDiaryNow(item: writeDiaryNow)
+            
+            
+            print("此刻日记保存成功")
         }
-        
-        print("日记内容：",writeDiaryData.content)
-        print("日记id: ",writeDiaryData.id )
-        print("日记保存中..")
-        saveDiaryData(item: writeDiaryData)
-        print("日记保存成功")
+
         //键盘消失
         self.view.endEditing(false)
         self.dismiss(animated: true, completion: nil)
     }
     
-    // 日记保存至Realm 数据库
+    // 今日日记保存至Realm 数据库
     func saveDiaryData(item:diaryToday)
     {
             do {
@@ -217,6 +247,20 @@ extension diaryWriteController:UITextViewDelegate {
                 print("数据保存出错")
             }
     }
+    
+    // 此刻日记保存至Realm 数据库
+    func saveDiaryNow(item:diaryNow)
+    {
+        do {
+            try realm.write {
+                realm.add(item)
+                print("数据保存完毕")
+            }
+        }catch {
+            print("数据保存出错")
+        }
+    }
+    
     // 左边退出按钮事件
     @objc func back(){
         print("退出写日记界面")
@@ -279,7 +323,12 @@ UINavigationControllerDelegate {
 //            let newItem = selectphoto()
             let imageURL = info[UIImagePickerController.InfoKey.imageURL]!
             let imageData = try! Data(contentsOf: imageURL as! URL)
-            writeDiaryData.images.append(imageData)
+            if self.type == "描述今日"{
+                writeDiaryData.images.append(imageData)
+            }else {
+                writeDiaryNow.images.append(imageData)
+            }
+
             photoData.append(imageData)
 //            print("imageURL:\(imageURL)")
 //            print("imageData1:\(imageData1)")

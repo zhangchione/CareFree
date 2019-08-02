@@ -11,6 +11,8 @@ import SwiftyJSON
 import HandyJSON
 import RealmSwift
 
+
+
 class DiaryViewController: UIViewController {
     
     
@@ -156,7 +158,7 @@ extension DiaryViewController {
     @objc func write(){
         print("跳转写日记界面...")
         
-        let writeVC = diaryWriteController()
+        let writeVC = diaryWriteController(modeType: "描述今日")
         let emotionLayer = CAGradientLayer()
         emotionLayer.frame = writeVC.view.bounds
         emotionLayer.colors = [UIColor.white.cgColor,UIColor.white.cgColor]
@@ -191,6 +193,33 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         cell.writeBtn.addTarget(self, action: #selector(write), for: .touchUpInside)
         cell.backgroundColor = .white
         cell.delegate = self
+            
+        let now = Date()
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "dd yyyy年MM月 HH点mm分 EE"
+        let date = timeForMatter.string(from: now)
+            cell.day.text = (date as NSString).substring(to: 2)
+            cell.yearMouth.text = (date as NSString).substring(with: NSMakeRange(3,8))
+            var weekText:String?
+            
+            switch (date as NSString).substring(from: 19) {
+            case "Mon":
+                weekText = "周一"
+            case "Tue":
+                weekText = "周二"
+            case "Wed":
+                weekText = "周三"
+            case "Thu":
+                weekText = "周四"
+            case "Fri":
+                weekText = "周五"
+            case "Sat":
+                weekText = "周六"
+            default:
+                weekText = "周日"
+            }
+            
+            cell.week.text = weekText
         return cell
         }else {
             let cell :DshowDiaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: DshowDiaryCellID, for: indexPath) as! DshowDiaryCell
@@ -215,7 +244,8 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 2{
-            let showDiaryVC = showDiaryController()
+            print(diaryData[indexPath.row].content)
+            let showDiaryVC = showDiaryController(headData: diaryData[indexPath.row ])
             let emotionLayer = CAGradientLayer()
             emotionLayer.colors = [UIColor.init(r: 155, g: 121, b: 255).cgColor,UIColor.init(r: 96, g: 114, b: 255).cgColor]
             showDiaryVC.emotionLayer = emotionLayer
@@ -257,7 +287,7 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
 extension DiaryViewController:diaryWriteDelegate {
     func diaryWriteClick(mood: Int) {
         
-        let writeVC = diaryWriteController()
+        let writeVC = diaryWriteController(modeType: "此刻")
         let emotionLayer = CAGradientLayer()
         emotionLayer.frame = writeVC.view.bounds
         switch mood {

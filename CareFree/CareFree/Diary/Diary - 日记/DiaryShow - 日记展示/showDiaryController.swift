@@ -12,7 +12,16 @@ import CollectionKit
 
 class showDiaryController: UIViewController {
     
-    fileprivate let dataHeadSource = ArrayDataSource(data:[1])
+    private var headData:DiaryTodayModel?
+    
+    convenience init(headData:DiaryTodayModel?) {
+        self.init()
+        self.headData = headData
+        print("传递数据的内容为：\(headData?.content)")
+        dataHeadSource.data.append(headData!)
+    }
+    
+    fileprivate let dataHeadSource = ArrayDataSource(data:[DiaryTodayModel]())
     fileprivate lazy var collectionView = CollectionView()
     fileprivate let dataBodySource = ArrayDataSource(data:[nowModel]())
     
@@ -96,20 +105,19 @@ class showDiaryController: UIViewController {
     
     func configCV(){
         
-        let viewHeadSource = ClosureViewSource(viewUpdater: {(view:showHeadCell,data:Int,index:Int) in
-            view.updateUI()
+        let viewHeadSource = ClosureViewSource(viewUpdater: {(view:showHeadCell,data:DiaryTodayModel,index:Int) in
+            view.updateUI(with: data)
+            
+            // 主线程更新头部渐变色
             DispatchQueue.main.async {
                 self.emotionLayer.frame = view.headView.bounds
                 view.headView.layer.addSublayer(self.emotionLayer)
             }
-            
             self.updateDiaryTap.addTarget(self, action: #selector(self.update))
             view.centerView.addGestureRecognizer(self.updateDiaryTap)
-            //view.centerView
-            //view.backgroundColor = .blue
-            
+
         })
-        let sizeHeadSource = {(index:Int,data:Int,collectionSize:CGSize) ->CGSize in
+        let sizeHeadSource = {(index:Int,data:DiaryTodayModel,collectionSize:CGSize) ->CGSize in
             return CGSize(width: collectionSize.width, height: 400)
         }
         

@@ -25,7 +25,7 @@ class showHeadCell: UIView {
     
     lazy var headView : UIView = {
        let vi = UIView()
-        vi.backgroundColor = UIColor.cyan
+        vi.backgroundColor = UIColor.white
         return vi
     }()
     
@@ -33,8 +33,7 @@ class showHeadCell: UIView {
         let label = UILabel()
         label.text = "25"
         label.font = UIFont(name: "PingFangSC-Semibold", size: 44)
-       // label.backgroundColor = UIColor.cyan
-        //label.backgroundColor = UIColor.red
+        label.textColor = UIColor.white
         return label
     }()
     
@@ -42,8 +41,7 @@ class showHeadCell: UIView {
         let label = UILabel()
         label.text = "周四"
         label.font = UIFont(name: "PingFangSC-Regular", size: 13)
-       // label.backgroundColor = UIColor.yellow
-        //label.backgroundColor = UIColor.green
+        label.textColor = UIColor.white
         return label
     }()
     
@@ -51,8 +49,7 @@ class showHeadCell: UIView {
         let label = UILabel()
         label.text = "2019年7月"
         label.font = UIFont(name: "PingFangSC-Regular", size: 13)
-        //label.backgroundColor = UIColor.blue
-        //label.backgroundColor = UIColor.blue
+        label.textColor = UIColor.white
         return label
     }()
     
@@ -67,6 +64,7 @@ class showHeadCell: UIView {
        let label = UILabel()
             label.text = "情绪值 -12"
         label.textColor = UIColor.white
+        label.textAlignment = .center
         return label
     }()
     
@@ -74,14 +72,17 @@ class showHeadCell: UIView {
         let vi = UIView()
         vi.backgroundColor = UIColor.white
         vi.layer.cornerRadius = 15
-        
+        vi.layer.shadowColor = UIColor.init(r: 110, g: 127, b: 255,alpha: 0.26).cgColor
+        vi.layer.shadowOffset = CGSize(width: 0, height: 2)
+        vi.layer.shadowOpacity = 1
+        vi.layer.shadowRadius = 7
         return vi
     }()
     
     lazy var todayLabel:UILabel = {
         let label = UILabel()
         label.text = "今天"
-        label.font = UIFont(name: "PingFangSC-Regular", size: 18)
+        label.font = UIFont(name: "PingFangSC-Semibold", size: 18)
         label.textColor = UIColor.black
         //label.backgroundColor = UIColor.red
         return label
@@ -101,7 +102,7 @@ class showHeadCell: UIView {
     lazy var nowLabel:UILabel = {
         let label = UILabel()
         label.text = "此刻"
-        label.font = UIFont(name: "PingFangSC-Regular", size: 22)
+        label.font = UIFont(name: "PingFangSC-Semibold", size: 22)
         label.textColor = UIColor.black
          //       label.backgroundColor = UIColor.blue
         return label
@@ -118,6 +119,43 @@ class showHeadCell: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateUI(with data: DiaryTodayModel){
+        self.emotionValue.text = "情绪值 " + String(data.mode)
+        self.content.text = data.content
+        day.text = (data.date as NSString).substring(to: 2)
+        yearMouth.text = (data.date as NSString).substring(with: NSMakeRange(3,8))
+        var weekText:String?
+        
+        switch (data.date as NSString).substring(from: 19) {
+        case "Mon":
+            weekText = "周一"
+        case "Tue":
+            weekText = "周二"
+        case "Wed":
+            weekText = "周三"
+        case "Thu":
+            weekText = "周四"
+        case "Fri":
+            weekText = "周五"
+        case "Sat":
+            weekText = "周六"
+        default:
+            weekText = "周日"
+        }
+        
+        week.text = weekText
+        
+        if data.mode > 25 {
+           self.rightView.backgroundColor = happyColor
+        }else if data.mode < 25 && data.mode > 0 {
+            self.rightView.backgroundColor = calmColor
+        }else if data.mode < 0 && data.mode > -25 {
+            self.rightView.backgroundColor = sadColor
+        }else {
+            self.rightView.backgroundColor = sadMoreColor
+        }
+
+    }
     
     func configUI(){
         addSubview(topView)
@@ -144,21 +182,18 @@ class showHeadCell: UIView {
             make.height.equalTo(270)
         }
         
-        emotionLayer = CAGradientLayer()
-        emotionLayer.frame = headView.bounds
-        emotionLayer.colors = [UIColor.init(r: 155, g: 121, b: 255).cgColor,UIColor.init(r: 96, g: 114, b: 255).cgColor]
-        //motionLayer.cornerRadius = 30
-        headView.layer.addSublayer(emotionLayer)
+
+
         
         
         day.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(26)
-            make.top.equalTo(self).offset(120)
+            make.top.equalTo(self).offset(140)
             make.height.width.equalTo(60)
         }
         week.snp.makeConstraints{(make) in
             make.left.equalTo(day.snp.right).offset(5)
-            make.top.equalTo(self).offset(130)
+            make.top.equalTo(self).offset(150)
             make.height.equalTo(20)
             make.width.equalTo(35)
         }
@@ -166,7 +201,7 @@ class showHeadCell: UIView {
             make.left.equalTo(day.snp.right).offset(5)
             make.top.equalTo(week.snp.bottom).offset(0)
             make.height.equalTo(20)
-            make.width.equalTo(70)
+            make.width.equalTo(90)
         }
         
         rightView.snp.makeConstraints{(make) in
@@ -183,7 +218,7 @@ class showHeadCell: UIView {
         }
         
         centerView.snp.makeConstraints{(make) in
-            make.top.equalTo(day.snp.bottom).offset(50)
+            make.top.equalTo(day.snp.bottom).offset(30)
             make.left.equalTo(self).offset(30)
             make.right.equalTo(self).offset(-30)
             make.height.equalTo(150)
@@ -202,7 +237,7 @@ class showHeadCell: UIView {
         }
         nowLabel.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(25)
-            make.top.equalTo(centerView.snp.bottom).offset(30)
+            make.top.equalTo(centerView.snp.bottom).offset(20)
             make.height.equalTo(30)
             make.width.equalTo(55)
         }
@@ -212,8 +247,6 @@ class showHeadCell: UIView {
         
     }
     
-    func updateUI(){
-        
-    }
+
 
 }

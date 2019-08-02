@@ -27,7 +27,20 @@ class diaryToday: Object {
         return "id"
     }
 }
-
+class diaryNow: Object {
+    @objc dynamic var dayId = "" // 索引日期
+    @objc dynamic var id = "" // 主健
+    @objc dynamic var title = ""
+    @objc dynamic var content = ""
+    @objc dynamic var date = ""
+    dynamic var images = List<Data>()
+    @objc dynamic var location = ""
+    @objc dynamic var mode = 0
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
 
 
 
