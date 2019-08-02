@@ -25,3 +25,5 @@ struct MineModel:HandyJSON {
 struct MineMoodModel {
     var mode_value = Int()
 }
+
+

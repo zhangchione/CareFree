@@ -87,6 +87,7 @@ class DshowDiaryCell: UICollectionViewCell {
     func updateWriteUI(){
         
     }
+    var nowDatas = [NowData]()
     
     var conten:DiaryTodayModel?{
         didSet{
@@ -133,6 +134,33 @@ class DshowDiaryCell: UICollectionViewCell {
                 self.emotionValue.textColor =  UIColor.init(r: 57, g: 210, b: 214)
             }
             
+            
+            var now = NowData()
+            
+            self.nowDatas.removeAll()
+            
+            if model.now.happy != 0 {
+                now.type = "开心"
+                now.mode = model.now.happy
+                self.nowDatas.append(now)
+            }
+            if model.now.calm != 0 {
+                now.type = "平静"
+                now.mode = model.now.calm
+                self.nowDatas.append(now)
+            }
+            if model.now.sad != 0 {
+                now.type = "难过"
+                now.mode = model.now.sad
+                self.nowDatas.append(now)
+            }
+            if model.now.so_sad != 0{
+                now.type = "压抑"
+                now.mode = model.now.so_sad
+                self.nowDatas.append(now)
+            }
+            
+            self.emotionData.reloadData()
         }
     }
     
@@ -212,57 +240,33 @@ class DshowDiaryCell: UICollectionViewCell {
 
 extension DshowDiaryCell:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return conten!.count
+        return nowDatas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "emotionCell", for: indexPath) as! emotionCell
         cell.selectionStyle = .none
-        if conten!.count == 0 {
-            cell.waiView.backgroundColor = UIColor.white
-            cell.modeData.text = ""
+        
+        let datas = nowDatas[indexPath.row]
+        
+        if datas.type == "开心" {
+            cell.waiView.backgroundColor = UIColor.init(r: 57, g: 210, b: 214)
+            cell.modeData.text = "开心\(datas.mode)条"
         }
-        else if conten!.count == 1 {
-            cell.waiView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
-            cell.modeData.text = "难过\(1)条"
-        }
-        else if conten!.count == 2 {
-            if indexPath.row == 0 {
-                cell.waiView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
-                cell.modeData.text = "压抑\(2)条"
-            } else {
+        if datas.type == "平静" {
             cell.waiView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
-            cell.modeData.text = "平静\(1)条"
-            }
+            cell.modeData.text = "平静\(datas.mode)条"
         }
-        else if conten!.count == 3 {
-            if indexPath.row == 0 {
-                cell.waiView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
-                cell.modeData.text = "平静\(1)条"
-            } else if indexPath.row == 1 {
-                cell.waiView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
-                cell.modeData.text = "难过\(1)条"
-            }else {
-                cell.waiView.backgroundColor = UIColor.init(r: 57, g: 210, b: 214)
-                cell.modeData.text = "开心\(1)条"
-            }
+        if datas.type == "难过" {
+            cell.waiView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
+            cell.modeData.text = "难过\(datas.mode)条"
         }
-        else if conten?.count == 4 {
-            if indexPath.row == 0 {
-                cell.waiView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
-                cell.modeData.text = "平静\(1)条"
-            } else if indexPath.row == 1 {
-                cell.waiView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
-                cell.modeData.text = "难过\(2)条"
-            }else if indexPath.row == 2{
-                cell.waiView.backgroundColor = UIColor.init(r: 57, g: 210, b: 214)
-                cell.modeData.text = "开心\(1)条"
-            }
-            else {
-                cell.waiView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
-                cell.modeData.text = "压抑\(1)条"
-            }
+        if datas.type == "压抑" {
+             cell.waiView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
+            cell.modeData.text = "压抑\(datas.mode)条"
         }
+        
+       
         return cell
     }
     

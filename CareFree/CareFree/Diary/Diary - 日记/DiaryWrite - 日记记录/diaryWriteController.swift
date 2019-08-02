@@ -179,6 +179,7 @@ extension diaryWriteController:UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         writeDiaryData.content = textView.text
         writeDiaryNow.content = textView.text
+        self.content = textView.text
         if self.type == "描述今日" {
         print("改变的内容为：",self.writeDiaryData.content)
         }else {
@@ -187,8 +188,6 @@ extension diaryWriteController:UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        self.content = textView.text
-        print("内容为：",self.content)
     }
     // 右边保存按钮事件
     @objc func save(){
@@ -208,13 +207,17 @@ extension diaryWriteController:UITextViewDelegate {
             writeDiaryData.mode = Int(arc4random() % 50)
             writeDiaryData.date = date
             let allDiary = realm.objects(diaryToday.self)
-            writeDiaryData.id = id + String(allDiary.count)
+            writeDiaryData.id = id 
             if allDiary.count % 3 == 0 {
                 writeDiaryData.mode = -writeDiaryData.mode
             }
+            for img in photoData {
+                writeDiaryData.images.append(img)
+            }
+            
             saveDiaryData(item: writeDiaryData)
             print("描述今日日记保存成功")
-        }else {
+        }else if self.type == "此刻"{
             writeDiaryNow.location = "上海"
             writeDiaryNow.mode = Int(arc4random() % 50)
             writeDiaryNow.date = date
@@ -224,10 +227,46 @@ extension diaryWriteController:UITextViewDelegate {
             if allNowDiary.count % 3 == 0 {
                 writeDiaryNow.mode = -writeDiaryNow.mode
             }
+            for img in photoData {
+                writeDiaryNow.images.append(img)
+            }
+
             saveDiaryNow(item: writeDiaryNow)
             
+            let predicate = NSPredicate(format: "id = %@", id)
+            let today = realm.objects(diaryToday.self).filter(predicate).first
+            try! realm.write {
+                today?.count += 1
+                if writeDiaryNow.mode > 25 {
+                    today?.happy += 1
+                }else if writeDiaryNow.mode > 0 {
+                    today?.calm += 1
+                    
+                }else if writeDiaryNow.mode > -25{
+                    today?.sad += 1
+                }else {
+                    today?.so_sad += 1
+                }
+                today?.mode = (today!.mode * (today!.count - 1 ) + writeDiaryNow.mode) / today!.count
+            }
             
             print("此刻日记保存成功")
+        }else if self.type == "修改今日描述"{
+            let update = diaryToday()
+            update.calm = 1
+            update.id = "20190802"
+            let predicate = NSPredicate(format: "id = %@", id)
+            let myup = realm.objects(diaryToday.self).filter(predicate).first
+            try! realm.write {
+               myup?.content = self.content
+                myup?.images.removeAll()
+                for img in photoData {
+                    myup?.images.append(img)
+                }
+            }
+            print("今日描述修改成功")
+        }else {
+            print("此刻描述修改成功")
         }
 
         //键盘消失
@@ -323,17 +362,8 @@ UINavigationControllerDelegate {
 //            let newItem = selectphoto()
             let imageURL = info[UIImagePickerController.InfoKey.imageURL]!
             let imageData = try! Data(contentsOf: imageURL as! URL)
-            if self.type == "描述今日"{
-                writeDiaryData.images.append(imageData)
-            }else {
-                writeDiaryNow.images.append(imageData)
-            }
 
             photoData.append(imageData)
-//            print("imageURL:\(imageURL)")
-//            print("imageData1:\(imageData1)")
-//            newItem.data = imageData1
-//            savePhotoTest(item: newItem)
            self.collectionView.reloadData()
            self.photoCollection.reloadData()
         }

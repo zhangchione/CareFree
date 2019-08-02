@@ -136,13 +136,14 @@ class DiaryViewController: UIViewController {
             dataModel.location = data.location
             dataModel.mode = data.mode
             dataModel.count = data.count
-            dataModel.now?.happy = data.happy
-            dataModel.now?.calm = data.calm
-            dataModel.now?.sad = data.sad
-            dataModel.now?.so_sad = data.so_sad
+            dataModel.now.happy = data.happy
+            dataModel.now.calm = data.calm
+            dataModel.now.sad = data.sad
+            dataModel.now.so_sad = data.so_sad
             self.diaryData.append(dataModel)
         }
         self.collectionView.reloadData()
+        
         
     }
 
@@ -156,20 +157,60 @@ extension DiaryViewController {
     }
     
     @objc func write(){
-        print("跳转写日记界面...")
+        let now = Date()
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "yyyyMMdd"
+        let id = timeForMatter.string(from: now)
         
-        let writeVC = diaryWriteController(modeType: "描述今日")
-        let emotionLayer = CAGradientLayer()
-        emotionLayer.frame = writeVC.view.bounds
-        emotionLayer.colors = [UIColor.white.cgColor,UIColor.white.cgColor]
-        emotionLayer.cornerRadius = 30
-        let topColor = UIColor.black
-        let writeColor = UIColor.init(r: 127, g: 127, b: 127)
-        writeVC.topColor = topColor
-        writeVC.writeColor = writeColor
-        writeVC.emotionLayer = emotionLayer
+        let datas = realm.objects(diaryToday.self)
         
-        self.present(writeVC, animated: true, completion: nil)
+        var isExitTodayDiary = false
+        
+        var todayData:diaryToday?
+        // 判断今日是否写过日记
+        for data in datas {
+            if data.id  == id {
+                isExitTodayDiary = true
+                todayData = data
+                break;
+            }
+        }
+        if isExitTodayDiary
+        {
+            print("今日已经写过日记")
+            let writeVC = diaryWriteController(modeType: "修改今日描述")
+            let emotionLayer = CAGradientLayer()
+            emotionLayer.frame = writeVC.view.bounds
+            emotionLayer.colors = [UIColor.white.cgColor,UIColor.white.cgColor]
+            emotionLayer.cornerRadius = 30
+            let topColor = UIColor.black
+            let writeColor = UIColor.init(r: 127, g: 127, b: 127)
+            writeVC.topColor = topColor
+            writeVC.writeColor = writeColor
+            writeVC.emotionLayer = emotionLayer
+            writeVC.content = todayData!.content
+
+            for img in todayData!.images {
+                writeVC.photoData.append(img)
+            }
+            self.present(writeVC, animated: true, completion: nil)
+        }else {
+            print("今日还未写过日记")
+            let writeVC = diaryWriteController(modeType: "描述今日")
+            let emotionLayer = CAGradientLayer()
+            emotionLayer.frame = writeVC.view.bounds
+            emotionLayer.colors = [UIColor.white.cgColor,UIColor.white.cgColor]
+            emotionLayer.cornerRadius = 30
+            let topColor = UIColor.black
+            let writeColor = UIColor.init(r: 127, g: 127, b: 127)
+            writeVC.topColor = topColor
+            writeVC.writeColor = writeColor
+            writeVC.emotionLayer = emotionLayer
+            
+            self.present(writeVC, animated: true, completion: nil)
+        }
+        
+
     }
     
 }
@@ -224,6 +265,7 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
         }else {
             let cell :DshowDiaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: DshowDiaryCellID, for: indexPath) as! DshowDiaryCell
             cell.conten = diaryData[indexPath.row]
+            
             return cell
         }
     }

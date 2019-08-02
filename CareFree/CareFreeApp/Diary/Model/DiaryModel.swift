@@ -20,7 +20,7 @@ struct DiaryTodayModel:HandyJSON {
     var longitude = ""
     var location = ""
     var mode = 0
-    var now:ModeNow?
+    var now = ModeNow()
     var count = 0
 }
 struct ModeNow:HandyJSON {
@@ -28,4 +28,9 @@ struct ModeNow:HandyJSON {
     var calm = 0
     var sad = 0
     var so_sad = 0
+}
+
+struct NowData {
+    var mode = 0
+    var type = ""
 }
