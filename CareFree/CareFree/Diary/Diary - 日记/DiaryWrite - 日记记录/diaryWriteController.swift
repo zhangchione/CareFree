@@ -252,9 +252,6 @@ extension diaryWriteController:UITextViewDelegate {
             
             print("此刻日记保存成功")
         }else if self.type == "修改今日描述"{
-            let update = diaryToday()
-            update.calm = 1
-            update.id = "20190802"
             let predicate = NSPredicate(format: "id = %@", id)
             let myup = realm.objects(diaryToday.self).filter(predicate).first
             try! realm.write {

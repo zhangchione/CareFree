@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import CollectionKit
+import RealmSwift
 
 class showDiaryController: UIViewController {
     
@@ -20,6 +21,8 @@ class showDiaryController: UIViewController {
         print("传递数据的内容为：\(headData?.content)")
         dataHeadSource.data.append(headData!)
     }
+    
+    let realm = try! Realm()
     
     fileprivate let dataHeadSource = ArrayDataSource(data:[DiaryTodayModel]())
     fileprivate lazy var collectionView = CollectionView()
@@ -46,28 +49,24 @@ class showDiaryController: UIViewController {
     }()
     
     func configData(){
+        
+        let now = Date()
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "yyyyMMdd"
+        let id = timeForMatter.string(from: now)
+         let predicate = NSPredicate(format: "dayId = %@", id)
+        let nowdatas = realm.objects(diaryNow.self).filter(predicate)
+        
         var model = nowModel()
+        
+        for data in nowdatas {
+            model.content = data.content
+            model.mode = data.mode
+            model.time = (data.date as NSString).substring(with: NSMakeRange(12,6))
+            self.dataBodySource.data.append(model)
+        }
+        
 
-        model.content = "期待已久的书终于到了"
-        model.time = "10点17分"
-        model.mode = 20
-        self.dataBodySource.data.append(model)
-        model.content = "书没有想象中的好"
-        model.time = "11点32分"
-        model.mode = -10
-        self.dataBodySource.data.append(model)
-        model.content = "书很难看诶！！☹️！"
-        model.time = "12点21分"
-        model.mode = -20
-        self.dataBodySource.data.append(model)
-        model.content = "朋友说送我一本好书，😸！开心"
-        model.time = "14点32分"
-        model.mode = 36
-        self.dataBodySource.data.append(model)
-        model.content = "真不好过，压抑啊 ！"
-        model.time = "16点32分"
-        model.mode = -34
-        self.dataBodySource.data.append(model)
         self.collectionView.reloadData()
     }
     
@@ -92,15 +91,33 @@ class showDiaryController: UIViewController {
     }
         var updateDiaryTap = UITapGestureRecognizer()
     @objc func update() {
-        let updateDiaryVC = diaryWriteController()
-        updateDiaryVC.content = "  上班好累呀！好想休息，去浪迹天涯诶，上班真累，难过ing 😞 🙁！"
-        let emotionLayer = CAGradientLayer()
-        emotionLayer.frame = updateDiaryVC.view.bounds
-        emotionLayer.colors = [UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
         
-        updateDiaryVC.emotionLayer = emotionLayer
-        updateDiaryVC.photo = ["t1","t2"]
-        present(updateDiaryVC,animated: true)
+        let now = Date()
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "yyyyMMdd"
+        let id = timeForMatter.string(from: now)
+        let predicate = NSPredicate(format: "id = %@", id)
+        let nowdatas = realm.objects(diaryToday.self).filter(predicate).first
+        
+        let writeVC = diaryWriteController(modeType: "修改今日描述")
+        let emotionLayer = CAGradientLayer()
+        emotionLayer.frame = writeVC.view.bounds
+        emotionLayer.colors = [UIColor.white.cgColor,UIColor.white.cgColor]
+        emotionLayer.cornerRadius = 30
+        let topColor = UIColor.black
+        let writeColor = UIColor.init(r: 127, g: 127, b: 127)
+        writeVC.topColor = topColor
+        writeVC.writeColor = writeColor
+        writeVC.emotionLayer = emotionLayer
+        writeVC.content = nowdatas!.content
+        
+        for img in nowdatas!.images {
+            writeVC.photoData.append(img)
+        }
+        self.present(writeVC, animated: true, completion: nil)
+        
+        
+       
     }
     
     func configCV(){
