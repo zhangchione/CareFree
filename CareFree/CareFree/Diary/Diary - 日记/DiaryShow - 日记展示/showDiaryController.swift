@@ -158,15 +158,33 @@ class showDiaryController: UIViewController {
         let finalProvider = ComposedProvider(sections:[providerHead,providerBody])
         
         providerBody.tapHandler = { context -> Void in
-            let updateDiaryVC = diaryWriteController()
-            updateDiaryVC.content = "  期待已久的书终于到了"
-            let emotionLayer = CAGradientLayer()
-            emotionLayer.frame = updateDiaryVC.view.bounds
-            emotionLayer.colors = [UIColor.init(r: 118, g: 175, b: 227).cgColor,UIColor.init(r: 91, g: 123, b: 218).cgColor]
+            print(context.index)
             
-            updateDiaryVC.emotionLayer = emotionLayer
-            updateDiaryVC.photo = ["t3"]
-            self.present(updateDiaryVC,animated: true)
+            
+            let now = Date()
+            let timeForMatter = DateFormatter()
+            timeForMatter.dateFormat = "yyyyMMdd"
+            let id = timeForMatter.string(from: now) + String(context.index)
+            let predicate = NSPredicate(format: "id = %@", id)
+            let nowdatas = self.realm.objects(diaryNow.self).filter(predicate).first
+            
+            let writeVC = diaryWriteController(type: "修改此刻描述",id: id)
+            let emotionLayer = CAGradientLayer()
+            emotionLayer.frame = writeVC.view.bounds
+            emotionLayer.colors = [UIColor.white.cgColor,UIColor.white.cgColor]
+            emotionLayer.cornerRadius = 30
+            let topColor = UIColor.black
+            let writeColor = UIColor.init(r: 127, g: 127, b: 127)
+            writeVC.topColor = topColor
+            writeVC.writeColor = writeColor
+            writeVC.emotionLayer = emotionLayer
+            writeVC.content = nowdatas!.content
+            
+            for img in nowdatas!.images {
+                writeVC.photoData.append(img)
+            }
+            print("修改第\(context.index)记录")
+            self.present(writeVC, animated: true, completion: nil)
         }
         providerBody.layout = FlowLayout(spacing: 40)
         providerHead.layout = FlowLayout(spacing: 30)

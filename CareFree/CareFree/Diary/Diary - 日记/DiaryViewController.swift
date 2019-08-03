@@ -15,6 +15,7 @@ import RealmSwift
 
 class DiaryViewController: UIViewController {
     
+
     
     var dismissKetboardTap = UITapGestureRecognizer()
     
@@ -328,23 +329,47 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
 
 extension DiaryViewController:diaryWriteDelegate {
     func diaryWriteClick(mood: Int) {
+        let now = Date()
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "yyyyMMdd"
+        let id = timeForMatter.string(from: now)
         
-        let writeVC = diaryWriteController(modeType: "此刻")
-        let emotionLayer = CAGradientLayer()
-        emotionLayer.frame = writeVC.view.bounds
-        switch mood {
-        case 0:
-            emotionLayer.colors = [UIColor.init(r: 56, g: 213, b: 214).cgColor,UIColor.init(r: 63, g: 171, b: 213).cgColor]
-        case 1:
-            emotionLayer.colors = [UIColor.init(r: 118, g: 175, b: 227).cgColor,UIColor.init(r: 91, g: 123, b: 218).cgColor]
-        case 2:
-            emotionLayer.colors = [UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
-        case 3:
-            emotionLayer.colors = [UIColor.init(r: 43, g: 88, b: 118).cgColor,UIColor.init(r: 9, g: 32, b: 63).cgColor]
-        default: break
+        let datas = realm.objects(diaryToday.self)
+        
+        var isExitTodayDiary = false
+        
+        var todayData:diaryToday?
+        // 判断今日是否写过日记
+        for data in datas {
+            if data.id  == id {
+                isExitTodayDiary = true
+                todayData = data
+                break;
+            }
         }
-        writeVC.emotionLayer = emotionLayer
-        self.present(writeVC, animated: true, completion: nil)
+        
+        if isExitTodayDiary {
+            let writeVC = diaryWriteController(modeType: "此刻")
+            let emotionLayer = CAGradientLayer()
+            emotionLayer.frame = writeVC.view.bounds
+            switch mood {
+            case 0:
+                emotionLayer.colors = [UIColor.init(r: 56, g: 213, b: 214).cgColor,UIColor.init(r: 63, g: 171, b: 213).cgColor]
+            case 1:
+                emotionLayer.colors = [UIColor.init(r: 118, g: 175, b: 227).cgColor,UIColor.init(r: 91, g: 123, b: 218).cgColor]
+            case 2:
+                emotionLayer.colors = [UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
+            case 3:
+                emotionLayer.colors = [UIColor.init(r: 43, g: 88, b: 118).cgColor,UIColor.init(r: 9, g: 32, b: 63).cgColor]
+            default: break
+            }
+            writeVC.emotionLayer = emotionLayer
+            self.present(writeVC, animated: true, completion: nil)
+        }else {
+            print("亲，你还未描述今日噢")
+        }
+        
+        
         
        
     }

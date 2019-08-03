@@ -213,7 +213,7 @@ class showHeadCell: UIView {
         emotionValue.snp.makeConstraints{(make) in
             make.centerY.equalTo(rightView.snp.centerY)
             make.centerX.equalTo(rightView.snp.centerX)
-            make.width.equalTo(85)
+            make.width.equalTo(90)
             make.height.equalTo(25)
         }
         

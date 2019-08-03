@@ -16,12 +16,18 @@ class diaryWriteController: UIViewController {
     /// 照片多选
     
     private var type:String?
+    private var dayId:String?
     
     convenience init(modeType:String) {
         self.init()
         self.type = modeType
     }
     
+    convenience init(type: String,id: String){
+        self.init()
+        self.type = type
+        self.dayId = id
+    }
     
     
     var dismissKetboardTap = UITapGestureRecognizer()
@@ -222,7 +228,7 @@ extension diaryWriteController:UITextViewDelegate {
             writeDiaryNow.mode = Int(arc4random() % 50)
             writeDiaryNow.date = date
             let allNowDiary = realm.objects(diaryNow.self)
-            writeDiaryNow.id = id + String(allNowDiary.count) + "1"
+            writeDiaryNow.id = id + String(allNowDiary.count)
             writeDiaryNow.dayId = id
             if allNowDiary.count % 3 == 0 {
                 writeDiaryNow.mode = -writeDiaryNow.mode
@@ -263,7 +269,17 @@ extension diaryWriteController:UITextViewDelegate {
             }
             print("今日描述修改成功")
         }else {
-            print("此刻描述修改成功")
+
+            let predicate = NSPredicate(format: "id = %@", dayId!)
+            let myup = realm.objects(diaryNow.self).filter(predicate).first
+            try! realm.write {
+                myup?.content = self.content
+                myup?.images.removeAll()
+                for img in photoData {
+                    myup?.images.append(img)
+                }
+            }
+            print("此刻修改成功")
         }
 
         //键盘消失
