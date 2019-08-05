@@ -15,14 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let a = 1
-    let b = 1
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-
-        
-        Bmob.register(withAppKey: "e41b7c9e8c0729aa40a5553ec3c19fa5")
-        //save()
         let config = Realm.Configuration(
         // 设置新的架构版本。这个版本号必须高于之前所用的版本号
         // （如果您之前从未设置过架构版本，那么这个版本号设置为 0）

@@ -41,7 +41,7 @@ class CFAlbumViewController: UIViewController {
         }
     }
     
-    func configNavBar(){
+    func configNavBar() {
         self.navigation.bar.isShadowHidden = true
         self.navigation.bar.alpha = 0
         Title.frame = CGRect(x: 22.fitWidth_CGFloat, y: 50.fitHeight_CGFloat, width: 100.fitWidth_CGFloat, height: 40.fitHeight_CGFloat)
@@ -52,18 +52,23 @@ class CFAlbumViewController: UIViewController {
     
     func configCV(){
         let viewSource = ClosureViewSource(viewUpdater: {(view:albumCell,data:Int,index:Int) in
+            
             view.updateUI()
             
         })
+        
         let sizeSource = {(index:Int,data:Int,collectionSize:CGSize) ->CGSize in
             return CGSize(width: collectionSize.width, height: 520)
         }
-
+        
+        
+        
         let provider = BasicProvider(
             dataSource: dataSource,
             viewSource: viewSource,
             sizeSource:sizeSource
         )
+        
         provider.tapHandler = { context -> Void in
             let albumMoreVC = AlbumDetialController()
             self.navigationController?.pushViewController(albumMoreVC, animated: true)

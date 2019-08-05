@@ -107,6 +107,7 @@ class DiaryViewController: UIViewController {
         }
     }
     
+    
     func configData(){
         //1 获取json文件路径
         let path = Bundle.main.path(forResource: "diary_today", ofType: "json")
@@ -123,7 +124,7 @@ class DiaryViewController: UIViewController {
         let diaryData = realm.objects(diaryToday.self)
         self.diaryData.removeAll()
         var dataModel = DiaryTodayModel()
-        for data in diaryData {
+        for data in diaryData.reversed() {
             dataModel.content = data.content
             dataModel.id = data.id
             dataModel.user_id = "cone"

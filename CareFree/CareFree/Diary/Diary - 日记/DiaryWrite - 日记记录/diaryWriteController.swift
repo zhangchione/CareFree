@@ -202,7 +202,7 @@ extension diaryWriteController:UITextViewDelegate {
         let now = Date()
         let timeForMatter = DateFormatter()
 
-
+        
         timeForMatter.dateFormat = "yyyyMMdd"
         let id = timeForMatter.string(from: now)
         timeForMatter.dateFormat = "dd yyyy年MM月 HH点mm分 EE"
