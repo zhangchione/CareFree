@@ -37,6 +37,12 @@ class showDiaryController: UIViewController {
         configCV()
         configData()
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.y)
+        print("11111")
+    }
+    
     // 左边返回按钮
     private lazy var leftBarButton:UIButton = {
         let button = UIButton.init(type: .custom)

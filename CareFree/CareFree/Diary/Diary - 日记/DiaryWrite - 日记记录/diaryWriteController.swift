@@ -227,7 +227,8 @@ extension diaryWriteController:UITextViewDelegate {
             writeDiaryNow.location = "上海"
             writeDiaryNow.mode = Int(arc4random() % 50)
             writeDiaryNow.date = date
-            let allNowDiary = realm.objects(diaryNow.self)
+            let predicate = NSPredicate(format: "dayId = %@", id)
+            let allNowDiary = realm.objects(diaryNow.self).filter(predicate)
             writeDiaryNow.id = id + String(allNowDiary.count)
             writeDiaryNow.dayId = id
             if allNowDiary.count % 3 == 0 {
@@ -239,8 +240,8 @@ extension diaryWriteController:UITextViewDelegate {
 
             saveDiaryNow(item: writeDiaryNow)
             
-            let predicate = NSPredicate(format: "id = %@", id)
-            let today = realm.objects(diaryToday.self).filter(predicate).first
+            let predicate1 = NSPredicate(format: "id = %@", id)
+            let today = realm.objects(diaryToday.self).filter(predicate1).first
             try! realm.write {
                 today?.count += 1
                 if writeDiaryNow.mode > 25 {

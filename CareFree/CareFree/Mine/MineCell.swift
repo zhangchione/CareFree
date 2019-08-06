@@ -12,6 +12,8 @@ import CollectionKit
 
 class MineCell: UIView {
 
+    //
+    
     lazy var userImg:UIImageView = {
        let vi = UIImageView()
         //vi.backgroundColor=UIColor.red
