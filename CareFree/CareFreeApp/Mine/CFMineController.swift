@@ -96,10 +96,10 @@ extension CFMineController{
         impliesAnimation.duration = self.duration * 2
         impliesAnimation.calculationMode = CAAnimationCalculationMode.cubic
         print("设置页面跳转中...")
-        let setVC = SetViewController()
+        let setVC = SetController()
 //        setVC.hero.isEnabled = true
 //        setVC.backView.hero.id = "sky"
-        setVC.backUser = [["user","Jeffrey"],["",""],["",""]]
+        //setVC.backUser = [["user","Jeffrey"],["",""],["",""]]
        self.navigationController?.pushViewController(setVC, animated: true)
     }
     @objc func diaryChartEvnent(){

@@ -30,80 +30,22 @@ class LoginViewController: UIViewController {
     @IBAction func loginBtn(_ sender: UIButton) {
         
    
-        ProgressHUD.show("登录中",interaction: true)
-        
+        ProgressHUD.show("登录中")
 
-        ProgressHUD.dismiss()
-        self.navigationController?.popViewController(animated: true)
-        ProgressHUD.showSuccess("登录成功")
-        // ProgressHUD.show("登陆中")
-        let loginApiUrl = getApiLogin(userId: userID.text!, password: password.text!)
-//
-//        let URL = "https://b97fe674.ngrok.io/login?username=17408001048&password=test"
-//
-//        Alamofire.request(URL).responseJSON{(resonds) in
-//            guard resonds.result.isSuccess else {
-//                print("请求错误")
-//                return
-//            }
-//            if let value = resonds.result.value{
-//                let json = JSON(value)
-//                print(json)
-//            }
-//        }
-//
-//        Alamofire.request(loginApiUrl).responseJSON{(responds) in
-//            guard responds.result.isSuccess else { ProgressHUD.showError("网络请求失败"); ProgressHUD.dismiss();  return }
-//            if let value = responds.result.value {
-//                let json = JSON(value)
-//                print(json)
-//            }
-//        }
-        
-//            //查找GameScore表
-//            let query:BmobQuery = BmobQuery(className: "_User")
-//            query.findObjectsInBackground { (array, error) in
-//                for i in 0..<array!.count{
-//                    let obj = array![i] as! BmobObject
-//                    let phone = obj.object(forKey: "mobilePhoneNumber") as? String
-//                    let pwd = obj.object(forKey: "pwd") as? String
-//                    guard phone! == self.userID.text! else {
-//                        print("用户不存在")
-//                        return
-//                    }
-//                    guard pwd! == self.password.text! else {
-//                        print("密码不正确")
-//                        return
-//                    }
-//                    var user = User()
-//                    user.id = obj.object(forKey: "id") as! String
-//                    user.mode = obj.object(forKey: "mode") as! String
-//                    user.total_notes = obj.object(forKey: "total_notes") as! Int
-//                    user.userName = obj.object(forKey: "username") as! String
-//
-//                    saveUser(userData: user)
-//
-//                    print("登录成功")
-//                    print(obj)
-//                    self.navigationController?.popViewController(animated: true)
-//                    break;
-//                }
-//            }
-//
-        
-//        let loginUrl = "http://120.77.151.36/api/login?UserTel=" + userID.text! + "&Password=" + password.text!
-//        Alamofire.request(loginUrl).responseJSON{(responds) in
-//            guard responds.result.isSuccess  else {
-//                ProgressHUD.showError("网络请求失败");
-//                ProgressHUD.dismiss();  return
-//            }
-//            if let value = responds.result.value {
-//                let json = JSON(value)
-//                print(json)
-//                self.navigationController?.popViewController(animated: true)
-//                }
-//
-//        }
+        let loginUrl = "http://47.107.37.32:8081/api1.1/user/" + userID.text! + "/" + password.text!
+        Alamofire.request(loginUrl).responseJSON{(responds) in
+            guard responds.result.isSuccess  else {
+                ProgressHUD.showError("网络请求失败");
+                 return
+            }
+            if let value = responds.result.value {
+                let json = JSON(value)
+                print(json)
+                ProgressHUD.showSuccess("登陆成功")
+                self.navigationController?.popViewController(animated: true)
+                }
+
+        }
     }
     
     @IBAction func forgetPwdBtn(_ sender: UIButton) {

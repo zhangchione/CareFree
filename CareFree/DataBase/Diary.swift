@@ -44,6 +44,8 @@ class diaryNow: Object {
 
 
 
+
+
 //class DiaryToday: Object {
 //    @objc dynamic var week : String = ""
 //    @objc dynamic var time : String = ""

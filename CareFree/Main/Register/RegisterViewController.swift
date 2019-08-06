@@ -19,7 +19,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     @IBAction func sendCheckBtn(_ sender: UIButton) {
-        let registerUrl = "http://120.77.151.36/api/sendverifycode?PhoneNumber=" + phoneNumber.text!
+        ProgressHUD.show("正在发送验证码")
+        let registerUrl = "http://47.107.37.32:8081/api1.1/mail/" + phoneNumber.text!
         Alamofire.request(registerUrl).responseJSON{(responds) in
             guard responds.result.isSuccess else {
                 ProgressHUD.showError("网络请求失败");
@@ -30,27 +31,31 @@ class RegisterViewController: UIViewController {
                 print("value=",value)
                 let json = JSON(value)
                 print(json)
+                if json["msg"] == "successful" {
+                    
+                    ProgressHUD.showSuccess("发送成功")
+                }
+                else {
+                    ProgressHUD.showError("发送失败")
+                }
             }
         }
     }
     
     @IBAction func registerBtn(_ sender: UIButton) {
-//        guard phoneNumber.text! == "" else {
-//            ProgressHUD.showError("手机号码不能为空")
-//            return
-//        }
-        let registerUrl = "http://120.77.151.36/api/registry?UserCode=" + verify.text! + "&UserTel=" + phoneNumber.text! +  "&Password=" + password.text!
-        Alamofire.request(registerUrl).responseJSON{(responds) in
+        ProgressHUD.show("正在注册")
+        let registerUrl =  "http://47.107.37.32:8081/api1.1/user/" + phoneNumber.text! + "/" + password.text! + "/" + verify.text!
+        Alamofire.request(registerUrl,method: .post).responseJSON{(responds) in
             print(registerUrl)
             guard responds.result.isSuccess else {
                 ProgressHUD.showError("注册失败，请稍后再试");
-                ProgressHUD.dismiss();
                 print("网络请求失败"); return
             }
             if let value = responds.result.value {
                 print("value=",value)
                 let json = JSON(value)
                 print(json)
+                //if json["msg"] == ""
                 ProgressHUD.showSuccess("注册成功")
                 self.navigationController?.popToRootViewController(animated: true)
             }

@@ -60,7 +60,7 @@ class showDiaryController: UIViewController {
         let timeForMatter = DateFormatter()
         timeForMatter.dateFormat = "yyyyMMdd"
         let id = timeForMatter.string(from: now)
-         let predicate = NSPredicate(format: "dayId = %@", id)
+        let predicate = NSPredicate(format: "dayId = %@", self.dataHeadSource.data.first!.id)
         let nowdatas = realm.objects(diaryNow.self).filter(predicate)
         
         var model = nowModel()
@@ -98,10 +98,7 @@ class showDiaryController: UIViewController {
         var updateDiaryTap = UITapGestureRecognizer()
     @objc func update() {
         
-        let now = Date()
-        let timeForMatter = DateFormatter()
-        timeForMatter.dateFormat = "yyyyMMdd"
-        let id = timeForMatter.string(from: now)
+        let id = self.dataHeadSource.data.first!.id
         let predicate = NSPredicate(format: "id = %@", id)
         let nowdatas = realm.objects(diaryToday.self).filter(predicate).first
         
@@ -166,18 +163,28 @@ class showDiaryController: UIViewController {
         providerBody.tapHandler = { context -> Void in
             print(context.index)
             
-            
-            let now = Date()
-            let timeForMatter = DateFormatter()
-            timeForMatter.dateFormat = "yyyyMMdd"
-            let id = timeForMatter.string(from: now) + String(context.index)
+
+            let id = self.dataHeadSource.data.first!.id + String(context.index)
             let predicate = NSPredicate(format: "id = %@", id)
             let nowdatas = self.realm.objects(diaryNow.self).filter(predicate).first
             
             let writeVC = diaryWriteController(type: "修改此刻描述",id: id)
             let emotionLayer = CAGradientLayer()
             emotionLayer.frame = writeVC.view.bounds
-            emotionLayer.colors = [UIColor.white.cgColor,UIColor.white.cgColor]
+            
+            let mode = nowdatas!.mode
+            
+            if mode > 25 {
+                emotionLayer.colors = [UIColor.init(r: 56, g: 213, b: 214).cgColor,UIColor.init(r: 63, g: 171, b: 213).cgColor]
+            }else if mode > 0 {
+                 emotionLayer.colors = [UIColor.init(r: 118, g: 175, b: 227).cgColor,UIColor.init(r: 91, g: 123, b: 218).cgColor]
+            }else if mode > -25 {
+                emotionLayer.colors = [UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
+            }else {
+                emotionLayer.colors = [UIColor.init(r: 43, g: 88, b: 118).cgColor,UIColor.init(r: 9, g: 32, b: 63).cgColor]
+            }
+            
+            
             emotionLayer.cornerRadius = 30
             let topColor = UIColor.black
             let writeColor = UIColor.init(r: 127, g: 127, b: 127)
@@ -192,13 +199,14 @@ class showDiaryController: UIViewController {
             print("修改第\(context.index)记录")
             self.present(writeVC, animated: true, completion: nil)
         }
+        
         providerBody.layout = FlowLayout(spacing: 40)
         providerHead.layout = FlowLayout(spacing: 30)
         finalProvider.layout = FlowLayout(spacing: 20)
         
         collectionView.provider = finalProvider
         
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 25, right: 0)
     }
     
     
