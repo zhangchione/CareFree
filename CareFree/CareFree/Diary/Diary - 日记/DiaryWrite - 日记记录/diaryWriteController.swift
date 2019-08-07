@@ -96,6 +96,8 @@ class diaryWriteController: UIViewController {
     }
     
     func configUI(){
+        self.navigation.bar.isShadowHidden = true
+        self.navigation.bar.alpha = 0
         dismissKetboardTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(dismissKetboardTap)
         self.photoCollection.addGestureRecognizer(dismissKetboardTap)
@@ -213,10 +215,14 @@ extension diaryWriteController:UITextViewDelegate {
             writeDiaryData.mode = Int(arc4random() % 50)
             writeDiaryData.date = date
             let allDiary = realm.objects(diaryToday.self)
-            writeDiaryData.id = id 
+            writeDiaryData.id = id
+            
+            
+            
             if allDiary.count % 3 == 0 {
                 writeDiaryData.mode = -writeDiaryData.mode
             }
+            
             for img in photoData {
                 writeDiaryData.images.append(img)
             }
@@ -237,26 +243,47 @@ extension diaryWriteController:UITextViewDelegate {
             for img in photoData {
                 writeDiaryNow.images.append(img)
             }
-
+            
             saveDiaryNow(item: writeDiaryNow)
             
             let predicate1 = NSPredicate(format: "id = %@", id)
             let today = realm.objects(diaryToday.self).filter(predicate1).first
+            
+            if today == nil {
+                writeDiaryData.content = "快记录一下吧~"
+                writeDiaryData.location = "上海"
+                writeDiaryData.mode = 0
+                writeDiaryData.date = date
+                writeDiaryData.id = id
+                if writeDiaryNow.mode >= 25 {
+                    writeDiaryData.happy += 1
+                }else if writeDiaryNow.mode >= 0 {
+                    writeDiaryData.calm += 1
+                    
+                }else if writeDiaryNow.mode >= -25{
+                    writeDiaryData.sad += 1
+                }else {
+                    writeDiaryData.so_sad += 1
+                }
+                writeDiaryData.mode = writeDiaryNow.mode
+                saveDiaryData(item: writeDiaryData)
+            }else {
+            
             try! realm.write {
                 today?.count += 1
                 if writeDiaryNow.mode > 25 {
                     today?.happy += 1
                 }else if writeDiaryNow.mode > 0 {
                     today?.calm += 1
-                    
+
                 }else if writeDiaryNow.mode > -25{
                     today?.sad += 1
                 }else {
                     today?.so_sad += 1
                 }
                 today?.mode = (today!.mode * (today!.count - 1 ) + writeDiaryNow.mode) / today!.count
+                }
             }
-            
             print("此刻日记保存成功")
         }else if self.type == "修改今日描述"{
             let predicate = NSPredicate(format: "id = %@", id)
@@ -285,7 +312,7 @@ extension diaryWriteController:UITextViewDelegate {
 
         //键盘消失
         self.view.endEditing(false)
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     // 今日日记保存至Realm 数据库
@@ -319,7 +346,8 @@ extension diaryWriteController:UITextViewDelegate {
         print("退出写日记界面")
         //键盘消失
         self.view.endEditing(false)
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     

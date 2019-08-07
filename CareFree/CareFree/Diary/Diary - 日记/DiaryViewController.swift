@@ -125,6 +125,9 @@ class DiaryViewController: UIViewController {
         self.diaryData.removeAll()
         var dataModel = DiaryTodayModel()
         for data in diaryData.reversed() {
+            
+            
+            
             dataModel.content = data.content
             dataModel.id = data.id
             dataModel.user_id = "cone"
@@ -195,7 +198,7 @@ extension DiaryViewController {
             for img in todayData!.images {
                 writeVC.photoData.append(img)
             }
-            self.present(writeVC, animated: true, completion: nil)
+           self.navigationController?.pushViewController(writeVC, animated: true)
         }else {
             print("今日还未写过日记")
             let writeVC = diaryWriteController(modeType: "描述今日")
@@ -209,7 +212,7 @@ extension DiaryViewController {
             writeVC.writeColor = writeColor
             writeVC.emotionLayer = emotionLayer
             
-            self.present(writeVC, animated: true, completion: nil)
+            self.navigationController?.pushViewController(writeVC, animated: true)
         }
         
 
@@ -330,26 +333,26 @@ extension DiaryViewController: UICollectionViewDelegateFlowLayout, UICollectionV
 
 extension DiaryViewController:diaryWriteDelegate {
     func diaryWriteClick(mood: Int) {
-        let now = Date()
-        let timeForMatter = DateFormatter()
-        timeForMatter.dateFormat = "yyyyMMdd"
-        let id = timeForMatter.string(from: now)
-        
-        let datas = realm.objects(diaryToday.self)
-        
-        var isExitTodayDiary = false
-        
-        var todayData:diaryToday?
-        // 判断今日是否写过日记
-        for data in datas {
-            if data.id  == id {
-                isExitTodayDiary = true
-                todayData = data
-                break;
-            }
-        }
-        
-        if isExitTodayDiary {
+//        let now = Date()
+//        let timeForMatter = DateFormatter()
+//        timeForMatter.dateFormat = "yyyyMMdd"
+//        let id = timeForMatter.string(from: now)
+//
+//        let datas = realm.objects(diaryToday.self)
+//
+//        var isExitTodayDiary = false
+//
+//        var todayData:diaryToday?
+//        // 判断今日是否写过日记
+//        for data in datas {
+//            if data.id  == id {
+//                isExitTodayDiary = true
+//                todayData = data
+//                break;
+//            }
+//        }
+//
+//        if isExitTodayDiary {
             let writeVC = diaryWriteController(modeType: "此刻")
             let emotionLayer = CAGradientLayer()
             emotionLayer.frame = writeVC.view.bounds
@@ -365,10 +368,10 @@ extension DiaryViewController:diaryWriteDelegate {
             default: break
             }
             writeVC.emotionLayer = emotionLayer
-            self.present(writeVC, animated: true, completion: nil)
-        }else {
-            print("亲，你还未描述今日噢")
-        }
+            self.navigationController?.pushViewController(writeVC, animated: true)
+//        }else {
+//            print("亲，你还未描述今日噢")
+//        }
         
         
         

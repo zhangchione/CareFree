@@ -13,6 +13,8 @@ import RealmSwift
 
 class showDiaryController: UIViewController {
     
+    
+    
     private var headData:DiaryTodayModel?
     
     convenience init(headData:DiaryTodayModel?) {
@@ -38,13 +40,20 @@ class showDiaryController: UIViewController {
         configData()
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
-        print("11111")
-    }
+
     
     // 左边返回按钮
     private lazy var leftBarButton:UIButton = {
+        let button = UIButton.init(type: .custom)
+        button.frame = CGRect(x:10, y:0, width:30, height: 30)
+        button.setTitle("←", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 36)
+        button.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
+        button.tintColor = UIColor.red
+        return button
+    }()
+    // 右边功能按钮 。。未写完
+    private lazy var rightBarButton:UIButton = {
         let button = UIButton.init(type: .custom)
         button.frame = CGRect(x:10, y:0, width:30, height: 30)
         button.setTitle("←", for: .normal)
@@ -88,7 +97,7 @@ class showDiaryController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
         //collectionView.isScrollEnabled = false
         collectionView.alwaysBounceVertical = false
-        
+        collectionView.delegate = self
         collectionView.snp.makeConstraints{(make) in
             make.bottom.right.left.equalTo(view)
             make.top.equalTo(navigation.bar.snp.top).offset(-176)
@@ -117,7 +126,7 @@ class showDiaryController: UIViewController {
         for img in nowdatas!.images {
             writeVC.photoData.append(img)
         }
-        self.present(writeVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(writeVC, animated: true)
         
         
        
@@ -158,6 +167,7 @@ class showDiaryController: UIViewController {
             viewSource: viewBodySource,
             sizeSource: sizeBodySource
         )
+        providerBody.animator = FadeAnimator()
         let finalProvider = ComposedProvider(sections:[providerHead,providerBody])
         
         providerBody.tapHandler = { context -> Void in
@@ -197,7 +207,7 @@ class showDiaryController: UIViewController {
                 writeVC.photoData.append(img)
             }
             print("修改第\(context.index)记录")
-            self.present(writeVC, animated: true, completion: nil)
+           self.navigationController?.pushViewController(writeVC, animated: true)
         }
         
         providerBody.layout = FlowLayout(spacing: 40)
@@ -215,5 +225,23 @@ extension showDiaryController{
     // 放回按钮
     @objc func back(){
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+// 滑动监听
+extension showDiaryController : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.y)
+        
+        if scrollView.contentOffset.y >= 0 {
+            self.navigation.bar.alpha = 1
+            leftBarButton.setTitleColor(UIColor.black, for: .normal)
+            
+            self.navigation.item.title = (headData!.date as NSString).substring(with: NSMakeRange(3,8)) + (headData!.date as NSString).substring(to: 2)
+        } else {
+            self.navigation.bar.alpha = 0
+            leftBarButton.setTitleColor(UIColor.white, for: .normal)
+            self.navigation.item.title = ""
+        }
     }
 }
