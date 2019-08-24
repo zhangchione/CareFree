@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print("CareFree停止半个月了")
         
         let config = Realm.Configuration(
         // 设置新的架构版本。这个版本号必须高于之前所用的版本号
