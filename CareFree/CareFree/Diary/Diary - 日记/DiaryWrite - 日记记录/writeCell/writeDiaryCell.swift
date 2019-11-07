@@ -42,11 +42,21 @@ class writeDiaryCell: UIView {
     lazy var saveBtn:UIButton = {
         let btn = UIButton()
         btn.setTitle("完成", for: .normal)
-        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.setTitleColor(UIColor.cyan, for: .normal)
         btn.titleLabel?.font = UIFont(name: "PingFangSC-Regular", size: 20)
-        btn.setTitleColor(.white, for: .normal)
+        btn.setTitleColor(.cyan, for: .normal)
         return btn
     }()
+    
+    lazy var deleteBtn:UIButton = {
+        let btn = UIButton()
+        btn.setTitle("删除", for: .normal)
+        btn.setTitleColor(UIColor.cyan, for: .normal)
+        btn.titleLabel?.font = UIFont(name: "PingFangSC-Regular", size: 20)
+        btn.setTitleColor(.cyan, for: .normal)
+        return btn
+    }()
+    
     
     lazy var Title:UILabel = {
         let label = UILabel()
@@ -101,6 +111,7 @@ class writeDiaryCell: UIView {
         addSubview(backBtn)
         addSubview(Title)
         addSubview(saveBtn)
+        addSubview(deleteBtn)
         
         backBtn.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(20)
@@ -119,6 +130,13 @@ class writeDiaryCell: UIView {
             make.width.equalTo(60)
             make.height.equalTo(30)
         }
+        deleteBtn.snp.makeConstraints{(make) in
+            make.right.equalTo(self).offset(-90)
+            make.centerY.equalTo(backBtn.snp.centerY)
+            make.width.equalTo(60)
+            make.height.equalTo(30)
+        }
+        
         addSubview(diaryWirte)
         diaryWirte.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(27)

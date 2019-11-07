@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import CollectionKit
 import RealmSwift
+import ProgressHUD
 
 class diaryWriteController: UIViewController {
 
@@ -150,7 +151,7 @@ class diaryWriteController: UIViewController {
             view.diaryWirte.delegate = self
             view.backBtn.addTarget(self, action: #selector(self.back), for: .touchUpInside)
             view.saveBtn.addTarget(self, action: #selector(self.save), for: .touchUpInside)
-            
+            view.deleteBtn.addTarget(self, action: #selector(self.deleteClick), for: .touchUpInside)
             
             view.updateUI()
         })
@@ -198,6 +199,46 @@ extension diaryWriteController:UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
     }
     // 右边保存按钮事件
+    @objc func deleteClick() {
+        
+        let now = Date()
+        let timeForMatter = DateFormatter()
+        
+        
+        timeForMatter.dateFormat = "yyyyMMdd"
+        let id = timeForMatter.string(from: now)
+        timeForMatter.dateFormat = "dd yyyy年MM月 HH点mm分 EE"
+        let date = timeForMatter.string(from: now)
+        
+        if self.type == "描述今日" {
+            ProgressHUD.showError("删除失败,没有日记");
+        }else if self.type == "此刻"{
+                            ProgressHUD.showError("删除失败,没有日记");
+        }else if self.type == "修改今日描述" {
+            let predicate = NSPredicate(format: "id = %@", id)
+            let myup = realm.objects(diaryToday.self).filter(predicate).first
+            try! realm.write {
+                               realm.delete(myup!)
+            }
+            ProgressHUD.showSuccess("删除成功")
+            
+            print("今日描述删除成功")
+        }else {
+            let predicate = NSPredicate(format: "id = %@", dayId!)
+            let myup = realm.objects(diaryNow.self).filter(predicate).first
+            try! realm.write {
+                realm.delete(myup!)
+            }
+            ProgressHUD.showSuccess("删除成功")
+            
+            print("此刻删除成功")
+        }
+        for index in 0 ..< 1000 {
+            print("1")
+        }
+         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     @objc func save(){
         
         

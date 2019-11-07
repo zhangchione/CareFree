@@ -13,8 +13,8 @@ PODS:
     - CollectionKit/Core
     - YetAnotherAnimationLibrary (~> 1.4.0)
   - DNSPageView (1.1.6)
-  - EachNavigationBar (1.9.2)
-  - ESTabBarController-swift (2.6.4)
+  - EachNavigationBar (1.12.1)
+  - ESTabBarController-swift (2.7)
   - HandyJSON (5.0.0-beta.1)
   - Hero (1.4.0)
   - Kingfisher (4.10.1)
@@ -56,7 +56,7 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - BmobSDK
     - BSGridCollectionViewLayout
@@ -98,8 +98,8 @@ SPEC CHECKSUMS:
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
   DNSPageView: df84b178394ddf4a73b2d19baf4deb24b4a4ba33
-  EachNavigationBar: 4978d1327a85d7c50d070b0a387f6e30fa089cfc
-  ESTabBarController-swift: 58cca4ab7de980657d99a02181c1ff310983e975
+  EachNavigationBar: edd979ad7b4a63ce5ea4208087ba55eb1e2f2b55
+  ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
   HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
@@ -115,6 +115,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 279efd91f18489cc67d83fcdd14d4d6c21c1698e
+PODFILE CHECKSUM: 652bfcd8016a1a30a2a5572a3ffe2ec3396b5104
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4
