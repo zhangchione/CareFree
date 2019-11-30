@@ -108,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func mainTabBarVC() -> ESTabBarController{
 
         let homeVC = CFHomeViewController()
-        let diaryVC = DiaryViewController()
+        let diaryVC = CFDiaryController()
         let albumVC = CFAlbumViewController()
         let mineVC = CFMineController()
         homeVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "首页", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))

@@ -181,20 +181,20 @@ extension diaryWriteCell:UICollectionViewDelegate,UICollectionViewDataSource,UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "writeCell", for: indexPath) as! writeCell
         
-        switch indexPath.row {
-        case 0 :
-            cell.circleView.backgroundColor = UIColor.init(r: 57, g: 210, b: 214)
-            cell.emotionLabel.text = "开心"
-        case 1 :
-            cell.circleView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
-            cell.emotionLabel.text = "平静"
-        case 2 :
-            cell.circleView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
-            cell.emotionLabel.text = "难过"
-        default:
-            cell.circleView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
-            cell.emotionLabel.text = "压抑"
-        }
+//        switch indexPath.row {
+//        case 0 :
+//            cell.circleView.backgroundColor = UIColor.init(r: 57, g: 210, b: 214)
+//            cell.emotionLabel.text = "开心"
+//        case 1 :
+//            cell.circleView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
+//            cell.emotionLabel.text = "平静"
+//        case 2 :
+//            cell.circleView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
+//            cell.emotionLabel.text = "难过"
+//        default:
+//            cell.circleView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
+//            cell.emotionLabel.text = "压抑"
+//        }
         
         return cell
     }

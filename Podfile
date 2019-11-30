@@ -29,7 +29,9 @@ target 'CareFree' do
   #图片选择器
   #pod 'DKImagePickerController'
   pod 'MJRefresh'
-
+  pod 'SQLite.swift'
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
    # 分页
    pod 'DNSPageView'
    # Pods for CareFree

@@ -27,8 +27,14 @@ PODS:
   - Realm/Headers (3.17.0)
   - RealmSwift (3.17.0):
     - Realm (= 3.17.0)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
   - SideMenu (5.0.1)
   - SnapKit (4.2.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
   - SwiftEntryKit (1.0.2):
     - QuickLayout (= 3.0.0)
   - SwiftyJSON (4.3.0)
@@ -50,8 +56,11 @@ DEPENDENCIES:
   - MJRefresh
   - ProgressHUD
   - RealmSwift
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
   - SideMenu
   - SnapKit
+  - SQLite.swift
   - SwiftEntryKit
   - SwiftyJSON
 
@@ -74,8 +83,11 @@ SPEC REPOS:
     - QuickLayout
     - Realm
     - RealmSwift
+    - RxCocoa
+    - RxSwift
     - SideMenu
     - SnapKit
+    - SQLite.swift
     - SwiftEntryKit
     - SwiftyJSON
     - YetAnotherAnimationLibrary
@@ -109,12 +121,15 @@ SPEC CHECKSUMS:
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Realm: b30db41ff34fc858ffc25ba8d44a82c164e7ccd0
   RealmSwift: fe733e459d60dc7b6971d4cbee2eb4854097d12c
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftEntryKit: 7bcd42b3dbff59c431d60d6513129fd3679e4aaf
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 652bfcd8016a1a30a2a5572a3ffe2ec3396b5104
+PODFILE CHECKSUM: 78d0b7c6d8be7925428f16ba0b86f545ab6af217
 
 COCOAPODS: 1.8.4
