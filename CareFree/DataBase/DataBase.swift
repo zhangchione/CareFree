@@ -78,7 +78,7 @@ extension DataBase {
         return false
     }
     //查
-    func queryNotesByTime() -> [DayDiaryModel] {
+    func queryDayDiaryAll() -> [DayDiaryModel] {
         var datas = [DayDiaryModel]()
         do {
             for value in Array(try DataBase.db!.prepare(dayDiaryTable.table) ) {
