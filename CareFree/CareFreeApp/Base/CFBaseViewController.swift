@@ -19,9 +19,7 @@ class CFBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configBase()
-
     }
     
     func configBase(){

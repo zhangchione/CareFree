@@ -1,19 +1,14 @@
 //
-//  showHeadCell.swift
+//  HeadShowCell.swift
 //  CareFree
 //
-//  Created by 张驰 on 2019/6/7.
+//  Created by 张驰 on 2019/12/1.
 //  Copyright © 2019 张驰. All rights reserved.
 //
 
 import UIKit
 
-// 添加按钮点击代理方法
-protocol diaryShowDelegate:NSObjectProtocol {
-    func diaryShowClick(mood:String)
-}
-
-class showHeadCell: UIView {
+class HeadShowCell: UITableViewCell {
     
     var emotionLayer: CAGradientLayer!
     
@@ -25,7 +20,7 @@ class showHeadCell: UIView {
     
     lazy var headView : UIView = {
        let vi = UIView()
-        vi.backgroundColor = UIColor.white
+        vi.backgroundColor = UIColor.orange
         return vi
     }()
     
@@ -99,67 +94,37 @@ class showHeadCell: UIView {
         return label
     }()
     
-    lazy var nowLabel:UILabel = {
-        let label = UILabel()
-        label.text = "此刻"
-        label.font = UIFont(name: "PingFangSC-Semibold", size: 22)
-        label.textColor = UIColor.black
-         //       label.backgroundColor = UIColor.blue
-        return label
-    }()
     
-    init() {
-        super.init(frame: .zero)
-        
-        configUI()
-        configShadow()
+    
+    
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configUI()
+    }
+    
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func updateUI(with data: DiaryTodayModel){
-        self.emotionValue.text = "情绪值 " + String(data.mode)
-        self.content.text = data.content
-        day.text = (data.date as NSString).substring(to: 2)
-        yearMouth.text = (data.date as NSString).substring(with: NSMakeRange(3,8))
-        var weekText:String?
-        
-        switch (data.date as NSString).substring(from: 19) {
-        case "Mon":
-            weekText = "周一"
-        case "Tue":
-            weekText = "周二"
-        case "Wed":
-            weekText = "周三"
-        case "Thu":
-            weekText = "周四"
-        case "Fri":
-            weekText = "周五"
-        case "Sat":
-            weekText = "周六"
-        default:
-            weekText = "周日"
-        }
-        
-        week.text = weekText
-        
-        if data.mode > 25 {
-           self.rightView.backgroundColor = happyColor
-        }else if data.mode < 25 && data.mode > 0 {
-            self.rightView.backgroundColor = calmColor
-        }else if data.mode < 0 && data.mode > -25 {
-            self.rightView.backgroundColor = sadColor
-        }else {
-            self.rightView.backgroundColor = repressioneColor
-        }
-
-    }
-    
+}
+//MARK: config
+extension HeadShowCell {
     func configUI(){
+      //  self.backgroundColor = .cyan
         addSubview(topView)
-        addSubview(headView)
+        //addSubview(headView)
         addSubview(day)
         addSubview(week)
         addSubview(yearMouth)
@@ -168,32 +133,26 @@ class showHeadCell: UIView {
         addSubview(centerView)
         centerView.addSubview(todayLabel)
         centerView.addSubview(content)
-        addSubview(nowLabel)
         
         topView.snp.makeConstraints{(make) in
             make.left.right.equalTo(self)
-            make.top.equalTo(self).offset(-680)
+            make.bottom.equalTo(self.snp.bottom).offset(-100)
             make.height.equalTo(680)
         }
         
-        headView.snp.makeConstraints{(make) in
-            make.left.right.equalTo(self)
-            make.top.equalTo(self).offset(0)
-            make.height.equalTo(270)
-        }
-        
-
-
-        
-        
+//        headView.snp.makeConstraints{(make) in
+//            make.left.right.equalTo(self)
+//            make.top.equalTo(self).offset(0)
+//            make.height.equalTo(270)
+//        }
         day.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(26)
-            make.top.equalTo(self).offset(140)
+            make.top.equalTo(self).offset(20)
             make.height.width.equalTo(60)
         }
         week.snp.makeConstraints{(make) in
             make.left.equalTo(day.snp.right).offset(5)
-            make.top.equalTo(self).offset(150)
+            make.top.equalTo(self).offset(30)
             make.height.equalTo(20)
             make.width.equalTo(35)
         }
@@ -235,18 +194,23 @@ class showHeadCell: UIView {
             make.top.equalTo(todayLabel.snp.bottom).offset(5)
             make.height.equalTo(80)
         }
-        nowLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(self).offset(25)
-            make.top.equalTo(centerView.snp.bottom).offset(20)
-            make.height.equalTo(30)
-            make.width.equalTo(55)
-        }
     }
-    
-    func configShadow(){
-        
+    func updateUI(with datas:CFDiaryModel) {
+        let data = datas.dayDiary
+        self.content.text = data.content
+        let date = data.date
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "dd"
+        let daytext = timeForMatter.string(from: date)
+        timeForMatter.dateFormat = "yyyy年MM月"
+        let yeartext = timeForMatter.string(from: date)
+        let dateFmt = DateFormatter()
+        dateFmt.dateFormat = "yyyy-MM-dd"
+        let weektext = date.getWeekDay(dateTime: dateFmt.string(from: date))
+        day.text = daytext
+        yearMouth.text = yeartext
+        week.text = weektext
+        content.text = data.content
+        emotionValue.text = "情绪值 \(datas.mode)"
     }
-    
-
-
 }

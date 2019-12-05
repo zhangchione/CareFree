@@ -1,14 +1,23 @@
 //
-//  File.swift
+//  CFDiaryModel.swift
 //  CareFree
 //
-//  Created by 张驰 on 2019/11/30.
+//  Created by 张驰 on 2019/12/5.
 //  Copyright © 2019 张驰. All rights reserved.
 //
 
 import Foundation
 
-struct DayDiaryModel{
+struct CFDiaryModel {
+    var id = 0
+    var mode = 0
+    var user_id = ""
+    var day_id = ""
+    var dayDiary = DayDiaryModel()
+    var nowDiary = [NowDiaryModel]()
+}
+
+struct CFDiaryDayModel {
     var id = 0
     var user_id = ""
     var day_id = ""
@@ -19,8 +28,7 @@ struct DayDiaryModel{
     var date = Date()
     var mode = 0
 }
-
-struct NowDiaryModel{
+struct CFDiaryNowModel {
     var id = 0
     var user_id = ""
     var day_id = ""

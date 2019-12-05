@@ -25,12 +25,12 @@ let tabBarHeight : CGFloat = isIphoneX ? 49 + 34 : 49
 let happyColor = UIColor.init(r: 57, g: 210, b: 214) // 开心
 let calmColor = UIColor.init(r: 100, g: 175, b: 232) // 平静
 let sadColor = UIColor.init(r: 155, g: 133, b: 255) //难过
-let sadMoreColor = UIColor.init(r: 31, g: 69, b: 99) //压抑
+let repressioneColor = UIColor.init(r: 31, g: 69, b: 99) //压抑
 
 
 /// 四种渐变色
 let happyGradientColor = [UIColor.init(r: 56, g: 213, b: 214).cgColor,UIColor.init(r: 29, g: 192, b: 193).cgColor] //开心渐变
 let calmGradientColor = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor] // 平静渐变
 let sadGradientColor = [UIColor.init(r: 128, g: 100, b: 255).cgColor,UIColor.init(r: 66, g: 39, b: 187).cgColor] // 难过渐变
-let sadMoreGradientColor = [UIColor.init(r: 38, g: 106, b: 160).cgColor,UIColor.init(r: 31, g: 69, b: 99).cgColor] //压抑渐变
+let repressioneGradientColor = [UIColor.init(r: 38, g: 106, b: 160).cgColor,UIColor.init(r: 31, g: 69, b: 99).cgColor] //压抑渐变
 

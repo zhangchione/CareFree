@@ -47,13 +47,16 @@ class CFDiaryController: CFBaseViewController {
     }()
     
     var data = [DayDiaryModel]()
-    
+    lazy var viewModel:CFDiaryViewModel = {
+        return CFDiaryViewModel()
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configUI()
         configData()
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        configData()
     }
 
 
@@ -77,7 +80,13 @@ extension CFDiaryController {
     }
     
     func configData(){
-        data = DataBase.shared.queryDayDiaryAll()
+        let das = DataBase.shared.queryAll()
+        for da in das {
+            print("da:",da)
+        }
+        //DataBase.shared.deleteDayDiaryById(id: 1)
+        self.viewModel.datas = DataBase.shared.queryAll()
+        //print(DataBase.shared.queryDayDiaryAll())
         collectionView.reloadData()
     }
     
@@ -88,7 +97,7 @@ extension CFDiaryController: UICollectionViewDelegateFlowLayout, UICollectionVie
         if section <= 1 {
             return 1
         }
-        return data.count
+        return self.viewModel.datas.count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
@@ -112,9 +121,6 @@ extension CFDiaryController: UICollectionViewDelegateFlowLayout, UICollectionVie
             cell.day.text = (date as NSString).substring(to: 2)
             cell.yearMouth.text = (date as NSString).substring(with: NSMakeRange(3,8))
             var weekText:String?
-            
-            
-            
             switch (date as NSString).substring(from: 19) {
             case "Mon":
                 weekText = "周一"
@@ -131,14 +137,13 @@ extension CFDiaryController: UICollectionViewDelegateFlowLayout, UICollectionVie
             default:
                 weekText = "周日"
             }
-
             cell.week.text = weekText
-            
+            cell.delegate = self
         return cell
         }else {
             let cell :DshowDiaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: DshowDiaryCellID, for: indexPath) as! DshowDiaryCell
             //cell.conten = diaryData[indexPath.row]
-            
+            cell.updateUI(with: self.viewModel.datas[indexPath.row])
             return cell
         }
     }
@@ -173,6 +178,12 @@ extension CFDiaryController: UICollectionViewDelegateFlowLayout, UICollectionVie
         }
         else {
             return CGSize(width: 0 , height: 0)
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 2{
+            let vc = ShowViewController(with: self.viewModel.datas[indexPath.row])
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

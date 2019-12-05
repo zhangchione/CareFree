@@ -12,7 +12,8 @@ import UIKit
 class DshowDiaryCell: UICollectionViewCell {
     
     var diaryContents = [diaryModel]()
-    
+    var nowData = [NowDiaryModel]()
+    var nums = [(String,Int)]()
     lazy var day: UILabel = {
         let label = UILabel()
         label.text = "24"
@@ -80,8 +81,50 @@ class DshowDiaryCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateUI(with data:diaryModel)
+    func updateUI(with datas:CFDiaryModel)
     {
+        let data = datas.dayDiary
+        
+        let date = data.date
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "dd"
+        let daytext = timeForMatter.string(from: date)
+        timeForMatter.dateFormat = "yyyy年MM月"
+        let yeartext = timeForMatter.string(from: date)
+        let dateFmt = DateFormatter()
+        dateFmt.dateFormat = "yyyy-MM-dd"
+        let weektext = date.getWeekDay(dateTime: dateFmt.string(from: date))
+        day.text = daytext
+        yearMouth.text = yeartext
+        week.text = weektext
+        content.text = data.content
+        print("day_id",data.day_id)
+        nowData = datas.nowDiary //DataBase.shared.queryNowDiaryByDayId(day_id: data.day_id)
+        var moodValue = data.mode
+        var num = [0,0,0,0]
+        for nowdata in nowData {
+            switch nowdata.mode {
+            case 26 ... 50:
+                num[0] += 1
+            case 0 ... 25:
+                num[1] += 1
+            case -25 ... -1:
+                num[2] += 1
+            case -50 ... -26:
+                num[3] += 1
+            default:
+                break
+            }
+            moodValue += nowdata.mode
+        }
+        nums.removeAll()
+        if num[0] != 0 { nums.append(("开心",num[0])) }
+        if num[1] != 0 { nums.append(("平静",num[1])) }
+        if num[2] != 0 { nums.append(("难过",num[2])) }
+        if num[3] != 0 { nums.append(("压抑",num[3])) }
+        emotionValue.text = "情绪值 \(moodValue/(nowData.count + 1))"
+        print("nowdata",nowData.count)
+        emotionData.reloadData()
     }
     
     func updateWriteUI(){
@@ -240,32 +283,30 @@ class DshowDiaryCell: UICollectionViewCell {
 
 extension DshowDiaryCell:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nowDatas.count
+        return nums.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "emotionCell", for: indexPath) as! emotionCell
         cell.selectionStyle = .none
         
-        let datas = nowDatas[indexPath.row]
-        
-        if datas.type == "开心" {
-            cell.waiView.backgroundColor = UIColor.init(r: 57, g: 210, b: 214)
-            cell.modeData.text = "开心\(datas.mode)条"
+        let data = nums[indexPath.row]
+        switch data.0 {
+            case "开心":
+                cell.waiView.backgroundColor = happyColor
+                cell.modeData.text = "开心\(data.1)条"
+            case "平静":
+                cell.waiView.backgroundColor = calmColor
+                cell.modeData.text = "平静\(data.1)条"
+            case "难过":
+                cell.waiView.backgroundColor = sadColor
+                cell.modeData.text = "难过\(data.1)条"
+            case "压抑":
+                cell.waiView.backgroundColor = repressioneColor
+                cell.modeData.text = "压抑\(data.1)条"
+        default:
+            break
         }
-        if datas.type == "平静" {
-            cell.waiView.backgroundColor = UIColor.init(r: 100, g: 175, b: 232)
-            cell.modeData.text = "平静\(datas.mode)条"
-        }
-        if datas.type == "难过" {
-            cell.waiView.backgroundColor = UIColor.init(r: 155, g: 133, b: 255)
-            cell.modeData.text = "难过\(datas.mode)条"
-        }
-        if datas.type == "压抑" {
-             cell.waiView.backgroundColor = UIColor.init(r: 31, g: 69, b: 99)
-            cell.modeData.text = "压抑\(datas.mode)条"
-        }
-        
        
         return cell
     }

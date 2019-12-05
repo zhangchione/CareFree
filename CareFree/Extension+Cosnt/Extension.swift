@@ -31,6 +31,18 @@ public extension Double {
     }
 }
 
+extension UIView {
+ 
+    //Colors：渐变色色值数组
+    func setLayerColors(_ colors:[CGColor])  {
+        let layer = CAGradientLayer()
+        layer.frame = bounds
+        layer.colors = colors
+        layer.startPoint = CGPoint(x: 0, y: 0)
+        layer.endPoint = CGPoint(x: 0, y: 1)
+        self.layer.addSublayer(layer)
+    }
+}
 extension UIViewController{
     public func setTabBar(controller: UIViewController, title: String, image: UIImage, selectedImage: UIImage) -> UIViewController{
         controller.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: selectedImage)
@@ -224,5 +236,15 @@ extension Date {
         let com = calendar.dateComponents([.year,.month,.day], from: self)
         let comNow = calendar.dateComponents([.year,.month,.day], from: Date())
         return com.year == comNow.year && com.month == comNow.month
+    }
+    func getWeekDay(dateTime:String)->String{
+        let dateFmt = DateFormatter()
+        dateFmt.dateFormat = "yyyy-MM-dd"
+        let date = dateFmt.date(from: dateTime)
+        let interval = Int(date!.timeIntervalSince1970)
+        let days = Int(interval/86400) // 24*60*60
+        let weekday = ((days + 5)%7+7)%7
+        let weekDays = ["周日","周一","周二","周三","周四","周五","周六"]
+        return weekDays[weekday]
     }
 }
