@@ -143,12 +143,19 @@ extension ShowViewController:UITableViewDataSource,UITableViewDelegate {
 extension ShowViewController:UIScrollViewDelegate{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let date = viewModel.datas.dayDiary.date
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "yyyy年MM月dd日"
+        let yeartext = timeForMatter.string(from: date)
+        
         let offsetY = scrollView.contentOffset.y
         print(offsetY)
-        if offsetY > 180 {
+        if offsetY > 0 {
             self.navigation.bar.alpha = 1
+            self.navigation.item.title = yeartext
         }else {
             self.navigation.bar.alpha = 0
+            self.navigation.item.title = ""
         }
     }
 }

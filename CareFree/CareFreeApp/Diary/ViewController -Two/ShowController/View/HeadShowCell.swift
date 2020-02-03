@@ -136,7 +136,7 @@ extension HeadShowCell {
         
         topView.snp.makeConstraints{(make) in
             make.left.right.equalTo(self)
-            make.bottom.equalTo(self.snp.bottom).offset(-100)
+            make.bottom.equalTo(self.snp.bottom).offset(-100.fit)
             make.height.equalTo(680)
         }
         
@@ -146,25 +146,25 @@ extension HeadShowCell {
 //            make.height.equalTo(270)
 //        }
         day.snp.makeConstraints{(make) in
-            make.left.equalTo(self).offset(26)
-            make.top.equalTo(self).offset(20)
+            make.left.equalTo(self).offset(26.fit)
+            make.top.equalTo(self).offset(20.fit)
             make.height.width.equalTo(60)
         }
         week.snp.makeConstraints{(make) in
-            make.left.equalTo(day.snp.right).offset(5)
-            make.top.equalTo(self).offset(30)
+            make.left.equalTo(day.snp.right).offset(5.fit)
+            make.top.equalTo(self).offset(30.fit)
             make.height.equalTo(20)
             make.width.equalTo(35)
         }
         yearMouth.snp.makeConstraints{(make) in
-            make.left.equalTo(day.snp.right).offset(5)
+            make.left.equalTo(day.snp.right).offset(5.fit)
             make.top.equalTo(week.snp.bottom).offset(0)
             make.height.equalTo(20)
             make.width.equalTo(90)
         }
         
         rightView.snp.makeConstraints{(make) in
-            make.right.equalTo(self).offset(-30)
+            make.right.equalTo(self).offset(-30.fit)
             make.centerY.equalTo(day.snp.centerY)
             make.width.equalTo(125)
             make.height.equalTo(35)
@@ -177,21 +177,21 @@ extension HeadShowCell {
         }
         
         centerView.snp.makeConstraints{(make) in
-            make.top.equalTo(day.snp.bottom).offset(30)
-            make.left.equalTo(self).offset(30)
-            make.right.equalTo(self).offset(-30)
+            make.top.equalTo(day.snp.bottom).offset(30.fit)
+            make.left.equalTo(self).offset(30.fit)
+            make.right.equalTo(self).offset(-30.fit)
             make.height.equalTo(150)
         }
         todayLabel.snp.makeConstraints{(make) in
-            make.top.equalTo(centerView.snp.top).offset(15)
-            make.left.equalTo(centerView.snp.left).offset(20)
+            make.top.equalTo(centerView.snp.top).offset(15.fit)
+            make.left.equalTo(centerView.snp.left).offset(20.fit)
             make.width.equalTo(50)
             make.height.equalTo(25)
         }
         content.snp.makeConstraints{(make) in
-            make.right.equalTo(centerView.snp.right).offset(-20)
-            make.left.equalTo(centerView.snp.left).offset(20)
-            make.top.equalTo(todayLabel.snp.bottom).offset(5)
+            make.right.equalTo(centerView.snp.right).offset(-20.fit)
+            make.left.equalTo(centerView.snp.left).offset(20.fit)
+            make.top.equalTo(todayLabel.snp.bottom).offset(5.fit)
             make.height.equalTo(80)
         }
     }

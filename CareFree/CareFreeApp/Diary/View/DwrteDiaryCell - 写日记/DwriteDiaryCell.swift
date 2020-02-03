@@ -46,7 +46,7 @@ class DwriteDiaryCell: UICollectionViewCell {
     
     lazy var emotionValue: UILabel = {
         let label = UILabel()
-        label.text = "情绪值"
+        label.text = "记录今日点滴"
         label.textColor = UIColor.black
         label.font = UIFont(name: "PingFangSC-Medium", size: 13)
         return label
@@ -61,8 +61,8 @@ class DwriteDiaryCell: UICollectionViewCell {
         btn.titleLabel?.font = UIFont(name: "PingFangSC-Medium", size: 10)
         btn.tintColor = UIColor.init(r: 96, g: 114, b: 255)
         
-        btn.imageEdgeInsets = UIEdgeInsets(top: -15, left: 12, bottom: 0, right: 0)
-        btn.titleEdgeInsets = UIEdgeInsets(top: 20, left: -20, bottom: -20, right: 0)
+        btn.imageEdgeInsets = UIEdgeInsets(top: -15, left: 15, bottom: 0, right: 0)
+        btn.titleEdgeInsets = UIEdgeInsets(top: 20, left: -30, bottom: -20, right: 0)
         return btn
     }()
     
@@ -110,46 +110,46 @@ class DwriteDiaryCell: UICollectionViewCell {
         writeCollection.delegate = self
         writeCollection.dataSource = self
         day.snp.makeConstraints{(make) in
-            make.top.equalTo(self) .offset(15)
-            make.left.equalTo(self).offset(20)
+            make.top.equalTo(self) .offset(15.fit)
+            make.left.equalTo(self).offset(20.fit)
             make.height.equalTo(35)
             make.width.equalTo(40)
         }
         dayLine.snp.makeConstraints{(make) in
-            make.top.equalTo(day.snp.bottom).offset(5)
-            make.left.equalTo(self).offset(20)
+            make.top.equalTo(day.snp.bottom).offset(5.fit)
+            make.left.equalTo(self).offset(20.fit)
             make.height.equalTo(2)
             make.width.equalTo(30)
         }
         week.snp.makeConstraints{(make) in
-            make.top.equalTo(self).offset(13)
-            make.left.equalTo(day.snp.right).offset(15)
+            make.top.equalTo(self).offset(13.fit)
+            make.left.equalTo(day.snp.right).offset(15.fit)
             make.height.equalTo(20)
             make.width.equalTo(40)
         }
         yearMouth.snp.makeConstraints{(make) in
-            make.top.equalTo(week.snp.bottom).offset(-1)
-            make.left.equalTo(day.snp.right).offset(15)
+            make.top.equalTo(week.snp.bottom).offset(-1.fit)
+            make.left.equalTo(day.snp.right).offset(15.fit)
             make.width.equalTo(80)
             make.height.equalTo(20)
         }
         emotionValue.snp.makeConstraints{(make) in
-            make.top.equalTo(self).offset(12)
-            make.right.equalTo(self).offset(-15)
+            make.top.equalTo(self).offset(12.fit)
+            make.right.equalTo(self).offset(-15.fit)
             make.height.equalTo(30)
             make.width.equalTo(90)
         }
         
         // 写日记
         writeBtn.snp.makeConstraints{(make) in
-            make.top.equalTo(dayLine.snp.bottom).offset(20)
-            make.left.equalTo(self).offset(35)
+            make.top.equalTo(dayLine.snp.bottom).offset(20.fit)
+            make.left.equalTo(self).offset(35.fit)
             make.height.equalTo(60)
             make.width.equalTo(60)
         }
         writeCollection.snp.makeConstraints{(make) in
             make.centerY.equalTo(writeBtn.snp.centerY)
-            make.left.equalTo(writeBtn.snp.right).offset(10)
+            make.left.equalTo(writeBtn.snp.right).offset(10.fit)
             make.height.equalTo(60)
             make.width.equalTo(250)
         }

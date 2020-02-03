@@ -23,7 +23,7 @@ target 'CareFree' do
   pod 'SwiftEntryKit'
   
   pod 'Kingfisher'
-  pod 'BmobSDK'
+ # pod 'BmobSDK'
   
   pod "BSImagePicker", "~> 2.8"
   #图片选择器
@@ -35,5 +35,5 @@ target 'CareFree' do
    # 分页
    pod 'DNSPageView'
    # Pods for CareFree
-
+  pod 'JXPhotoBrowser'
 end

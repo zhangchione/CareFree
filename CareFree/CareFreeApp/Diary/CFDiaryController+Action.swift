@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import ProgressHUD
 
 // MARK: method 以及自定义代理方法
+
 extension CFDiaryController:diaryWriteDelegate {
     func diaryWriteClick(mood: Int) {
         var notesVC:NotesViewController?
@@ -37,9 +39,22 @@ extension CFDiaryController:diaryWriteDelegate {
     
     // 写日记
     @objc func write(){
+        let now = Date()
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "yyyyMMdd"
+        let day_id = timeForMatter.string(from: now)
         
-        let notesVC = NotesViewController(type: .Day)
-        self.navigationController?.pushViewController(notesVC, animated: true)
+        if DataBase.shared.queryDayDiaryByDayId(day_id:day_id ) {
+            
+            print("今日已经有日记")
+            ProgressHUD.showSuccess("今日已描述~")
+        }else {
+           let notesVC = NotesViewController(type: .Day)
+           self.navigationController?.pushViewController(notesVC, animated: true)
+        }
+        
+        
+
     }
     
 }

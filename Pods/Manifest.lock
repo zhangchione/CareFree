@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (4.8.2)
-  - BmobSDK (2.3.4)
   - BSGridCollectionViewLayout (1.2.3)
   - BSImagePicker (2.10.0):
     - BSGridCollectionViewLayout (= 1.2.3)
@@ -17,6 +16,12 @@ PODS:
   - ESTabBarController-swift (2.7)
   - HandyJSON (5.0.0-beta.1)
   - Hero (1.4.0)
+  - JXPhotoBrowser (2.1.5):
+    - JXPhotoBrowser/Kingfisher (= 2.1.5)
+  - JXPhotoBrowser/Core (2.1.5)
+  - JXPhotoBrowser/Kingfisher (2.1.5):
+    - JXPhotoBrowser/Core
+    - Kingfisher
   - Kingfisher (4.10.1)
   - lottie-ios (3.0.3)
   - MJRefresh (3.1.16)
@@ -42,7 +47,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - BmobSDK
   - BSImagePicker (~> 2.8)
   - CollectionKit
   - CollectionKit/WobbleAnimator
@@ -51,6 +55,7 @@ DEPENDENCIES:
   - ESTabBarController-swift
   - HandyJSON (from `https://github.com/alibaba/HandyJSON.git`, branch `dev_for_swift5.0`)
   - Hero
+  - JXPhotoBrowser
   - Kingfisher
   - lottie-ios
   - MJRefresh
@@ -67,7 +72,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - BmobSDK
     - BSGridCollectionViewLayout
     - BSImagePicker
     - BSImageView
@@ -76,6 +80,7 @@ SPEC REPOS:
     - EachNavigationBar
     - ESTabBarController-swift
     - Hero
+    - JXPhotoBrowser
     - Kingfisher
     - lottie-ios
     - MJRefresh
@@ -104,7 +109,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  BmobSDK: 03e9889d92b721bfc2452faa5b2c2497581abbca
   BSGridCollectionViewLayout: 568273e113fbc815f868f1898ef0465aee68f955
   BSImagePicker: fa0c15b6740e8aa7a7b7f0fe38a71ad4cfa0ec4a
   BSImageView: a149459433a2687157d034c78e059d30ac7f2544
@@ -114,6 +118,7 @@ SPEC CHECKSUMS:
   ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
   HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  JXPhotoBrowser: 0178c485d1dbad1ef1dcbb24e4f463d80c30369d
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
@@ -130,6 +135,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 78d0b7c6d8be7925428f16ba0b86f545ab6af217
+PODFILE CHECKSUM: 18ebc8febb86aead4221ed68c0460674c5a1f7a8
 
 COCOAPODS: 1.8.4

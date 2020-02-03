@@ -60,20 +60,20 @@ class ShowBodyCell: UITableViewCell {
         addSubview(content)
         
         backgruondView.snp.makeConstraints{(make) in
-            make.left.equalTo(self).offset(30)
-            make.right.equalTo(self).offset(-30)
+            make.left.equalTo(self).offset(30.fit)
+            make.right.equalTo(self).offset(-30.fit)
             make.centerY.equalTo(self.snp.centerY)
             make.height.equalTo(130)
         }
         time.snp.makeConstraints{(make) in
-            make.left.equalTo(backgruondView.snp.left).offset(20)
-            make.top.equalTo(backgruondView.snp.top).offset(10)
+            make.left.equalTo(backgruondView.snp.left).offset(20.fit)
+            make.top.equalTo(backgruondView.snp.top).offset(10.fit)
             make.width.equalTo(60)
             make.height.equalTo(20)
         }
         content.snp.makeConstraints{(make) in
-            make.left.equalTo(backgruondView.snp.left).offset(20)
-            make.top.equalTo(time.snp.bottom).offset(20)
+            make.left.equalTo(backgruondView.snp.left).offset(20.fit)
+            make.top.equalTo(time.snp.bottom).offset(20.fit)
             make.width.equalTo(250)
             make.height.equalTo(50)
         }

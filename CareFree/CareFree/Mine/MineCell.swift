@@ -21,6 +21,7 @@ class MineCell: UIView {
         vi.image = UIImage(named: "mine_user")
         return vi
     }()
+    
     lazy var userName:UILabel = {
        let label = UILabel()
         label.text = "Jeffrey"
@@ -56,7 +57,7 @@ class MineCell: UIView {
     lazy var emotionLabel:UILabel  = {
        let label = UILabel ()
         label.textColor = UIColor.white
-        label.text = "情绪值"
+        label.text = "近七天"
         label.font = UIFont.init(name: "PingFangSC-Medium", size: 14)
         return label
     }()
@@ -183,13 +184,13 @@ class MineCell: UIView {
     lazy var trashLabel:UILabel  = {
         let label = UILabel ()
         label.textColor = UIColor.black
-        label.text = "废纸篓"
+        label.text = "照片统计"
         label.font = UIFont.init(name: "PingFangSC-Medium", size: 14)
         return label
     }()
     lazy var trashIco:UIImageView = {
         let vi = UIImageView()
-        vi.image = UIImage(named: "mine_trash")
+        vi.image = UIImage(named: "分组4")
         return vi
     }()
     lazy var trashValue:UILabel = {
@@ -297,19 +298,19 @@ class MineCell: UIView {
     }
     
     func updateUI(with data: MineModel){
-        
+        self.dataHeadSource.data.removeAll()
         DispatchQueue.main.async {
             let  emotionLayer = CAGradientLayer()
             emotionLayer.frame = self.emotionView.bounds
             if data.mode > 25 {
-                emotionLayer.colors = [UIColor.init(r: 56, g: 213, b: 214).cgColor,UIColor.init(r: 63, g: 171, b: 213).cgColor]
+                emotionLayer.colors = happyGradientColor//[UIColor.init(r: 56, g: 213, b: 214).cgColor,UIColor.init(r: 63, g: 171, b: 213).cgColor]
 
-            }else if data.mode < 25 && data.mode > 0 {
-                emotionLayer.colors = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
-            }else if data.mode < 0 && data.mode > -25 {
-                 emotionLayer.colors = [UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
+            }else if data.mode <= 25 && data.mode > 0 {
+                emotionLayer.colors = calmGradientColor//[UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor]
+            }else if data.mode <= 0 && data.mode > -25 {
+                 emotionLayer.colors = sadGradientColor//[UIColor.init(r: 151, g: 136, b: 248).cgColor,UIColor.init(r: 160, g: 115, b: 218).cgColor]
             }else {
-                emotionLayer.colors = [UIColor.init(r: 43, g: 88, b: 118).cgColor,UIColor.init(r: 9, g: 32, b: 63).cgColor]
+                emotionLayer.colors = repressioneGradientColor//[UIColor.init(r: 43, g: 88, b: 118).cgColor,UIColor.init(r: 9, g: 32, b: 63).cgColor]
             }
             
             emotionLayer.cornerRadius = 25
@@ -337,13 +338,13 @@ class MineCell: UIView {
         self.emotionValue.text = String(data.mode)
         self.diaryHeadValue.text = data.day_notes
         self.diaryBackValue.text = data.now_notes
-        
+        self.trashValue.text = data.pics
         var model = emotionChartModel()
         for index in 0 ..< data.mode_value.count {
             if data.mode_value[index] > 0 {
                 model.bottomValue = 0
                 model.topValue = data.mode_value[index]
-                if data.mode_value[index] >= 25 {
+                if data.mode_value[index] > 25 {
                     model.color =  UIColor.init(r: 57, g: 210, b: 214)
                 }
                 else {
@@ -353,7 +354,7 @@ class MineCell: UIView {
             else {
                 model.bottomValue = -data.mode_value[index]
                 model.topValue = 0
-                if data.mode_value[index] <= -25 {
+                if data.mode_value[index] < -25 {
                     model.color = UIColor.init(r: 31, g: 69, b: 99)
                 }
                 else {
@@ -386,94 +387,94 @@ class MineCell: UIView {
         emotionView.addSubview(lineView)
         emotionView.addSubview(pointLabel)
 
-
-        
-        userImg.snp.makeConstraints{(make) in
-            make.left.top.equalTo(self).offset(25)
-            make.height.width.equalTo(90)
-        }
-        userName.snp.makeConstraints{(make) in
-            make.left.equalTo(userImg.snp.right).offset(30)
-            make.top.equalTo(self).offset(30)
-            make.height.equalTo(30)
-            make.width.equalTo(120)
-        }
-        idView.snp.makeConstraints{(make) in
-            make.left.equalTo(userImg.snp.right).offset(30)
-            make.top.equalTo(userName.snp.bottom).offset(10)
-            make.height.equalTo(30)
-            make.width.equalTo(70)
-        }
-        id.snp.makeConstraints{(make) in
-            make.left.equalTo(idView.snp.left).offset(9)
-            make.top.equalTo(idView.snp.top).offset(0)
-            make.width.equalTo(70)
-            make.height.equalTo(30)
-            
-        }
+//
+//
+//        userImg.snp.makeConstraints{(make) in
+//            make.left.top.equalTo(self).offset(25)
+//            make.height.width.equalTo(90)
+//        }
+//        userName.snp.makeConstraints{(make) in
+//            make.left.equalTo(userImg.snp.right).offset(30)
+//            make.top.equalTo(self).offset(30)
+//            make.height.equalTo(30)
+//            make.width.equalTo(120)
+//        }
+//        idView.snp.makeConstraints{(make) in
+//            make.left.equalTo(userImg.snp.right).offset(30)
+//            make.top.equalTo(userName.snp.bottom).offset(10)
+//            make.height.equalTo(30)
+//            make.width.equalTo(70)
+//        }
+//        id.snp.makeConstraints{(make) in
+//            make.left.equalTo(idView.snp.left).offset(9)
+//            make.top.equalTo(idView.snp.top).offset(0)
+//            make.width.equalTo(70)
+//            make.height.equalTo(30)
+//
+//        }
         
         // 情绪值
         emotionView.snp.makeConstraints{(make) in
-            make.left.equalTo(self).offset(22)
-            make.top.equalTo(userImg.snp.bottom).offset(35)
-            make.width.equalTo(175)
-            make.height.equalTo(215)
+            make.left.equalTo(self).offset(22.fit)
+            make.top.equalTo(self).offset(35.fit)
+            make.width.equalTo(175.fit)
+            make.height.equalTo(215.fit)
         }
         oneBackView.snp.makeConstraints{(make) in
-            make.left.equalTo(self).offset(22)
-            make.top.equalTo(userImg.snp.bottom).offset(35)
-            make.width.equalTo(175)
-            make.height.equalTo(215)
+            make.left.equalTo(self).offset(22.fit)
+            make.top.equalTo(self).offset(35.fit)
+            make.width.equalTo(175.fit)
+            make.height.equalTo(215.fit)
         }
         emotionLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(emotionView.snp.left).offset(20)
-            make.top.equalTo(emotionView.snp.top).offset(30)
-            make.width.equalTo(42)
-            make.height.equalTo(22)
+            make.left.equalTo(emotionView.snp.left).offset(20.fit)
+            make.top.equalTo(emotionView.snp.top).offset(30.fit)
+            make.width.equalTo(70.fit)
+            make.height.equalTo(22.fit)
         }
         favIco.snp.makeConstraints{(make) in
-            make.right.equalTo(emotionView.snp.right).offset(-20)
+            make.right.equalTo(emotionView.snp.right).offset(-20.fit)
             make.centerY.equalTo(emotionLabel.snp.centerY)
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(20.fit)
         }
         bottomView.snp.makeConstraints{(make) in
             make.centerX.equalTo(emotionLabel.snp.centerX)
-            make.top.equalTo(emotionLabel.snp.bottom).offset(30)
-            make.width.equalTo(40)
-            make.height.equalTo(100)
+            make.top.equalTo(emotionLabel.snp.bottom).offset(30.fit)
+            make.width.equalTo(40.fit)
+            make.height.equalTo(100.fit)
         }
 
         topTwoView.snp.makeConstraints{(make) in
             make.centerX.equalTo(emotionLabel.snp.centerX)
             make.bottom.equalTo(bottomView.snp.bottom).offset(0)
-            make.width.equalTo(40)
+            make.width.equalTo(40.fit)
             //make.height.equalTo(60)
         }
         topOneView.snp.makeConstraints{(make) in
             make.centerX.equalTo(emotionLabel.snp.centerX)
-            make.centerY.equalTo(topTwoView.snp.top).offset(5)
+            make.centerY.equalTo(topTwoView.snp.top).offset(5.fit)
            // make.bottom.equalTo().offset(30)
-            make.width.equalTo(40)
+            make.width.equalTo(40.fit)
             //make.height.equalTo(50)
         }
         
         emotionValue.snp.makeConstraints{(make) in
-            make.right.equalTo(emotionView.snp.right).offset(-25)
-            make.centerY.equalTo(bottomView.snp.centerY).offset(10)
-            make.width.equalTo(30)
-            make.height.equalTo(20)
+            make.right.equalTo(emotionView.snp.right).offset(-25.fit)
+            make.centerY.equalTo(bottomView.snp.centerY).offset(10.fit)
+            make.width.equalTo(30.fit)
+            make.height.equalTo(20.fit)
         }
         lineView.snp.makeConstraints{(make) in
-            make.right.equalTo(emotionView.snp.right).offset(-28)
-            make.top.equalTo(emotionValue.snp.bottom).offset(3)
-            make.width.equalTo(14)
-            make.height.equalTo(1)
+            make.right.equalTo(emotionView.snp.right).offset(-28.fit)
+            make.top.equalTo(emotionValue.snp.bottom).offset(3.fit)
+            make.width.equalTo(14.fit)
+            make.height.equalTo(1.fit)
         }
         pointLabel.snp.makeConstraints{(make) in
-            make.right.equalTo(emotionView.snp.right).offset(-25)
-            make.top.equalTo(lineView.snp.bottom).offset(3)
-            make.width.equalTo(38)
-            make.height.equalTo(20)
+            make.right.equalTo(emotionView.snp.right).offset(-25.fit)
+            make.top.equalTo(lineView.snp.bottom).offset(3.fit)
+            make.width.equalTo(38.fit)
+            make.height.equalTo(20.fit)
         }
         
         // 日记统计
@@ -487,61 +488,61 @@ class MineCell: UIView {
 
         
         diaryView.snp.makeConstraints{(make) in
-            make.right.equalTo(self).offset(-22)
+            make.right.equalTo(self).offset(-22.fit)
             make.centerY.equalTo(emotionView.snp.centerY)
-            make.width.equalTo(175)
-            make.height.equalTo(215)
+            make.width.equalTo(175.fit)
+            make.height.equalTo(215.fit)
         }
         diaryLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(diaryView.snp.left).offset(20)
-            make.top.equalTo(diaryView.snp.top).offset(30)
-            make.width.equalTo(60)
-            make.height.equalTo(22)
+            make.left.equalTo(diaryView.snp.left).offset(20.fit)
+            make.top.equalTo(diaryView.snp.top).offset(30.fit)
+            make.width.equalTo(70.fit)
+            make.height.equalTo(22.fit)
         }
         diaryIco.snp.makeConstraints{(make) in
-            make.right.equalTo(diaryView.snp.right).offset(-20)
+            make.right.equalTo(diaryView.snp.right).offset(-20.fit)
             make.centerY.equalTo(diaryLabel.snp.centerY)
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(20.fit)
         }
         
         diaryHeadValue.snp.makeConstraints{(make) in
-            make.left.equalTo(diaryView.snp.left).offset(20)
+            make.left.equalTo(diaryView.snp.left).offset(20.fit)
             make.centerY.equalTo(emotionValue.snp.centerY)
-            make.width.equalTo(20)
-            make.height.equalTo(20)
+            make.width.equalTo(20.fit)
+            make.height.equalTo(20.fit)
         }
         lineDiaryHeadView.snp.makeConstraints{(make) in
-            make.left.equalTo(diaryView.snp.left).offset(20)
-            make.top.equalTo(diaryHeadValue.snp.bottom).offset(3)
-            make.width.equalTo(14)
-            make.height.equalTo(1)
+            make.left.equalTo(diaryView.snp.left).offset(20.fit)
+            make.top.equalTo(diaryHeadValue.snp.bottom).offset(3.fit)
+            make.width.equalTo(14.fit)
+            make.height.equalTo(1.fit)
         }
         diaryHeadLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(diaryView.snp.left).offset(20)
-            make.top.equalTo(lineDiaryHeadView.snp.bottom).offset(3)
-            make.width.equalTo(38)
-            make.height.equalTo(20)
+            make.left.equalTo(diaryView.snp.left).offset(20.fit)
+            make.top.equalTo(lineDiaryHeadView.snp.bottom).offset(3.fit)
+            make.width.equalTo(38.fit)
+            make.height.equalTo(20.fit)
         }
         diaryView.addSubview(diaryBackValue)
         diaryView.addSubview(lineDiaryBackView)
         diaryView.addSubview(diaryBackLabel)
         diaryBackValue.snp.makeConstraints{(make) in
-            make.right.equalTo(diaryView.snp.right).offset(-40)
+            make.right.equalTo(diaryView.snp.right).offset(-40.fit)
             make.centerY.equalTo(emotionValue.snp.centerY)
-            make.width.equalTo(30)
-            make.height.equalTo(20)
+            make.width.equalTo(30.fit)
+            make.height.equalTo(20.fit)
         }
         lineDiaryBackView.snp.makeConstraints{(make) in
-            make.right.equalTo(diaryView.snp.right).offset(-56)
-            make.top.equalTo(diaryBackValue.snp.bottom).offset(3)
-            make.width.equalTo(14)
-            make.height.equalTo(1)
+            make.right.equalTo(diaryView.snp.right).offset(-56.fit)
+            make.top.equalTo(diaryBackValue.snp.bottom).offset(3.fit)
+            make.width.equalTo(14.fit)
+            make.height.equalTo(1.fit)
         }
         diaryBackLabel.snp.makeConstraints{(make) in
-            make.right.equalTo(diaryView.snp.right).offset(-40)
-            make.top.equalTo(lineDiaryBackView.snp.bottom).offset(3)
-            make.width.equalTo(30)
-            make.height.equalTo(20)
+            make.right.equalTo(diaryView.snp.right).offset(-40.fit)
+            make.top.equalTo(lineDiaryBackView.snp.bottom).offset(3.fit)
+            make.width.equalTo(30.fit)
+            make.height.equalTo(20.fit)
         }
         
         
@@ -553,40 +554,40 @@ class MineCell: UIView {
         trashView.addSubview(lineTrashView)
         trashView.addSubview(photoLabel)
         trashView.snp.makeConstraints{(make) in
-            make.left.equalTo(self).offset(22)
-            make.top.equalTo(emotionView.snp.bottom).offset(20)
-            make.width.equalTo(175)
-            make.height.equalTo(175)
+            make.left.equalTo(self).offset(22.fit)
+            make.top.equalTo(emotionView.snp.bottom).offset(20.fit)
+            make.width.equalTo(175.fit)
+            make.height.equalTo(215.fit)
         }
         trashLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(trashView.snp.left).offset(20)
-            make.top.equalTo(trashView.snp.top).offset(30)
-            make.width.equalTo(42)
-            make.height.equalTo(22)
+            make.left.equalTo(trashView.snp.left).offset(20.fit)
+            make.top.equalTo(trashView.snp.top).offset(30.fit)
+            make.width.equalTo(70.fit)
+            make.height.equalTo(22.fit)
         }
         trashIco.snp.makeConstraints{(make) in
-            make.right.equalTo(trashView.snp.right).offset(-20)
+            make.right.equalTo(trashView.snp.right).offset(-20.fit)
             make.centerY.equalTo(trashLabel.snp.centerY)
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(20.fit)
         }
         
         trashValue.snp.makeConstraints{(make) in
-            make.left.equalTo(trashView.snp.left).offset(20)
-            make.top.equalTo(trashLabel.snp.bottom).offset(50)
-            make.width.equalTo(20)
-            make.height.equalTo(20)
+            make.left.equalTo(trashView.snp.left).offset(20.fit)
+            make.top.equalTo(trashLabel.snp.bottom).offset(50.fit)
+            make.width.equalTo(20.fit)
+            make.height.equalTo(20.fit)
         }
         lineTrashView.snp.makeConstraints{(make) in
-            make.left.equalTo(trashView.snp.left).offset(20)
-            make.top.equalTo(trashValue.snp.bottom).offset(3)
-            make.width.equalTo(14)
-            make.height.equalTo(1)
+            make.left.equalTo(trashView.snp.left).offset(20.fit)
+            make.top.equalTo(trashValue.snp.bottom).offset(3.fit)
+            make.width.equalTo(14.fit)
+            make.height.equalTo(1.fit)
         }
         photoLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(trashView.snp.left).offset(20)
-            make.top.equalTo(lineTrashView.snp.bottom).offset(3)
-            make.width.equalTo(38)
-            make.height.equalTo(20)
+            make.left.equalTo(trashView.snp.left).offset(20.fit)
+            make.top.equalTo(lineTrashView.snp.bottom).offset(3.fit)
+            make.width.equalTo(38.fit)
+            make.height.equalTo(20.fit)
         }
         
         // 心情报表
@@ -599,36 +600,36 @@ class MineCell: UIView {
         moodView.addSubview(collectionView)
         
         moodView.snp.makeConstraints{(make) in
-            make.right.equalTo(self).offset(-22)
-            make.top.equalTo(diaryView.snp.bottom).offset(20)
-            make.width.equalTo(175)
-            make.height.equalTo(215)
+            make.right.equalTo(self).offset(-22.fit)
+            make.top.equalTo(diaryView.snp.bottom).offset(20.fit)
+            make.width.equalTo(175.fit)
+            make.height.equalTo(215.fit)
         }
         moodLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(moodView.snp.left).offset(20)
-            make.top.equalTo(moodView.snp.top).offset(30)
-            make.width.equalTo(70)
-            make.height.equalTo(22)
+            make.left.equalTo(moodView.snp.left).offset(20.fit)
+            make.top.equalTo(moodView.snp.top).offset(30.fit)
+            make.width.equalTo(70.fit)
+            make.height.equalTo(22.fit)
         }
         moodIco.snp.makeConstraints{(make) in
-            make.right.equalTo(moodView.snp.right).offset(-20)
+            make.right.equalTo(moodView.snp.right).offset(-20.fit)
             make.centerY.equalTo(moodLabel.snp.centerY)
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(20.fit)
         }
         
         // 心情图
         collectionView.snp.makeConstraints{(make) in
             make.centerX.equalTo(moodView.snp.centerX)
-            make.centerY.equalTo(moodView.snp.centerY).offset(5)
-            make.width.equalTo(150)
-            make.height.equalTo(100)
+            make.centerY.equalTo(moodView.snp.centerY).offset(5.fit)
+            make.width.equalTo(150.fit)
+            make.height.equalTo(100.fit)
         }
         let viewHeadSource = ClosureViewSource(viewUpdater: {(view:MineChartCell,data:emotionChartModel,index:Int) in
             view.updateUI(with: data)
 //            view.backgroundColor = UIColor.yellow
         })
         let sizeHeadSource = {(index:Int,data:emotionChartModel,collectionSize:CGSize) ->CGSize in
-            return CGSize(width: 15, height: 95)
+            return CGSize(width: 15.fit, height: 95.fit)
         }
         
         let provider = BasicProvider(
@@ -636,48 +637,48 @@ class MineCell: UIView {
             viewSource: viewHeadSource,
             sizeSource:sizeHeadSource
         )
-        provider.layout = FlowLayout(spacing: 5)
+        provider.layout = FlowLayout(spacing: 5.fit)
         collectionView.provider = provider
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10.fit, bottom: 0, right: 0)
         
         moodValue.snp.makeConstraints{(make) in
-            make.left.equalTo(moodView.snp.left).offset(20)
-            make.top.equalTo(moodLabel.snp.bottom).offset(100)
-            make.width.equalTo(20)
-            make.height.equalTo(20)
+            make.left.equalTo(moodView.snp.left).offset(20.fit)
+            make.top.equalTo(moodLabel.snp.bottom).offset(100.fit)
+            make.width.equalTo(20.fit)
+            make.height.equalTo(20.fit)
         }
         lineMoodView.snp.makeConstraints{(make) in
-            make.left.equalTo(moodView.snp.left).offset(20)
-            make.top.equalTo(moodValue.snp.bottom).offset(3)
-            make.width.equalTo(10)
-            make.height.equalTo(1)
+            make.left.equalTo(moodView.snp.left).offset(20.fit)
+            make.top.equalTo(moodValue.snp.bottom).offset(3.fit)
+            make.width.equalTo(10.fit)
+            make.height.equalTo(1.fit)
         }
         moodDayLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(moodView.snp.left).offset(20)
-            make.top.equalTo(lineMoodView.snp.bottom).offset(3)
-            make.width.equalTo(38)
-            make.height.equalTo(20)
+            make.left.equalTo(moodView.snp.left).offset(20.fit)
+            make.top.equalTo(lineMoodView.snp.bottom).offset(3.fit)
+            make.width.equalTo(38.fit)
+            make.height.equalTo(20.fit)
         }
         // 设置
         addSubview(setView)
         setView.addSubview(setLabel)
         setView.addSubview(setIco)
         setView.snp.makeConstraints{(make) in
-            make.left.equalTo(self).offset(22)
-            make.top.equalTo(trashView.snp.bottom).offset(20)
-            make.width.equalTo(175)
-            make.height.equalTo(185)
+            make.left.equalTo(self).offset(22.fit)
+            make.top.equalTo(trashView.snp.bottom).offset(20.fit)
+            make.width.equalTo(175.fit)
+            make.height.equalTo(185.fit)
         }
         setLabel.snp.makeConstraints{(make) in
-            make.left.equalTo(setView.snp.left).offset(20)
-            make.top.equalTo(setView.snp.top).offset(30)
-            make.width.equalTo(42)
-            make.height.equalTo(22)
+            make.left.equalTo(setView.snp.left).offset(20.fit)
+            make.top.equalTo(setView.snp.top).offset(30.fit)
+            make.width.equalTo(42.fit)
+            make.height.equalTo(22.fit)
         }
         setIco.snp.makeConstraints{(make) in
-            make.right.equalTo(setView.snp.right).offset(-20)
+            make.right.equalTo(setView.snp.right).offset(-20.fit)
             make.centerY.equalTo(setLabel.snp.centerY)
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(20.fit)
         }
     }
     func configShadow(){

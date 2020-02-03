@@ -37,7 +37,7 @@ class ShowHeaderView: UITableViewHeaderFooterView {
         self.addSubview(self.nowLabel)
         self.nowLabel.text = "此刻"
         self.nowLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(15)
+            make.left.equalTo(15.fit)
             make.centerY.equalTo(self.snp.centerY)
             make.width.equalTo(150)
             make.height.equalTo(30)

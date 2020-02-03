@@ -8,6 +8,13 @@
 
 import Foundation
 
+struct CFAlbumMouthModel {
+    var time = ""
+    var data  = [CFDiaryModel]()
+    var celldata = [AlbumCellModel]()
+    
+}
+
 struct CFDiaryModel {
     var id = 0
     var mode = 0

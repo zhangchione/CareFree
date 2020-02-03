@@ -20,6 +20,7 @@ struct MineModel:HandyJSON {
     var sex = ""
     var now_notes = ""
     var head_pic = ""
+    var pics = ""
 }
 
 struct MineMoodModel {

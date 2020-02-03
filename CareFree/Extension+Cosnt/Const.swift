@@ -15,11 +15,14 @@ let CFHeight = UIScreen.main.bounds.height
 let FooterViewColor = UIColor.init(red: 240/255.0, green: 241/255.0, blue: 244/255.0, alpha: 1)
 
 // iphone X
-let isIphoneX = CFHeight == 812 ? true : false
+let isIphoneX = CFHeight >= 812 ? true : false
 // navigationBarHeight
 let navigationBarHeight : CGFloat = isIphoneX ? 88 : 64
 // tabBarHeight
 let tabBarHeight : CGFloat = isIphoneX ? 49 + 34 : 49
+
+/// 主题背景色
+let backColor = UIColor.init(r: 247, g: 249, b: 254)
 
 /// 四种主题心情色
 let happyColor = UIColor.init(r: 57, g: 210, b: 214) // 开心
@@ -33,4 +36,26 @@ let happyGradientColor = [UIColor.init(r: 56, g: 213, b: 214).cgColor,UIColor.in
 let calmGradientColor = [UIColor.init(r: 100, g: 176, b: 232).cgColor,UIColor.init(r: 83, g: 121, b: 255).cgColor] // 平静渐变
 let sadGradientColor = [UIColor.init(r: 128, g: 100, b: 255).cgColor,UIColor.init(r: 66, g: 39, b: 187).cgColor] // 难过渐变
 let repressioneGradientColor = [UIColor.init(r: 38, g: 106, b: 160).cgColor,UIColor.init(r: 31, g: 69, b: 99).cgColor] //压抑渐变
-
+// 自定义索引值
+let kBaseTarget : Int = 1000
+// 宽度比
+let kWidthRatio = CFWidth / 414.0
+// 高度比
+let kHeightRatio = CFHeight / 896.0
+// 自适应
+func Adapt(_ value : CGFloat) -> CGFloat {
+    
+    return AdaptW(value)
+}
+// 自适应宽度
+func AdaptW(_ value : CGFloat) -> CGFloat {
+    return ceil(value) * kWidthRatio
+}
+// 常规字体
+func FontSize(_ size : CGFloat) -> UIFont {
+    return UIFont.systemFont(ofSize: AdaptW(size))
+}
+// 加粗字体
+func BoldFontSize(_ size : CGFloat) -> UIFont {
+    return UIFont.boldSystemFont(ofSize: AdaptW(size))
+}

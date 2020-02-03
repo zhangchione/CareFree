@@ -41,7 +41,7 @@ class CFDiaryController: CFBaseViewController {
         collection.register(DsearchCell.self, forCellWithReuseIdentifier: DsearchCellID)
         collection.register(DwriteDiaryCell.self, forCellWithReuseIdentifier: DwriteDiaryCellID)
         collection.register(DshowDiaryCell.self, forCellWithReuseIdentifier: DshowDiaryCellID)
-        collection.backgroundColor = UIColor.init(r: 247, g: 249, b: 254)
+        collection.backgroundColor = backColor
         collection.showsVerticalScrollIndicator = false
         return collection
     }()
@@ -50,6 +50,7 @@ class CFDiaryController: CFBaseViewController {
     lazy var viewModel:CFDiaryViewModel = {
         return CFDiaryViewModel()
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -67,13 +68,13 @@ extension CFDiaryController {
     func configUI(){
         
         self.Title.text = "日记"
-        self.navigation.item.rightBarButtonItem = UIBarButtonItem.init(customView: rightBarButton)
+        //self.navigation.item.rightBarButtonItem = UIBarButtonItem.init(customView: rightBarButton)
         self.view.addSubview(self.collectionView)
         
         self.collectionView.snp.makeConstraints{ (make) in
-            make.left.equalTo(self.view.snp.left).offset(20)
-            make.right.equalTo(self.view.snp.right).offset(-20)
-            make.bottom.equalTo(self.view.snp.bottom).offset(-88)
+            make.left.equalTo(self.view.snp.left).offset(20.fit)
+            make.right.equalTo(self.view.snp.right).offset(-20.fit)
+            make.bottom.equalTo(self.view.snp.bottom).offset(-88.fit)
             make.top.equalTo(self.navigation.bar.snp.bottom).offset(0)
         }
         
@@ -94,24 +95,25 @@ extension CFDiaryController {
 }
 extension CFDiaryController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section <= 1 {
+        if section <= 0 {
             return 1
         }
         return self.viewModel.datas.count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.section == 0 {
-            let cell :DsearchCell =  collectionView.dequeueReusableCell(withReuseIdentifier: DsearchCellID, for: indexPath) as! DsearchCell
-            return cell
-        }else if indexPath.section == 1{
         let cell :DwriteDiaryCell =  collectionView.dequeueReusableCell(withReuseIdentifier: DwriteDiaryCellID, for: indexPath) as! DwriteDiaryCell
             
         cell.writeBtn.addTarget(self, action: #selector(write), for: .touchUpInside)
+        let now1 = Date()
+        let timeForMatter1 = DateFormatter()
+        timeForMatter1.dateFormat = "yyyyMMdd"
+        let day_id = timeForMatter1.string(from: now1)
         cell.backgroundColor = .white
        // cell.delegate = self
         let now = Date()
@@ -149,39 +151,32 @@ extension CFDiaryController: UICollectionViewDelegateFlowLayout, UICollectionVie
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            return CGSize(width: CFWidth-40, height: 60)
-        }else if indexPath.section == 1 {
-            return CGSize(width: CFWidth-40, height: 160)
+            return CGSize(width: CFWidth-40.fit, height: 160)
         }else {
-            return CGSize(width: CFWidth-40, height: 180)
+            return CGSize(width: CFWidth-40.fit, height: 180)
         }
     }
     //每个分区的内边距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        return UIEdgeInsets(top: 20.fit, left: 0, bottom: 20.fit, right: 0)
         
     }
     
     //最小 item 间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 20.fit
     }
     
     //最小行间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 20.fit
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == 0 {
-            return CGSize(width: CFWidth-40, height: 15)
-        }
-        else {
             return CGSize(width: 0 , height: 0)
-        }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 2{
+        if indexPath.section == 1{
             let vc = ShowViewController(with: self.viewModel.datas[indexPath.row])
             self.navigationController?.pushViewController(vc, animated: true)
         }

@@ -68,7 +68,6 @@ extension DataBase {
                         nowDatas.append(nowData)
                         modes += mode
                     }
-                    print("查询到的now数据data:",datas)
                 } catch {
                     assertionFailure("\(error)")
                 }
@@ -80,8 +79,122 @@ extension DataBase {
             assertionFailure("\(error)")
         }
         datas = datas.reversed()
-        print(datas)
         return datas
+    }
+    
+    func queryByMouth() -> [CFAlbumMouthModel]{
+        var mouthDatas = [CFAlbumMouthModel]()
+        var datas = [CFDiaryModel]()
+        var time = ""
+        do {
+            for value in Array(try DataBase.db!.prepare(dayDiaryTable.table) ) {
+
+                let user_id = value[dayDiaryTable.user_id]
+                let content = value[dayDiaryTable.content]
+                let weather = value[dayDiaryTable.weather]
+                let day_id = value[dayDiaryTable.day_id]
+                let date = value[dayDiaryTable.date]
+                let mode = value[dayDiaryTable.mode]
+                let title = value[dayDiaryTable.title]
+                let id = value[dayDiaryTable.id]
+                let images = value[dayDiaryTable.images]
+                let dayData = DayDiaryModel(id: Int(id),user_id: user_id, day_id:day_id, title: title, content: content, weather: weather, images:images, date: date, mode: Int(mode))
+                if time == "" {
+                    time = String(day_id.prefix(6))
+                }
+                var nowDatas = [NowDiaryModel]()
+                var modes = mode
+                do {
+                    for value in Array(try DataBase.db!.prepare(nowDiaryTable.table.filter(nowDiaryTable.day_id == day_id)) ) {
+                        let user_id = value[nowDiaryTable.user_id]
+                        let content = value[nowDiaryTable.content]
+                        let day_id = value[nowDiaryTable.day_id]
+                        let weather = value[nowDiaryTable.weather]
+                        let date = value[nowDiaryTable.date]
+                        let mode = value[nowDiaryTable.mode]
+                        let title = value[nowDiaryTable.title]
+                        let id = value[nowDiaryTable.id]
+                        let iamges = value[nowDiaryTable.images]
+                        let nowData = NowDiaryModel(id: Int(id), user_id: user_id, day_id: day_id, title: title, content: content, weather: weather, images: iamges, date: date, mode: Int(mode))
+                        nowDatas.append(nowData)
+                        modes += mode
+                    }
+                } catch {
+                    assertionFailure("\(error)")
+                }
+
+                let CFData = CFDiaryModel(id: Int(id), mode: (Int(modes)/(nowDatas.count+1)), user_id: user_id, day_id: day_id, dayDiary: dayData, nowDiary: nowDatas)
+                datas.append(CFData)
+                
+                if  time != String(day_id.prefix(6)) {
+                       time = String(day_id.prefix(6))
+                        let mouthdata = CFAlbumMouthModel(time: time.prefix(4) + "年" + time.suffix(2) + "月", data: datas)
+                        mouthDatas.append(mouthdata)
+                        datas.removeAll()
+                }
+            }
+        } catch {
+            assertionFailure("\(error)")
+        }
+        let mouthdata = CFAlbumMouthModel(time: time.prefix(4) + "年" + time.suffix(2) + "月", data: datas)
+        mouthDatas.append(mouthdata)
+        datas.removeAll()
+        mouthDatas = mouthDatas.reversed()
+        var resultData = [CFAlbumMouthModel]()
+        for (index,data) in mouthDatas.enumerated() {
+            if data.data.count == 0 {
+                
+            }else {
+                var count = 0
+                var imgdatas = AlbumModel()
+                for da in data.data {
+
+                    let imgs = da.dayDiary.images.components(separatedBy: ",")
+                    if da.dayDiary.mode > 25 {
+                        imgdatas.happyPhoto += imgs
+                    }else if da.dayDiary.mode <= 25 && da.dayDiary.mode > 0 {
+                        imgdatas.calmPhoto += imgs
+                    }else if da.dayDiary.mode <= 0 && da.dayDiary.mode > -25 {
+                        imgdatas.sadPhoto += imgs
+                    }else{
+                        imgdatas.repressionePhoto += imgs
+                    }
+                    for das in da.nowDiary {
+                        let imgs = das.images.components(separatedBy: ",")
+                        if das.mode > 25 {
+                            imgdatas.happyPhoto += imgs
+                        }else if das.mode <= 25 && das.mode > 0 {
+                            imgdatas.calmPhoto += imgs
+                        }else if das.mode <= 0 && das.mode > -25 {
+                            imgdatas.sadPhoto += imgs
+                        }else{
+                            imgdatas.repressionePhoto += imgs
+                        }
+                    }
+                }
+                if imgdatas.happyPhoto.count != 0 {
+                    let da = AlbumCellModel(photos: imgdatas.happyPhoto,type:.happy)
+                    imgdatas.data.append(da)
+                }
+                if imgdatas.calmPhoto.count != 0 {
+                    let da = AlbumCellModel(photos: imgdatas.calmPhoto,type:.calm)
+                    imgdatas.data.append(da)
+                }
+                if imgdatas.sadPhoto.count != 0 {
+                    let da = AlbumCellModel(photos: imgdatas.sadPhoto,type:.sad)
+                    imgdatas.data.append(da)
+                }
+                if imgdatas.repressionePhoto.count != 0 {
+                    let da = AlbumCellModel(photos: imgdatas.repressionePhoto,type:.repressione)
+                    imgdatas.data.append(da)
+                }
+                resultData.insert(data, at: resultData.count)
+                resultData[resultData.count-1].celldata = imgdatas.data
+            }
+        }
+        
+
+        return resultData
     }
 }
 // DayDiaryTable 操作

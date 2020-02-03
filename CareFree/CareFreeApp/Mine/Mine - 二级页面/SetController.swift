@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ProgressHUD
+
 
 class SetController: UIViewController {
 
@@ -18,7 +20,7 @@ class SetController: UIViewController {
         let button = UIButton.init(type: .custom)
         button.frame = CGRect(x:10, y:0, width:30, height: 30)
         button.setTitle("←", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 36)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 28)
         button.setTitleColor(UIColor.black, for: .normal)
         button.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
         button.tintColor = UIColor.red
@@ -45,63 +47,19 @@ class SetController: UIViewController {
     }
     // 换头像
     @IBAction func userHeadTap(_ sender: Any) {
-        print("头像更换")
-        let actionSheet = UIAlertController(title: "更改头像", message: "请选择图像来源", preferredStyle: .actionSheet)
-        let alterUserImg = UIAlertAction(title: "相册选择", style: .default, handler: {(alters:UIAlertAction) -> Void in
-            print("拍照继续更改头像中..")
-            
-            self.imgPricker = UIImagePickerController()
-            self.imgPricker.delegate = self
-            self.imgPricker.allowsEditing = true
-            self.imgPricker.sourceType = .photoLibrary
-            
-            self.imgPricker.navigationBar.barTintColor = UIColor.gray
-            self.imgPricker.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-            
-            self.imgPricker.navigationBar.tintColor = UIColor.white
-            
-            self.present(self.imgPricker, animated: true, completion: nil)
-            
-        })
-        
-        let alterUserImgTake = UIAlertAction(title: "拍照选择", style: .default, handler: {(alters:UIAlertAction) -> Void in
-            print("继续更改头像中..")
-            if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
-                self.imgPricker = UIImagePickerController()
-                self.imgPricker.delegate = self
-                self.imgPricker.allowsEditing = true
-                self.imgPricker.sourceType = .camera
-                self.imgPricker.cameraDevice = UIImagePickerController.CameraDevice.rear
-                self.imgPricker.showsCameraControls = true
-                
-                self.imgPricker.navigationBar.barTintColor = UIColor.gray
-                self.imgPricker.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-                
-                self.imgPricker.navigationBar.tintColor = UIColor.white
-                
-                self.present(self.imgPricker, animated: true, completion: nil)
-            }
-        })
-        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: {(alters:UIAlertAction) -> Void in print("取消更改头像")})
-        
-        actionSheet.addAction(cancel)
-        actionSheet.addAction(alterUserImg)
-        actionSheet.addAction(alterUserImgTake)
-        
-        self.present(actionSheet,animated: true){
-            print("正在更改")
-        }
+        let teamVC = TeamViewController()
+        self.navigationController?.pushViewController(teamVC, animated: true)
     }
     // 换昵称
     @IBAction func userNameTap(_ sender: Any) {
-        print("昵称更换")
-        let alterVC = AlterUserNameController()
-        self.navigationController?.pushViewController(alterVC, animated: true)
+        if let url = URL(string: "https://shimo.im/docs/VrWVWKCPVC9hKQpV") {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     // 反馈
     @IBAction func faceBackTap(_ sender: Any) {
                 print("反馈")
-        let faceBackVC = FacebackViewController()
+        let faceBackVC = FaceBookViewController()
         self.navigationController?.pushViewController(faceBackVC, animated: true)
     }
     // 关于
@@ -112,13 +70,15 @@ class SetController: UIViewController {
     }
     // 换账号
     @IBAction func cutUserTap(_ sender: Any) {
-                print("切换账号")
+                    ProgressHUD.show()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                }
+                ProgressHUD.showSuccess("已是最新版本")
     }
     // 退出
     @IBAction func returnLoginTap(_ sender: Any) {
-        print("退出登录")
-        let loginVC = LoginViewController()
-        self.navigationController?.pushViewController(loginVC, animated: true)
+        let url = URL(string: "itms-apps://itunes.apple.com/")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
 }

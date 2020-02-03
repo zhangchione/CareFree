@@ -70,21 +70,21 @@ class MineChartCell: UIView {
         
         day.snp.makeConstraints{(make) in
             make.center.equalTo(self.snp.center)
-            make.width.equalTo(8)
+            make.width.equalTo(8.fit)
             //make..equalTo(10)
         }
         topView.snp.makeConstraints{(make) in
             make.centerX.equalTo(day.snp.centerX)
-            make.bottom.equalTo(day.snp.top).offset(-2)
-            make.width.equalTo(6)
-            make.height.equalTo(50)
+            make.bottom.equalTo(day.snp.top).offset(-2.fit)
+            make.width.equalTo(6.fit)
+            make.height.equalTo(50.fit)
         }
         
         bottomView.snp.makeConstraints{(make) in
             make.centerX.equalTo(day.snp.centerX)
-            make.top.equalTo(day.snp.bottom).offset(2)
-            make.width.equalTo(6)
-            make.height.equalTo(50)
+            make.top.equalTo(day.snp.bottom).offset(2.fit)
+            make.width.equalTo(6.fit)
+            make.height.equalTo(50.fit)
         }
     }
     

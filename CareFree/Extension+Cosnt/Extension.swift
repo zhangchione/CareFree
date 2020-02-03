@@ -30,6 +30,48 @@ public extension Double {
         return Int(self/896.0 * Double(CFHeight))
     }
 }
+extension Double {
+    var fit: CGFloat {
+        return CGFloat(self/414.0) * UIScreen.main.bounds.width
+    }
+    var fitW: CGFloat {
+        return CGFloat(self/414.0) * UIScreen.main.bounds.width
+    }
+    var fitH: CGFloat {
+        return CGFloat(self/896.0) * UIScreen.main.bounds.width
+    }
+}
+extension Int {
+    var fit: Int {
+        return Int(CGFloat(self)/414.0 * UIScreen.main.bounds.width)
+    }
+    var fitW: Int {
+        return Int(CGFloat(self)/414.0 * UIScreen.main.bounds.width)
+    }
+    var fitH: Int {
+        return Int(CGFloat(self)/896.0 * UIScreen.main.bounds.width)
+    }
+}
+extension CGFloat {
+    var fitScreen: CGFloat {
+        return CGFloat(self/414.0 * UIScreen.main.bounds.size.width)
+    }
+    var fit: CGFloat {
+        return CGFloat(self/414.0) * UIScreen.main.bounds.width
+    }
+    var fitW: CGFloat {
+        return CGFloat(self/414.0) * UIScreen.main.bounds.width
+    }
+    var fitH: CGFloat {
+        return CGFloat(self/896.0) * UIScreen.main.bounds.width
+    }
+}
+
+extension CGRect {
+    var fit: CGRect {
+        return CGRect(x: self.minX.fitScreen, y: self.minY.fitScreen, width: self.width.fitScreen, height: self.height.fitScreen)
+    }
+}
 
 extension UIView {
  

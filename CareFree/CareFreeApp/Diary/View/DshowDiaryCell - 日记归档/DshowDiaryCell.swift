@@ -222,44 +222,44 @@ class DshowDiaryCell: UICollectionViewCell {
         
         addSubview(emotionData)
         day.snp.makeConstraints{(make) in
-            make.top.equalTo(self) .offset(15)
-            make.left.equalTo(self).offset(20)
+            make.top.equalTo(self) .offset(15.fit)
+            make.left.equalTo(self).offset(20.fit)
             make.height.equalTo(35)
             make.width.equalTo(40)
         }
         dayLine.snp.makeConstraints{(make) in
-            make.top.equalTo(day.snp.bottom).offset(5)
-            make.left.equalTo(self).offset(20)
+            make.top.equalTo(day.snp.bottom).offset(5.fit)
+            make.left.equalTo(self).offset(20.fit)
             make.height.equalTo(2)
             make.width.equalTo(30)
         }
         week.snp.makeConstraints{(make) in
-            make.top.equalTo(self).offset(13)
-            make.left.equalTo(day.snp.right).offset(15)
+            make.top.equalTo(self).offset(13.fit)
+            make.left.equalTo(day.snp.right).offset(15.fit)
             make.height.equalTo(20)
             make.width.equalTo(40)
         }
         yearMouth.snp.makeConstraints{(make) in
-            make.top.equalTo(week.snp.bottom).offset(-1)
-            make.left.equalTo(day.snp.right).offset(15)
+            make.top.equalTo(week.snp.bottom).offset(-1.fit)
+            make.left.equalTo(day.snp.right).offset(15.fit)
             make.width.equalTo(80)
             make.height.equalTo(20)
         }
         content.snp.makeConstraints{(make) in
-            make.top.equalTo(dayLine.snp.bottom).offset(5)
-            make.left.equalTo(self).offset(18)
+            make.top.equalTo(dayLine.snp.bottom).offset(5.fit)
+            make.left.equalTo(self).offset(18.fit)
             make.width.equalTo(180)
             make.height.equalTo(100)
         }
         emotionValue.snp.makeConstraints{(make) in
-            make.top.equalTo(self).offset(12)
-            make.right.equalTo(self).offset(-15)
+            make.top.equalTo(self).offset(12.fit)
+            make.right.equalTo(self).offset(-15.fit)
             make.height.equalTo(30)
             make.width.equalTo(90)
         }
         emotionData.snp.makeConstraints{(make) in
-            make.top.equalTo(emotionValue.snp.bottom).offset(3)
-            make.right.equalTo(self).offset(-15)
+            make.top.equalTo(emotionValue.snp.bottom).offset(3.fit)
+            make.right.equalTo(self).offset(-15.fit)
             make.width.equalTo(100)
             make.height.equalTo(120)
         }
