@@ -1,10 +1,4 @@
 PODS:
-  - Alamofire (4.8.2)
-  - BSGridCollectionViewLayout (1.2.3)
-  - BSImagePicker (2.10.0):
-    - BSGridCollectionViewLayout (= 1.2.3)
-    - BSImageView (= 1.0.3)
-  - BSImageView (1.0.3)
   - CollectionKit (2.4.0):
     - CollectionKit/Core (= 2.4.0)
   - CollectionKit/Core (2.4.0)
@@ -14,7 +8,6 @@ PODS:
   - DNSPageView (1.1.6)
   - EachNavigationBar (1.12.1)
   - ESTabBarController-swift (2.7)
-  - HandyJSON (5.0.0-beta.1)
   - Hero (1.4.0)
   - JXPhotoBrowser (2.1.5):
     - JXPhotoBrowser/Kingfisher (= 2.1.5)
@@ -23,58 +16,32 @@ PODS:
     - JXPhotoBrowser/Core
     - Kingfisher
   - Kingfisher (4.10.1)
-  - lottie-ios (3.0.3)
-  - MJRefresh (3.1.16)
   - ProgressHUD (2.51)
-  - QuickLayout (3.0.0)
-  - Realm (3.17.0):
-    - Realm/Headers (= 3.17.0)
-  - Realm/Headers (3.17.0)
-  - RealmSwift (3.17.0):
-    - Realm (= 3.17.0)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.5.0)
-  - SideMenu (5.0.1)
   - SnapKit (4.2.0)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
-  - SwiftEntryKit (1.0.2):
-    - QuickLayout (= 3.0.0)
-  - SwiftyJSON (4.3.0)
   - YetAnotherAnimationLibrary (1.4.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - BSImagePicker (~> 2.8)
   - CollectionKit
   - CollectionKit/WobbleAnimator
   - DNSPageView
   - EachNavigationBar
   - ESTabBarController-swift
-  - HandyJSON (from `https://github.com/alibaba/HandyJSON.git`, branch `dev_for_swift5.0`)
   - Hero
   - JXPhotoBrowser
-  - Kingfisher
-  - lottie-ios
-  - MJRefresh
   - ProgressHUD
-  - RealmSwift
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
-  - SideMenu
   - SnapKit
   - SQLite.swift
-  - SwiftEntryKit
-  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Alamofire
-    - BSGridCollectionViewLayout
-    - BSImagePicker
-    - BSImageView
     - CollectionKit
     - DNSPageView
     - EachNavigationBar
@@ -82,59 +49,28 @@ SPEC REPOS:
     - Hero
     - JXPhotoBrowser
     - Kingfisher
-    - lottie-ios
-    - MJRefresh
     - ProgressHUD
-    - QuickLayout
-    - Realm
-    - RealmSwift
     - RxCocoa
     - RxSwift
-    - SideMenu
     - SnapKit
     - SQLite.swift
-    - SwiftEntryKit
-    - SwiftyJSON
     - YetAnotherAnimationLibrary
 
-EXTERNAL SOURCES:
-  HandyJSON:
-    :branch: dev_for_swift5.0
-    :git: https://github.com/alibaba/HandyJSON.git
-
-CHECKOUT OPTIONS:
-  HandyJSON:
-    :commit: a2ba4e537711ae1fcd9183679c4db878eb171a78
-    :git: https://github.com/alibaba/HandyJSON.git
-
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  BSGridCollectionViewLayout: 568273e113fbc815f868f1898ef0465aee68f955
-  BSImagePicker: fa0c15b6740e8aa7a7b7f0fe38a71ad4cfa0ec4a
-  BSImageView: a149459433a2687157d034c78e059d30ac7f2544
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
   DNSPageView: df84b178394ddf4a73b2d19baf4deb24b4a4ba33
   EachNavigationBar: edd979ad7b4a63ce5ea4208087ba55eb1e2f2b55
   ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
-  HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   JXPhotoBrowser: 0178c485d1dbad1ef1dcbb24e4f463d80c30369d
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
-  lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
-  MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
-  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
-  Realm: b30db41ff34fc858ffc25ba8d44a82c164e7ccd0
-  RealmSwift: fe733e459d60dc7b6971d4cbee2eb4854097d12c
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
-  SwiftEntryKit: 7bcd42b3dbff59c431d60d6513129fd3679e4aaf
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 18ebc8febb86aead4221ed68c0460674c5a1f7a8
+PODFILE CHECKSUM: cab51727bd3d72e208abe32b3660cb7ec4ca537b
 
 COCOAPODS: 1.8.4

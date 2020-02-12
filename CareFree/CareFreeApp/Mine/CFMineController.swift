@@ -9,8 +9,6 @@
 import UIKit
 import CollectionKit
 import SnapKit
-import SwiftyJSON
-import HandyJSON
 import Hero
 
 class CFMineController: CFBaseViewController {

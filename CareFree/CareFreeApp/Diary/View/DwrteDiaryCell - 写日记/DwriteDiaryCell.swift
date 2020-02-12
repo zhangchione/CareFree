@@ -94,10 +94,6 @@ class DwriteDiaryCell: UICollectionViewCell {
     }
     
     
-    func updateUI(with data:diaryModel)
-    {
-        
-    }
     
     func configUI(){
         addSubview(day)

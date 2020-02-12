@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import JXPhotoBrowser
+import NaturalLanguage
 
 enum NotesType {
     case Day
@@ -284,7 +285,7 @@ extension NotesViewController{
         saveData.content = content
         saveData.date = now
         saveData.day_id = day_id
-        saveData.mode = Int(arc4random() % 50)
+        saveData.mode = emotionAI(content: content)//Int(arc4random() % 50)
         saveData.title = ""
         saveData.user_id = ""
         saveData.weather = ""
@@ -301,13 +302,60 @@ extension NotesViewController{
         saveData.content = content
         saveData.date = now
         saveData.day_id = day_id
-        saveData.mode = Int(arc4random() % 50)
+        saveData.mode = emotionAI(content: content)//Int(arc4random() % 50)
         saveData.title = ""
         saveData.user_id = ""
         saveData.weather = ""
         saveData.images = images
         let rowid = DataBase.shared.insertNowDiary(with: saveData)
         print(rowid!)
+    }
+    func emotionAI(content:String) -> Int {
+        let sentimentPredictor = try! NLModel(mlModel: emotionClassier().model)
+        let result = sentimentPredictor.predictedLabel(for: content)
+        var emotionValue = 0
+        var randomValue = Int(arc4random() % 25)
+        switch result {
+        case "0": // 开心
+            emotionValue = 25 + randomValue
+            break;
+        case "1": // 难过
+            emotionValue = -25 + randomValue
+            break;
+        case "2": //平静
+            emotionValue = 0 + randomValue
+            break;
+        case "3": // 压抑
+            emotionValue = -50 + randomValue
+            break;
+        default:
+            break;
+        }
+        var randomValue1 = Int(arc4random() % 25)
+        switch type {
+        case .Day:
+            break;
+        case .Happy:
+            if emotionValue < 25 {
+                emotionValue = 25 + randomValue1
+            }
+        case .Calm:
+            if emotionValue < 0 || emotionValue > 25{
+                emotionValue = 0 + randomValue1
+            }
+        case .Sad:
+            if emotionValue > 0 || emotionValue < -25 {
+                emotionValue = -25 + randomValue1
+            }
+        case .Repression:
+            if emotionValue > -25 {
+                emotionValue = -50 + randomValue1
+            }
+        default:
+            break;
+        }
+        
+        return emotionValue
     }
 }
 extension NotesViewController:UITextViewDelegate {

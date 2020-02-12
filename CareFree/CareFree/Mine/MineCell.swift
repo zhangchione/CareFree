@@ -90,7 +90,7 @@ class MineCell: UIView {
     lazy var emotionValue:UILabel = {
        let label = UILabel()
         label.textColor = UIColor.white
-        label.text = "36"
+        label.text = "0"
         label.textAlignment = NSTextAlignment.right
         label.font = UIFont.init(name: "PingFangSC-Medium", size: 16)
         return label

@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import HandyJSON
 
-struct DiaryTodayModel:HandyJSON {
+
+struct DiaryTodayModel {
     var id = ""
     var user_id = ""
     var title = ""
@@ -23,7 +23,7 @@ struct DiaryTodayModel:HandyJSON {
     var now = ModeNow()
     var count = 0
 }
-struct ModeNow:HandyJSON {
+struct ModeNow {
     var happy = 0
     var calm = 0
     var sad = 0

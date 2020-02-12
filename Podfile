@@ -8,32 +8,35 @@ target 'CareFree' do
   pod 'CollectionKit'
   pod 'CollectionKit/WobbleAnimator'
   pod 'ProgressHUD'
-  #pod 'RxRealm'
-  pod 'RealmSwift'
-  pod 'SnapKit'
-  pod 'lottie-ios'
-  pod 'EachNavigationBar'
-  pod 'Alamofire'
-  pod 'SideMenu'
-  pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'dev_for_swift5.0'
-  
-  pod 'SwiftyJSON'
-  # UI库
   pod 'Hero'
-  pod 'SwiftEntryKit'
+  pod 'EachNavigationBar'
+  pod 'SnapKit'
+  pod 'JXPhotoBrowser'
+  pod 'SQLite.swift'
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
+  # 分页
+  pod 'DNSPageView'
+  pod 'SnapKit'
   
-  pod 'Kingfisher'
- # pod 'BmobSDK'
   
-  pod "BSImagePicker", "~> 2.8"
+  
+  #pod 'RxRealm'
+  #pod 'RealmSwift'
+  #pod 'lottie-ios'
+  #pod 'Alamofire'
+  #pod 'SideMenu'
+  #pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'dev_for_swift5.0'
+  #pod 'SwiftyJSON'
+  # UI库
+  #pod 'SwiftEntryKit
+  #pod 'Kingfisher'
+  #pod 'BmobSDK'
+  
+  #pod "BSImagePicker", "~> 2.8"
   #图片选择器
   #pod 'DKImagePickerController'
-  pod 'MJRefresh'
-  pod 'SQLite.swift'
-    pod 'RxSwift',    '~> 4.0'
-    pod 'RxCocoa',    '~> 4.0'
-   # 分页
-   pod 'DNSPageView'
+  #pod 'MJRefresh'
+
    # Pods for CareFree
-  pod 'JXPhotoBrowser'
 end

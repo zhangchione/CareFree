@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import HandyJSON
 
 
-struct MineModel:HandyJSON {
+
+struct MineModel {
     var id = ""
     var day_notes = ""
     var username = ""

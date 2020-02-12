@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F5D9752022A3B36E0014BE15"
-               BuildableName = "CareFree.app"
+               BuildableName = "&#x5fc3;&#x60c5;&#x65e5;&#x8bb0;.app"
                BlueprintName = "CareFree"
                ReferencedContainer = "container:CareFree.xcodeproj">
             </BuildableReference>
@@ -27,19 +27,17 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F5D9752022A3B36E0014BE15"
-            BuildableName = "CareFree.app"
+            BuildableName = "&#x5fc3;&#x60c5;&#x65e5;&#x8bb0;.app"
             BlueprintName = "CareFree"
             ReferencedContainer = "container:CareFree.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -56,20 +54,23 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F5D9752022A3B36E0014BE15"
-            BuildableName = "CareFree.app"
+            BuildableName = "&#x5fc3;&#x60c5;&#x65e5;&#x8bb0;.app"
             BlueprintName = "CareFree"
             ReferencedContainer = "container:CareFree.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
+            key = "DYLD_PRINT_STATISTICS"
+            value = "YES"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
             key = "OS_ACTIVITY_MODE"
             value = "disable"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -82,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F5D9752022A3B36E0014BE15"
-            BuildableName = "CareFree.app"
+            BuildableName = "&#x5fc3;&#x60c5;&#x65e5;&#x8bb0;.app"
             BlueprintName = "CareFree"
             ReferencedContainer = "container:CareFree.xcodeproj">
          </BuildableReference>

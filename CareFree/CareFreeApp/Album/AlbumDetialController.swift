@@ -98,10 +98,10 @@ class AlbumDetialController: UIViewController {
         configUI()
     }
     
-    ///资源管理
-    let rescouceManager = RescouceManager.share
-    ///配置管理
-    let rescoucceConfiguration = RescouceConfiguration.share
+//    ///资源管理
+//    let rescouceManager = RescouceManager.share
+//    ///配置管理
+//    let rescoucceConfiguration = RescouceConfiguration.share
     
     // 左边返回按钮
     private lazy var leftBarButton:UIButton = {
@@ -139,58 +139,6 @@ class AlbumDetialController: UIViewController {
     }
     @objc func AR(){
         print("进入AR展示")
-        var albumVC: TKARViewController!
-        let storB = UIStoryboard.init(name: "ARPanorama", bundle: nil)
-        albumVC = storB.instantiateViewController(withIdentifier: "TKARViewController") as? TKARViewController
-        DispatchQueue.global(qos: .userInteractive).sync {
-            let manager = RescouceManager.share
-            let imageManager = PHImageManager.default()
-            let option = PHImageRequestOptions()
-            option.isSynchronous = true
-            
-            if manager.horizontalImages.count > 0 {
-                for image in manager.horizontalImages {
-                    manager.deleteHorizontalImage(image: image)
-                }
-            }
-            if manager.verticalImages.count > 0 {
-                for image in manager.verticalImages {
-                    manager.deleteVerticalImage(image: image)
-                }
-            }
-            
-            manager.addVerticalImage(image: UIImage(named: "V_Image_00")!)
-            manager.addVerticalImage(image: UIImage(named: "V_Image_01")!)
-            manager.addVerticalImage(image: UIImage(named: "V_Image_02")!)
-            manager.addVerticalImage(image: UIImage(named: "V_Image_03")!)
-            manager.addVerticalImage(image: UIImage(named: "V_Image_04")!)
-            manager.addVerticalImage(image: UIImage(named: "V_Image_05")!)
-            
-            manager.addHorizontalImage(image: UIImage(named: "H_Image_00")!)
-            manager.addHorizontalImage(image: UIImage(named: "H_Image_10")!)
-            manager.addHorizontalImage(image: UIImage(named: "H_Image_20")!)
-            manager.addHorizontalImage(image: UIImage(named: "H_Image_30")!)
-            manager.addHorizontalImage(image: UIImage(named: "H_Image_40")!)
-            manager.addHorizontalImage(image: UIImage(named: "H_Image_50")!)
-            manager.addHorizontalImage(image: UIImage(named: "H_Image_60")!)
-            
-            manager.text = ""
-            manager.textColor = "textColor_7"
-        }
-        
-        DispatchQueue.global(qos: .background).async {
-            var path=NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-            path+="/RescouceManager"
-            NSKeyedArchiver.archiveRootObject(self.rescouceManager, toFile: path)
-            var cPath=NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-            cPath+="/RescouceConfiguration"
-            print("路径："+cPath)
-            NSKeyedArchiver.archiveRootObject(self.rescoucceConfiguration, toFile: cPath)
-        }
-        albumVC.hero.isEnabled = true
-        albumVC.view.hero.modifiers = [.fade, .scale(0.1)]
-        albumVC.navigationItem.title = " "
-        navigationController?.pushViewController(albumVC, animated: true)
     }
 
 }
