@@ -29,7 +29,7 @@ class SKPHAssetToImageTool: NSObject {
         imageRequestOption.deliveryMode = .highQualityFormat
         
         // 按照PHImageRequestOptions指定的规则取出图片
-        imageManager.requestImage(for: asset, targetSize: CGSize.init(width: 1080, height: 1920), contentMode: .aspectFill, options: imageRequestOption, resultHandler: {
+        imageManager.requestImage(for: asset, targetSize: CGSize.init(width: 256, height: 256), contentMode: .aspectFill, options: imageRequestOption, resultHandler: {
             (result, _) -> Void in
             image = result!
         })
