@@ -11,6 +11,7 @@ import SQLite
 
 class DayDiaryTable {
     let table = Table("DayDiaryTable")
+    
     let id = Expression<Int64>("id")
     let user_id = Expression<String>("user_id")
     let day_id = Expression<String>("day_id")

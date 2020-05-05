@@ -10,9 +10,52 @@
 import Foundation
 import UIKit
 
+
+/** 日期信息 */
+
+class DateInfo {
+    static let shared = DateInfo()
+    
+    var year = 0
+    var mouth = 0
+    var day = 0
+    var week = 0
+    var todayText = ""
+    var nowText = ""
+    init() {
+        let now = Date()
+        year = now.year()
+        mouth = now.month()
+        day = now.day()
+        week = now.weekDay()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy年MM月dd日"
+        todayText = formatter.string(from: now)
+    }
+}
+
+/*
+#define kIs_iphone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define kIs_iPhoneX kScreenWidth >=375.0f && kScreenHeight >=812.0f&& kIs_iphone
+*/
+
+// 根据文字 获取 content 高度
+ func getTextHeight(textStr:String,font:UIFont,width:CGFloat) -> CGFloat {
+    let normalText: NSString = textStr as NSString
+    let size = CGSize(width: width, height: 3000)
+    let dic = NSDictionary(object: font, forKey: NSAttributedString.Key.font as NSCopying)
+    let stringSize = normalText.boundingRect(with: size,options: .usesLineFragmentOrigin, attributes: (dic as! [NSAttributedString.Key : Any]) , context:nil).size
+    return stringSize.height
+}
+
+
+// INF
+let INF = 100001
+
 let CFWidth = UIScreen.main.bounds.width
 let CFHeight = UIScreen.main.bounds.height
 let FooterViewColor = UIColor.init(red: 240/255.0, green: 241/255.0, blue: 244/255.0, alpha: 1)
+
 
 // iphone X
 let isIphoneX = CFHeight >= 812 ? true : false
@@ -20,6 +63,27 @@ let isIphoneX = CFHeight >= 812 ? true : false
 let navigationBarHeight : CGFloat = isIphoneX ? 88 : 64
 // tabBarHeight
 let tabBarHeight : CGFloat = isIphoneX ? 49 + 34 : 49
+
+
+/*状态栏高度*/
+let kStatusBarHeight: CGFloat = isIphoneX ? 44.0 : 20.0
+/*导航栏高度*/
+let kNavBarHeight: CGFloat = 44
+
+/*状态栏和导航栏总高度*/
+let kNavBarAndStatusBarHeight : CGFloat = isIphoneX ? 88.0 : 64.0
+/*TabBar高度*/
+let kTabBarHeight: CGFloat = isIphoneX ? 49.0 + 34.0 : 49.0
+
+/*顶部安全区域远离高度*/
+let kTopBarSafeHeight : CGFloat = isIphoneX ? 44.0 : 0
+/*底部安全区域远离高度*/
+let kBottomSafeHeight : CGFloat = isIphoneX ? 34.0 : 0
+/*iPhoneX的状态栏高度差值*/
+let kTopBarDifHeight: CGFloat = isIphoneX ? 24.0 : 0
+
+/*导航条和Tabbar总高度*/
+let kNavAndTabHeight = kNavBarAndStatusBarHeight + kTabBarHeight
 
 /// 主题背景色
 let backColor = UIColor.init(r: 247, g: 249, b: 254)

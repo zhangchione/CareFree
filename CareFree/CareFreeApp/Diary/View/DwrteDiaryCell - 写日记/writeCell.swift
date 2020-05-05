@@ -13,6 +13,9 @@ import UIKit
 class writeCell: UICollectionViewCell {
 
     @IBOutlet weak var circleView: UIView!
+    
+    
+    @IBOutlet weak var circleImage: UIImageView!
     @IBOutlet weak var emotionLabel: UILabel!
     
     override func awakeFromNib() {

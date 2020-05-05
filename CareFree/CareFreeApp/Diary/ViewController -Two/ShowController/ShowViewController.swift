@@ -11,6 +11,7 @@ import UIKit
 let HeadShowCellID = "HeadShowCell"
 let ShowHeaderViewID = "ShowHeaderView"
 let ShowBodyCellID = "ShowBodyCell"
+
 class ShowViewController: UIViewController {
     // 左边返回按钮
     private lazy var leftBarButton:UIButton = {
@@ -74,6 +75,7 @@ extension ShowViewController {
             make.top.equalTo(view).offset(0)
             make.left.right.bottom.equalTo(view)
         }
+        
     }
     func configNav(){
         self.navigation.bar.isShadowHidden = true

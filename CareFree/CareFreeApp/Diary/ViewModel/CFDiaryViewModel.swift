@@ -11,10 +11,25 @@ import UIKit
 
 class CFDiaryViewModel:NSObject {
     var datas = [CFDiaryModel]()
+    var data = [DiaryModel]()
     
 }
 
 // MARK: 数据
 
 extension CFDiaryViewModel{
+    
+    func getLocalDiaryData(callback: @escaping ([DiaryModel]) -> ()){
+        let data = DataBase.shared.queryDiaryAll(isTrash: false)
+        callback(data)
+    }
+    
+    func getSearchData(with keyWord:String,callback: @escaping ([DiaryModel]) -> ()) {
+        
+    }
+    
+    func getDateDiaryData(with dateStr:String,callback: @escaping ([DiaryModel]) -> () ){
+        let data = DataBase.shared.queryDiary(by: dateStr)
+        callback(data)
+    }
 }

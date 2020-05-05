@@ -8,6 +8,14 @@
 
 import UIKit
 
+
+class CFSearchBar:UISearchBar {
+    override func layoutSubviews() {
+        
+    }
+}
+
+
 class DsearchCell: UICollectionViewCell {
     
     override init(frame: CGRect) {

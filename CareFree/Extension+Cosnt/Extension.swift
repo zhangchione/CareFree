@@ -10,6 +10,26 @@ import Foundation
 import UIKit
 import EachNavigationBar
 
+
+extension UIImage {
+    func image(withIcon iconCode: String?, inFont fontName: String?, size: Int, color: UIColor?) -> UIImage? {
+        let imageSize = CGSize(width: CGFloat(size), height: CGFloat(size))
+        UIGraphicsBeginImageContextWithOptions(imageSize, _: false, _: UIScreen.main.scale)
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(size), height: CGFloat(size)))
+        label.font = UIFont(name: fontName ?? "", size: CGFloat(size))
+        label.text = iconCode
+        if color != nil {
+            label.textColor = color
+        }
+        if let context = UIGraphicsGetCurrentContext() {
+            label.layer.render(in: context)
+        }
+        let retImage = UIGraphicsGetImageFromCurrentImageContext()
+        return retImage
+    }
+}
+
+
 public extension Double {
     var fitWidth_Double: Double {
         return self/414.0 * Double(CFWidth)
@@ -279,6 +299,7 @@ extension Date {
         let comNow = calendar.dateComponents([.year,.month,.day], from: Date())
         return com.year == comNow.year && com.month == comNow.month
     }
+    
     func getWeekDay(dateTime:String)->String{
         let dateFmt = DateFormatter()
         dateFmt.dateFormat = "yyyy-MM-dd"

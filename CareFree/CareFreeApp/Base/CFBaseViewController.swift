@@ -10,12 +10,25 @@ import UIKit
 
 class CFBaseViewController: UIViewController {
     
-    // 左上角标题
+    private var titleText = ""
     
-    public lazy var Title:UILabel = {
+    // 左上角标题
+    public lazy var Title: UILabel = {
         let label = UILabel()
+        label.font = UIFont(name: "PingFangSC-Semibold", size: 26.fit)
         return label
     }()
+    
+    // Bar
+    public lazy var barView: UIView = {
+        let vi = UIView()
+        vi.backgroundColor = .clear
+        return vi
+    }()
+    convenience init(title: String){
+        self.init()
+        self.titleText = title
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +38,12 @@ class CFBaseViewController: UIViewController {
     func configBase(){
         self.navigation.bar.isShadowHidden = true
         self.navigation.bar.alpha = 0
-        Title.frame = CGRect(x: 22.fitWidth_CGFloat, y: 50.fitHeight_CGFloat, width: 100.fitWidth_CGFloat, height: 40.fitHeight_CGFloat)
-        Title.text = "我的"
-        Title.font = UIFont(name: "PingFangSC-Semibold", size: 26)
+        
+        
         view.backgroundColor = UIColor.init(r: 247, g: 249, b: 254)
-        view.addSubview(Title)
+        Title.frame = CGRect(x: 22.fit, y: 10.fit, width: 100.fit, height: 40.fit)
+        Title.text = titleText
+        self.navigation.bar.addSubview(Title)
     }
 
 

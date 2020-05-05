@@ -47,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         albumNav.navigation.configuration.isEnabled = true
         mineNav.navigation.configuration.isEnabled = true
         
+        //diaryNav.navigation.configuration.barTintColor = .white
         
         if homeNav.children.count > 1 {
             
@@ -54,7 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabBarController = ESTabBarController()
         
-        tabBarController.viewControllers = [diaryNav, albumNav,mineNav]
+        tabBarController.viewControllers = [homeNav,diaryNav, albumNav,mineNav]
+        tabBarController.tabBar.backgroundColor = .white
+        //tabBarController.tabBar.shadowImage = UIImage(named: "background")
+        
+        tabBarController.tabBar.backgroundImage = UIImage(named: "background")
         return tabBarController
     }
     

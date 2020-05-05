@@ -20,6 +20,9 @@ enum NotesType {
 }
 
 
+let textViewPlaceHolder = "南风知我意，吹梦到西洲。"
+
+
 class NotesViewController: UIViewController {
 
     private var type:NotesType? //记录类型
@@ -36,7 +39,7 @@ class NotesViewController: UIViewController {
         tv.backgroundColor = UIColor.clear
         tv.font = UIFont.systemFont(ofSize: 20)
         tv.textColor = UIColor.lightGray
-        tv.text = "快记录一下吧~"
+        tv.text = textViewPlaceHolder
         tv.delegate = self
         return tv
     }()
@@ -167,7 +170,7 @@ class NotesViewController: UIViewController {
         
     }
     func setUI(title:String,photoImg:String,colors:[CGColor],themColor:UIColor) {
-        self.title = title
+        self.title = DateInfo.shared.todayText
         self.colors = colors
         self.themColor = themColor
         self.photoImg = photoImg
@@ -361,7 +364,7 @@ extension NotesViewController{
 extension NotesViewController:UITextViewDelegate {
 
     func textViewShouldBeginEditing(_ content: UITextView) -> Bool {
-        if (content.text == "快记录一下吧~") {
+        if (content.text == textViewPlaceHolder) {
             content.text = ""
         }
         content.textColor = .black

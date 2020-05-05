@@ -8,8 +8,27 @@
 
 import UIKit
 
+protocol DiaryCellDelegate:NSObjectProtocol {
+    func photoDelete(with indexPath:IndexPath)
+}
+
+
+
 class diaryPhotoCell: UICollectionViewCell {
 
+    
+    public var isDeleteButtonShow = true
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    weak var delegate:DiaryCellDelegate?
+    public var indexPath = IndexPath()
+    @IBAction func deleteBtn(_ sender: UIButton) {
+        self.delegate?.photoDelete(with: self.indexPath)
+        if !isDeleteButtonShow {
+            sender.isHidden = true
+        }
+    }
+    
     @IBOutlet weak var photo: UIImageView!
     
     override func awakeFromNib() {

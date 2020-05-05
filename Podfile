@@ -38,5 +38,9 @@ target 'CareFree' do
   #pod 'DKImagePickerController'
   #pod 'MJRefresh'
 
+  #搜索
+  pod 'Fuse'
+  #日历
+  pod 'FSCalendar'
    # Pods for CareFree
 end

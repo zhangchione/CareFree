@@ -3,6 +3,8 @@ ${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework
 ${BUILT_PRODUCTS_DIR}/DNSPageView/DNSPageView.framework
 ${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework
 ${BUILT_PRODUCTS_DIR}/EachNavigationBar/EachNavigationBar.framework
+${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
+${BUILT_PRODUCTS_DIR}/Fuse/Fuse.framework
 ${BUILT_PRODUCTS_DIR}/Hero/Hero.framework
 ${BUILT_PRODUCTS_DIR}/JXPhotoBrowser/JXPhotoBrowser.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework

@@ -8,6 +8,8 @@ PODS:
   - DNSPageView (1.1.6)
   - EachNavigationBar (1.12.1)
   - ESTabBarController-swift (2.7)
+  - FSCalendar (2.8.0)
+  - Fuse (1.2.0)
   - Hero (1.4.0)
   - JXPhotoBrowser (2.1.5):
     - JXPhotoBrowser/Kingfisher (= 2.1.5)
@@ -32,6 +34,8 @@ DEPENDENCIES:
   - DNSPageView
   - EachNavigationBar
   - ESTabBarController-swift
+  - FSCalendar
+  - Fuse
   - Hero
   - JXPhotoBrowser
   - ProgressHUD
@@ -46,6 +50,8 @@ SPEC REPOS:
     - DNSPageView
     - EachNavigationBar
     - ESTabBarController-swift
+    - FSCalendar
+    - Fuse
     - Hero
     - JXPhotoBrowser
     - Kingfisher
@@ -61,6 +67,8 @@ SPEC CHECKSUMS:
   DNSPageView: df84b178394ddf4a73b2d19baf4deb24b4a4ba33
   EachNavigationBar: edd979ad7b4a63ce5ea4208087ba55eb1e2f2b55
   ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  Fuse: 287bd95a5c8dbfe6c41af519eaf48856aa1a28f6
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   JXPhotoBrowser: 0178c485d1dbad1ef1dcbb24e4f463d80c30369d
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
@@ -71,6 +79,6 @@ SPEC CHECKSUMS:
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: cab51727bd3d72e208abe32b3660cb7ec4ca537b
+PODFILE CHECKSUM: 2be4ff5714e5b34984dcb639c2fc2e376d7e8043
 
 COCOAPODS: 1.8.4

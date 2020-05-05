@@ -7,17 +7,26 @@
 //
 
 import UIKit
-
+import Photos
 
 class DshowDiaryCell: UICollectionViewCell {
     
     var diaryContents = [diaryModel]()
     var nowData = [NowDiaryModel]()
     var nums = [(String,Int)]()
+    
+    lazy var backView:UIView = {
+       let vi = UIView()
+        vi.backgroundColor = .white
+        vi.layer.cornerRadius = 20.fit
+        vi.layer.masksToBounds = true
+        return vi
+    }()
+    
     lazy var day: UILabel = {
         let label = UILabel()
         label.text = "24"
-        label.font = UIFont(name: "PingFangSC-Semibold", size: 32)
+        label.font = UIFont(name: "PingFangSC-Semibold", size: 32.fit)
         //label.backgroundColor = UIColor.red
         return label
     }()
@@ -25,7 +34,7 @@ class DshowDiaryCell: UICollectionViewCell {
     lazy var week: UILabel = {
         let label = UILabel()
         label.text = "周五"
-        label.font = UIFont(name: "PingFangSC-Regular", size: 12)
+        label.font = UIFont(name: "PingFangSC-Regular", size: 12.fit)
         //label.backgroundColor = UIColor.green
         return label
     }()
@@ -33,7 +42,7 @@ class DshowDiaryCell: UICollectionViewCell {
     lazy var yearMouth: UILabel = {
         let label = UILabel()
         label.text = "2019年5月"
-        label.font = UIFont(name: "PingFangSC-Regular", size: 12)
+        label.font = UIFont(name: "PingFangSC-Regular", size: 12.fit)
         //label.backgroundColor = UIColor.blue
         return label
     }()
@@ -47,7 +56,7 @@ class DshowDiaryCell: UICollectionViewCell {
     lazy var content: UILabel = {
         let label = UILabel()
         label.text = "今天考试，准备了很久，希望能够得到好成绩"
-        label.font = UIFont(name: "PingFangSC-Regular", size: 15)
+        label.font = UIFont(name: "PingFangSC-Regular", size: 15.fit)
         label.numberOfLines = 0
         // label.backgroundColor = UIColor.red
         label.textAlignment = NSTextAlignment.left
@@ -59,9 +68,18 @@ class DshowDiaryCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "情绪值 32"
         label.textColor = UIColor.init(r: 57, g: 210, b: 214)
-        label.font = UIFont(name: "PingFangSC-Medium", size: 13)
+        label.font = UIFont(name: "PingFangSC-Medium", size: 16.fit)
+        label.textAlignment = .center
         //label.backgroundColor = UIColor.red
         return label
+    }()
+    
+    lazy var image:UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(named: "t3")
+        img.clipsToBounds = true
+        img.layer.cornerRadius = 5.fit
+        return img
     }()
     
     lazy var emotionData : UITableView = {
@@ -74,16 +92,17 @@ class DshowDiaryCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configUI()
+
         configShadow()
+        configUI()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateUI(with datas:CFDiaryModel)
+    func updateUI(with datas:DiaryModel)
     {
-        let data = datas.dayDiary
+        let data = datas
         
         let date = data.date
         let timeForMatter = DateFormatter()
@@ -98,33 +117,35 @@ class DshowDiaryCell: UICollectionViewCell {
         yearMouth.text = yeartext
         week.text = weektext
         content.text = data.content
-        print("day_id",data.day_id)
-        nowData = datas.nowDiary //DataBase.shared.queryNowDiaryByDayId(day_id: data.day_id)
-        var moodValue = data.mode
-        var num = [0,0,0,0]
-        for nowdata in nowData {
-            switch nowdata.mode {
-            case 26 ... 50:
-                num[0] += 1
-            case 0 ... 25:
-                num[1] += 1
-            case -25 ... -1:
-                num[2] += 1
-            case -50 ... -26:
-                num[3] += 1
-            default:
-                break
-            }
-            moodValue += nowdata.mode
+        emotionValue.text = "情绪值 \(data.mood)"
+        switch data.mood {
+        case 26 ... 50:
+            emotionValue.textColor = happyColor
+        case 0 ... 25:
+            emotionValue.textColor = calmColor
+        case -25 ... -1:
+            emotionValue.textColor = sadColor
+        case -50 ... -26:
+            emotionValue.textColor = repressioneColor
+        default:
+            break;
         }
-        nums.removeAll()
-        if num[0] != 0 { nums.append(("开心",num[0])) }
-        if num[1] != 0 { nums.append(("平静",num[1])) }
-        if num[2] != 0 { nums.append(("难过",num[2])) }
-        if num[3] != 0 { nums.append(("压抑",num[3])) }
-        emotionValue.text = "情绪值 \(moodValue/(nowData.count + 1))"
-        print("nowdata",nowData.count)
-        emotionData.reloadData()
+        
+        var photoData = data.images.components(separatedBy: ",")
+        if photoData[0] == "" {
+            photoData.removeAll()
+            self.image.alpha = 0
+        }else {
+            self.image.alpha = 1
+            let result = PHAsset.fetchAssets(withLocalIdentifiers: [photoData[0]].compactMap{ $0 },options: nil) as? PHFetchResult
+            result?.enumerateObjects({ (obj, index, stop) in
+                let imageAsset = obj as? PHAsset
+                if let imageAsset = imageAsset {
+                    let img = SKPHAssetToImageTool.PHAssetToImage(asset: imageAsset)
+                    self.image.image = img
+                }
+            })
+        }
     }
     
     func updateWriteUI(){
@@ -209,74 +230,78 @@ class DshowDiaryCell: UICollectionViewCell {
     
     
     func configUI(){
-        addSubview(day)
-        addSubview(week)
-        addSubview(yearMouth)
-        addSubview(dayLine)
-        addSubview(content)
-        addSubview(emotionValue)
+        addSubview(backView)
+        backView.snp.makeConstraints { (make) in
+            make.top.bottom.equalTo(self)
+            make.left.equalTo(self).offset(20.fit)
+            make.right.equalTo(self).offset(-20.fit)
+        }
+        backView.addSubview(day)
+        backView.addSubview(week)
+        backView.addSubview(yearMouth)
+        backView.addSubview(dayLine)
+        backView.addSubview(content)
+        backView.addSubview(emotionValue)
+        backView.addSubview(image)
         //addSubview(writeBtn)
         //addSubview(writeCollection)
-        emotionData.delegate = self
-        emotionData.dataSource = self
+        //emotionData.delegate = self
+        //emotionData.dataSource = self
         
-        addSubview(emotionData)
+        //addSubview(emotionData)
         day.snp.makeConstraints{(make) in
             make.top.equalTo(self) .offset(15.fit)
-            make.left.equalTo(self).offset(20.fit)
-            make.height.equalTo(35)
-            make.width.equalTo(40)
+            make.left.equalTo(self).offset(40.fit)
+            make.height.equalTo(35.fit)
+            make.width.equalTo(40.fit)
         }
         dayLine.snp.makeConstraints{(make) in
             make.top.equalTo(day.snp.bottom).offset(5.fit)
-            make.left.equalTo(self).offset(20.fit)
-            make.height.equalTo(2)
-            make.width.equalTo(30)
+            make.left.equalTo(self).offset(40.fit)
+            make.height.equalTo(2.fit)
+            make.width.equalTo(30.fit)
         }
         week.snp.makeConstraints{(make) in
             make.top.equalTo(self).offset(13.fit)
             make.left.equalTo(day.snp.right).offset(15.fit)
-            make.height.equalTo(20)
-            make.width.equalTo(40)
+            make.height.equalTo(20.fit)
+            make.width.equalTo(40.fit)
         }
         yearMouth.snp.makeConstraints{(make) in
             make.top.equalTo(week.snp.bottom).offset(-1.fit)
             make.left.equalTo(day.snp.right).offset(15.fit)
-            make.width.equalTo(80)
-            make.height.equalTo(20)
+            make.width.equalTo(80.fit)
+            make.height.equalTo(20.fit)
         }
         content.snp.makeConstraints{(make) in
             make.top.equalTo(dayLine.snp.bottom).offset(5.fit)
-            make.left.equalTo(self).offset(18.fit)
-            make.width.equalTo(180)
-            make.height.equalTo(100)
+            make.left.equalTo(self).offset(38.fit)
+            make.width.equalTo(180.fit)
+            make.height.equalTo(100.fit)
         }
         emotionValue.snp.makeConstraints{(make) in
             make.top.equalTo(self).offset(12.fit)
-            make.right.equalTo(self).offset(-15.fit)
-            make.height.equalTo(30)
-            make.width.equalTo(90)
+            make.right.equalTo(self).offset(-35.fit)
+            make.height.equalTo(30.fit)
+            make.width.equalTo(90.fit)
         }
-        emotionData.snp.makeConstraints{(make) in
-            make.top.equalTo(emotionValue.snp.bottom).offset(3.fit)
-            make.right.equalTo(self).offset(-15.fit)
-            make.width.equalTo(100)
-            make.height.equalTo(120)
+        image.snp.makeConstraints{(make) in
+            make.centerY.equalTo(content.snp.centerY)
+            make.centerX.equalTo(emotionValue.snp.centerX)
+            make.width.equalTo(80.fit)
+            make.height.equalTo(80.fit)
         }
     }
     
     func configShadow(){
         
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 20
-        //self.layer.borderWidth = 1.0
-        //self.layer.borderColor = UIColor.clear.cgColor
-        
-        self.layer.shadowColor = UIColor.init(red: 110, green: 127, blue: 255, alpha: 0).cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.layer.shadowRadius = 6.0
-        self.layer.shadowOpacity = 0.6
-        self.layer.masksToBounds = false
+        self.backView.backgroundColor = .white
+        self.backView.layer.cornerRadius = 20.fit
+        self.backView.layer.masksToBounds = false
+        self.backView.layer.shadowColor = UIColor(red: 0.43, green: 0.5, blue: 1, alpha: 0.3).cgColor
+        self.backView.layer.shadowOffset = CGSize(width: 0, height: 4.fit)
+        self.backView.layer.shadowOpacity = 1
+        self.backView.layer.shadowRadius = 12.fit
     }
     
 }

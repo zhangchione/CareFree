@@ -27,11 +27,13 @@ class DataBase {
         return nil
     }()
     
+    var diaryTable = DiaryTable()
     var dayDiaryTable = DayDiaryTable()
     var nowDiaryTable = NowDiaryTable()
     init() {
         dayDiaryTable.setupTable()
         nowDiaryTable.setupTable()
+        diaryTable.setupTable()
     }
 }
 

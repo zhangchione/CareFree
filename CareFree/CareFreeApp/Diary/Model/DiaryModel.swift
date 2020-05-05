@@ -8,6 +8,20 @@
 
 import Foundation
 
+struct DiaryModel {
+    var id = -1
+    var date = Date()
+    var dateStr = ""
+    var title = ""
+    var content = ""
+    var images = ""
+    var mood = 0
+    
+    var locate = ""
+    var weather = ""
+    //var isTrash = false
+}
+
 
 struct DiaryTodayModel {
     var id = ""

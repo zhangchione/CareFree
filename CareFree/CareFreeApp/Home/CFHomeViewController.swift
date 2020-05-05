@@ -31,6 +31,8 @@ class CFHomeViewController: UIViewController {
         configNavBar()
     }
     
+    
+    
     func configUI(){
         view.backgroundColor = UIColor.init(r: 247, g: 249, b: 255)
         view.addSubview(collectionView)
