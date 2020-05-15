@@ -387,31 +387,7 @@ class MineCell: UIView {
         emotionView.addSubview(lineView)
         emotionView.addSubview(pointLabel)
 
-//
-//
-//        userImg.snp.makeConstraints{(make) in
-//            make.left.top.equalTo(self).offset(25)
-//            make.height.width.equalTo(90)
-//        }
-//        userName.snp.makeConstraints{(make) in
-//            make.left.equalTo(userImg.snp.right).offset(30)
-//            make.top.equalTo(self).offset(30)
-//            make.height.equalTo(30)
-//            make.width.equalTo(120)
-//        }
-//        idView.snp.makeConstraints{(make) in
-//            make.left.equalTo(userImg.snp.right).offset(30)
-//            make.top.equalTo(userName.snp.bottom).offset(10)
-//            make.height.equalTo(30)
-//            make.width.equalTo(70)
-//        }
-//        id.snp.makeConstraints{(make) in
-//            make.left.equalTo(idView.snp.left).offset(9)
-//            make.top.equalTo(idView.snp.top).offset(0)
-//            make.width.equalTo(70)
-//            make.height.equalTo(30)
-//
-//        }
+
         
         // 情绪值
         emotionView.snp.makeConstraints{(make) in

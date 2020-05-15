@@ -11,81 +11,130 @@ import CollectionKit
 import SnapKit
 import Hero
 
+
+extension CFMineController: MineBodyViewDelegate {
+    func setCallBack(type: SetViewOnBodyViewType,isOn:Bool) {
+        print(type,isOn)
+    }
+    
+    func mineCardTapCallBack(type: CardType) {
+        print(type)
+        var vc = UIViewController()
+        switch type {
+        case .set:
+            vc = SetViewController()
+        default:
+            break
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+}
+
+
+extension CFMineController: UIScrollViewDelegate {
+    
+}
+
 class CFMineController: CFBaseViewController {
 
-    var emotionLayer: CAGradientLayer!
     
-    fileprivate let dataSource = ArrayDataSource(data:[MineModel]())
-    fileprivate lazy var collectionView = CollectionView()
+    
+    
+    var mineHeaderData = MineHeaderViewModel()
+    
+    var mineBodyData = MineBodyModel()
+    
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+            scrollView.delegate = self
+            scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
+    
+    lazy var contentView: UIView = {
+        let vi = UIView()
+        return vi
+    }()
+    
+    lazy var headerView: MineHeaderView = {
+       let headerView = MineHeaderView()
+        return headerView
+    }()
+    
+    lazy var bodyView: MineBodyView = {
+       let bodyView = MineBodyView()
+        bodyView.delegate = self
+        return bodyView
+    }()
+    
+    
+    
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        congfigUI()
-        configCV()
-        configAnimation()
+        setUI()
+        configNav()
     }
     override func viewWillAppear(_ animated: Bool) {
         configData()
+        updateUI()
     }
 
-    func congfigUI() {
+
+    
+    func setUI(){
         self.Title.text = "我的"
-        view.addSubview(collectionView)
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        //collectionView.isScrollEnabled = false
-        collectionView.alwaysBounceVertical = false
-        collectionView.snp.makeConstraints{(make) in
-            make.bottom.right.left.equalTo(view)
-            make.top.equalTo(navigation.bar.snp.bottom).offset(0)
+        self.view.backgroundColor = .white
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
+            make.left.top.right.bottom.equalToSuperview()
         }
-
-    }
-    
-    var impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-    public var duration = 0.3
-    
-    func configCV(){
-        let viewSource = ClosureViewSource(viewUpdater: {(view:MineCell,data:MineModel,index:Int) in
-            view.updateUI(with:data)
-            
-            let setTap = UITapGestureRecognizer(target: self, action: #selector(self.setEvent))
-            let trashTap = UITapGestureRecognizer(target: self, action: #selector(self.trashEvent))
-            let diaryChartTap = UITapGestureRecognizer(target: self, action: #selector(self.diaryChartEvnent))
-            view.setView.addGestureRecognizer(setTap)
-            view.trashView.addGestureRecognizer(trashTap)
-            view.moodView.addGestureRecognizer(diaryChartTap)
-            
-            //view.oneBackView.layer.add(self.impliesAnimation, forKey: nil)
-//            view.diaryView.layer.add(self.impliesAnimation, forKey: nil)
-//            view.trashView.layer.add(self.impliesAnimation, forKey: nil)
-//            view.moodView.layer.add(self.impliesAnimation, forKey: nil)
-            view.setView.layer.add(self.impliesAnimation, forKey: nil)
-            
-            view.setView.hero.id = "sky"
-            
-            
-            
-        })
-        let sizeSource = {(index:Int,data:MineModel,collectionSize:CGSize) ->CGSize in
-            return CGSize(width: collectionSize.width, height: 820.fit)
+        scrollView.addSubview(contentView)
+        
+        contentView.snp.makeConstraints { (make) in
+            make.edges.equalTo(scrollView)
+            make.width.equalTo(scrollView)
+            make.height.equalTo(CFHeight)
         }
         
-        let provider = BasicProvider(
-            dataSource: dataSource,
-            viewSource: viewSource,
-            sizeSource:sizeSource
-        )
-        collectionView.provider = provider
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        contentView.addSubview(headerView)
+        headerView.snp.makeConstraints { (make) in
+            make.left.equalTo(scrollView.snp.left)
+            make.right.equalTo(scrollView.snp.right)
+            make.top.equalTo(scrollView.snp.top).offset(10.fit)
+            make.height.equalTo(130.fit)
+        }
+        contentView.addSubview(bodyView)
+        bodyView.snp.makeConstraints { (make) in
+            make.left.equalTo(scrollView.snp.left)
+            make.right.equalTo(scrollView.snp.right)
+            make.top.equalTo(headerView.snp.bottom)
+            make.bottom.equalTo(scrollView.snp.bottom)
+        }
     }
-    func configAnimation() {
-        impliesAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
-        impliesAnimation.duration = self.duration * 2
-        impliesAnimation.calculationMode = CAAnimationCalculationMode.cubic
+    
+    func configNav(){
+        self.navigation.bar.barTintColor = .white
+        self.navigation.bar.alpha = 1
     }
+    
+    func configData(){
+        mineBodyData.emotionViewData = getTodayMoodValue()
+        mineBodyData.diaryViewData = (getDiaryTotal(),getNotesTotal())
+        mineBodyData.trashViewData = getTrashTotal()
+    }
+    
+    func updateUI(){
+        self.bodyView.updateUI(with: mineBodyData)
+        self.headerView.updateUI(with: mineHeaderData)
+    }
+    
+    
 
 }
 
@@ -118,54 +167,120 @@ extension CFMineController{
 
 // 请求数据
 
-extension CFMineController {
-    func configData(){
-//        //1 获取json文件路径
-//        let path = Bundle.main.path(forResource: "mine", ofType: "json")
-//        //2 获取json文件里面的内容,NSData格式
-//        let jsonData=NSData(contentsOfFile: path!)
-//        //3 解析json内容
-//        let json = JSON(jsonData!)
-//        if let mappedObject = JSONDeserializer<MineModel>.deserializeFrom(json: json["data"].description) {
-//            print("数据解析成功")
-//            dataSource.data.append(mappedObject)
-//            self.collectionView.reloadData()
+//extension CFMineController {
+//    func configData(){
+////        //1 获取json文件路径
+////        let path = Bundle.main.path(forResource: "mine", ofType: "json")
+////        //2 获取json文件里面的内容,NSData格式
+////        let jsonData=NSData(contentsOfFile: path!)
+////        //3 解析json内容
+////        let json = JSON(jsonData!)
+////        if let mappedObject = JSONDeserializer<MineModel>.deserializeFrom(json: json["data"].description) {
+////            print("数据解析成功")
+////            dataSource.data.append(mappedObject)
+////            self.collectionView.reloadData()
+////        }
+//
+//        var nowNum = 0
+//        var dayNum = 0
+//        var picNum = 0
+//        var sevenAve = 0
+//        var sevenMode = [Int]()
+//
+//        let datas =  DataBase.shared.queryAll()
+//
+//        for (index,data) in datas.enumerated() {
+//
+//            nowNum += data.nowDiary.count
+//            let imgs = data.dayDiary.images.components(separatedBy: ",")
+//            picNum += imgs.count
+//            for da in data.nowDiary {
+//                picNum += da.images.components(separatedBy: ",").count
+//            }
+//            if index < 7 {
+//                sevenAve += data.mode
+//                sevenMode.append(data.mode)
+//            }
 //        }
-        
-        var nowNum = 0
-        var dayNum = 0
-        var picNum = 0
-        var sevenAve = 0
-        var sevenMode = [Int]()
-        
-        let datas =  DataBase.shared.queryAll()
-        
-        for (index,data) in datas.enumerated() {
-            
-            nowNum += data.nowDiary.count
-            let imgs = data.dayDiary.images.components(separatedBy: ",")
-            picNum += imgs.count
-            for da in data.nowDiary {
-                picNum += da.images.components(separatedBy: ",").count
-            }
-            if index < 7 {
-                sevenAve += data.mode
-                sevenMode.append(data.mode)
-            }
-        }
-        if datas.count >= 7{
-            sevenAve /= 7
-        }else if datas.count == 0 {
-            
-        }else{
-            sevenAve /= datas.count
-        }
-        dayNum = datas.count
-        let mimedata = MineModel(id: "123", day_notes: "\(dayNum)", username: "cone", password: "123", mode: sevenAve, mode_value: sevenMode, sex: "1", now_notes: "\(nowNum)", head_pic: "",pics: "\(picNum)")
-        dataSource.data.removeAll()
-        dataSource.data.append(mimedata)
-        sevenMode.removeAll()
-        self.collectionView.reloadData()
-        
-    }
-}
+//        if datas.count >= 7{
+//            sevenAve /= 7
+//        }else if datas.count == 0 {
+//
+//        }else{
+//            sevenAve /= datas.count
+//        }
+//        dayNum = datas.count
+//        let mimedata = MineModel(id: "123", day_notes: "\(dayNum)", username: "cone", password: "123", mode: sevenAve, mode_value: sevenMode, sex: "1", now_notes: "\(nowNum)", head_pic: "",pics: "\(picNum)")
+//        dataSource.data.removeAll()
+//        dataSource.data.append(mimedata)
+//        sevenMode.removeAll()
+//        self.collectionView.reloadData()
+//
+//    }
+//}
+//
+//    /// 以下没有用
+//    var emotionLayer: CAGradientLayer!
+//
+//    fileprivate let dataSource = ArrayDataSource(data:[MineModel]())
+//    fileprivate lazy var collectionView = CollectionView()
+//
+//
+//
+//
+//
+//    func congfigUI() {
+//        self.Title.text = "我的"
+//        view.addSubview(collectionView)
+//        collectionView.showsVerticalScrollIndicator = false
+//        collectionView.showsHorizontalScrollIndicator = false
+//        //collectionView.isScrollEnabled = false
+//        collectionView.alwaysBounceVertical = false
+//        collectionView.snp.makeConstraints{(make) in
+//            make.bottom.right.left.equalTo(view)
+//            make.top.equalTo(navigation.bar.snp.bottom).offset(0)
+//        }
+//    }
+//
+//    var impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+//    public var duration = 0.3
+//
+//    func configCV(){
+//        let viewSource = ClosureViewSource(viewUpdater: {(view:MineCell,data:MineModel,index:Int) in
+//            view.updateUI(with:data)
+//
+//            let setTap = UITapGestureRecognizer(target: self, action: #selector(self.setEvent))
+//            let trashTap = UITapGestureRecognizer(target: self, action: #selector(self.trashEvent))
+//            let diaryChartTap = UITapGestureRecognizer(target: self, action: #selector(self.diaryChartEvnent))
+//            view.setView.addGestureRecognizer(setTap)
+//            view.trashView.addGestureRecognizer(trashTap)
+//            view.moodView.addGestureRecognizer(diaryChartTap)
+//
+//            //view.oneBackView.layer.add(self.impliesAnimation, forKey: nil)
+////            view.diaryView.layer.add(self.impliesAnimation, forKey: nil)
+////            view.trashView.layer.add(self.impliesAnimation, forKey: nil)
+////            view.moodView.layer.add(self.impliesAnimation, forKey: nil)
+//            view.setView.layer.add(self.impliesAnimation, forKey: nil)
+//
+//            view.setView.hero.id = "sky"
+//
+//
+//
+//        })
+//        let sizeSource = {(index:Int,data:MineModel,collectionSize:CGSize) ->CGSize in
+//            return CGSize(width: collectionSize.width, height: 820.fit)
+//        }
+//
+//        let provider = BasicProvider(
+//            dataSource: dataSource,
+//            viewSource: viewSource,
+//            sizeSource:sizeSource
+//        )
+//        collectionView.provider = provider
+//        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//    }
+//    func configAnimation() {
+//        impliesAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
+//        impliesAnimation.duration = self.duration * 2
+//        impliesAnimation.calculationMode = CAAnimationCalculationMode.cubic
+//    }

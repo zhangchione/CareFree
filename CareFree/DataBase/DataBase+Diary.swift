@@ -42,7 +42,7 @@ extension DataBase {
         data = data.reversed()
         return data
     }
-    /** 按日期字符串查询*/
+    /** 按日期字符串查询 格式 "yyyy年MM月dd日" */
     
     func queryDiary(by dateStr:String) -> [DiaryModel] {
         var datas = [DiaryModel]()

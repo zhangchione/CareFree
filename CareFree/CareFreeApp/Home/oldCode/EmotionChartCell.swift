@@ -8,7 +8,13 @@
 
 import UIKit
 
-class emotionChartCell: UIView {
+
+struct EmotionChartModel {
+    var dayText = ""
+    var mood = 0
+}
+
+class EmotionChartCell: UIView {
 
     lazy var topView:UIView = {
        let vi = UIView()
@@ -20,6 +26,7 @@ class emotionChartCell: UIView {
        let label = UILabel()
         label.text = "4"
         label.font = UIFont.systemFont(ofSize: 10)
+        label.textAlignment = .center
         return label
     }()
     
@@ -40,25 +47,38 @@ class emotionChartCell: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateUI(with data:emotionChartModel){
+    func updateUI(with data:EmotionChartModel){
         
-        if data.bottomValue == 0 {
-            bottomView.backgroundColor = UIColor.clear
-            topView.snp.makeConstraints{(make) in
-                make.height.equalTo(data.topValue*2)
-            }
-            topView.backgroundColor = data.color
+        
+        
+        switch data.mood {
+            case 26 ... 50:
+                topView.backgroundColor = happyColor
+            case 0 ... 25:
+                topView.backgroundColor = calmColor
+            case -25 ... -1:
+                bottomView.backgroundColor = sadColor
+            case -50 ... -26:
+                bottomView.backgroundColor = repressioneColor
+            default:
+                break
         }
-        else {
+        
+        if data.mood > 0 {
+            topView.snp.makeConstraints{(make) in
+                make.height.equalTo((data.mood*2).fit)
+            }
+            bottomView.backgroundColor = UIColor.clear
+        }else if data.mood < 0 {
             topView.backgroundColor = UIColor.clear
             bottomView.snp.makeConstraints{(make) in
-                make.height.equalTo(data.bottomValue*2)
+                make.height.equalTo((abs(data.mood)*2).fit)
             }
-            bottomView.backgroundColor = data.color
+        }else {
+            bottomView.backgroundColor = UIColor.clear
+            topView.backgroundColor = UIColor.clear
         }
-        day.text = data.day
-        
-        
+        day.text = data.dayText
     }
     
     func configUI(){
@@ -68,22 +88,23 @@ class emotionChartCell: UIView {
         
         day.snp.makeConstraints{(make) in
             make.center.equalTo(self.snp.center)
-            make.width.equalTo(8)
-            //make..equalTo(10)
+            make.width.equalTo(20.fit)
+            make.height.equalTo(15.fit)
         }
         topView.snp.makeConstraints{(make) in
             make.centerX.equalTo(day.snp.centerX)
-            make.bottom.equalTo(day.snp.top).offset(-2)
-            make.width.equalTo(8)
-            make.height.equalTo(100)
+            make.bottom.equalTo(day.snp.top).offset(-2.fit)
+            make.width.equalTo(10.fit)
+            make.height.equalTo(100.fit)
         }
         
         bottomView.snp.makeConstraints{(make) in
             make.centerX.equalTo(day.snp.centerX)
-            make.top.equalTo(day.snp.bottom).offset(2)
-            make.width.equalTo(8)
-            make.height.equalTo(100)
+            make.top.equalTo(day.snp.bottom).offset(2.fit)
+            make.width.equalTo(10.fit)
+            make.height.equalTo(100.fit)
         }
+        //self.backgroundColor = .red
     }
     
     func configShadow(){

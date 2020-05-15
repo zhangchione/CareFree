@@ -128,8 +128,6 @@ class CFDiaryController: CFBaseViewController {
     }()
     
     //MARK: life circle
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

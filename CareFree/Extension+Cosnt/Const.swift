@@ -11,28 +11,7 @@ import Foundation
 import UIKit
 
 
-/** 日期信息 */
 
-class DateInfo {
-    static let shared = DateInfo()
-    
-    var year = 0
-    var mouth = 0
-    var day = 0
-    var week = 0
-    var todayText = ""
-    var nowText = ""
-    init() {
-        let now = Date()
-        year = now.year()
-        mouth = now.month()
-        day = now.day()
-        week = now.weekDay()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年MM月dd日"
-        todayText = formatter.string(from: now)
-    }
-}
 
 /*
 #define kIs_iphone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)

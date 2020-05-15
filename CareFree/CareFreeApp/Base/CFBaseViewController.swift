@@ -40,8 +40,8 @@ class CFBaseViewController: UIViewController {
         self.navigation.bar.alpha = 0
         
         
-        view.backgroundColor = UIColor.init(r: 247, g: 249, b: 254)
-        Title.frame = CGRect(x: 22.fit, y: 10.fit, width: 100.fit, height: 40.fit)
+        ///view.backgroundColor = UIColor.init(r: 247, g: 249, b: 254)
+        Title.frame = CGRect(x: 22.fit, y: 8.fit, width: 100.fit, height: 40.fit)
         Title.text = titleText
         self.navigation.bar.addSubview(Title)
     }

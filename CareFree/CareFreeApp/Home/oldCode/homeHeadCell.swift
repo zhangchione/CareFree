@@ -32,6 +32,7 @@ class homeHeadCell: UIView {
         vi.backgroundColor = .white
         return vi
     }()
+    
     // 心情圆
     let progressView: YQCircleProgreeView = {
         let progressView = YQCircleProgreeView()
@@ -65,6 +66,7 @@ class homeHeadCell: UIView {
         label.text = "当前情绪值"
         return label
     }()
+    
     lazy var nowEmotionValue:UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 32)
@@ -248,23 +250,23 @@ class homeHeadCell: UIView {
         chartView.addSubview(collectionView)
         
         //collectionView.backgroundColor = UIColor.green
-        let viewHeadSource = ClosureViewSource(viewUpdater: {(view:emotionChartCell,data:emotionChartModel,index:Int) in
-            view.updateUI(with: data)
-            //view.backgroundColor = UIColor.yellow
-        })
-        let sizeHeadSource = {(index:Int,data:emotionChartModel,collectionSize:CGSize) ->CGSize in
-            return CGSize(width: 33, height: 160)
-        }
-        
-        let provider = BasicProvider(
-            dataSource: dataHeadSource,
-            viewSource: viewHeadSource,
-            sizeSource:sizeHeadSource
-        )
-        provider.layout = FlowLayout(spacing: 10)
-        collectionView.provider = provider
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        
+//        let viewHeadSource = ClosureViewSource(viewUpdater: {(view:EmotionChartCell,data:emotionChartModel,index:Int) in
+//            view.updateUI(with: data)
+//            //view.backgroundColor = UIColor.yellow
+//        })
+//        let sizeHeadSource = {(index:Int,data:emotionChartModel,collectionSize:CGSize) ->CGSize in
+//            return CGSize(width: 33, height: 160)
+//        }
+//        
+//        let provider = BasicProvider(
+//            dataSource: dataHeadSource,
+//            viewSource: viewHeadSource,
+//            sizeSource:sizeHeadSource
+//        )
+//        provider.layout = FlowLayout(spacing: 10)
+//        collectionView.provider = provider
+//        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+//        
         
         
         addSubview(todayRecommend)

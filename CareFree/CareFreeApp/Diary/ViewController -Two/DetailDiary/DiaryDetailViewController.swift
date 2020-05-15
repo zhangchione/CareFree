@@ -159,7 +159,7 @@ class DiaryDetailViewController: UIViewController {
         contentView.addSubview(imageBtn)
         imageBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20.fit)
-            make.bottom.equalTo(view.snp.bottom).offset(-60.fit+kBottomSafeHeight)
+            make.bottom.equalTo(view.snp.bottom).offset(-60.fit-kBottomSafeHeight)
             make.height.width.equalTo(30.fit)
         }
         
@@ -169,7 +169,7 @@ class DiaryDetailViewController: UIViewController {
         
         photoCollection.snp.makeConstraints{(make) in
             make.left.equalTo(view.snp.left).offset(60.fit)
-            make.bottom.equalTo(view.snp.bottom).offset(-15.fit+kBottomSafeHeight)
+            make.bottom.equalTo(view.snp.bottom).offset(-15.fit-kBottomSafeHeight)
             make.right.equalTo(view.snp.right).offset(0.fit)
             make.height.equalTo(120.fit)
         }

@@ -104,6 +104,39 @@ extension UIView {
         layer.endPoint = CGPoint(x: 0, y: 1)
         self.layer.addSublayer(layer)
     }
+    
+    //Colors：渐变色色值数组 单独的扩展， 要改
+    func setLayerColorsForMine(_ colors:[CGColor])  {
+        let layer = CAGradientLayer()
+        layer.frame = bounds
+        layer.colors = colors
+        layer.startPoint = CGPoint(x: 0, y: 0)
+        layer.endPoint = CGPoint(x: 0, y: 1)
+        layer.cornerRadius = 25.fit
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor(red: 0.43, green: 0.5, blue: 1, alpha: 0.3).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 4.fit)
+        layer.shadowOpacity = 1
+        layer.shadowRadius = 15.fit
+        self.layer.sublayers?.removeAll()
+        self.layer.addSublayer(layer)
+    }
+    //Colors：渐变色色值数组 单独的扩展， 要改
+    func setLayerColorsForHome(_ colors:[CGColor])  {
+        let layer = CAGradientLayer()
+        layer.frame = bounds
+        layer.colors = colors
+        layer.startPoint = CGPoint(x: 1, y: 0)
+        layer.endPoint = CGPoint(x: 0, y: 0)
+        layer.cornerRadius = 15.fit
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor(red: 0.43, green: 0.5, blue: 1, alpha: 0.3).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 4.fit)
+        layer.shadowOpacity = 1
+        layer.shadowRadius = 15.fit
+        self.layer.sublayers?.removeAll()
+        self.layer.addSublayer(layer)
+    }
 }
 extension UIViewController{
     public func setTabBar(controller: UIViewController, title: String, image: UIImage, selectedImage: UIImage) -> UIViewController{
@@ -309,5 +342,15 @@ extension Date {
         let weekday = ((days + 5)%7+7)%7
         let weekDays = ["周日","周一","周二","周三","周四","周五","周六"]
         return weekDays[weekday]
+    }
+    
+    // 获取N天前后
+    func getDate(_ currentDate: Date?, day: Int) -> Date? {
+        var days = day // n天后的天数
+        days = Int((days == 0 ? 2.0 : Double(days))) //未指定天数则默认为两天
+        var appointDate: Date? // 指定日期声明
+        let oneDay: TimeInterval = 24 * 60 * 60 // 一天一共有多少秒
+        appointDate = currentDate?.addingTimeInterval((oneDay * Double(days)))
+        return appointDate
     }
 }
