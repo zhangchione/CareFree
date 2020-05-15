@@ -14,12 +14,16 @@ class NoteTable {
     
     let id = Expression<Int64>("id")
     let date = Expression<Date>("date")
-    let title = Expression<String?>("title")
-    let content = Expression<String?>("content")
-    let images = Expression<String?>("images")
-    let mood = Expression<Int64>("mood")
-    let weather = Expression<String?>("weather")
+    let dateStr = Expression<String>("dateStr")
+    let title = Expression<String>("title")
+    let content = Expression<String>("content")
     
+    let images = Expression<String>("images")
+    let restDay = Expression<Int64>("restDay")
+    let startDate = Expression<Date>("startDate")
+    
+    let clockContent = Expression<String>("clockContent")
+    let clockTime = Expression<Date>("clockTime")
     let priority = Expression<Int64>("priority")
     let isTrash = Expression<Bool>("isTrash")
     
@@ -37,12 +41,14 @@ class NoteTable {
         return table.create(ifNotExists: true) { tbl in
             tbl.column(id, primaryKey: true)
             tbl.column(date)
+            tbl.column(dateStr)
             tbl.column(title)
             tbl.column(content)
             tbl.column(images)
-            tbl.column(mood)
-            tbl.column(weather)
-            
+            tbl.column(restDay)
+            tbl.column(startDate)
+            tbl.column(clockTime)
+            tbl.column(clockContent)
             tbl.column(priority)
             tbl.column(isTrash)
         }

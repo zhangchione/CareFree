@@ -72,7 +72,7 @@ class CFHomeViewController: CFBaseViewController {
     
     func configNavBar(){
         self.view.backgroundColor = .white
-        self.Title.text = "日记"
+        self.Title.text = "首页"
         self.navigation.bar.barTintColor = .white
         self.navigation.bar.alpha = 1
     }
@@ -128,7 +128,7 @@ extension CFHomeViewController: UICollectionViewDelegateFlowLayout, UICollection
             return cell
         }else {
             let cell :CFHomeMarkCell =  collectionView.dequeueReusableCell(withReuseIdentifier: CFHomeMarkCellID, for: indexPath) as! CFHomeMarkCell
-            cell.updateUI()
+            cell.updateUI(with: CFNotesModel())
             return cell
         }
     }

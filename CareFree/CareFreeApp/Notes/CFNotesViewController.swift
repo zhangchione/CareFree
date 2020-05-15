@@ -38,9 +38,15 @@ class CFNotesViewController: CFBaseViewController {
     lazy var addBtn:UIButton = {
        let btn = UIButton()
         
-        btn.setImage(UIImage(named: "diary_icon_add"), for: .normal)
+        btn.setImage(UIImage(named: "notes_title_add"), for: .normal)
         btn.frame = CGRect(x: CFWidth, y: 4*CFHeight/5, width: 60.fit, height: 60.fit)
-        btn.backgroundColor = .cyan
+        btn.backgroundColor = .white
+        btn.layer.cornerRadius = 30.fit
+        btn.layer.masksToBounds = false
+        btn.layer.shadowColor = UIColor(red: 0.43, green: 0.5, blue: 1, alpha: 0.3).cgColor
+        btn.layer.shadowOffset = CGSize(width: 0, height: 4.fit)
+        btn.layer.shadowOpacity = 1
+        btn.layer.shadowRadius = 12.fit
         return btn
     }()
     
@@ -137,7 +143,7 @@ extension CFNotesViewController: UICollectionViewDelegateFlowLayout, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell :CFHomeMarkCell =  collectionView.dequeueReusableCell(withReuseIdentifier: CFNotesMarkCellID, for: indexPath) as! CFHomeMarkCell
-            cell.updateUI()
+        cell.updateUI(with: CFNotesModel())
         return cell
     }
     

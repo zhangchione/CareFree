@@ -28,12 +28,14 @@ class DataBase {
     }()
     
     var diaryTable = DiaryTable()
+    var noteTable = NoteTable()
     var dayDiaryTable = DayDiaryTable()
     var nowDiaryTable = NowDiaryTable()
     init() {
         dayDiaryTable.setupTable()
         nowDiaryTable.setupTable()
         diaryTable.setupTable()
+        noteTable.setupTable()
     }
 }
 

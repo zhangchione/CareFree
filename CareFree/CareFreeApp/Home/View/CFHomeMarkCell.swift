@@ -11,8 +11,59 @@ import UIKit
 class CFHomeMarkCell: UICollectionViewCell {
     
     
-    public func updateUI(){
-        backView.backgroundColor = UIColor.init(r: 247, g: 115, b: 152)
+    public func updateUI(with data:CFNotesModel){
+        
+        contentLabel.snp.updateConstraints { (make) in
+            make.height.equalTo(self.getContentLabelHeigt(with: data.content))
+        }
+        contentLabel.text = data.content
+        
+        let date = Date() //data.date
+        let timeForMatter = DateFormatter()
+        timeForMatter.dateFormat = "MM月dd日"
+        let mouthDaytext = timeForMatter.string(from: date)
+        timeForMatter.dateFormat = "HH:MM"
+        let hourstext = timeForMatter.string(from: date)
+        
+        mouthDayLabel.text = mouthDaytext
+        hoursLabel.text = hourstext
+        
+        if data.restDay != -1 {
+            restDayValue.text = "\(data.restDay)"
+            restDay.text = "天"
+        }else {
+            restDayValue.text = ""
+            restDay.text = ""
+        }
+        
+        switch data.priority {
+        case 0:
+            backView.backgroundColor = shortTimeGradeColor
+            updateWhite()
+        case 1:
+            backView.backgroundColor = firstGradeColor
+        case 2:
+            backView.backgroundColor = secendGradeColor
+        case 3:
+            backView.backgroundColor = threeGradeColor
+        case 10001:
+            backView.backgroundColor = markGradeColor
+            
+        default:
+            backView.backgroundColor = .white
+            updateWhite()
+        }
+        
+        
+    }
+    
+    private func updateWhite(){
+        self.contentLabel.textColor = UIColor.black
+        self.mouthDayLabel.textColor = UIColor.init(r: 103, g: 103, b: 103)
+        self.hoursLabel.textColor = UIColor.init(r: 103, g: 103, b: 103)
+        self.restDayValue.textColor =  UIColor.black
+        self.restDay.textColor = UIColor.black
+        self.moreImg.image = UIImage(named: "abc_ic_more_gray_22x22_")
     }
     
     // 背景
@@ -50,6 +101,7 @@ class CFHomeMarkCell: UICollectionViewCell {
     lazy var line: UIView = {
         let vi = UIView()
         vi.backgroundColor = .white
+        vi.alpha = 0.3
         return vi
     }()
     
@@ -58,7 +110,7 @@ class CFHomeMarkCell: UICollectionViewCell {
         label.font = UIFont.init(name: "PingFangSC-Semibold", size: 26.fit)
         label.textColor = .white
         label.textAlignment = .right
-        label.text = "30"
+        label.text = ""
         return label
     }()
     lazy var restDay: UILabel = {
@@ -66,15 +118,15 @@ class CFHomeMarkCell: UICollectionViewCell {
         label.font = UIFont.init(name: "PingFangSC-Regular", size: 16.fit)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "天"
+        label.text = ""
         return label
     }()
     
-    lazy var moreBtn:UIButton = {
-        let btn = UIButton()
-         btn.setTitle("。。。", for: .normal)
-         btn.setTitleColor(UIColor.white, for: .normal)
-         return btn
+    lazy var moreImg:UIImageView = {
+        let img = UIImageView()
+            img.image = UIImage(named: "home_stroy_setmore")
+        img.contentMode = .scaleAspectFill
+         return img
     }()
     
     
@@ -98,28 +150,28 @@ class CFHomeMarkCell: UICollectionViewCell {
             make.centerY.equalTo(self)
             make.height.equalTo(150.fit)
         }
-        addSubview(moreBtn)
-        moreBtn.snp.makeConstraints{(make) in
+        addSubview(moreImg)
+        moreImg.snp.makeConstraints{(make) in
             make.right.equalTo(self).offset(-40.fit)
             make.bottom.equalTo(self).offset(-15.fit)
-            make.width.equalTo(30.fit)
-            make.height.equalTo(20.fit)
+            make.width.equalTo(35.fit)
+            make.height.equalTo(25.fit)
         }
         
         addSubview(mouthDayLabel)
         mouthDayLabel.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(40.fit)
-            make.centerY.equalTo(moreBtn)
+            make.centerY.equalTo(moreImg)
             make.width.equalTo(80.fit)
-            make.height.equalTo(20.fit)
+            make.height.equalTo(30.fit)
         }
         
         addSubview(hoursLabel)
         hoursLabel.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(140.fit)
-            make.centerY.equalTo(moreBtn)
+            make.centerY.equalTo(moreImg)
             make.width.equalTo(60.fit)
-            make.height.equalTo(20.fit)
+            make.height.equalTo(30.fit)
         }
         
         addSubview(line)
@@ -149,7 +201,7 @@ class CFHomeMarkCell: UICollectionViewCell {
         contentLabel.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(40.fit)
             make.bottom.equalTo(restDay.snp.bottom)
-            make.width.equalTo(100.fit)
+            make.width.equalTo(250.fit)
             make.height.equalTo(30.fit)
         }
         
@@ -163,5 +215,10 @@ class CFHomeMarkCell: UICollectionViewCell {
         self.backView.layer.shadowOffset = CGSize(width: 0, height: 4.fit)
         self.backView.layer.shadowOpacity = 1
         self.backView.layer.shadowRadius = 12.fit
+    }
+    
+    private func getContentLabelHeigt(with text:String) -> CGFloat {
+        let height = getTextHeight(textStr: text, font: UIFont.init(name: "PingFangSC-Regular", size: 18.fit)!, width: 250.fit)
+        return height
     }
 }

@@ -15,7 +15,7 @@
 		25051160239201AF0092E55E /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505115F239201AF0092E55E /* DataBase.swift */; };
 		25051164239201B50092E55E /* DayDiaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25051162239201B50092E55E /* DayDiaryTable.swift */; };
 		25051165239201B50092E55E /* ContentTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25051163239201B50092E55E /* ContentTable.swift */; };
-		25051167239205480092E55E /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25051166239205480092E55E /* NotesModel.swift */; };
+		25051167239205480092E55E /* NotesModel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25051166239205480092E55E /* NotesModel1.swift */; };
 		250511692392056E0092E55E /* UserTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250511682392056E0092E55E /* UserTable.swift */; };
 		2505116B2392079B0092E55E /* NowDiaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505116A2392079B0092E55E /* NowDiaryTable.swift */; };
 		2505116D23920A820092E55E /* DayDiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505116C23920A820092E55E /* DayDiaryModel.swift */; };
@@ -70,6 +70,10 @@
 		25903DBE2398B09C0073E4D8 /* CFDiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25903DBD2398B09C0073E4D8 /* CFDiaryModel.swift */; };
 		259E7FE02445B489000C42F7 /* NotesViewController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259E7FDF2445B489000C42F7 /* NotesViewController+Action.swift */; };
 		25BBD90D23E92E1F001298CD /* emotionClassier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 25BBD90C23E92E1F001298CD /* emotionClassier.mlmodel */; };
+		25BC1082246EFD03007F9F9D /* CFNotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BC1081246EFD03007F9F9D /* CFNotesModel.swift */; };
+		25BC1084246F00DE007F9F9D /* DataBase+Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BC1083246F00DE007F9F9D /* DataBase+Notes.swift */; };
+		25BC1087246F05F8007F9F9D /* NoteWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BC1086246F05F8007F9F9D /* NoteWriteViewController.swift */; };
+		25BC108A246F1027007F9F9D /* TrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BC1089246F1027007F9F9D /* TrashViewController.swift */; };
 		25D6575523935B3800B918D4 /* HGImageCompleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D6574E23935B3800B918D4 /* HGImageCompleteButton.swift */; };
 		25D6575623935B3800B918D4 /* HGImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25D6574F23935B3800B918D4 /* HGImage.storyboard */; };
 		25D6575723935B3800B918D4 /* HGImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D6575023935B3800B918D4 /* HGImageCollectionViewController.swift */; };
@@ -173,7 +177,7 @@
 		2505115F239201AF0092E55E /* DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		25051162239201B50092E55E /* DayDiaryTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayDiaryTable.swift; sourceTree = "<group>"; };
 		25051163239201B50092E55E /* ContentTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentTable.swift; sourceTree = "<group>"; };
-		25051166239205480092E55E /* NotesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
+		25051166239205480092E55E /* NotesModel1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesModel1.swift; sourceTree = "<group>"; };
 		250511682392056E0092E55E /* UserTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTable.swift; sourceTree = "<group>"; };
 		2505116A2392079B0092E55E /* NowDiaryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowDiaryTable.swift; sourceTree = "<group>"; };
 		2505116C23920A820092E55E /* DayDiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDiaryModel.swift; sourceTree = "<group>"; };
@@ -228,6 +232,10 @@
 		25903DBD2398B09C0073E4D8 /* CFDiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDiaryModel.swift; sourceTree = "<group>"; };
 		259E7FDF2445B489000C42F7 /* NotesViewController+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesViewController+Action.swift"; sourceTree = "<group>"; };
 		25BBD90C23E92E1F001298CD /* emotionClassier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = emotionClassier.mlmodel; sourceTree = "<group>"; };
+		25BC1081246EFD03007F9F9D /* CFNotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CFNotesModel.swift; path = "CareFree/CareFreeApp/Diary/ViewController -Two/CFNotesModel.swift"; sourceTree = SOURCE_ROOT; };
+		25BC1083246F00DE007F9F9D /* DataBase+Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataBase+Notes.swift"; sourceTree = "<group>"; };
+		25BC1086246F05F8007F9F9D /* NoteWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWriteViewController.swift; sourceTree = "<group>"; };
+		25BC1089246F1027007F9F9D /* TrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewController.swift; sourceTree = "<group>"; };
 		25D6574E23935B3800B918D4 /* HGImageCompleteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HGImageCompleteButton.swift; sourceTree = "<group>"; };
 		25D6574F23935B3800B918D4 /* HGImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HGImage.storyboard; sourceTree = "<group>"; };
 		25D6575023935B3800B918D4 /* HGImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HGImageCollectionViewController.swift; sourceTree = "<group>"; };
@@ -536,6 +544,22 @@
 			path = NotesWrite;
 			sourceTree = "<group>";
 		};
+		25BC1085246F05DF007F9F9D /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				25BC1086246F05F8007F9F9D /* NoteWriteViewController.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		25BC1088246F0FF0007F9F9D /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				25BC1089246F1027007F9F9D /* TrashViewController.swift */,
+			);
+			path = Trash;
+			sourceTree = "<group>";
+		};
 		25D6574D23935B3800B918D4 /* HGImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +733,7 @@
 		E3B7DE2B246E7F4400EA03A7 /* Notes - Two */ = {
 			isa = PBXGroup;
 			children = (
+				25BC1085246F05DF007F9F9D /* Write */,
 			);
 			path = "Notes - Two";
 			sourceTree = "<group>";
@@ -737,6 +762,7 @@
 		E3B7DE2F246E7F6600EA03A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				25BC1081246EFD03007F9F9D /* CFNotesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -801,6 +827,7 @@
 		F56BBA2A22F957B4007C2877 /* Mine - Next */ = {
 			isa = PBXGroup;
 			children = (
+				25BC1088246F0FF0007F9F9D /* Trash */,
 				E327E120246D06DC007AD84E /* Set */,
 				2565A76823E8041900822C65 /* FaceBookViewController.swift */,
 				2565A76B23E8041C00822C65 /* SetController.swift */,
@@ -962,11 +989,12 @@
 			isa = PBXGroup;
 			children = (
 				2505116E23920A8E0092E55E /* Model */,
-				25051166239205480092E55E /* NotesModel.swift */,
+				25051166239205480092E55E /* NotesModel1.swift */,
 				25051161239201B50092E55E /* Table */,
 				2505115F239201AF0092E55E /* DataBase.swift */,
 				251215A622E060E70025CFD9 /* UserDefaults.swift */,
 				2500FBCD245A67AF00A99955 /* DataBase+Diary.swift */,
+				25BC1083246F00DE007F9F9D /* DataBase+Notes.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -1213,13 +1241,15 @@
 				25D9F3812460F29100487C64 /* DiaryAlterViewController.swift in Sources */,
 				2565A75723E8034600822C65 /* CalmViewController.swift in Sources */,
 				E3B7DE2A246E7EA100EA03A7 /* CFNotesViewController.swift in Sources */,
-				25051167239205480092E55E /* NotesModel.swift in Sources */,
+				25051167239205480092E55E /* NotesModel1.swift in Sources */,
 				25903DBC23989B790073E4D8 /* CFDiaryViewModel.swift in Sources */,
 				F58869B822E98CEB0047BEF5 /* CFBaseViewController.swift in Sources */,
 				F5FCFA6122AE85CB00C7B8A0 /* MineCell.swift in Sources */,
 				F5C4091B22EED287004DE68A /* YearEmotionController.swift in Sources */,
 				2505116D23920A820092E55E /* DayDiaryModel.swift in Sources */,
 				E3B7DE32246EBA9500EA03A7 /* SingleClass.swift in Sources */,
+				25BC108A246F1027007F9F9D /* TrashViewController.swift in Sources */,
+				25BC1082246EFD03007F9F9D /* CFNotesModel.swift in Sources */,
 				E327EBF2246D5C2B007AD84E /* SetViewCell.swift in Sources */,
 				F5D28D5E22BB1D45008CA4D2 /* DsearchCell.swift in Sources */,
 				257F44D923F3D55A00BFCC25 /* nowModel.swift in Sources */,
@@ -1247,6 +1277,7 @@
 				25EBFE3C22E16B000055B7C2 /* RecommendController.swift in Sources */,
 				257E9A7B2393A84800689EB6 /* ShowViewController.swift in Sources */,
 				2500FBD0245AD0FC00A99955 /* WriteViewController.swift in Sources */,
+				25BC1087246F05F8007F9F9D /* NoteWriteViewController.swift in Sources */,
 				2565A76023E8034600822C65 /* HappyAlbumController.swift in Sources */,
 				257F44D823F3D55A00BFCC25 /* diaryModel.swift in Sources */,
 				25D6575B23935B3800B918D4 /* HGImagePickerController.swift in Sources */,
@@ -1310,6 +1341,7 @@
 				25477C26245F9CC7004156D2 /* DiaryDetailViewController.swift in Sources */,
 				F536AAC322B10EC100F9853B /* EmotionChartController.swift in Sources */,
 				250DDD0722ED2B56001C765B /* DiaryModel.swift in Sources */,
+				25BC1084246F00DE007F9F9D /* DataBase+Notes.swift in Sources */,
 				E3D158C9246B87B3002B3B96 /* CradView.swift in Sources */,
 				2500FBCE245A67AF00A99955 /* DataBase+Diary.swift in Sources */,
 				25D6575A23935B3800B918D4 /* HGImagePickerCell.swift in Sources */,

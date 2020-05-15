@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "分享 (1).png",
       "idiom" : "universal",
-      "filename" : "返回-5.png",
       "scale" : "1x"
     },
     {
+      "filename" : "分享 (1)@2x.png",
       "idiom" : "universal",
-      "filename" : "返回-5@2x.png",
       "scale" : "2x"
     },
     {
+      "filename" : "分享 (1)@3x.png",
       "idiom" : "universal",
-      "filename" : "返回-5@3x.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
