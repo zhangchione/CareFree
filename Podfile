@@ -26,8 +26,8 @@ target 'CareFree' do
   #pod 'lottie-ios'
   #pod 'Alamofire'
   #pod 'SideMenu'
-  #pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'dev_for_swift5.0'
-  #pod 'SwiftyJSON'
+  pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'dev_for_swift5.0'
+  pod 'SwiftyJSON'
   # UI库
   #pod 'SwiftEntryKit
   #pod 'Kingfisher'

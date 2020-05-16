@@ -1,0 +1,13 @@
+{
+    "code": 200,
+    "data": {
+        "localImagePath": "",
+        "localUserName": "CareFree",
+        "localUserBio": "一切都是最好的安排！",
+        "localSet_HomeShowMark": true,
+        "localSet_HomeShowTask": false,
+        "localSet_HomeCardShowContent": "当前情绪值",
+        "localSet_languege": "简体 - 中文"
+    }
+}
+

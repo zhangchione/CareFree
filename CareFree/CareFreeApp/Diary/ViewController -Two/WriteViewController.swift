@@ -332,8 +332,6 @@ extension WriteViewController: UIGestureRecognizerDelegate {
         }
         return true
     }
-
-
 }
 
 // MARK: objc Method
@@ -355,8 +353,6 @@ extension WriteViewController {
         }
 
 
-        print(DataBase.shared.queryDiaryAll(isTrash: false))
-        print(DataBase.shared.queryDiary(by: DateInfo.shared.todayText))
     }
     @objc func deleteDiary(){
         guard self.writeData.id != -1 else {

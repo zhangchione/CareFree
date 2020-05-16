@@ -180,11 +180,13 @@ func getDiaryTotal() -> Int {
     return datas.count
 }
 func getNotesTotal() -> Int {
-    /// todo:
-    return 0
+    
+    let datas = DataBase.shared.queryNoteAll(isTrash: false)
+    return datas.count
 }
 
 func getTrashTotal() -> Int {
-    /// TODO
-     return 0
+    let noteDatas = DataBase.shared.queryNoteAll(isTrash: true)
+    let diaryDatas = DataBase.shared.queryDiaryAll(isTrash: true)
+    return noteDatas.count + diaryDatas.count
 }

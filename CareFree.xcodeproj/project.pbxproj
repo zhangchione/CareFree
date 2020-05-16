@@ -25,7 +25,6 @@
 		250DDD0322ED2935001C765B /* diary_today.json in Resources */ = {isa = PBXBuildFile; fileRef = 250DDD0222ED2935001C765B /* diary_today.json */; };
 		250DDD0522ED2939001C765B /* diary_now.json in Resources */ = {isa = PBXBuildFile; fileRef = 250DDD0422ED2939001C765B /* diary_now.json */; };
 		250DDD0722ED2B56001C765B /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DDD0622ED2B56001C765B /* DiaryModel.swift */; };
-		251215A722E060E70025CFD9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251215A622E060E70025CFD9 /* UserDefaults.swift */; };
 		251215AB22E062010025CFD9 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251215AA22E062010025CFD9 /* MyModel.swift */; };
 		25477C26245F9CC7004156D2 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25477C25245F9CC7004156D2 /* DiaryDetailViewController.swift */; };
 		25477C29245FA25C004156D2 /* HeadDetialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25477C28245FA25C004156D2 /* HeadDetialView.swift */; };
@@ -97,6 +96,10 @@
 		25EBFE5022E193090055B7C2 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE4F22E193090055B7C2 /* BookCell.swift */; };
 		25EBFE5322E19B680055B7C2 /* RCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EBFE5122E19B680055B7C2 /* RCViewController.swift */; };
 		25EBFE5422E19B680055B7C2 /* RCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25EBFE5222E19B680055B7C2 /* RCViewController.xib */; };
+		E31E631A246F8BE200011DBF /* RestDaySelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31E6319246F8BE200011DBF /* RestDaySelectedView.swift */; };
+		E31E631C246F952200011DBF /* NoteTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31E631B246F952200011DBF /* NoteTypeCell.swift */; };
+		E31E631F246FD20300011DBF /* UserDefualt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31E631E246FD20300011DBF /* UserDefualt.swift */; };
+		E31E6321246FD58600011DBF /* localUserInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = E31E6320246FD58600011DBF /* localUserInfo.json */; };
 		E327E122246D0706007AD84E /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E327E121246D0706007AD84E /* SetViewController.swift */; };
 		E327EBF2246D5C2B007AD84E /* SetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E327EBF1246D5C2B007AD84E /* SetViewCell.swift */; };
 		E327EBF4246D7241007AD84E /* SetViewController+action.swift in Sources */ = {isa = PBXBuildFile; fileRef = E327EBF3246D7241007AD84E /* SetViewController+action.swift */; };
@@ -187,7 +190,6 @@
 		250DDD0222ED2935001C765B /* diary_today.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = diary_today.json; sourceTree = "<group>"; };
 		250DDD0422ED2939001C765B /* diary_now.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = diary_now.json; sourceTree = "<group>"; };
 		250DDD0622ED2B56001C765B /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
-		251215A622E060E70025CFD9 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		251215AA22E062010025CFD9 /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
 		25477C25245F9CC7004156D2 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
 		25477C28245FA25C004156D2 /* HeadDetialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadDetialView.swift; sourceTree = "<group>"; };
@@ -277,6 +279,10 @@
 		AB56F75EB18873700726BCC1 /* Pods-CareFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CareFree/Pods-CareFree.debug.xcconfig"; sourceTree = "<group>"; };
 		B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CareFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D61990A36297C6554824A5D1 /* Pods-CareFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CareFree.release.xcconfig"; path = "Pods/Target Support Files/Pods-CareFree/Pods-CareFree.release.xcconfig"; sourceTree = "<group>"; };
+		E31E6319246F8BE200011DBF /* RestDaySelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestDaySelectedView.swift; sourceTree = "<group>"; };
+		E31E631B246F952200011DBF /* NoteTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTypeCell.swift; sourceTree = "<group>"; };
+		E31E631E246FD20300011DBF /* UserDefualt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefualt.swift; sourceTree = "<group>"; };
+		E31E6320246FD58600011DBF /* localUserInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localUserInfo.json; sourceTree = "<group>"; };
 		E327E121246D0706007AD84E /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		E327EBF1246D5C2B007AD84E /* SetViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewCell.swift; sourceTree = "<group>"; };
 		E327EBF3246D7241007AD84E /* SetViewController+action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetViewController+action.swift"; sourceTree = "<group>"; };
@@ -547,6 +553,7 @@
 		25BC1085246F05DF007F9F9D /* Write */ = {
 			isa = PBXGroup;
 			children = (
+				E31E6318246F8B0600011DBF /* View */,
 				25BC1086246F05F8007F9F9D /* NoteWriteViewController.swift */,
 			);
 			path = Write;
@@ -666,12 +673,29 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E31E6318246F8B0600011DBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E31E6319246F8BE200011DBF /* RestDaySelectedView.swift */,
+				E31E631B246F952200011DBF /* NoteTypeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E31E631D246FD1E900011DBF /* UserDefualt */ = {
+			isa = PBXGroup;
+			children = (
+				E31E631E246FD20300011DBF /* UserDefualt.swift */,
+			);
+			path = UserDefualt;
+			sourceTree = "<group>";
+		};
 		E327E120246D06DC007AD84E /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				E3B7DE38246EDF3400EA03A7 /* Set - Next */,
 				E327E121246D0706007AD84E /* SetViewController.swift */,
 				E327EBF3246D7241007AD84E /* SetViewController+action.swift */,
+				E3B7DE38246EDF3400EA03A7 /* Set - Next */,
 				E327E123246D070E007AD84E /* View */,
 			);
 			path = Set;
@@ -842,11 +866,11 @@
 		F58869AF22E98C690047BEF5 /* CareFreeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F5303D4722A8D15E0060EACE /* Home */,
+				F58869B322E98C840047BEF5 /* Diary */,
 				E3B7DE28246E7E7500EA03A7 /* Notes */,
 				F58869B622E98C970047BEF5 /* Base */,
-				F5303D4722A8D15E0060EACE /* Home */,
 				F58869B422E98C8A0047BEF5 /* HomeNew */,
-				F58869B322E98C840047BEF5 /* Diary */,
 				F58869B222E98C7F0047BEF5 /* Album */,
 				F58869B122E98C790047BEF5 /* Mine */,
 			);
@@ -988,11 +1012,12 @@
 		F5A5C3B722B26C5A0060AA3E /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				E31E6320246FD58600011DBF /* localUserInfo.json */,
+				E31E631D246FD1E900011DBF /* UserDefualt */,
 				2505116E23920A8E0092E55E /* Model */,
 				25051166239205480092E55E /* NotesModel1.swift */,
 				25051161239201B50092E55E /* Table */,
 				2505115F239201AF0092E55E /* DataBase.swift */,
-				251215A622E060E70025CFD9 /* UserDefaults.swift */,
 				2500FBCD245A67AF00A99955 /* DataBase+Diary.swift */,
 				25BC1083246F00DE007F9F9D /* DataBase+Notes.swift */,
 			);
@@ -1172,6 +1197,7 @@
 				25D6575623935B3800B918D4 /* HGImage.storyboard in Resources */,
 				2565A76F23E8041D00822C65 /* SetController.xib in Resources */,
 				2565A76123E8034600822C65 /* SoSadViewController.xib in Resources */,
+				E31E6321246FD58600011DBF /* localUserInfo.json in Resources */,
 				F5D9752C22A3B3700014BE15 /* Assets.xcassets in Resources */,
 				2565A76623E803C800822C65 /* writeCell.xib in Resources */,
 				F58869CC22E99E280047BEF5 /* mine.json in Resources */,
@@ -1248,6 +1274,7 @@
 				F5C4091B22EED287004DE68A /* YearEmotionController.swift in Sources */,
 				2505116D23920A820092E55E /* DayDiaryModel.swift in Sources */,
 				E3B7DE32246EBA9500EA03A7 /* SingleClass.swift in Sources */,
+				E31E631C246F952200011DBF /* NoteTypeCell.swift in Sources */,
 				25BC108A246F1027007F9F9D /* TrashViewController.swift in Sources */,
 				25BC1082246EFD03007F9F9D /* CFNotesModel.swift in Sources */,
 				E327EBF2246D5C2B007AD84E /* SetViewCell.swift in Sources */,
@@ -1261,7 +1288,6 @@
 				E327EBF9246D7B25007AD84E /* CFHomeEmotionCell.swift in Sources */,
 				2565A76523E803C800822C65 /* DwriteDiaryCell.swift in Sources */,
 				2565A76723E803C800822C65 /* writeCell.swift in Sources */,
-				251215A722E060E70025CFD9 /* UserDefaults.swift in Sources */,
 				F5C7738722B090F70087520B /* RegisterViewController.swift in Sources */,
 				E3B7DE37246EDB4E00EA03A7 /* UIViewController + Extension.swift in Sources */,
 				250DDCFE22ED2907001C765B /* CFDiaryController.swift in Sources */,
@@ -1298,6 +1324,7 @@
 				F58869BC22E991770047BEF5 /* CFMineController.swift in Sources */,
 				F5303D4F22A8D3B60060EACE /* CFBasicContentView.swift in Sources */,
 				2565A75F23E8034600822C65 /* SoSadViewController.swift in Sources */,
+				E31E631F246FD20300011DBF /* UserDefualt.swift in Sources */,
 				2565A75923E8034600822C65 /* albumCell.swift in Sources */,
 				25BBD90D23E92E1F001298CD /* emotionClassier.mlmodel in Sources */,
 				F5C4091922EED276004DE68A /* MouthEmotionController.swift in Sources */,
@@ -1339,6 +1366,7 @@
 				2500FBCC245A667000A99955 /* NoteTable.swift in Sources */,
 				25EBFE3722E14E8D0055B7C2 /* YQCircleProgressView.swift in Sources */,
 				25477C26245F9CC7004156D2 /* DiaryDetailViewController.swift in Sources */,
+				E31E631A246F8BE200011DBF /* RestDaySelectedView.swift in Sources */,
 				F536AAC322B10EC100F9853B /* EmotionChartController.swift in Sources */,
 				250DDD0722ED2B56001C765B /* DiaryModel.swift in Sources */,
 				25BC1084246F00DE007F9F9D /* DataBase+Notes.swift in Sources */,
@@ -1497,7 +1525,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020043001;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A4TWU4S2JA;
 				INFOPLIST_FILE = CareFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1505,7 +1533,7 @@
 				);
 				MACH_O_TYPE = mh_execute;
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.cone.CareFree;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cone.CareFreecc;
 				PRODUCT_NAME = "心情日记";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CareFree/CareFree-Bridging-Header.h";

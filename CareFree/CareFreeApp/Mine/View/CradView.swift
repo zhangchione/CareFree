@@ -44,7 +44,7 @@ class CardView: UIView {
             self.configLeftValue(value: trashTotal, valueLabel: "废纸")
             self.updateSelfUI(with: CardViewModel(titleName: "废纸篓", iconName: "mine_icon_trash"))
         case .set:
-            self.configSetView(title1: "首页显示任务", title2: "任务置顶")
+            self.configSetView(title1: "首页显示任务", title2: "首页显示Mark")
             self.updateSelfUI(with: CardViewModel(titleName: "设置", iconName: "mine_icon_set"))
         }
     }

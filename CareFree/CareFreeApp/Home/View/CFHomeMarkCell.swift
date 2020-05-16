@@ -18,7 +18,7 @@ class CFHomeMarkCell: UICollectionViewCell {
         }
         contentLabel.text = data.content
         
-        let date = Date() //data.date
+        let date = data.date
         let timeForMatter = DateFormatter()
         timeForMatter.dateFormat = "MM月dd日"
         let mouthDaytext = timeForMatter.string(from: date)
@@ -42,13 +42,16 @@ class CFHomeMarkCell: UICollectionViewCell {
             updateWhite()
         case 1:
             backView.backgroundColor = firstGradeColor
+            updateBlack()
         case 2:
             backView.backgroundColor = secendGradeColor
+            updateBlack()
         case 3:
             backView.backgroundColor = threeGradeColor
+            updateBlack()
         case 10001:
             backView.backgroundColor = markGradeColor
-            
+            updateBlack()
         default:
             backView.backgroundColor = .white
             updateWhite()
@@ -63,7 +66,17 @@ class CFHomeMarkCell: UICollectionViewCell {
         self.hoursLabel.textColor = UIColor.init(r: 103, g: 103, b: 103)
         self.restDayValue.textColor =  UIColor.black
         self.restDay.textColor = UIColor.black
+        
         self.moreImg.image = UIImage(named: "abc_ic_more_gray_22x22_")
+    }
+    private func updateBlack() {
+        self.contentLabel.textColor = UIColor.white
+        self.mouthDayLabel.textColor = UIColor.white
+        self.hoursLabel.textColor = UIColor.white
+        self.restDayValue.textColor =  UIColor.white
+        self.restDay.textColor = UIColor.white
+        self.moreImg.image = UIImage(named: "abc_ic_more_gray_22x22_")?.withRenderingMode(.alwaysTemplate)
+         self.moreImg.tintColor = UIColor.white
     }
     
     // 背景
@@ -124,7 +137,7 @@ class CFHomeMarkCell: UICollectionViewCell {
     
     lazy var moreImg:UIImageView = {
         let img = UIImageView()
-            img.image = UIImage(named: "home_stroy_setmore")
+            img.image = UIImage(named: "icon_more_18x18_")
         img.contentMode = .scaleAspectFill
          return img
     }()
@@ -193,7 +206,7 @@ class CFHomeMarkCell: UICollectionViewCell {
         restDayValue.snp.makeConstraints{(make) in
             make.right.equalTo(self).offset(-65.fit)
             make.bottom.equalTo(restDay.snp.bottom)
-            make.width.equalTo(35.fit)
+            make.width.equalTo(60.fit)
             make.height.equalTo(35.fit)
         }
         
@@ -201,7 +214,7 @@ class CFHomeMarkCell: UICollectionViewCell {
         contentLabel.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(40.fit)
             make.bottom.equalTo(restDay.snp.bottom)
-            make.width.equalTo(250.fit)
+            make.width.equalTo(230.fit)
             make.height.equalTo(30.fit)
         }
         

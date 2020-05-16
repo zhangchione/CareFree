@@ -29,6 +29,12 @@ let secendGradeColor = UIColor.init(r: 199, g: 189, b: 241)
 let threeGradeColor = UIColor.init(r: 245, g: 86, b: 133)
 let markGradeColor = UIColor.init(r: 108, g: 80, b: 233)
 
+let shortTimeGradeText = "临时任务贴"
+let firstGradeText = "一级任务贴"
+let secendGradeText = "二级任务贴"
+let threeGradeText = "三级任务贴"
+let markGradeText = "Mark"
+
 struct CFNotesModel {
     var id = -1
     var date = Date()

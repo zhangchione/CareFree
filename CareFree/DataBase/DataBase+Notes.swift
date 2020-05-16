@@ -69,7 +69,25 @@ extension DataBase {
         }
         return datas
     }
-    
+    /** 按等级查询查询 --- Mark  0 1 2 3 等级*/
+    func queryNote(unCount priority:[Int]) -> [CFNotesModel] {
+        var datas = [CFNotesModel]()
+        let data = queryNoteAll(isTrash: false)
+        
+        data.forEach { (item) in
+            var flag = true // 添加标志
+            for value in priority {
+                if item.priority == value {
+                    flag = false
+                    break;
+                }
+            }
+            if flag {
+                datas.append(item)
+            }
+        }
+        return datas
+    }
 }
 
 

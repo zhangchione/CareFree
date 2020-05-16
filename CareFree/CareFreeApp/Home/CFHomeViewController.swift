@@ -16,6 +16,7 @@ private let CFHomeEmotionCellID = "CFHomeEmotionCell"
 private let CFHomeChartCellID = "CFHomeChartCell"
 private let CFHomeHeaderViewID = "CFHomeMarkHeaderView"
 private let CFHomeMarkCellID = "CFHomeMarkCell"
+
 class CFHomeViewController: CFBaseViewController {
 
     fileprivate let dataBodySource = ArrayDataSource(data:[1])
@@ -24,8 +25,12 @@ class CFHomeViewController: CFBaseViewController {
     
     
     let homeArrayDatas = ["22"]
-    var chartArrayDatas = [EmotionChartModel]()
+    
     var moodValue = 0
+    var chartArrayDatas = [EmotionChartModel]()
+    var homeMarkDatas = [CFNotesModel]()
+    var homeTaskDatas = [CFNotesModel]()
+
     // 主界面控件
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout.init()
@@ -35,6 +40,7 @@ class CFHomeViewController: CFBaseViewController {
         
         collection.register(CFHomeEmotionCell.self, forCellWithReuseIdentifier: CFHomeEmotionCellID)
         collection.register(CFHomeChartCell.self, forCellWithReuseIdentifier: CFHomeChartCellID)
+        
         collection.register(CFHomeMarkCell.self, forCellWithReuseIdentifier: CFHomeMarkCellID)
         collection.register(CFHomeMarkHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CFHomeHeaderViewID)
         
@@ -89,6 +95,12 @@ class CFHomeViewController: CFBaseViewController {
         }
         
         self.moodValue = getTodayMoodValue()
+        
+        let markData = DataBase.shared.queryNote(by: markGrade)
+        self.homeMarkDatas = markData
+        
+        let taskData = DataBase.shared.queryNote(unCount: [shortTimeGrade,markGrade])
+        self.homeTaskDatas = taskData
     }
 
 
@@ -108,10 +120,13 @@ class CFHomeViewController: CFBaseViewController {
 
 extension CFHomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section <= 2 {
+        if section <= 1 {
             return 1
+        }else if section == 2 {
+            return self.homeMarkDatas.count
+        }else {
+            return homeTaskDatas.count
         }
-        return self.homeArrayDatas.count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
@@ -126,9 +141,13 @@ extension CFHomeViewController: UICollectionViewDelegateFlowLayout, UICollection
             let cell :CFHomeChartCell =  collectionView.dequeueReusableCell(withReuseIdentifier: CFHomeChartCellID, for: indexPath) as! CFHomeChartCell
             cell.updateUI(with: self.chartArrayDatas)
             return cell
+        }else if indexPath.section == 2{
+            let cell :CFHomeMarkCell =  collectionView.dequeueReusableCell(withReuseIdentifier: CFHomeMarkCellID, for: indexPath) as! CFHomeMarkCell
+            cell.updateUI(with: homeMarkDatas[indexPath.row])
+            return cell
         }else {
             let cell :CFHomeMarkCell =  collectionView.dequeueReusableCell(withReuseIdentifier: CFHomeMarkCellID, for: indexPath) as! CFHomeMarkCell
-            cell.updateUI(with: CFNotesModel())
+            cell.updateUI(with: homeTaskDatas[indexPath.row])
             return cell
         }
     }
@@ -148,15 +167,19 @@ extension CFHomeViewController: UICollectionViewDelegateFlowLayout, UICollection
         guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CFHomeHeaderViewID, for: indexPath) as? CFHomeMarkHeaderView else {
             return UICollectionReusableView()
         }
-        headerView.titleLabel.text = "Mark"
+
         headerView.titleLabel.textColor = UIColor.black
         headerView.titleLabel.font = UIFont.init(name: "PingFangSC-Semibold", size: 24.fit)
-        
+        if indexPath.section == 3 {
+            headerView.titleLabel.text = "任务"
+        }else {
+            headerView.titleLabel.text = "Mark"
+        }
         return headerView
     }
     // 头部高度
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == 2 {
+        if section == 2 || section == 3{
             return CGSize(width: CFWidth, height: 40.fit)
         }else {
             return CGSize(width: CFWidth, height: 0.fit)
@@ -181,8 +204,43 @@ extension CFHomeViewController: UICollectionViewDelegateFlowLayout, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 1{
-            let vc = DiaryDetailViewController()
+        if indexPath.section == 2 {
+            let data = homeMarkDatas[indexPath.row]
+            var type:NoteWriteControllerType?
+            switch data.priority {
+            case 0:
+                type = .shorTimeGrade
+            case 1:
+                type = .fristGrade
+            case 2:
+                type = .secendGrade
+            case 3:
+                type = .threeGrade
+            case 10001:
+                type = .markGrade
+            default:
+                type = .shorTimeGrade
+            }
+            let vc = NoteWriteViewController(data,type: type!)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if indexPath.section == 3 {
+            let data = homeTaskDatas[indexPath.row]
+            var type:NoteWriteControllerType?
+            switch data.priority {
+            case 0:
+                type = .shorTimeGrade
+            case 1:
+                type = .fristGrade
+            case 2:
+                type = .secendGrade
+            case 3:
+                type = .threeGrade
+            case 10001:
+                type = .markGrade
+            default:
+                type = .shorTimeGrade
+            }
+            let vc = NoteWriteViewController(data,type: type!)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

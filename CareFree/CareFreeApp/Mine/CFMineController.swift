@@ -23,6 +23,8 @@ extension CFMineController: MineBodyViewDelegate {
         switch type {
         case .set:
             vc = SetViewController()
+        case .trash(_ ):
+            vc = TrashViewController()
         default:
             break
         }
@@ -127,6 +129,7 @@ class CFMineController: CFBaseViewController {
         mineBodyData.emotionViewData = getTodayMoodValue()
         mineBodyData.diaryViewData = (getDiaryTotal(),getNotesTotal())
         mineBodyData.trashViewData = getTrashTotal()
+        
     }
     
     func updateUI(){
@@ -168,18 +171,7 @@ extension CFMineController{
 // 请求数据
 
 //extension CFMineController {
-//    func configData(){
-////        //1 获取json文件路径
-////        let path = Bundle.main.path(forResource: "mine", ofType: "json")
-////        //2 获取json文件里面的内容,NSData格式
-////        let jsonData=NSData(contentsOfFile: path!)
-////        //3 解析json内容
-////        let json = JSON(jsonData!)
-////        if let mappedObject = JSONDeserializer<MineModel>.deserializeFrom(json: json["data"].description) {
-////            print("数据解析成功")
-////            dataSource.data.append(mappedObject)
-////            self.collectionView.reloadData()
-////        }
+
 //
 //        var nowNum = 0
 //        var dayNum = 0

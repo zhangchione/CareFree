@@ -9,6 +9,10 @@
 import UIKit
 import ESTabBarController_swift
 
+import SwiftyJSON
+import HandyJSON
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,6 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainTabVC = mainTabBarVC()
         self.window?.rootViewController = mainTabVC
         self.window?.makeKeyAndVisible()
+        if getUser().localSet_languege != "简体 - 中文" {
+                    self.setLocalInfo()
+        }else {
+             print(getUser().localSet_languege)
+        }
+
+       
         
     }
     
@@ -64,6 +75,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return tabBarController
     }
     
+    func setLocalInfo() {
+        //1 获取json文件路径
+        let path = Bundle.main.path(forResource: "localUserInfo", ofType: "json")
+        //2 获取json文件里面的内容,NSData格式
+        let jsonData=NSData(contentsOfFile: path!)
+        //3 解析json内容
+        let json = JSON(jsonData!)
+        saveUserInfo(json["data"].dictionaryObject)
+                    
+        
+    }
     
+}
+
+struct Local:HandyJSON {
+    var code = 200
+    var data = localInfoModel()
+    
+}
+
+struct localInfoModel:HandyJSON {
+    var localImagePath = ""
+    var localUserName = ""
+    var localUserBio = ""
+    
+    var localSet_HomeShowMark = true
+    var localSet_HomeShowTask = false
+    var localSet_HomeCardShowContent = ""
+    var localSet_languege = ""
 }
 

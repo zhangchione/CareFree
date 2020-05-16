@@ -42,11 +42,14 @@ class DiaryDetailViewController: UIViewController {
     private lazy var rightBarButton:UIButton = {
         let button = UIButton.init(type: .custom)
         button.frame = CGRect(x:10, y:0, width:30, height: 30)
-        button.setImage(UIImage(named: "mine_alter_icon"), for: .normal)
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "mine_alter_icon")?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = UIColor.white
+        button.tintColor = UIColor.white
+        button.setImage(imageView.image, for: .normal)
+        
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.addTarget(self, action: #selector(alter), for: UIControl.Event.touchUpInside)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.tintColor = UIColor.red
         return button
     }()
     // ScrollView

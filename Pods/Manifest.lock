@@ -10,6 +10,7 @@ PODS:
   - ESTabBarController-swift (2.7)
   - FSCalendar (2.8.0)
   - Fuse (1.2.0)
+  - HandyJSON (5.0.0-beta.1)
   - Hero (1.4.0)
   - JXPhotoBrowser (2.1.5):
     - JXPhotoBrowser/Kingfisher (= 2.1.5)
@@ -26,6 +27,7 @@ PODS:
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
+  - SwiftyJSON (5.0.0)
   - YetAnotherAnimationLibrary (1.4.0)
 
 DEPENDENCIES:
@@ -36,6 +38,7 @@ DEPENDENCIES:
   - ESTabBarController-swift
   - FSCalendar
   - Fuse
+  - HandyJSON (from `https://github.com/alibaba/HandyJSON.git`, branch `dev_for_swift5.0`)
   - Hero
   - JXPhotoBrowser
   - ProgressHUD
@@ -43,6 +46,7 @@ DEPENDENCIES:
   - RxSwift (~> 4.0)
   - SnapKit
   - SQLite.swift
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -60,7 +64,18 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - SQLite.swift
+    - SwiftyJSON
     - YetAnotherAnimationLibrary
+
+EXTERNAL SOURCES:
+  HandyJSON:
+    :branch: dev_for_swift5.0
+    :git: https://github.com/alibaba/HandyJSON.git
+
+CHECKOUT OPTIONS:
+  HandyJSON:
+    :commit: a2ba4e537711ae1fcd9183679c4db878eb171a78
+    :git: https://github.com/alibaba/HandyJSON.git
 
 SPEC CHECKSUMS:
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
@@ -69,6 +84,7 @@ SPEC CHECKSUMS:
   ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   Fuse: 287bd95a5c8dbfe6c41af519eaf48856aa1a28f6
+  HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   JXPhotoBrowser: 0178c485d1dbad1ef1dcbb24e4f463d80c30369d
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
@@ -77,8 +93,9 @@ SPEC CHECKSUMS:
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 2be4ff5714e5b34984dcb639c2fc2e376d7e8043
+PODFILE CHECKSUM: 784b9941221a0bf02fbebc0204d4dec291c10b7d
 
 COCOAPODS: 1.8.4

@@ -26,7 +26,7 @@ class CFNotesViewController: CFBaseViewController {
 
     // 数据
     
-    var notesArrayDatas = ["11","22","11","22"]
+    var notesArrayDatas = [CFNotesModel]()
     // 选择按钮
     lazy var selectedBtn:UIButton = {
        let btn = UIButton()
@@ -39,6 +39,7 @@ class CFNotesViewController: CFBaseViewController {
        let btn = UIButton()
         
         btn.setImage(UIImage(named: "notes_title_add"), for: .normal)
+        btn.addTarget(self, action: #selector(note), for: .touchUpInside)
         btn.frame = CGRect(x: CFWidth, y: 4*CFHeight/5, width: 60.fit, height: 60.fit)
         btn.backgroundColor = .white
         btn.layer.cornerRadius = 30.fit
@@ -49,6 +50,11 @@ class CFNotesViewController: CFBaseViewController {
         btn.layer.shadowRadius = 12.fit
         return btn
     }()
+    
+    @objc func note(){
+        let vc = NoteWriteViewController(CFNotesModel(),type: .shorTimeGrade)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     // 主界面控件
     lazy var collectionView : UICollectionView = {
@@ -74,7 +80,7 @@ class CFNotesViewController: CFBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        configData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -116,6 +122,11 @@ extension CFNotesViewController {
         showAddBtn()
     }
     
+    func configData(){
+        let data = DataBase.shared.queryNoteAll(isTrash: false)
+        self.notesArrayDatas = data
+        self.collectionView.reloadData()
+    }
 }
 
 
@@ -143,7 +154,7 @@ extension CFNotesViewController: UICollectionViewDelegateFlowLayout, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell :CFHomeMarkCell =  collectionView.dequeueReusableCell(withReuseIdentifier: CFNotesMarkCellID, for: indexPath) as! CFHomeMarkCell
-        cell.updateUI(with: CFNotesModel())
+        cell.updateUI(with: notesArrayDatas[indexPath.row])
         return cell
     }
     
@@ -172,10 +183,24 @@ extension CFNotesViewController: UICollectionViewDelegateFlowLayout, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 1{
-            let vc = DiaryDetailViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+        let data = notesArrayDatas[indexPath.row]
+        var type:NoteWriteControllerType?
+        switch data.priority {
+        case 0:
+            type = .shorTimeGrade
+        case 1:
+            type = .fristGrade
+        case 2:
+            type = .secendGrade
+        case 3:
+            type = .threeGrade
+        case 10001:
+            type = .markGrade
+        default:
+            type = .shorTimeGrade
         }
+        let vc = NoteWriteViewController(data,type: type!)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 // MARK: 滑动代理
@@ -183,10 +208,10 @@ extension CFNotesViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         
-        if offsetY <= 0 {
-            self.showAddBtn()
-        }else {
-            self.hiddenBtn()
-        }
+//        if offsetY <= 0 {
+//            self.showAddBtn()
+//        }else {
+//            self.hiddenBtn()
+//        }
     }
 }
