@@ -12,7 +12,7 @@ class FaceBookViewController: SubClassBaseViewController {
 
     
     var leftList = ["QQ","weibo","Mail","iMessages","tel","其他方式"]
-    var rightList = ["1525163730","@zhangchione","zc@zhangchione.cc","15274737502","15274737502","无"]
+    var rightList = ["1525163730","@zhangchione","zc@zhangchione.cc","发消息","Call me","QQ群:1054521548"]
     private lazy var tableview: UITableView = {
         let tableview = UITableView()
         tableview.delegate = self

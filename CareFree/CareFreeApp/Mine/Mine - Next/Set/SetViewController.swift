@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Photos
+
 
 class SetViewController: UIViewController {
     
@@ -14,10 +16,10 @@ class SetViewController: UIViewController {
     var imgPricker:UIImagePickerController!
     
     // 数据源 暂时
-    let setArrayDatas = [["头像","昵称","签名"],["首页","日记","便贴"],["关于","反馈交流","给个好评"]]
+    let setArrayDatas = [["头像","昵称","签名"],["首页","日记"],["关于","反馈交流","给个好评"]]
     
     
-    private lazy var tableview: UITableView = {
+    lazy var tableview: UITableView = {
         let tableview = UITableView()
         tableview.delegate = self
         tableview.dataSource = self
@@ -52,6 +54,7 @@ class SetViewController: UIViewController {
 
     func configUI(){
         view.backgroundColor = backColor
+       
         self.view.addSubview(tableview)
         tableview.snp.makeConstraints { (make) in
             make.left.equalTo(view).offset(5.fit)
@@ -85,11 +88,19 @@ extension SetViewController: UITableViewDataSource  {
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .image(UIImage(named: "mine_img_user")!))
+                let image = UIImage(named: "mine_img_user")
+                cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .image(image!))
             }else if indexPath.row == 1 {
                 cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("CareFree"))
+                if let value = getUserName() {
+                    cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio(value))
+                }
+
             }else {
                 cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("一切都是最好的安排！"))
+                if let value = getUserBio() {
+                    cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio(value))
+                }
             }
 
         }else {
@@ -126,11 +137,13 @@ extension SetViewController: UITableViewDelegate {
                 self.alertViewShoww(with: "修改昵称") { (value) in
                     let cell = tableView.cellForRow(at: indexPath) as! SetViewCell
                     cell.updateUI(with: "昵称", type: .bio(value))
+                    saveUserName(value: value)
                 }
             }else {
                 self.alertViewShoww(with: "修改签名") { (value) in
                    let cell = tableView.cellForRow(at: indexPath) as! SetViewCell
                    cell.updateUI(with: "签名", type: .bio(value))
+                    saveUserBio(value: value)
                }
             }
 

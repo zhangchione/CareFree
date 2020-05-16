@@ -25,14 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func configVC() {
         
+
+
+        
         let mainTabVC = mainTabBarVC()
         self.window?.rootViewController = mainTabVC
         self.window?.makeKeyAndVisible()
-        if getUser().localSet_languege != "简体 - 中文" {
-                    self.setLocalInfo()
-        }else {
-             print(getUser().localSet_languege)
+        
+        guard getSetLanguege() != nil else {
+            self.configSetInfo()
+            return
         }
+        
 
        
         
@@ -75,17 +79,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return tabBarController
     }
     
-    func setLocalInfo() {
-        //1 获取json文件路径
-        let path = Bundle.main.path(forResource: "localUserInfo", ofType: "json")
-        //2 获取json文件里面的内容,NSData格式
-        let jsonData=NSData(contentsOfFile: path!)
-        //3 解析json内容
-        let json = JSON(jsonData!)
-        saveUserInfo(json["data"].dictionaryObject)
-                    
-        
+    
+    func configSetInfo() {
+        saveSetLanguege(value: "简体 - 中文")
+        saveSetHomeShowTask(value: true)
+        saveSetHomeShowMark(value: true)
     }
+    
+//    func setLocalInfo() {
+//        //1 获取json文件路径
+//        let path = Bundle.main.path(forResource: "localUserInfo", ofType: "json")
+//        //2 获取json文件里面的内容,NSData格式
+//        let jsonData=NSData(contentsOfFile: path!)
+//        //3 解析json内容
+//        let json = JSON(jsonData!)
+//        saveUserInfo(json["data"].dictionaryObject)
+//
+//
+//    }
     
 }
 

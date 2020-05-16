@@ -12,7 +12,7 @@ class SetHomeViewController: UIViewController {
 
     
     // 数据源 暂时
-    let setArrayDatas = [["语言","卡片展示内容","首页显示任务"]]
+    let setArrayDatas = [["语言","首页显示Mark","首页显示任务"]]
     
     private lazy var tableview: UITableView = {
         let tableview = UITableView()
@@ -84,11 +84,28 @@ extension SetHomeViewController: UITableViewDataSource  {
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("汉语"))
+                cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio(""))
+                if let text = getSetLanguege() {
+                    cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio(text))
+                }
             }else if indexPath.row == 1 {
-                cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("当前情绪值"))
+                if let value = getSetHomeShowMark() {
+                    if value {
+                        cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("是"))
+                    }else {
+                        cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("否"))
+                    }
+
+                }
             }else {
-                cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("显示"))
+                if let value = getSetHomeShowTask() {
+                    if value {
+                        cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("是"))
+                    }else {
+                        cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("否"))
+                    }
+
+                }
             }
 
         }else {
@@ -122,15 +139,9 @@ extension SetHomeViewController: UITableViewDelegate {
             if indexPath.row == 0 {
                 
             }else if indexPath.row == 1 {
-                self.alertViewShoww(with: "修改昵称") { (value) in
-                    let cell = tableView.cellForRow(at: indexPath) as! SetViewCell
-                    cell.updateUI(with: "昵称", type: .bio(value))
-                }
+
             }else {
-                self.alertViewShoww(with: "修改签名") { (value) in
-                   let cell = tableView.cellForRow(at: indexPath) as! SetViewCell
-                   cell.updateUI(with: "签名", type: .bio(value))
-               }
+                
             }
 
         }

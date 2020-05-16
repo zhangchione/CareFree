@@ -9,41 +9,42 @@
 import UIKit
 import SnapKit
 
-class AboutAppViewController: UIViewController {
+class AboutViewController: UIViewController {
 
     
     // 左边返回按钮
     private lazy var leftBarButton:UIButton = {
         let button = UIButton.init(type: .custom)
         button.frame = CGRect(x:10, y:0, width:30, height: 30)
-        button.setTitle("←", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 28)
-        button.setTitleColor(UIColor.black, for: .normal)
+        button.setImage(UIImage(named: "hone_icon_back"), for: .normal)
+        //button.titleLabel?.font = UIFont.systemFont(ofSize: 26)
         button.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
-        button.tintColor = UIColor.red
+        button.setTitleColor(UIColor.white, for: .normal)
         return button
     }()
+    
+    
     
     lazy var appImg:UIImageView = {
        let vi = UIImageView()
         vi.image = UIImage(named: "icon-76")
-        vi.cornerRadius = 10
+        vi.cornerRadius = 10.fit
         vi.clipsToBounds = true
         return vi
     }()
     
     lazy var appName:UILabel = {
        let label = UILabel()
-        label.text = "心情日记"
+        label.text = "无忧日记"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 14.fit)
         return label
     }()
     
     lazy var appVersion:UILabel = {
        let label = UILabel()
-        label.text = "1.0.0 (20200203)"
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = "1.1.0 (20200516)"
+        label.font = UIFont.systemFont(ofSize: 14.fit)
                 label.textAlignment = .center
         return label
     }()
@@ -56,6 +57,15 @@ class AboutAppViewController: UIViewController {
          return label
     }()
     
+    lazy var openAddress: RestDaySelectedView = {
+        let restDatView = RestDaySelectedView()
+        restDatView.callback =  {
+
+        }
+       return restDatView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,15 +73,20 @@ class AboutAppViewController: UIViewController {
         setUI()
     }
 
-
     func configUI(){
-        view.backgroundColor = UIColor.init(r: 247, g: 249, b: 254)
+        
+        view.backgroundColor = backColor
+        
+    }
+    
+    func configNav(){
         self.navigation.bar.isShadowHidden = true
         self.navigation.bar.alpha = 0
         self.navigation.item.title = "关于"
         self.navigation.item.leftBarButtonItem = UIBarButtonItem.init(customView: leftBarButton)
     }
     
+
     @objc func back() {
          self.navigationController?.popViewController(animated: true)
     }
@@ -105,6 +120,14 @@ class AboutAppViewController: UIViewController {
             make.height.equalTo(200.fit)
             make.width.equalTo(CFWidth-40.fit)
         }
+        
+        openAddress.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(27.fit)
+            make.right.equalToSuperview().offset(-27.fit)
+            make.top.equalTo(describe.snp.bottom).offset(90.fit)
+            make.height.equalTo(40.fit)
+        }
+        
         
     }
 }

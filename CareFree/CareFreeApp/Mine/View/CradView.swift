@@ -177,6 +177,9 @@ class CardView: UIView {
         setView1.updateUI(title: title1)
         setView1.delegate = self
         
+        if let value = getSetHomeShowTask() {
+            setView1.controller.isOn = value
+        }
         
         addSubview(setView2)
         setView2.snp.makeConstraints { (make) in
@@ -189,6 +192,9 @@ class CardView: UIView {
         setView2.updateUI(title: title2)
         setView2.delegate = self
         
+        if let value = getSetHomeShowMark() {
+            setView2.controller.isOn = value
+        }
     }
     
     

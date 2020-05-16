@@ -65,7 +65,7 @@ class SetController: UIViewController {
     // 关于
     @IBAction func aboutTap(_ sender: Any) {
                 print("关于")
-        let aboutVC = AboutAppViewController()
+        let aboutVC = AboutAViewController()
         self.navigationController?.pushViewController(aboutVC, animated: true)
     }
     // 换账号

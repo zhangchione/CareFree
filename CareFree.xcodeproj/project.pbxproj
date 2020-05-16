@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05F3E14BDA059F45C2EF8ED8 /* Pods_CareFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CCC6817D8AE2AE7C00048E /* Pods_CareFree.framework */; };
 		2500FBC8245A61ED00A99955 /* DiaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2500FBC7245A61ED00A99955 /* DiaryTable.swift */; };
 		2500FBCA245A65D100A99955 /* TrashDiaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2500FBC9245A65D100A99955 /* TrashDiaryTable.swift */; };
 		2500FBCC245A667000A99955 /* NoteTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2500FBCB245A667000A99955 /* NoteTable.swift */; };
@@ -84,7 +85,6 @@
 		25E3582C22DEEDD80063AA9E /* CollectionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582B22DEEDD80063AA9E /* CollectionKit.framework */; };
 		25E3582E22DEEDD80063AA9E /* EachNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582D22DEEDD80063AA9E /* EachNavigationBar.framework */; };
 		25E3583022DEEDD80063AA9E /* ESTabBarController_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3582F22DEEDD80063AA9E /* ESTabBarController_swift.framework */; };
-		25E3583822DEEDD80063AA9E /* Pods_CareFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583722DEEDD80063AA9E /* Pods_CareFree.framework */; };
 		25E3583A22DEEDD80063AA9E /* ProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3583922DEEDD80063AA9E /* ProgressHUD.framework */; };
 		25E3584622DEEDD80063AA9E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584522DEEDD80063AA9E /* SnapKit.framework */; };
 		25E3584A22DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E3584922DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework */; };
@@ -107,6 +107,8 @@
 		E327EBFB246D7B41007AD84E /* CFHomeChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E327EBFA246D7B41007AD84E /* CFHomeChartCell.swift */; };
 		E327EBFD246D7B5B007AD84E /* CFHomeMoodValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E327EBFC246D7B5B007AD84E /* CFHomeMoodValueCell.swift */; };
 		E327EBFF246D7B68007AD84E /* CFHomeMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E327EBFE246D7B68007AD84E /* CFHomeMarkCell.swift */; };
+		E3661FD624701C97005C4F7B /* AboutAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3661FD524701C97005C4F7B /* AboutAViewController.swift */; };
+		E3661FD824702424005C4F7B /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3661FD724702424005C4F7B /* UpdateViewController.swift */; };
 		E3B7DE27246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7DE26246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift */; };
 		E3B7DE2A246E7EA100EA03A7 /* CFNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7DE29246E7EA100EA03A7 /* CFNotesViewController.swift */; };
 		E3B7DE32246EBA9500EA03A7 /* SingleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7DE31246EBA9500EA03A7 /* SingleClass.swift */; };
@@ -256,7 +258,6 @@
 		25E3583122DEEDD80063AA9E /* HandyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HandyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E3583322DEEDD80063AA9E /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E3583522DEEDD80063AA9E /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		25E3583722DEEDD80063AA9E /* Pods_CareFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_CareFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E3583922DEEDD80063AA9E /* ProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E3583B22DEEDD80063AA9E /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E3583D22DEEDD80063AA9E /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,6 +291,8 @@
 		E327EBFA246D7B41007AD84E /* CFHomeChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeChartCell.swift; sourceTree = "<group>"; };
 		E327EBFC246D7B5B007AD84E /* CFHomeMoodValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeMoodValueCell.swift; sourceTree = "<group>"; };
 		E327EBFE246D7B68007AD84E /* CFHomeMarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeMarkCell.swift; sourceTree = "<group>"; };
+		E3661FD524701C97005C4F7B /* AboutAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAViewController.swift; sourceTree = "<group>"; };
+		E3661FD724702424005C4F7B /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		E3B7DE26246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeMarkHeaderView.swift; sourceTree = "<group>"; };
 		E3B7DE29246E7EA100EA03A7 /* CFNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFNotesViewController.swift; sourceTree = "<group>"; };
 		E3B7DE31246EBA9500EA03A7 /* SingleClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleClass.swift; sourceTree = "<group>"; };
@@ -352,10 +355,10 @@
 				25E3582C22DEEDD80063AA9E /* CollectionKit.framework in Frameworks */,
 				25E3582E22DEEDD80063AA9E /* EachNavigationBar.framework in Frameworks */,
 				25E3583022DEEDD80063AA9E /* ESTabBarController_swift.framework in Frameworks */,
-				25E3583822DEEDD80063AA9E /* Pods_CareFree.framework in Frameworks */,
 				25E3583A22DEEDD80063AA9E /* ProgressHUD.framework in Frameworks */,
 				25E3584622DEEDD80063AA9E /* SnapKit.framework in Frameworks */,
 				25E3584A22DEEDD80063AA9E /* YetAnotherAnimationLibrary.framework in Frameworks */,
+				05F3E14BDA059F45C2EF8ED8 /* Pods_CareFree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +379,6 @@
 				25E3583122DEEDD80063AA9E /* HandyJSON.framework */,
 				25E3583322DEEDD80063AA9E /* Lottie.framework */,
 				25E3583522DEEDD80063AA9E /* MJRefresh.framework */,
-				25E3583722DEEDD80063AA9E /* Pods_CareFree.framework */,
 				25E3583922DEEDD80063AA9E /* ProgressHUD.framework */,
 				25E3583B22DEEDD80063AA9E /* Realm.framework */,
 				25E3583D22DEEDD80063AA9E /* RealmSwift.framework */,
@@ -741,6 +743,16 @@
 			path = oldCode;
 			sourceTree = "<group>";
 		};
+		E3661FD424701581005C4F7B /* Adout  */ = {
+			isa = PBXGroup;
+			children = (
+				2565A77223E8352300822C65 /* AboutAppViewController.swift */,
+				E3661FD524701C97005C4F7B /* AboutAViewController.swift */,
+				E3661FD724702424005C4F7B /* UpdateViewController.swift */,
+			);
+			path = "Adout ";
+			sourceTree = "<group>";
+		};
 		E3B7DE28246E7E7500EA03A7 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +823,7 @@
 		E3B7DE38246EDF3400EA03A7 /* Set - Next */ = {
 			isa = PBXGroup;
 			children = (
+				E3661FD424701581005C4F7B /* Adout  */,
 				E3B7DE39246EDF6100EA03A7 /* SetHomeViewController.swift */,
 				E3B7DE3B246EE10E00EA03A7 /* SetDiaryViewController.swift */,
 			);
@@ -858,7 +871,6 @@
 				2565A76A23E8041B00822C65 /* SetController.xib */,
 				2565A76923E8041A00822C65 /* SubClassBaseViewController.swift */,
 				2565A76C23E8041D00822C65 /* TeamViewController.swift */,
-				2565A77223E8352300822C65 /* AboutAppViewController.swift */,
 			);
 			path = "Mine - Next";
 			sourceTree = "<group>";
@@ -1134,8 +1146,8 @@
 				F5D9751D22A3B36E0014BE15 /* Sources */,
 				F5D9751E22A3B36E0014BE15 /* Frameworks */,
 				F5D9751F22A3B36E0014BE15 /* Resources */,
-				7041C65CDE430184C24CC7F6 /* [CP] Embed Pods Frameworks */,
 				E3B7DE23246E43CF00EA03A7 /* CopyFiles */,
+				3E57CA91E0CF74BC185CEDDF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1229,7 +1241,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7041C65CDE430184C24CC7F6 /* [CP] Embed Pods Frameworks */ = {
+		3E57CA91E0CF74BC185CEDDF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1267,6 +1279,7 @@
 				25D9F3812460F29100487C64 /* DiaryAlterViewController.swift in Sources */,
 				2565A75723E8034600822C65 /* CalmViewController.swift in Sources */,
 				E3B7DE2A246E7EA100EA03A7 /* CFNotesViewController.swift in Sources */,
+				E3661FD624701C97005C4F7B /* AboutAViewController.swift in Sources */,
 				25051167239205480092E55E /* NotesModel1.swift in Sources */,
 				25903DBC23989B790073E4D8 /* CFDiaryViewModel.swift in Sources */,
 				F58869B822E98CEB0047BEF5 /* CFBaseViewController.swift in Sources */,
@@ -1359,6 +1372,7 @@
 				2565A73F23E802AA00822C65 /* DshowDiaryCell.swift in Sources */,
 				2565A76D23E8041D00822C65 /* FaceBookViewController.swift in Sources */,
 				2500FBCA245A65D100A99955 /* TrashDiaryTable.swift in Sources */,
+				E3661FD824702424005C4F7B /* UpdateViewController.swift in Sources */,
 				F5C4091522EED25C004DE68A /* DayEmotionController.swift in Sources */,
 				F5C8D40322EA900E002215F4 /* MineChartCell.swift in Sources */,
 				25EBFE4E22E1924B0055B7C2 /* BookModel.swift in Sources */,
@@ -1533,7 +1547,7 @@
 				);
 				MACH_O_TYPE = mh_execute;
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.cone.CareFreecc;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cone.CareFree;
 				PRODUCT_NAME = "心情日记";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CareFree/CareFree-Bridging-Header.h";

@@ -21,6 +21,7 @@ class MineHeaderView: UIView {
     public func updateUI(with data:MineHeaderViewModel){
         self.userImg.image = data.img
         self.userBio.text = data.bio
+        self.userName.text = data.userName
     }
     
     

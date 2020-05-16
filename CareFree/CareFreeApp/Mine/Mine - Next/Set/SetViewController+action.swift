@@ -31,18 +31,24 @@ extension SetViewController {
     }
     func gotoDiarySet(){
         
+        let vc = SetDiaryViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func gotoNoteSet() {
         
     }
     func about() {
         
+        let vc = AboutAViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func faceBack() {
-        
+        let vc = FaceBookViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func giveGood(){
-        
+        let url = URL(string: "itms-apps://itunes.apple.com/")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
 }
 
@@ -102,17 +108,9 @@ extension SetViewController :UIImagePickerControllerDelegate,UINavigationControl
         let img = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         let imageURL = info[UIImagePickerController.InfoKey.imageURL]!
         let imgUrl = (imageURL as! URL).path
-//        self.headimg = img
-//        self.userImg.image = self.headimg
-
-//          let size = CGSize(width: 30, height: 30)
-//              startAnimating(size, message: "上传头像中...", type: .ballClipRotate, fadeInAnimation: nil)
+        saveUserImg(path: imgUrl)
         
-//        let headpic = uploadPic(imageURL: imgUrl)
-//        alterHeadPicNet(username: userData!.username, password: userData!.password,headPic: headpic)
-      //  print(headpic)
-//        NVActivityIndicatorPresenter.sharedInstance.setMessage("更改完成...")
-//        self.stopAnimating(nil)
+        self.tableview.reloadData()
         self.dismiss(animated: true, completion: nil)
         
 

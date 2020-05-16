@@ -14,7 +14,15 @@ import Hero
 
 extension CFMineController: MineBodyViewDelegate {
     func setCallBack(type: SetViewOnBodyViewType,isOn:Bool) {
-        print(type,isOn)
+        
+        switch type {
+        case .taskTop:
+            saveSetHomeShowMark(value:isOn)
+        case .showTask:
+            saveSetHomeShowTask(value: isOn)
+        }
+        
+        print(getSetHomeShowMark())
     }
     
     func mineCardTapCallBack(type: CardType) {
@@ -130,6 +138,12 @@ class CFMineController: CFBaseViewController {
         mineBodyData.diaryViewData = (getDiaryTotal(),getNotesTotal())
         mineBodyData.trashViewData = getTrashTotal()
         
+        if let username = getUserName() {
+            mineHeaderData.userName = username
+        }
+        if let bio = getUserBio() {
+            mineHeaderData.bio = bio
+        }
     }
     
     func updateUI(){

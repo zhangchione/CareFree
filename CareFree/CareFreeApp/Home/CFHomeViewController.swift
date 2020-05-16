@@ -99,8 +99,16 @@ class CFHomeViewController: CFBaseViewController {
         let markData = DataBase.shared.queryNote(by: markGrade)
         self.homeMarkDatas = markData
         
-        let taskData = DataBase.shared.queryNote(unCount: [shortTimeGrade,markGrade])
-        self.homeTaskDatas = taskData
+        if let value = getSetHomeShowTask() {
+            if value == true {
+                let taskData = DataBase.shared.queryNote(unCount: [shortTimeGrade,markGrade])
+                self.homeTaskDatas = taskData
+            }else{
+                self.homeTaskDatas.removeAll()
+            }
+        }
+        
+        
     }
 
 
@@ -179,11 +187,22 @@ extension CFHomeViewController: UICollectionViewDelegateFlowLayout, UICollection
     }
     // 头部高度
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == 2 || section == 3{
+        if section == 2 {
             return CGSize(width: CFWidth, height: 40.fit)
-        }else {
+        } else if section == 3 {
+
+           if let value = getSetHomeShowTask() {
+               if value == true {
+                    return CGSize(width: CFWidth, height: 40.fit)
+               } else{
+                    return CGSize(width: CFWidth, height: 0.fit)
+               }
+           }
+        } else {
             return CGSize(width: CFWidth, height: 0.fit)
         }
+        
+        return CGSize(width: CFWidth, height: 0.fit)
     }
     
     //每个分区的内边距

@@ -32,7 +32,7 @@ class NoteTypeCell: UICollectionViewCell {
     
     lazy var selecteIcon:UIImageView = {
        let img = UIImageView()
-        img.image = UIImage(named: "mine_icon_fav")
+        img.image = UIImage(named: "write_icon_blackcheck")
         return img
     }()
     

@@ -41,6 +41,18 @@ class CFHomeEmotionCell: UICollectionViewCell {
         return vi
     }()
     
+    // 心情圆
+    let progressView: YQCircleProgreeView = {
+        let progressView = YQCircleProgreeView()
+        
+        // 粗细
+        progressView.borderWidth = 10
+        // 动画时间
+        progressView.animationDuration = 0.5
+        return progressView
+    }()
+    
+    
     lazy var emotionValue: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 32.fit)
@@ -78,8 +90,10 @@ class CFHomeEmotionCell: UICollectionViewCell {
     private func configUI(){
         addSubview(backView)
         addSubview(line)
-        addSubview(emotionValue)
+        addSubview(progressView)
         
+        
+        addSubview(emotionValue)
         addSubview(favIcon)
         addSubview(valueLabel)
         
@@ -94,6 +108,17 @@ class CFHomeEmotionCell: UICollectionViewCell {
             make.centerY.equalTo(self)
             make.height.equalTo(160.fit)
             make.width.equalTo(2.fit)
+        }
+        progressView.setProgress(Double(0.72), animation: true)
+        progressView.backgroundImage = nil
+        progressView.defaultBorderColor = .white
+        progressView.layer.shadowColor = UIColor.lightGray.cgColor
+        progressView.layer.shadowRadius = 5
+        progressView.layer.shadowOpacity = 0.8
+        progressView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(self)
+            make.left.equalTo(self).offset(60.fit)
+            make.width.height.equalTo(120.fit)
         }
         
         favIcon.snp.makeConstraints{(make) in
