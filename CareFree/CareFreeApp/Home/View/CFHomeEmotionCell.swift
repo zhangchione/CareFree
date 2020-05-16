@@ -27,6 +27,7 @@ class CFHomeEmotionCell: UICollectionViewCell {
                 break
             }
         }
+        progressView.updateUI(with: 0.8)
         
     }
     
@@ -41,14 +42,13 @@ class CFHomeEmotionCell: UICollectionViewCell {
         return vi
     }()
     
+    
+    
+    
     // 心情圆
-    let progressView: YQCircleProgreeView = {
-        let progressView = YQCircleProgreeView()
-        
-        // 粗细
-        progressView.borderWidth = 10
-        // 动画时间
-        progressView.animationDuration = 0.5
+    let progressView: ZCCircleProgree = {
+        let progressView = ZCCircleProgree()
+
         return progressView
     }()
     
@@ -109,12 +109,7 @@ class CFHomeEmotionCell: UICollectionViewCell {
             make.height.equalTo(160.fit)
             make.width.equalTo(2.fit)
         }
-        progressView.setProgress(Double(0.72), animation: true)
-        progressView.backgroundImage = nil
-        progressView.defaultBorderColor = .white
-        progressView.layer.shadowColor = UIColor.lightGray.cgColor
-        progressView.layer.shadowRadius = 5
-        progressView.layer.shadowOpacity = 0.8
+                
         progressView.snp.makeConstraints { (make) in
             make.centerY.equalTo(self)
             make.left.equalTo(self).offset(60.fit)

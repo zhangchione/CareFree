@@ -144,6 +144,9 @@ class CFMineController: CFBaseViewController {
         if let bio = getUserBio() {
             mineHeaderData.bio = bio
         }
+        if let data = getHeadImg() {
+            mineHeaderData.img = UIImage(data: data)
+        }
     }
     
     func updateUI(){

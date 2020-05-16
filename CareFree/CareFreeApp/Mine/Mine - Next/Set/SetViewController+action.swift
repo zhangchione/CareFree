@@ -108,7 +108,10 @@ extension SetViewController :UIImagePickerControllerDelegate,UINavigationControl
         let img = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         let imageURL = info[UIImagePickerController.InfoKey.imageURL]!
         let imgUrl = (imageURL as! URL).path
-        saveUserImg(path: imgUrl)
+        
+
+        let imgData = UIImage.jpegData(img)(compressionQuality: 1.0)
+        saveHeadImg(imgData)
         
         self.tableview.reloadData()
         self.dismiss(animated: true, completion: nil)

@@ -88,7 +88,10 @@ extension SetViewController: UITableViewDataSource  {
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                let image = UIImage(named: "mine_img_user")
+                var image = UIImage(named: "mine_img_user")
+                if let data = getHeadImg() {
+                    image = UIImage(data: data)
+                }
                 cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .image(image!))
             }else if indexPath.row == 1 {
                 cell.updateUI(with: setArrayDatas[indexPath.section][indexPath.row], type: .bio("CareFree"))

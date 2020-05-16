@@ -22,6 +22,9 @@
 		2505116D23920A820092E55E /* DayDiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505116C23920A820092E55E /* DayDiaryModel.swift */; };
 		25051170239216B60092E55E /* CFDiaryController+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2505116F239216B60092E55E /* CFDiaryController+Action.swift */; };
 		25051172239217820092E55E /* CFDiaryController+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25051171239217820092E55E /* CFDiaryController+Config.swift */; };
+		250C5B1C24704352009CEB44 /* NotesTypeSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C5B1B24704352009CEB44 /* NotesTypeSelectedView.swift */; };
+		250C5B1E247057F8009CEB44 /* ZCCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C5B1D247057F8009CEB44 /* ZCCircle.swift */; };
+		250C5B2024705E9C009CEB44 /* endPoint.png in Resources */ = {isa = PBXBuildFile; fileRef = 250C5B1F24705E9C009CEB44 /* endPoint.png */; };
 		250DDCFE22ED2907001C765B /* CFDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DDCFD22ED2907001C765B /* CFDiaryController.swift */; };
 		250DDD0322ED2935001C765B /* diary_today.json in Resources */ = {isa = PBXBuildFile; fileRef = 250DDD0222ED2935001C765B /* diary_today.json */; };
 		250DDD0522ED2939001C765B /* diary_now.json in Resources */ = {isa = PBXBuildFile; fileRef = 250DDD0422ED2939001C765B /* diary_now.json */; };
@@ -188,6 +191,9 @@
 		2505116C23920A820092E55E /* DayDiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDiaryModel.swift; sourceTree = "<group>"; };
 		2505116F239216B60092E55E /* CFDiaryController+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CFDiaryController+Action.swift"; sourceTree = "<group>"; };
 		25051171239217820092E55E /* CFDiaryController+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CFDiaryController+Config.swift"; sourceTree = "<group>"; };
+		250C5B1B24704352009CEB44 /* NotesTypeSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotesTypeSelectedView.swift; path = "CareFree/CareFreeApp/Mine/Mine - Next/Trash/NotesTypeSelectedView.swift"; sourceTree = SOURCE_ROOT; };
+		250C5B1D247057F8009CEB44 /* ZCCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCCircle.swift; sourceTree = "<group>"; };
+		250C5B1F24705E9C009CEB44 /* endPoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = endPoint.png; sourceTree = "<group>"; };
 		250DDCFD22ED2907001C765B /* CFDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDiaryController.swift; sourceTree = "<group>"; };
 		250DDD0222ED2935001C765B /* diary_today.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = diary_today.json; sourceTree = "<group>"; };
 		250DDD0422ED2939001C765B /* diary_now.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = diary_now.json; sourceTree = "<group>"; };
@@ -714,11 +720,13 @@
 		E327EBF5246D7AEF007AD84E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				250C5B1F24705E9C009CEB44 /* endPoint.png */,
 				E327EBF8246D7B25007AD84E /* CFHomeEmotionCell.swift */,
 				E327EBFA246D7B41007AD84E /* CFHomeChartCell.swift */,
 				E327EBFC246D7B5B007AD84E /* CFHomeMoodValueCell.swift */,
 				E327EBFE246D7B68007AD84E /* CFHomeMarkCell.swift */,
 				E3B7DE26246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift */,
+				250C5B1D247057F8009CEB44 /* ZCCircle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -784,6 +792,7 @@
 		E3B7DE2D246E7F5600EA03A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				250C5B1B24704352009CEB44 /* NotesTypeSelectedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1210,6 +1219,7 @@
 				2565A76F23E8041D00822C65 /* SetController.xib in Resources */,
 				2565A76123E8034600822C65 /* SoSadViewController.xib in Resources */,
 				E31E6321246FD58600011DBF /* localUserInfo.json in Resources */,
+				250C5B2024705E9C009CEB44 /* endPoint.png in Resources */,
 				F5D9752C22A3B3700014BE15 /* Assets.xcassets in Resources */,
 				2565A76623E803C800822C65 /* writeCell.xib in Resources */,
 				F58869CC22E99E280047BEF5 /* mine.json in Resources */,
@@ -1323,6 +1333,7 @@
 				E3B7DE3C246EE10E00EA03A7 /* SetDiaryViewController.swift in Sources */,
 				2565A74023E802AA00822C65 /* emotionCell.swift in Sources */,
 				25903DBE2398B09C0073E4D8 /* CFDiaryModel.swift in Sources */,
+				250C5B1C24704352009CEB44 /* NotesTypeSelectedView.swift in Sources */,
 				E3D158CD246B8F25002B3B96 /* EmotionView.swift in Sources */,
 				2565A76E23E8041D00822C65 /* SubClassBaseViewController.swift in Sources */,
 				F56C2E0622AA6B2E00BCFA11 /* MainNavigationController.swift in Sources */,
@@ -1356,6 +1367,7 @@
 				E3B7DE27246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift in Sources */,
 				E3B7DE3A246EDF6100EA03A7 /* SetHomeViewController.swift in Sources */,
 				257E9A822393ACB200689EB6 /* ShowHeaderView.swift in Sources */,
+				250C5B1E247057F8009CEB44 /* ZCCircle.swift in Sources */,
 				F5303D4D22A8D2C70060EACE /* Extension.swift in Sources */,
 				251215AB22E062010025CFD9 /* MyModel.swift in Sources */,
 				F58869C422E993580047BEF5 /* CFMineModel.swift in Sources */,

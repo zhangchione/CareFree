@@ -10,6 +10,13 @@ import Foundation
 
 let defaults = UserDefaults.standard
 
+func saveHeadImg(_ imgData: Data?) {
+    defaults.set(imgData, forKey: "userhead_img")
+    defaults.synchronize()
+}
+func getHeadImg() -> Data? {
+    return defaults.data(forKey: "userhead_img")
+}
 func saveUserImg(path:String) {
     defaults.set(path, forKey: "user_image")
     defaults.synchronize()

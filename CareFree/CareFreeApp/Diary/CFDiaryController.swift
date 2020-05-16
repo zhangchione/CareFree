@@ -121,7 +121,7 @@ class CFDiaryController: CFBaseViewController {
         vi.backgroundColor = UIColor.clear
         return vi
     }()
-    
+
     var data = [DayDiaryModel]()
     lazy var viewModel:CFDiaryViewModel = {
         return CFDiaryViewModel()
@@ -134,6 +134,7 @@ class CFDiaryController: CFBaseViewController {
         configUI()
         configData()
         initKeyBoardObserver()
+        caculateNoteRestDay()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -249,6 +250,22 @@ extension CFDiaryController {
         // 注册键盘监听
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDisShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
 
+    }
+    
+    func caculateNoteRestDay(){
+        
+        var datas = DataBase.shared.queryNoteAll(isTrash: false)
+        
+        for index in 0..<datas.count {
+            let components = NSCalendar.current.dateComponents([.day], from: datas[index].startDate, to: Date())
+            datas[index].restDay -= components.day!
+            if datas[index].restDay <= 0 {
+                datas[index].restDay = 0
+            }
+            DataBase.shared.updateStrNote(with: datas[index])
+        }
+
+        
     }
 
 }
