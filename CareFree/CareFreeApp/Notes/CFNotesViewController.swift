@@ -176,7 +176,7 @@ extension CFNotesViewController {
             make.left.equalTo(self.view.snp.left).offset(20.fit)
             make.top.equalTo(self.navigation.bar.snp.bottom).offset(10.fit)
             make.height.equalTo(30.fit)
-            make.width.equalTo(100.fit)
+            make.width.equalTo(120.fit)
         }
         
         self.view.addSubview(self.collectionView)

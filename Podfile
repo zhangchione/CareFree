@@ -13,8 +13,8 @@ target 'CareFree' do
   pod 'SnapKit'
   pod 'JXPhotoBrowser'
   pod 'SQLite.swift'
-  pod 'RxSwift',    '~> 4.0'
-  pod 'RxCocoa',    '~> 4.0'
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
   # 分页
   pod 'DNSPageView'
   pod 'SnapKit'

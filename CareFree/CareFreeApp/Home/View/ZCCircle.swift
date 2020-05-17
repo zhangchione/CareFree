@@ -112,19 +112,15 @@ class ZCCircle: UIView {
         var y: Float = 0.0 //用于保存_dotView的frame
         switch index {
             case 0:
-                print("第一象限")
                 x = radius + sinf(needAngle) * radius
                 y = radius - cosf(needAngle) * radius
             case 1:
-                print("第二象限")
                 x = radius + cosf(needAngle) * radius
                 y = radius + sinf(needAngle) * radius
             case 2:
-                print("第三象限")
                 x = radius - sinf(needAngle) * radius
                 y = radius + cosf(needAngle) * radius
             case 3:
-                print("第四象限")
                 x = radius - cosf(needAngle) * radius
                 y = radius - sinf(needAngle) * radius
             default:

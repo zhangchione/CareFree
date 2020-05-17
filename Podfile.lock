@@ -20,9 +20,12 @@ PODS:
     - Kingfisher
   - Kingfisher (4.10.1)
   - ProgressHUD (2.51)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxSwift (4.5.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
   - SnapKit (4.2.0)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
@@ -42,8 +45,8 @@ DEPENDENCIES:
   - Hero
   - JXPhotoBrowser
   - ProgressHUD
-  - RxCocoa (~> 4.0)
-  - RxSwift (~> 4.0)
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
   - SnapKit
   - SQLite.swift
   - SwiftyJSON
@@ -61,6 +64,7 @@ SPEC REPOS:
     - Kingfisher
     - ProgressHUD
     - RxCocoa
+    - RxRelay
     - RxSwift
     - SnapKit
     - SQLite.swift
@@ -89,13 +93,14 @@ SPEC CHECKSUMS:
   JXPhotoBrowser: 0178c485d1dbad1ef1dcbb24e4f463d80c30369d
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: 784b9941221a0bf02fbebc0204d4dec291c10b7d
+PODFILE CHECKSUM: c09a01878bba15de28540b4e0bbd4a962dba5058
 
 COCOAPODS: 1.8.4
