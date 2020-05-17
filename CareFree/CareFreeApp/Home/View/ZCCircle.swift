@@ -8,36 +8,36 @@
 
 import UIKit
 
-let  endPointMargin:CGFloat = 1.0
+let endPointMargin: CGFloat = 3.fit
+let PI: CGFloat = 3.14159265358979323846264338327950288
 
 class ZCCircle: UIView {
 
     public var progress:CGFloat = 0.0
-    public var lineWidth:CGFloat = 0.0
+    public var lineWidth:CGFloat = 15.fit
     
     
     private var trackLayer = CAShapeLayer()
     private var progressLayer =  CAShapeLayer()
-    private var endPoint = UIImageView()
+    private var endPoint = UIView()
     
-    init() {
-        super.init(frame: .zero)
-
-        buildLayout()
+    override init(frame: CGRect) {
+        super.init(frame:frame)
+        configUI()
     }
     
-    func buildLayout(){
-        var centerX = self.bounds.size.width/2.0;
-        var centerY = self.bounds.size.height/2.0;
+    func configUI(){
+        let centerX = self.bounds.size.width/2.0;
+        let centerY = self.bounds.size.height/2.0;
         //半径
-        var radius = (self.bounds.size.width-lineWidth)/2.0;
+        let radius = (self.bounds.size.width-lineWidth)/2.0;
         //创建贝塞尔路径
         
-        let path = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: -0.5 * .pi, endAngle: 1.5 * .pi, clockwise: true)
+        let path = UIBezierPath(arcCenter: CGPoint(x: centerX, y: centerY), radius: radius, startAngle: -0.5 * PI, endAngle: 1.5 * PI, clockwise: true)
         let backLayer = CAShapeLayer()
         backLayer.frame = bounds
         backLayer.fillColor = UIColor.clear.cgColor
-        backLayer.strokeColor = UIColor(red: 50.0 / 255.0, green: 50.0 / 255.0, blue: 50.0 / 255.0, alpha: 1).cgColor
+        backLayer.strokeColor = UIColor.init(r: 50, g: 50, b: 50,alpha: 0.2).cgColor//UIColor.init(r: 139, g: 208, b: 231).cgColor// UIColor(red: 50.0 / 255.0, green: 50.0 / 255.0, blue: 50.0 / 255.0, alpha: 1).cgColor
         backLayer.lineWidth = lineWidth
         backLayer.path = path.cgPath
         backLayer.strokeEnd = 1
@@ -47,11 +47,12 @@ class ZCCircle: UIView {
         progressLayer.frame = bounds
         progressLayer.fillColor = UIColor.clear.cgColor
         //指定path的渲染颜色
-        progressLayer.strokeColor = UIColor.black.cgColor
+        progressLayer.strokeColor = UIColor.init(r: 255, g: 255, b: 255,alpha: 1).cgColor //UIColor.black.cgColor
         progressLayer.lineCap = .round
         progressLayer.lineWidth = lineWidth
         progressLayer.path = path.cgPath
         progressLayer.strokeEnd = 0
+        layer.addSublayer(progressLayer)
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
@@ -59,32 +60,47 @@ class ZCCircle: UIView {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0, y: 1)
         gradientLayer.mask = progressLayer //用progressLayer来截取渐变层
-        layer.addSublayer(gradientLayer)
+
         
-        endPoint = UIImageView()
-        endPoint.frame = CGRect(x: 0, y: 0, width: lineWidth - endPointMargin * 2, height: lineWidth - endPointMargin * 2)
+        endPoint = UIView()
+        let width = lineWidth - endPointMargin * 2
+        endPoint.frame = CGRect(x: self.bounds.size.width/2-width/2, y: 0, width: width, height: lineWidth - endPointMargin * 2)
         endPoint.isHidden = true
-        endPoint.backgroundColor = UIColor.black
-        endPoint.image = UIImage(named: "endPoint")
+        
         endPoint.layer.masksToBounds = true
         endPoint.layer.cornerRadius = endPoint.bounds.size.width / 2
         addSubview(endPoint)
         
     }
     
-    func updateUI(pregree:CGFloat) {
-        self.progress = pregree
-        progressLayer.strokeEnd = pregree
-        updateEndPoint()
-        progressLayer.removeAllAnimations()
+    func updateUI(value:CGFloat) {
+        let rangeValue = abs(value)
+        self.progressLayer.strokeEnd = rangeValue / 50.0
+        self.progress = rangeValue / 50.0
+        self.updateEndPoint()
+        self.progressLayer.removeAllAnimations()
+        
+        switch rangeValue {
+        case 26 ... 50:
+            endPoint.backgroundColor = happyColor
+        case 0 ... 25:
+            endPoint.backgroundColor = calmColor
+        case -25 ... -1:
+            endPoint.backgroundColor = sadColor
+        case -50 ... -26:
+            endPoint.backgroundColor = repressioneColor
+        default:
+            break
+        }
     }
     
     
     func updateEndPoint(){
-        let angle: CGFloat = .pi * 2 * progress
-        let radius: Float = Float((bounds.size.width - lineWidth) / 2.0)
-        let index = Int((angle) / CGFloat(M_PI_2)) //用户区分在第几象限内
-        let needAngle = Float(angle - CGFloat(Double(index) * M_PI_2)) //用于计算正弦/余弦的角度
+        
+        let angle: CGFloat = PI * 2 * progress
+        let radius: Float = Float((bounds.size.width - lineWidth - endPoint.bounds.size.width  ) / 2.0)
+        let index = Int(angle / CGFloat(PI/2)) //用户区分在第几象限内
+        let needAngle = Float(angle - CGFloat(CGFloat(index) * (PI/2))) //用于计算正弦/余弦的角度
         var x: Float = 0
         var y: Float = 0 //用于保存_dotView的frame
         switch index {
@@ -115,7 +131,7 @@ class ZCCircle: UIView {
         //移动到最前
         bringSubviewToFront(endPoint)
         endPoint.isHidden = false
-        if progress == 0 || progress == 1 {
+        if  progress == 1 {
             endPoint.isHidden = true
         }
     }
@@ -128,17 +144,16 @@ class ZCCircle: UIView {
 
 class ZCCircleProgree:UIView {
     
-    public var progree:CGFloat = 0.0
+    
     lazy var circle: ZCCircle = {
-       let circle = ZCCircle()
+        let circle = ZCCircle(frame: CGRect(x: 0, y: 0, width: 120.fit, height: 120.fit))
         let lineWidth: Float = Float(0.1 * bounds.size.width)
-        circle.frame = bounds
         circle.lineWidth = CGFloat(lineWidth)
         return circle
     }()
     
     lazy var percentLabel: UILabel = {
-       let label = UILabel(frame: bounds)
+       let label = UILabel()
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 36.fit)
@@ -146,10 +161,13 @@ class ZCCircleProgree:UIView {
         return label
     }()
     
-    init() {
-        super.init(frame: .zero)
+    
+    override init(frame: CGRect) {
+        super.init(frame:frame)
         configUI()
     }
+    
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -158,11 +176,17 @@ class ZCCircleProgree:UIView {
 
         addSubview(circle)
         addSubview(percentLabel)
+        
+        circle.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        percentLabel.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
     func updateUI(with value:CGFloat) {
         circle.progress = value
-        self.progree = value
-        self.percentLabel.text = "\(value*10)"
-        circle.updateUI(pregree: value)
+        self.percentLabel.text = "\(Int(value))"
+        circle.updateUI(value: value)
     }
 }

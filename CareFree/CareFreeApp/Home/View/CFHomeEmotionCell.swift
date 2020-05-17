@@ -27,7 +27,7 @@ class CFHomeEmotionCell: UICollectionViewCell {
                 break
             }
         }
-        progressView.updateUI(with: 0.8)
+        progressView.updateUI(with: CGFloat(value))
         
     }
     
