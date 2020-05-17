@@ -32,7 +32,7 @@ class CFNotesViewController: CFBaseViewController, UIGestureRecognizerDelegate {
     // 选择按钮
     lazy var selectedBtn:UIButton = {
        let btn = UIButton()
-        btn.setTitle("普通便签", for: .normal)
+        btn.setTitle("所有贴纸", for: .normal)
         btn.titleLabel?.font = UIFont.init(name: "PingFangSC-Medium", size: 14.fit)
         let imageView = UIImageView()
         imageView.image = UIImage(named: "right_icon")?.withRenderingMode(.alwaysTemplate)

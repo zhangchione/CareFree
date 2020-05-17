@@ -82,8 +82,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configSetInfo() {
         saveSetLanguege(value: "简体 - 中文")
-        saveSetHomeShowTask(value: true)
+        saveSetHomeShowTask(value: false)
         saveSetHomeShowMark(value: true)
+        
+        var defualtDiaryData =  DiaryModel()
+        defualtDiaryData.content = "用每一篇日记，记录下您当时的心情吧~"
+        defualtDiaryData.images = ""
+        defualtDiaryData.dateStr = DateInfo.shared.todayText
+        defualtDiaryData.date = Date()
+        defualtDiaryData.mood = 0
+        DataBase.shared.insertDiary(with: defualtDiaryData)
+        
+        var defualtMarkData =  CFNotesModel()
+        
+        defualtMarkData.content = "Mark住您做重要的事情~"
+        defualtMarkData.dateStr = DateInfo.shared.todayText
+        defualtMarkData.date = Date()
+        defualtMarkData.startDate = Date()
+        defualtMarkData.priority = 10001
+        DataBase.shared.insertNote(with: defualtMarkData)
+        
+        var defualtNoteData =  CFNotesModel()
+        
+        defualtNoteData.content = "便贴可临时记录要做的事~"
+        defualtNoteData.dateStr = DateInfo.shared.todayText
+        defualtNoteData.date = Date()
+        defualtNoteData.startDate = Date()
+        defualtNoteData.priority = 0
+        DataBase.shared.insertNote(with: defualtNoteData)
+        
     }
     
 //    func setLocalInfo() {

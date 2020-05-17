@@ -26,11 +26,11 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeW-hI-NQF">
-                        <rect key="frame" x="97" y="5" width="15" height="15"/>
+                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeW-hI-NQF">
+                        <rect key="frame" x="96" y="2" width="18" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" image="multiply.circle" catalog="system"/>
+                        <state key="normal" image="closeicon_repost_18x18_"/>
                         <connections>
                             <action selector="deleteBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="SWd-8F-Uin"/>
                         </connections>
@@ -48,6 +48,6 @@
     </objects>
     <resources>
         <image name="background_dark" width="0.5" height="0.5"/>
-        <image name="multiply.circle" catalog="system" width="128" height="121"/>
+        <image name="closeicon_repost_18x18_" width="18" height="18"/>
     </resources>
 </document>

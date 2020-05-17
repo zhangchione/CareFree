@@ -106,7 +106,7 @@ class CFHomeEmotionCell: UICollectionViewCell {
         line.snp.makeConstraints{(make) in
             make.left.equalTo(self).offset(40.fit)
             make.centerY.equalTo(self)
-            make.height.equalTo(160.fit)
+            make.height.equalTo(140.fit)
             make.width.equalTo(2.fit)
         }
                 

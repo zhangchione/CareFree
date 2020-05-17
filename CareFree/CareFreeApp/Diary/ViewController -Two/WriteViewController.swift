@@ -232,7 +232,7 @@ class WriteViewController: UIViewController {
         }
         photoCollection.snp.makeConstraints{(make) in
             make.left.equalTo(view.snp.left).offset(20.fit)
-            make.bottom.equalTo(view.snp.bottom).offset(-10.fit+kBottomSafeHeight)
+            make.bottom.equalTo(view.snp.bottom).offset(-10.fit-kBottomSafeHeight)
             make.right.equalTo(view.snp.right).offset(-20.fit)
             make.height.equalTo(120.fit)
         }

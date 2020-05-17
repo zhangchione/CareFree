@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F5D9752022A3B36E0014BE15"
-               BuildableName = "&#x5fc3;&#x60c5;&#x65e5;&#x8bb0;.app"
+               BuildableName = "&#x65e0;&#x5fe7;&#x65e5;&#x8bb0;.app"
                BlueprintName = "CareFree"
                ReferencedContainer = "container:CareFree.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F5D9752022A3B36E0014BE15"
-            BuildableName = "&#x5fc3;&#x60c5;&#x65e5;&#x8bb0;.app"
+            BuildableName = "&#x65e0;&#x5fe7;&#x65e5;&#x8bb0;.app"
             BlueprintName = "CareFree"
             ReferencedContainer = "container:CareFree.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F5D9752022A3B36E0014BE15"
-            BuildableName = "&#x5fc3;&#x60c5;&#x65e5;&#x8bb0;.app"
+            BuildableName = "&#x65e0;&#x5fe7;&#x65e5;&#x8bb0;.app"
             BlueprintName = "CareFree"
             ReferencedContainer = "container:CareFree.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F5D9752022A3B36E0014BE15"
-            BuildableName = "&#x5fc3;&#x60c5;&#x65e5;&#x8bb0;.app"
+            BuildableName = "&#x65e0;&#x5fe7;&#x65e5;&#x8bb0;.app"
             BlueprintName = "CareFree"
             ReferencedContainer = "container:CareFree.xcodeproj">
          </BuildableReference>

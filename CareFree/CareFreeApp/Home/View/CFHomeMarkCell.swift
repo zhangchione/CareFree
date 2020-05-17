@@ -14,7 +14,7 @@ class CFHomeMarkCell: UICollectionViewCell {
     public func updateUI(with data:CFNotesModel){
         
         contentLabel.snp.updateConstraints { (make) in
-            make.height.equalTo(self.getContentLabelHeigt(with: data.content))
+            make.height.equalTo(self.getContentLabelHeigt(with: data.content)+10.fit)
         }
         contentLabel.text = data.content
         

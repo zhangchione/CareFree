@@ -343,7 +343,7 @@
 		F5C7738622B090F70087520B /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		F5C8D40222EA900E002215F4 /* MineChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineChartCell.swift; sourceTree = "<group>"; };
 		F5D28D5D22BB1D45008CA4D2 /* DsearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DsearchCell.swift; sourceTree = "<group>"; };
-		F5D9752122A3B36E0014BE15 /* 心情日记.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "心情日记.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5D9752122A3B36E0014BE15 /* 无忧日记.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "无忧日记.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D9752422A3B36E0014BE15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D9752622A3B36E0014BE15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F5D9752922A3B36E0014BE15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1119,7 +1119,7 @@
 		F5D9752222A3B36E0014BE15 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F5D9752122A3B36E0014BE15 /* 心情日记.app */,
+				F5D9752122A3B36E0014BE15 /* 无忧日记.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1164,7 +1164,7 @@
 			);
 			name = CareFree;
 			productName = CareFree;
-			productReference = F5D9752122A3B36E0014BE15 /* 心情日记.app */;
+			productReference = F5D9752122A3B36E0014BE15 /* 无忧日记.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1548,10 +1548,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020043001;
-				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				DEVELOPMENT_TEAM = A4TWU4S2JA;
 				INFOPLIST_FILE = CareFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1559,8 +1559,8 @@
 				);
 				MACH_O_TYPE = mh_execute;
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.cone.CareFree;
-				PRODUCT_NAME = "心情日记";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangchione.carefree;
+				PRODUCT_NAME = "无忧日记";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CareFree/CareFree-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1575,10 +1575,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2020043001;
-				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				DEVELOPMENT_TEAM = A4TWU4S2JA;
 				INFOPLIST_FILE = CareFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1586,8 +1586,8 @@
 				);
 				MACH_O_TYPE = mh_execute;
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cc.cone.CareFreecc;
-				PRODUCT_NAME = "心情日记";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangchione.carefree;
+				PRODUCT_NAME = "无忧日记";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CareFree/CareFree-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

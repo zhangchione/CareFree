@@ -12,7 +12,7 @@ import UIKit
 class NotesTypeSelectedCell: UIView {
     lazy var titleLabel:UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.black
+        label.textColor = UIColor.white
         label.text = "所有贴纸"
         label.textAlignment = .center
         label.font = UIFont.init(name: "PingFangSC-Semibold", size: 16.fit)

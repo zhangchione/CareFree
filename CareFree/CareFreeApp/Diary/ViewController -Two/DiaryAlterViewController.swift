@@ -30,7 +30,7 @@ class DiaryAlterViewController: UIViewController {
     lazy var textView : UITextView = {
         let tv = UITextView()
         tv.backgroundColor = UIColor.clear
-        tv.font = UIFont.systemFont(ofSize: 20)
+        tv.font = UIFont.systemFont(ofSize: 20.fit)
         tv.textColor = UIColor.white
         tv.text = textViewPlaceHolder
         tv.delegate = self

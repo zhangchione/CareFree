@@ -96,8 +96,6 @@ class CFHomeViewController: CFBaseViewController {
         
         self.moodValue = getTodayMoodValue()
         
-        let markData = DataBase.shared.queryNote(by: markGrade)
-        self.homeMarkDatas = markData
         
         if let value = getSetHomeShowTask() {
             if value == true {
@@ -107,7 +105,14 @@ class CFHomeViewController: CFBaseViewController {
                 self.homeTaskDatas.removeAll()
             }
         }
-        
+        if let value = getSetHomeShowMark() {
+            if value == true {
+                let markData = DataBase.shared.queryNote(by: markGrade)
+                self.homeMarkDatas = markData
+            }else{
+                self.homeMarkDatas.removeAll()
+            }
+        }
         
     }
 
@@ -188,7 +193,13 @@ extension CFHomeViewController: UICollectionViewDelegateFlowLayout, UICollection
     // 头部高度
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 2 {
-            return CGSize(width: CFWidth, height: 40.fit)
+            if let value = getSetHomeShowMark() {
+                if value == true {
+                     return CGSize(width: CFWidth, height: 40.fit)
+                } else{
+                     return CGSize(width: CFWidth, height: 0.fit)
+                }
+            }
         } else if section == 3 {
 
            if let value = getSetHomeShowTask() {
