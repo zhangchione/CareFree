@@ -18,8 +18,12 @@ default_platform(:ios)
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
+    get_certificates           # invokes cert
+    get_provisioning_profile   # invokes sigh
     increment_build_number(xcodeproj: "CareFree.xcodeproj")
-    build_app(workspace: "CareFree.xcworkspace", scheme: "CareFree")
+    build_app(export_xcargs: "-allowProvisioningUpdates",
+              workspace: "CareFree.xcworkspace", 
+              scheme: "CareFree")
     upload_to_testflight
   end
 end
