@@ -1550,7 +1550,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020051602;
+				CURRENT_PROJECT_VERSION = 2020052302;
 				DEVELOPMENT_TEAM = A4TWU4S2JA;
 				INFOPLIST_FILE = CareFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1558,7 +1558,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangchione.carefree;
 				PRODUCT_NAME = "无忧日记";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1577,7 +1577,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020051602;
+				CURRENT_PROJECT_VERSION = 2020052302;
 				DEVELOPMENT_TEAM = A4TWU4S2JA;
 				INFOPLIST_FILE = CareFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1585,7 +1585,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangchione.carefree;
 				PRODUCT_NAME = "无忧日记";
 				PROVISIONING_PROFILE_SPECIFIER = "";

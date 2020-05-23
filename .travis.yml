@@ -1,16 +1,19 @@
 language: swift
 xcode_workspace: CareFree.xcworkspace
 xcode_scheme: CareFree
-osx_image: xcode10.2
+osx_image: xcode11.3
 podfile: path/to/Podfile
 branches:
   only:
-  - master
-  - /release*/
+    - master
+    - /release*/
 cache:
+  - bundler
   - cocoapods
 before_install:
-- bundle install
-- pod install || pod install --repo-update
+  - bundle install
+  - export CI=1
+  - pod install || pod install --repo-update
 script:
-- fastlane ci
+  - bundle update fastlane
+  - fastlane beta
