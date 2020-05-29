@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1048427530544-o7m851q6969a8jdelsuo8je7ugd38rvb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1048427530544-o7m851q6969a8jdelsuo8je7ugd38rvb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBD3hdF9gpHHhaC6xWQRBJTSiPqz5M5q4E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1048427530544</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.zhangchione.carefree</string>
+	<key>PROJECT_ID</key>
+	<string>carefree-c5258</string>
+	<key>STORAGE_BUCKET</key>
+	<string>carefree-c5258.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1048427530544:ios:d31f0c9af5be6a987220f5</string>
+	<key>DATABASE_URL</key>
+	<string>https://carefree-c5258.firebaseio.com</string>
+</dict>
+</plist>

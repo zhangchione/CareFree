@@ -5,11 +5,76 @@ PODS:
   - CollectionKit/WobbleAnimator (2.4.0):
     - CollectionKit/Core
     - YetAnotherAnimationLibrary (~> 1.4.0)
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
   - DNSPageView (1.1.6)
   - EachNavigationBar (1.12.1)
   - ESTabBarController-swift (2.7)
+  - Fabric (1.10.2)
+  - Firebase/Analytics (6.25.0):
+    - Firebase/Core
+  - Firebase/Core (6.25.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.5.1)
+  - Firebase/CoreOnly (6.25.0):
+    - FirebaseCore (= 6.7.1)
+  - FirebaseAnalytics (6.5.1):
+    - FirebaseCore (~> 6.7)
+    - FirebaseInstallations (~> 1.2)
+    - GoogleAppMeasurement (= 6.5.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 1.30905.0)
+  - FirebaseCore (6.7.1):
+    - FirebaseCoreDiagnostics (~> 1.3)
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+  - FirebaseCoreDiagnostics (1.3.0):
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleDataTransportCCTSupport (~> 3.1)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+    - nanopb (~> 1.30905.0)
+  - FirebaseCoreDiagnosticsInterop (1.2.0)
+  - FirebaseInstallations (1.2.0):
+    - FirebaseCore (~> 6.6)
+    - GoogleUtilities/Environment (~> 6.6)
+    - GoogleUtilities/UserDefaults (~> 6.6)
+    - PromisesObjC (~> 1.2)
   - FSCalendar (2.8.0)
   - Fuse (1.2.0)
+  - GoogleAppMeasurement (6.5.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 1.30905.0)
+  - GoogleDataTransport (6.1.1)
+  - GoogleDataTransportCCTSupport (3.1.0):
+    - GoogleDataTransport (~> 6.1)
+    - nanopb (~> 1.30905.0)
+  - GoogleUtilities/AppDelegateSwizzler (6.6.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.6.0):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (6.6.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.6.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.6.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.6.0)"
+  - GoogleUtilities/Reachability (6.6.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.6.0):
+    - GoogleUtilities/Logger
   - HandyJSON (5.0.0-beta.1)
   - Hero (1.4.0)
   - JXPhotoBrowser (2.1.5):
@@ -19,7 +84,13 @@ PODS:
     - JXPhotoBrowser/Core
     - Kingfisher
   - Kingfisher (4.10.1)
+  - nanopb (1.30905.0):
+    - nanopb/decode (= 1.30905.0)
+    - nanopb/encode (= 1.30905.0)
+  - nanopb/decode (1.30905.0)
+  - nanopb/encode (1.30905.0)
   - ProgressHUD (2.51)
+  - PromisesObjC (1.2.8)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -36,9 +107,12 @@ PODS:
 DEPENDENCIES:
   - CollectionKit
   - CollectionKit/WobbleAnimator
+  - Crashlytics (~> 3.14.0)
   - DNSPageView
   - EachNavigationBar
   - ESTabBarController-swift
+  - Fabric (~> 1.10.2)
+  - Firebase/Analytics
   - FSCalendar
   - Fuse
   - HandyJSON (from `https://github.com/alibaba/HandyJSON.git`, branch `dev_for_swift5.0`)
@@ -54,15 +128,29 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - CollectionKit
+    - Crashlytics
     - DNSPageView
     - EachNavigationBar
     - ESTabBarController-swift
+    - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreDiagnosticsInterop
+    - FirebaseInstallations
     - FSCalendar
     - Fuse
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
+    - GoogleUtilities
     - Hero
     - JXPhotoBrowser
     - Kingfisher
+    - nanopb
     - ProgressHUD
+    - PromisesObjC
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -83,16 +171,30 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   DNSPageView: df84b178394ddf4a73b2d19baf4deb24b4a4ba33
   EachNavigationBar: edd979ad7b4a63ce5ea4208087ba55eb1e2f2b55
   ESTabBarController-swift: 4fb52ad03d94d0717ef97bc9eb09a5abfdded0a2
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  Firebase: 5719b4f965f76643241a1bb8244483ff6117db39
+  FirebaseAnalytics: 93565f3f0f0f50a5d8770850bfe6a82eaba5db27
+  FirebaseCore: 6023faeada5afa95a349fccafb40900e32e9ac42
+  FirebaseCoreDiagnostics: 4a773a47bd83bbd5a9b1ccf1ce7caa8b2d535e67
+  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
+  FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   Fuse: 287bd95a5c8dbfe6c41af519eaf48856aa1a28f6
+  GoogleAppMeasurement: 137afe68bfa406c3f4221b9395253d9e5d4654cf
+  GoogleDataTransport: ad884314b81cdb808fb1d23787b367ff8da4e28a
+  GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
+  GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   JXPhotoBrowser: 0178c485d1dbad1ef1dcbb24e4f463d80c30369d
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
@@ -101,6 +203,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YetAnotherAnimationLibrary: 7f808b10c2d193dd3e82407e722fa60aa0bdff2d
 
-PODFILE CHECKSUM: c09a01878bba15de28540b4e0bbd4a962dba5058
+PODFILE CHECKSUM: 6b1bd71c1b18954f839e600163a82b864bf04c8d
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

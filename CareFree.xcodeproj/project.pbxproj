@@ -112,6 +112,7 @@
 		E327EBFF246D7B68007AD84E /* CFHomeMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E327EBFE246D7B68007AD84E /* CFHomeMarkCell.swift */; };
 		E3661FD624701C97005C4F7B /* AboutAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3661FD524701C97005C4F7B /* AboutAViewController.swift */; };
 		E3661FD824702424005C4F7B /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3661FD724702424005C4F7B /* UpdateViewController.swift */; };
+		E392C33E247F9E8C00C49452 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E392C33D247F9E8C00C49452 /* GoogleService-Info.plist */; };
 		E3B7DE27246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7DE26246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift */; };
 		E3B7DE2A246E7EA100EA03A7 /* CFNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7DE29246E7EA100EA03A7 /* CFNotesViewController.swift */; };
 		E3B7DE32246EBA9500EA03A7 /* SingleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7DE31246EBA9500EA03A7 /* SingleClass.swift */; };
@@ -299,6 +300,7 @@
 		E327EBFE246D7B68007AD84E /* CFHomeMarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeMarkCell.swift; sourceTree = "<group>"; };
 		E3661FD524701C97005C4F7B /* AboutAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAViewController.swift; sourceTree = "<group>"; };
 		E3661FD724702424005C4F7B /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		E392C33D247F9E8C00C49452 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3B7DE26246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeMarkHeaderView.swift; sourceTree = "<group>"; };
 		E3B7DE29246E7EA100EA03A7 /* CFNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFNotesViewController.swift; sourceTree = "<group>"; };
 		E3B7DE31246EBA9500EA03A7 /* SingleClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleClass.swift; sourceTree = "<group>"; };
@@ -1135,6 +1137,7 @@
 				F5303D4822A8D1620060EACE /* Extension+Cosnt */,
 				25EBFE3522E14E810055B7C2 /* Third */,
 				F5D9752622A3B36E0014BE15 /* ViewController.swift */,
+				E392C33D247F9E8C00C49452 /* GoogleService-Info.plist */,
 				F5D9752822A3B36E0014BE15 /* Main.storyboard */,
 				F5D9752B22A3B3700014BE15 /* Assets.xcassets */,
 				F5D9752D22A3B3700014BE15 /* LaunchScreen.storyboard */,
@@ -1225,6 +1228,7 @@
 				F58869CC22E99E280047BEF5 /* mine.json in Resources */,
 				25D6575923935B3800B918D4 /* HGImage.xcassets in Resources */,
 				F5D9752A22A3B36E0014BE15 /* Main.storyboard in Resources */,
+				E392C33E247F9E8C00C49452 /* GoogleService-Info.plist in Resources */,
 				2565A75323E8034600822C65 /* CalmViewController.xib in Resources */,
 				F5C7738422B08C3A0087520B /* LoginViewController.xib in Resources */,
 			);
