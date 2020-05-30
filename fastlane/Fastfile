@@ -148,16 +148,6 @@ end
 def buildApp
     # 更改build号
     updateProjectBuildNumber
-    gym(
-      workspace: "wehkamp.xcworkspace",
-      configuration: "DebugDistribution",
-      scheme: "wehkamp",
-      silent: true,
-      output_directory: params[:output_directory],
-      output_name: "wehkamp.ipa",
-      export_team_id: "8V375A94TK",
-      export_xcargs: "-allowProvisioningUpdates"
-  )
     # 编译
     build_app(workspace: "CareFree.xcworkspace", 
                scheme: "CareFree",
