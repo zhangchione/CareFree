@@ -34,7 +34,7 @@ platform :ios do
     timeout: 3600,
     add_to_search_list: true
     )
-    # 导入私钥
+
     import_certificate(
     certificate_path: "./fastlane/certs/dist.p12",
     certificate_password: ENV["Cert_PassWord"],
@@ -148,8 +148,23 @@ end
 def buildApp
     # 更改build号
     updateProjectBuildNumber
+    gym(
+      workspace: "wehkamp.xcworkspace",
+      configuration: "DebugDistribution",
+      scheme: "wehkamp",
+      silent: true,
+      output_directory: params[:output_directory],
+      output_name: "wehkamp.ipa",
+      export_team_id: "8V375A94TK",
+      export_xcargs: "-allowProvisioningUpdates"
+  )
     # 编译
-    build_app(workspace: "CareFree.xcworkspace", scheme: "CareFree")
+    build_app(workspace: "CareFree.xcworkspace", 
+               scheme: "CareFree",
+               export_options: {
+                  provisioningProfiles: {"com.zhangchione.carefree"=>"CareFree_distribution"}
+               },
+            )
 end
 
 # 跟新版本号
