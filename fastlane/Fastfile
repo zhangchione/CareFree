@@ -125,6 +125,7 @@ platform :ios do
      distribute_external: true,
      changelog: File.read("Changelog.txt"),
      groups: ["testflight.top","Price Tag","其他渠道"],
+     skip_waiting_for_build_processing: true,
      )
      # 更新版本tag
      add_git_tag

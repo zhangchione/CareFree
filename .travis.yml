@@ -5,15 +5,16 @@ osx_image: xcode11.3
 podfile: path/to/Podfile
 branches:
   only:
-    - master
-    - /release*/
+  - master
+  - "/release*/"
 cache:
-  - bundler
-  - cocoapods
+- cocoapods
 before_install:
-  - bundle install
-  - export CI=1
-  - pod install || pod install --repo-update
+- bundle install
+- pod install || pod install --repo-update
 script:
-  - bundle update fastlane
-  - fastlane ci
+- fastlane ci
+env:
+  global:
+    secure: SaQsfG7iUikmTekgyfAVNoYD/nO2lHBjeP+/T9UuejTVHJMJzuwQfjei5Qw6K+QBUaALJfw0kIE0TYZaQEVrC+spKV/yny6MiOgTtRTxMQwjmHs28uHf1Na2a1wZQ6RyrTKvsgIwjrf2WB/eqjkG6OiNVJkQLA6kaRKvpLsi/wa/n/wWqLIONsFUvYzVX7NhhO2QI+fgvjpHCnwl67TojhB4xRjfLNO2HZWPvhenWPYmKkagd+Ef9pcwyBn8SMRCQml8TGRaUV0iNScm84qfpu6c1+cEjnTXlERaksvgBVhBPo8WOzhd+QBu/77bfnCAyGf+wsDRru2uums7SLuRiBijjn/dMUgCnLjj3s6d3od4LafPFhEuFZ2fnz6ipg+OuqHLLgvB7dMpOEn6ld5yayr4oV3KS6e4aJ4dEaTYO48htoEToMt9Ye0hwaekVLux25u/bSLcg1LOM4SBROwamqNwRXDn3TFmU7N0R9M4LYlkZl2UzLhZNwAcqkyMhTE5mVxjle6yPMsCDJsWNusb+V0NJZPaPhJ3OOTps9ttMmgTCPVcskSsb0pSkplPvt46qi8wU2ADCMyvOXMXC7V/XlPLUqaK9EF53mI57F2PUcQaymJkvlCGR5kpygmGwF4lc+8BuItgTisc+Pzjk7VQ7H8ZAqWxc0VDGuNxgC1VJR8=
+
