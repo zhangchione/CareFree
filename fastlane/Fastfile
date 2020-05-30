@@ -49,6 +49,7 @@ platform :ios do
     )
     # 拉取证书
     system "sh ./load_provision.sh"
+    
     # sigh(app_identifier: "name.wxz.easy",
     #   username: "245328522@qq.com")
     if branch.start_with? "master"
