@@ -9,9 +9,14 @@
 ## Download
 [AppStore下载](https://apps.apple.com/cn/app/%E6%97%A0%E5%BF%A7%E6%97%A5%E8%AE%B0-%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB-%E6%97%A0%E5%BF%A7%E6%97%A0%E8%99%91/id1513785294)
 ## Screenshot
+
 .|.|.|.
 ---:|:---:|:---:|:---
 ![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/home.png)|![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/diary.png)|![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/note.png)|![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/mine.png)
+
 .|.|.|.
 ---:|:---:|:---:|:---
-![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/diary_write.png)|![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/diary_detail.png)|![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/note_write.png)|![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/trash.png)
+![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/diary_write.PNG)|![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/diary_detail.PNG)|![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/note_write.PNG)|![](https://github.com/zhangchione/ConeImagesSpec/blob/master/CareFree/trash.PNG)
+
+## License
+[GPL](https://github.com/shine56/CareFree/blob/master/LICENSE)
