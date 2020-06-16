@@ -23,12 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         configVC()
+        
+
+        let languages = UserDefaults.standard.value(forKey: "AppleLanguages")
+        
+        print("当前语言：\(languages)")
+        
         return true
     }
     func configVC() {
-        
-
-
         
         let mainTabVC = mainTabBarVC()
         self.window?.rootViewController = mainTabVC
@@ -38,10 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.configSetInfo()
             return
         }
-        
 
-       
-        
     }
     
     func mainTabBarVC() -> ESTabBarController{
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let diaryVC = CFDiaryController()
         let notesVC = CFNotesViewController()
         let mineVC = CFMineController()
-        homeVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "首页", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))
+        homeVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: I18n.localizedString("home"), image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))
         diaryVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "日记", image: UIImage(named: "分组2"), selectedImage: UIImage(named: "分组2"))
         notesVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "便贴", image: UIImage(named: "分组4"), selectedImage: UIImage(named: "note_1"))
         mineVC.tabBarItem = ESTabBarItem.init(CFBouncesContentView(), title: "我的", image: UIImage(named: "me"), selectedImage: UIImage(named: "me_1"))

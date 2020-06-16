@@ -151,10 +151,11 @@ def buildApp
     # 编译
     build_app(workspace: "CareFree.xcworkspace", 
                scheme: "CareFree",
-               export_options: {
-                  provisioningProfiles: {"com.zhangchione.carefree"=>"CareFree_distribution"}
-               },
+              
             )
+            # export_options: {
+            #    provisioningProfiles: {"com.zhangchione.carefree"=>"CareFree_distribution"}
+            # },
 end
 
 # 跟新版本号

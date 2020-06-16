@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  CareFree
+
+  Created by zhangchi06 on 2020/5/30.
+  Copyright © 2020 张驰. All rights reserved.
+*/
+"home" = "首页";
+
+"diary" = "日记";
+
+"notes" = "便签";
+
+"mine" = "我的";
+
+"CurrentMood" = "当前情绪值";
+
+"MoodReport" = "情绪报表";
+
+"day" = "天";
+
+"today" = "描述今日";
+
+"happy" = "开心";
+
+"calm" = "平静";
+
+"sad" = "难过";
+
+"depression" = "压抑";
+
+"mood" = "情绪值";
+
+"search" = "搜索";
+
+"temporary" = "临时";
+
+"task" = "任务";
+
+
+"all" = "所有";
+
+"bio" = "一切都是最好的安排";
+
+"total" = "统计";
+
+"trash" = "废纸篓";
+
+"set" = "设置";
+
+"showMark" = "首页展示Mark";
+
+"showTask" = "首页展示任务";
+

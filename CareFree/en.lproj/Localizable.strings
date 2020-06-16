@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  CareFree
+
+  Created by zhangchi06 on 2020/5/30.
+  Copyright © 2020 张驰. All rights reserved.
+*/
+
+"home" = "home";
+
+"diary" = "diary";
+
+"note" = "note";
+
+"mine" = "mine";
+
+"CurrentMood" = "Current Mood";
+
+"MoodReport" = "Mood report";
+
+"day" = "day";
+
+"today" = "Today's summary";
+
+"happy" = "happy";
+
+"calm" = "calm";
+
+"sad" = "sad";
+
+"depression" = "depression";
+
+"mood" = "mood";
+
+"search" = "search";
+
+"temporary" = "temporary";
+
+"task" = "task";
+
+
+"all" = "all";
+
+"bio" = "Everything is the best arrangement!";
+
+"total" = "total";
+
+"trash" = "Wastebasket";
+
+"set" = "setting";
+
+"showMark" = "Home Show Mark";
+
+"showTask" = "Home Show Task";

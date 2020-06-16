@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  CareFree
+
+  Created by zhangchi06 on 2020/5/30.
+  Copyright © 2020 张驰. All rights reserved.
+*/
+CFBundleDisplayName = "无忧日记";

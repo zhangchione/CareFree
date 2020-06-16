@@ -113,6 +113,9 @@
 		E3661FD624701C97005C4F7B /* AboutAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3661FD524701C97005C4F7B /* AboutAViewController.swift */; };
 		E3661FD824702424005C4F7B /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3661FD724702424005C4F7B /* UpdateViewController.swift */; };
 		E392C33E247F9E8C00C49452 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E392C33D247F9E8C00C49452 /* GoogleService-Info.plist */; };
+		E3A7BE93248240060084BC37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3A7BE95248240060084BC37 /* InfoPlist.strings */; };
+		E3A7BE99248242D00084BC37 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3A7BE9B248242D00084BC37 /* Localizable.strings */; };
+		E3A7C5C5248244300084BC37 /* I18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7C5C4248244300084BC37 /* I18n.swift */; };
 		E3B7DE27246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7DE26246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift */; };
 		E3B7DE2A246E7EA100EA03A7 /* CFNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7DE29246E7EA100EA03A7 /* CFNotesViewController.swift */; };
 		E3B7DE32246EBA9500EA03A7 /* SingleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7DE31246EBA9500EA03A7 /* SingleClass.swift */; };
@@ -301,6 +304,13 @@
 		E3661FD524701C97005C4F7B /* AboutAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAViewController.swift; sourceTree = "<group>"; };
 		E3661FD724702424005C4F7B /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		E392C33D247F9E8C00C49452 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E3A7BE8F24823F9B0084BC37 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		E3A7BE9024823F9B0084BC37 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		E3A7BE94248240060084BC37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E3A7BE962482400A0084BC37 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E3A7BE9A248242D00084BC37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E3A7BE9C248242D20084BC37 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E3A7C5C4248244300084BC37 /* I18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I18n.swift; sourceTree = "<group>"; };
 		E3B7DE26246E6DB100EA03A7 /* CFHomeMarkHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeMarkHeaderView.swift; sourceTree = "<group>"; };
 		E3B7DE29246E7EA100EA03A7 /* CFNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFNotesViewController.swift; sourceTree = "<group>"; };
 		E3B7DE31246EBA9500EA03A7 /* SingleClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleClass.swift; sourceTree = "<group>"; };
@@ -763,6 +773,14 @@
 			path = "Adout ";
 			sourceTree = "<group>";
 		};
+		E3A7C5C3248244140084BC37 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E3A7C5C4248244300084BC37 /* I18n.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		E3B7DE28246E7E7500EA03A7 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1129,6 +1147,7 @@
 		F5D9752322A3B36E0014BE15 /* CareFree */ = {
 			isa = PBXGroup;
 			children = (
+				E3A7C5C3248244140084BC37 /* Tool */,
 				25BBD90C23E92E1F001298CD /* emotionClassier.mlmodel */,
 				F5D9752422A3B36E0014BE15 /* AppDelegate.swift */,
 				F58869AF22E98C690047BEF5 /* CareFreeApp */,
@@ -1142,7 +1161,9 @@
 				F5D9752B22A3B3700014BE15 /* Assets.xcassets */,
 				F5D9752D22A3B3700014BE15 /* LaunchScreen.storyboard */,
 				F5D9753022A3B3700014BE15 /* Info.plist */,
+				E3A7BE95248240060084BC37 /* InfoPlist.strings */,
 				25FE25E622DEFC4E00FAE883 /* CareFree-Bridging-Header.h */,
+				E3A7BE9B248242D00084BC37 /* Localizable.strings */,
 			);
 			path = CareFree;
 			sourceTree = "<group>";
@@ -1193,6 +1214,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = F5D9751822A3B36E0014BE15;
 			productRefGroup = F5D9752222A3B36E0014BE15 /* Products */;
@@ -1218,9 +1240,11 @@
 				F5C7738822B090F70087520B /* RegisterViewController.xib in Resources */,
 				25EBFE5422E19B680055B7C2 /* RCViewController.xib in Resources */,
 				250DDD0522ED2939001C765B /* diary_now.json in Resources */,
+				E3A7BE93248240060084BC37 /* InfoPlist.strings in Resources */,
 				25D6575623935B3800B918D4 /* HGImage.storyboard in Resources */,
 				2565A76F23E8041D00822C65 /* SetController.xib in Resources */,
 				2565A76123E8034600822C65 /* SoSadViewController.xib in Resources */,
+				E3A7BE99248242D00084BC37 /* Localizable.strings in Resources */,
 				E31E6321246FD58600011DBF /* localUserInfo.json in Resources */,
 				250C5B2024705E9C009CEB44 /* endPoint.png in Resources */,
 				F5D9752C22A3B3700014BE15 /* Assets.xcassets in Resources */,
@@ -1347,6 +1371,7 @@
 				25EBFE4C22E190E50055B7C2 /* RecommendBookCell.swift in Sources */,
 				2565A75523E8034600822C65 /* AlbumItemsViewController.swift in Sources */,
 				F5303D4B22A8D2AD0060EACE /* Const.swift in Sources */,
+				E3A7C5C5248244300084BC37 /* I18n.swift in Sources */,
 				2505116B2392079B0092E55E /* NowDiaryTable.swift in Sources */,
 				F5C7738322B08C3A0087520B /* LoginViewController.swift in Sources */,
 				F58869BC22E991770047BEF5 /* CFMineController.swift in Sources */,
@@ -1411,10 +1436,29 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E3A7BE95248240060084BC37 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3A7BE94248240060084BC37 /* en */,
+				E3A7BE962482400A0084BC37 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E3A7BE9B248242D00084BC37 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3A7BE9A248242D00084BC37 /* en */,
+				E3A7BE9C248242D20084BC37 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F5D9752822A3B36E0014BE15 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F5D9752922A3B36E0014BE15 /* Base */,
+				E3A7BE8F24823F9B0084BC37 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1423,6 +1467,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F5D9752E22A3B3700014BE15 /* Base */,
+				E3A7BE9024823F9B0084BC37 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1434,6 +1479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1495,6 +1541,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1554,7 +1601,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20053001;
+				CURRENT_PROJECT_VERSION = 20053101;
 				DEVELOPMENT_TEAM = A4TWU4S2JA;
 				INFOPLIST_FILE = CareFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1562,7 +1609,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangchione.carefree;
 				PRODUCT_NAME = "无忧日记";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1582,7 +1629,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20053001;
+				CURRENT_PROJECT_VERSION = 20053101;
 				DEVELOPMENT_TEAM = A4TWU4S2JA;
 				INFOPLIST_FILE = CareFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1590,7 +1637,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhangchione.carefree;
 				PRODUCT_NAME = "无忧日记";
 				PROVISIONING_PROFILE_SPECIFIER = "";
