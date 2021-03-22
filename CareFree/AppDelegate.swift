@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         configVC()
         
-
+// test ci 
         let languages = UserDefaults.standard.value(forKey: "AppleLanguages")
         
         print("当前语言：\(languages)")
